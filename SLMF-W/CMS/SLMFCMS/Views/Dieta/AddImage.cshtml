@@ -1,0 +1,91 @@
+﻿@model SLMFCMS.Models.Dieta
+@using System.Web.Helpers
+@using SLMFCMS.App_Code
+@using System.Configuration;
+@{
+    ViewBag.Title = "Agregar la Imagen de la Dieta";
+}
+@{string sRutaImages = ConfigurationManager.AppSettings["App_FolderDietsImages"];
+string sFileImage = "";}
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="row-header-index" class="row">
+            <div id="div-titulo" class="col-md-7">
+                <h4>@ViewBag.Title</h4>
+            </div>
+            <div class="col-md-4">
+                &nbsp;
+            </div>
+            <div id="div-search" class="col-md-1">
+                @Html.ActionLink("Cancelar", "Details", "Dieta", routeValues: new { id = Model.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { id = "buttonback", @class = "btn btn-cancel", @title = "Cancelar" })
+            </div>
+        </div>
+    </div>
+</div>
+<hr id="header-divisor" />
+<div class="row">
+    <div class="col-md-3 lbltitulo">
+        @Html.LabelFor(model => model.Nombre)
+        <input type="hidden" id="iddieta" value="@Model.ID" />
+    </div>
+    <div class="col-md-8 lbltitulo">
+        @Html.LabelFor(model => model.Descripcion)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 txt-area-display-with-border area-border-3">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+    <div class="col-md-8 txt-area-display-with-border area-border-8-4">
+        @Html.DisplayFor(model => model.Descripcion)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table webGrid table-partial-upload center-table">
+            <tr class="webGridHeader">
+                <th class="txt-center">
+                    Imagen
+                </th>
+            </tr>
+            <tr>
+                <td class="celda-imagen-upload">
+                    <div>
+                        @if (!String.IsNullOrEmpty(Model.FileImage))
+                        {
+                            sFileImage = sRutaImages + Model.FileImage;
+                            <a href="@sFileImage.Replace("~/","../../")" data-lightbox="image-1">
+                                @Html.Image(sFileImage, "Imagen", new { @class = "image-preview-portada-ready" })
+                            </a>
+                        }
+                        else
+                        {
+                            <div id="main-container-drop" class="container-dropper-portrait">
+                                <div id="dropbox">
+                                    <span class="message">
+                                        Arrastre a este recuadro, el archivo de Imagen con las dimensiones especificadas.
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <div id="image-uploaded">
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+@section LocalScript {
+    @Scripts.Render("~/bundles/lightbox")
+    @Scripts.Render("~/bundles/upload-image-diet")
+}

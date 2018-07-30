@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS: SLMF - @ViewBag.Title</title>
+    <link rel="icon" type="image/png" href="~/favicon.png">
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/css")
+    @RenderSection("LocalCss", required: false)
+    @RenderSection("WYSWYG", required: false)
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.Partial("_Home")
+            </div>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </div>
+    @Html.Partial("_ClientFoodMenu")
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <div id="footer-estructura" class="nav navbar-fixed-bottom">
+        <hr />
+        <footer>
+            <div class="text-footer">
+                Copyright &copy; @DateTime.Now.Year - Solo Los Mas Fuertes - Administrador de Contenidos.
+            </div>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @RenderSection("LocalScript", required: false)
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿@model SLMFCMS.Models.Accesorio
+@{
+    ViewBag.Title = "Editar el Accesorio del Ejercicio";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12">
+            <div id="row-header-index" class="row">
+                <div id="div-titulo" class="col-md-7">
+                    <h4>@ViewBag.Title</h4>
+                </div>
+                <div class="col-md-3">
+                    &nbsp;
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-save" type="submit" title="Guardar">Guardar</button>
+                </div>
+                <div id="div-search" class="col-md-1">
+                    @Html.ActionLink("Cancelar", "Index", "Accesorio", routeValues: new { pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "btn btn-cancel", @title = "Cancelar" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr id="header-divisor" />
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID)
+        <div class="row">
+            <div class="col-md-1 lbltitulo">
+                @Html.LabelFor(model => model.Abreviacion)
+            </div>
+            <div class="col-md-2 lbltitulo">
+                @Html.LabelFor(model => model.Nombre)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 margen-off">
+                @Html.TextBoxFor(model => model.Abreviacion, new { @class = "txt-box-input-7-1" })
+            </div>
+            <div class="col-md-2 margen-off">
+                @Html.TextBoxFor(model => model.Nombre, new { @class = "txt-box-input-col2-row1" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Abreviacion, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

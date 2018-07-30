@@ -1,0 +1,131 @@
+﻿@model PagedList.IPagedList<SLMFCMS.Models.Plan>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Planes";
+}
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm("Index", "Plan", FormMethod.Get))
+        {
+            <div id="row-header-index" class="row">
+                <div id="div-add" class="col-md-1">
+                    @Html.ActionLink(" ", "Create", "Plan", routeValues: null, htmlAttributes: new { @class = "fa fa-plus-square fa-2x btn-accion", @title = "Agregar un Plan" })
+                </div>
+                <div id="div-titulo" class="col-md-7">
+                    <h4>@ViewBag.Title</h4>
+                </div>
+                @if (String.IsNullOrEmpty(ViewBag.CurrentFilter))
+                {
+                    <div id="div-search" class="col-md-3">
+                        @Html.TextBox("sSearchString", ViewBag.CurrentFilter as string, htmlAttributes: new { @class = "form-control search-box", autocomplete = "off" })
+                    </div>
+                }
+                else
+                {
+                    <div id="div-search" class="col-md-3">
+                        @Html.TextBox("sSearchString", ViewBag.CurrentFilter as string, htmlAttributes: new { @class = "form-control search-box disabled", disabled = "disabled" })
+                    </div>
+                }
+                <div id="div-find" class="col-md-1">
+                    @if (String.IsNullOrEmpty(ViewBag.CurrentFilter))
+                    {
+                        <button id="btn-search" type="submit" class="fa fa-search fa-2x" />
+                    }
+                    else
+                    {
+                        @Html.ActionLink(" ", "Index", "Plan", new { sSortOrder = "", sCurrentFilter = "" }, new { @class = "fa fa-times fa-2x btn-accion-inv" })
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table webGrid">
+            <tr class="webGridHeader">
+                <th>
+                    @Html.ActionLink("Disciplina", "Index", new { sSortOrder = ViewBag.DisciplinaSortParm, sCurrentFilter = ViewBag.CurrentFilter }, new { @class = "ancla-sort" })
+                </th>
+                <th>
+                    @Html.ActionLink("Nombre", "Index", new { sSortOrder = ViewBag.NameSortParm, sCurrentFilter = ViewBag.CurrentFilter }, new { @class = "ancla-sort" })
+                </th>
+                <th>
+                    Leyenda
+                </th>
+                <th>
+                    Descripción
+                </th>
+                <th>
+                    Días
+                </th>
+                <th>
+                    Definido
+                </th>
+                <th class="columnPagerwebGrid">
+                    @if (@Model.PageCount > 1)
+                    {
+                        @Html.PagedListPager(Model, pagina => Url.Action("Index", new { pagina, sSortOrder = ViewBag.CurrentSort, sCurrentFilter = ViewBag.CurrentFilter }),
+                    new PagedListRenderOptions
+                    {
+                        DisplayLinkToFirstPage = PagedListDisplayMode.IfNeeded,
+                        DisplayLinkToLastPage = PagedListDisplayMode.IfNeeded,
+                        LinkToFirstPageFormat = "1",
+                        LinkToLastPageFormat = @Model.PageCount.ToString(),
+                        LinkToPreviousPageFormat = String.Format("«"),
+                        LinkToNextPageFormat = String.Format("»"),
+                        MaximumPageNumbersToDisplay = 2,
+                        DisplayEllipsesWhenNotShowingAllPageNumbers = false,
+                        DisplayLinkToIndividualPages = true
+                    })
+                    }
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Disciplina.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Leyenda)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DiasDelPlan.Count)
+                    </td>
+                    <td class="txt-center">
+                        @if (item.Definido)
+                        {
+                            @Html.Label("Ok")
+                        }
+                    </td>
+                    <td style="width: 228px !important;">
+                        @Html.ActionLink(" ", "Edit", "Plan", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-pencil-square fa-2x btn-accion", @title = "Editar el Plan" })
+                        @Html.ActionLink(" ", "Details", "Plan", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-info-circle fa-2x btn-accion " + item.CSSNoImagen, @title = "Detalles del Plan" })
+                        @Html.ActionLink(" ", "Tags", "Plan", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-tags fa-2x btn-accion " + item.CSSNoTagueado, @title = "Etiquetas del Plan" })
+                        @Html.ActionLink(" ", "Days", "Plan", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-calendar fa-2x btn-accion " + item.CSSSinDias, @title = "Calendario del Plan" })
+                        @if (item.DiasDelPlan.Count == 0 && item.EtiquetasDelPlan.Count == 0 && item.UsuariosDelPlan.Count == 0)
+                        {
+                            @Html.ActionLink(" ", "Delete", "Plan", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-minus-square fa-2x btn-accion", @title = "Borrar el Plan" })
+                        }
+                        @if (item.Visible == true)
+                        {
+                            @Html.ActionLink(" ", "Hide", "Plan", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-eye fa-2x btn-accion", @title = "Plan Visible" })
+                        }
+                        @if (item.Visible == false)
+                        {
+                            @Html.ActionLink(" ", "Show", "Plan", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-eye-slash fa-2x btn-accion " + item.CSSSinDias, @title = "Plan Oculto" })
+                        }
+                        <a class="fa fa-anchor fa-2x btn-accion" href="@item.URLPlan" target="_blank"> </a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

@@ -1,0 +1,974 @@
+html{font-size:100%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-family:sans-serif}
+button,input,select,textarea{font-family:sans-serif}
+body{margin:0}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:0.67em 0}
+h2{font-size:1.5em;margin:0.83em 0}
+h3{font-size:1.17em;margin:1em 0}
+h4{font-size:1em;margin:1.33em 0}
+h5{font-size:0.83em;margin:1.67em 0}
+h6{font-size:0.67em;margin:2.33em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:normal;font-style:normal}
+blockquote{margin:1em 40px}
+dfn{font-style:normal;font-weight:normal}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+p,pre{margin:1em 0}
+code,kbd,pre,samp{font-family:monospace,serif;_font-family:"courier new",monospace;font-size:1em}
+pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}
+q{quotes:none}
+q:before,q:after{content:"";content:none}
+small{font-size:80%}
+sub{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;top:-0.5em}
+sub{bottom:-0.25em}
+dl,menu,ol,ul{margin:1em 0}
+dd{margin:0 0 0 40px}
+menu,ol,ul{padding:0 0 0 40px}
+nav ul,nav ol{list-style:none;list-style-image:none}
+img{border:0;-ms-interpolation-mode:bicubic}
+svg:not(:root){overflow:hidden}
+figure,form{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:0.35em 0.625em 0.75em}
+legend{border:0;padding:0;white-space:normal;*margin-left:-7px}
+button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"]{-webkit-appearance:button;cursor:pointer;*overflow:visible}
+input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;*overflow:visible}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;*height:13px;*width:13px}
+input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;outline:none;text-decoration:none;color:#cdcccb;line-height:1em}
+a::-moz-focus-inner{border:0}
+a:focus{outline:none}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+body{line-height:0}
+ol,ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after{content:"";content:none}
+q:before,q:after{content:"";content:none}
+table{border-collapse:collapse;border-spacing:0}
+@font-face{font-family:"JLSOverKillHammerSCNormal";src:url("../Content/fonts/295CF1_B_0.eot");src:url("../Content/fonts/295CF1_B_0.eot?#iefix") format("embedded-opentype"),url("../Content/fonts/295CF1_B_0.woff") format("woff"),url("../Content/fonts/295CF1_B_0.ttf") format("truetype")}
+@font-face{font-family:"Tungsten A","Tungsten B";font-weight:300;font-style:normal}
+@font-face{font-family:"PlexesMediumPro";src:url("../Content/fonts/29D657_0_0.eot");src:url("../Content/fonts/29D657_0_0.eot?#iefix") format("embedded-opentype"),url("../Content/fonts/29D657_0_0.woff") format("woff"),url("../Content/fonts/29D657_0_0.ttf") format("truetype")}
+@font-face{font-family:"PlexesLightPro";src:url("../Content/fonts/2AF293_0_0.eot");src:url("../Content/fonts/2AF293_0_0.eot?#iefix") format("embedded-opentype"),url("../Content/fonts/2AF293_0_0.woff") format("woff"),url("../Content/fonts/2AF293_0_0.ttf") format("truetype")}
+
+@font-face{font-family:"Slmfnormal";src:url("../Content/fonts/slmf_normal-webfont.eot");src:url("../Content/fonts/slmf_normal-webfont.eot?#iefix") format("embedded-opentype"),url("../Content/fonts/slmf_normal-webfont.woff") format("woff"),url("../Content/fonts/slmf_normal-webfont.ttf") format("truetype")}
+
+
+h2,h2 span,h3,h3 span,span.title,span.title sub{font-family:"Tungsten A","Tungsten B";font-weight:500;font-style:normal;font-size:22px;letter-spacing:0.39em;padding-bottom:11px;color:#f6d641;text-transform:uppercase;line-height:1.1em}
+p,a,li,td span,em{color:#ccc;font-family:"PlexesLightPro";font-weight:normal;font-style:normal;font-size:14px;line-height:1.8em;letter-spacing:0.012em}
+
+html,body
+{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	float: left;
+	display: block;
+	background-color: #202020;
+	overflow: hidden;
+}
+#fullContainer
+{
+	width: 100%;
+	height: 100%;	
+	position: relative;
+	float: left;
+	display: block;
+	overflow-x: auto;
+}
+
+#stage
+{	
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: block;
+	float: left;
+
+}
+#loader
+{
+	width: 100%;
+	height: 100%;
+	display: block;	
+}
+#loader p{
+	width: 100%;
+	height: 150px;
+	text-align: center;
+	vertical-align: middle;	
+	font-family:"JLSOverKillHammerSCNormal";
+	font-weight:normal;
+	font-style:normal;
+	font-size: 150px;
+	line-height:100%;	
+	position:absolute;
+	top: 50%;
+	margin-top: -100px;
+	letter-spacing:-0.04em;
+	color:#f6d641;
+}	
+.home_content_btn
+{
+	width: 134px;	   
+    display: block;
+    position: relative;    
+    padding-top: 4px;
+    margin: 11px 0 0 0;
+	float: left;
+}
+.home_content_btn.comprar{display: block;}
+.labs_orange .home_content_btn:hover,.labs_yellow .home_content_btn:hover { background-color: transparent;}
+.labs_orange .home_content_btn:hover p{ color: #df5023}
+.labs_yellow .home_content_btn:hover p{ color: #f6d641}
+
+.labs_yellow .home_content_btn{background-color: #f6d641;border: 1px solid #f6d641;}
+.labs_orange .home_content_btn{background-color: #df5023;border: 1px solid #df5023;}
+
+
+.labs_yellow .home_content_btn.dosis,.labs_yellow .home_content_btn.tabla
+{background-color: transparent;border: 1px solid #f6d641;}
+
+.labs_yellow .home_content_btn.dosis:hover,.labs_yellow .home_content_btn.tabla:hover
+{background-color: #f6d641;}
+.labs_yellow .home_content_btn.dosis:hover p,.labs_yellow .home_content_btn.tabla:hover p
+{color: #000000;}
+.home_content_btn p
+{
+	width: 100%;
+    position: relative;
+    text-align: center;
+    font-family: "Tungsten A","Tungsten B";    
+    font-size: 16px;
+    letter-spacing: 7px;
+    vertical-align: middle;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-shadow: none;    
+    margin-left: 4px;
+    text-transform: uppercase;
+}
+
+.labs_yellow .home_content_btn p
+{color: #000000;}
+
+.labs_orange .home_content_btn p
+{color: #ffffff;}
+
+.labs_yellow .home_content_btn.dosis p,.labs_yellow .home_content_btn.tabla p
+{color: #f6d641;}
+
+.labs_orange .home_content_btn.dosis p,.labs_orange .home_content_btn.tabla p
+{color: #df5023;}
+
+.bullets
+{
+	width: 100%;
+	height: 30px;
+	position: fixed;	
+	right: 0;	
+	margin-right: 0;
+	padding-top: 10px;
+	z-index: 15;
+	background-color: #393939;
+}
+.bullets .bullet_item
+{
+	width: 20%;
+	height: 40px;
+	display: block;
+	position: relative;	
+	text-align: center;
+	float: left;
+}
+.bullets .bullet_item .p_container
+{
+	width: 100%;
+	height: 16px;
+	float: left;
+	display: block;
+	overflow: hidden;
+	margin-bottom: 5px;
+	margin-right: 0;
+}
+.bullets .bullet_item p
+{
+	width: 100%;
+	font-family: "Tungsten";
+	font-size: 12px;
+	color: #ffffff;
+	margin: 0;
+	padding: 0;
+	line-height: 16px;
+	text-align: center;	
+	letter-spacing: 2px;	
+	display: block;
+}
+.bullets .bullet_item .under
+{
+	width: 100%;
+	margin-right: 0;
+	height: 2px;
+	background-color: #ffffff;
+	float: right;	
+}
+
+#slmf_labs_slider_container
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+
+}
+
+#labs_slider
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.team_slider_item
+{
+	width: 100%;
+	position: relative;
+	float: left;
+	display: block;
+}
+#labs_slider_home
+{	
+	height: 100%;		
+}
+.bg_lights
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+
+}
+.bg_figure
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+}
+#labs_slider_home .bg_lights
+{
+	background-image: url("../Content/img/slmf-labs/LABS_home_bg.png");
+	background-size: cover;
+	background-position: center;
+}
+
+#labs_slider_home .bg_figure
+{
+	background-image: url("../Content/img/slmf-labs/LABS_home_figures.png");
+	background-size: cover;
+	background-position: center;
+}
+.main_container
+{
+	position: absolute;
+	z-index: 5;
+}
+#labs_slider_home .main_container
+{
+	width: 100%;	
+	top: 50px;
+	left: 0;
+	text-align: center;
+}
+#labs_slider_home .main_container #labs_home_logo
+{
+	width: 150px;
+	display: inline-block;
+	margin-bottom: 15px;
+}
+#labs_slider_home .main_container p
+{
+	
+	height: 86px;
+	width: 300px;		
+	
+	font-family: "Tungsten";
+	font-size: 18px;
+	color: #999999;		
+	
+	position: relative;
+	
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: center;
+	display: inline-block;
+}
+.bg_text
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 1;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+
+.labs_changer_menu_container
+{
+	width: 100%;
+	height: 100%;			
+	position: absolute;
+	left: 0;
+	top: 0;
+	text-align: center;
+	z-index: 7;
+}
+.labs_changer_logo
+{
+	width: 35px;
+	height: 37px;
+	position: relative;
+	display: inline-block;
+}
+.labs_changer_logo svg
+{
+	fill: #c7c7c7;	
+}
+.labs_changer_menu_item
+{
+	font-family: "PlexesLightPro";
+	font-size: 14px;
+	color: #ffffff;
+	text-decoration: underline;
+	margin-top: 10px;
+	display: inline-block;
+}
+.labs_changer_menu_item.current,.labs_changer_menu_item:hover{ color: #f2db3f;}
+
+.labs_changer_container
+{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 6;
+	margin-top: 60px;
+}
+.labs_changer_item
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	overflow: hidden;
+}
+.labs_changer_item.current
+{
+	opacity: 1;
+}
+.labs_changer_item .bg_figure
+{
+	width: 100%;
+	height: 300px;
+	position: relative;
+	left: 0;
+	z-index: 6;
+	background-position: center bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.labs_right_container
+{
+	width: 100%;
+	position: relative;	
+}
+.labs_stage_container
+{
+	width: 100%;
+}
+.labs_menu_container{display: none;}
+.labs_info_sections_container
+{
+	width: 100%;
+}
+.labs_info_container
+{
+	width: 100%;
+	position: relative;
+}
+.labs_info_container.tabla{display: none;}
+.labs_info_container.dosis{display: none;}
+.labs_info_container h3 {font-size: 52px;letter-spacing: 1px;line-height: 53px;}
+.labs_yellow .labs_info_container h3{color: #f6d641;}
+.labs_orange .labs_info_container h3{color: #df5023;}
+.labs_left .labs_info_container h3,.labs_left .labs_info_container .description {margin-left: 30px;margin-right: 30px;text-align: left;}
+.labs_right .labs_info_container h3,.labs_right .labs_info_container .description {margin-right: 30px;margin-left: 30px;text-align: right;}
+.labs_info_container h3 span{color: #ffffff;font-size: 52px;letter-spacing: 1px;}
+
+.labs_info_container .description {
+	font-family: "PlexesLightPro";
+	color: #cccccc;font-size: 12px;
+	letter-spacing: 1px;	
+	margin-top: 4px;
+	display: block;
+}
+
+.labs_info_container ul{ list-style: none;}
+.labs_left .labs_info_container ul{ margin-left: 30px;margin-right: 30px;}
+.labs_right .labs_info_container ul{ margin-right: 30px;margin-left: 30px;}
+
+.labs_info_container ul li
+{
+	height: 30px;
+	margin-top: 9px;
+	text-transform: uppercase;
+	border-bottom: dotted #4b4b4b;
+	font-size: 12px;
+}
+.labs_left .labs_info_container ul li{ text-align: left;}
+.labs_right .labs_info_container ul li{ text-align: right;}
+
+.labs_left .labs_info_container ul li:before 
+{
+    content:' ';
+    width: 7px;
+    height: 7px;    
+    border-radius: 50%;
+    display: block;
+    float: left;    
+    margin-top: 8px;
+    margin-right: 20px;
+}
+.labs_yellow .labs_info_container ul li:before{ background-color: #f6d641 ;}
+.labs_yellow .labs_info_container ul li:after{ background-color: #f6d641 ;}
+
+.labs_orange .labs_info_container ul li:before{ background-color: #df5023 ;}
+.labs_orange .labs_info_container ul li:after{ background-color: #df5023 ;}
+
+.labs_right .labs_info_container ul li:after 
+{
+    content:' ';
+    width: 7px;
+    height: 7px;
+    background-color: #f6d641 ;
+    border-radius: 50%;
+    display: block;
+    float: right;    
+    margin-top: 8px;
+    margin-left: 20px;
+}
+.labs_stage_container .home_content_btn
+{
+	margin-left: 30px;
+	margin-top: 25px;
+}
+
+#labs_slider_energia{height: 900px;}
+#labs_slider_energia .bg_text{background-image: url("../Content/img/slmf-labs/LABS_energia_text.png");}
+
+#labs_hysteria .bg_figure{  background-image: url("../Content/img/slmf-labs/LABS_hysteria_figure.png");}
+#labs_hysteria_l .bg_figure{  background-image: url("../Content/img/slmf-labs/LABS_hysteria-l_figure.png");}
+#labs_ardor .bg_figure{ background-image: url("../Content/img/slmf-labs/LABS_ardor_figure.png");}
+#labs_provoke .bg_figure{ background-image: url("../Content/img/slmf-labs/LABS_provoke_figure.png");}
+
+#labs_slider_desarrollo{height: 1000px;}
+#labs_slider_desarrollo .bg_text{  background-image: url("../Content/img/slmf-labs/LABS_desarrollo_text.png");}
+
+#labs_bold{display: none;}
+#menu_labs_bold{display: none;}
+#labs_bold .bg_figure{  background-image: url("../Content/img/slmf-labs/LABS_bold_figure.png");}
+#labs_pride .bg_figure{ background-image: url("../Content/img/slmf-labs/LABS_pride_figure.png");}
+#labs_tenacious .bg_figure{ background-image: url("../Content/img/slmf-labs/LABS_tenacious_figure.png");}
+
+#labs_slider_regula{height: 730px;}
+#labs_slider_regula .bg_text{  background-image: url("../Content/img/slmf-labs/LABS_regula_text.png");}
+
+#labs_revival .bg_figure{  background-image: url("../Content/img/slmf-labs/LABS_revival_figure.png");}
+#labs_temper .bg_figure{ background-image: url("../Content/img/slmf-labs/LABS_temper_figure.png");}
+#labs_relief .bg_figure{ background-image: url("../Content/img/slmf-labs/LABS_relief_figure.png");}
+
+#team_slider_especiales
+{
+	width: 100%;
+	height: 100%;
+	display: block;
+	overflow: hidden;
+}
+#labs_changer_menu_container
+{
+	width: 100%;
+	height: 50px;
+	top: 100px;	
+}
+#team_slider_especiales .bg
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	top: 150px;	
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#team_slider_especiales .bg.dark{z-index: 2;}
+
+#team_slider_especiales .bg_figure{  background-image: url("../Content/img/slmf-labs/LABS_especiales_figure.png");}
+
+#team_slider_especiales .boldness.dark{  background-image: url("../Content/img/slmf-labs/LABS_shock_figure_dark.png");}
+#team_slider_especiales .mad.dark{  background-image: url("../Content/img/slmf-labs/LABS_mad_figure_dark.png");}
+#team_slider_especiales .ripped.dark{  background-image: url("../Content/img/slmf-labs/LABS_ripped_figure_dark.png");}
+
+#team_slider_especiales .dark.current{opacity: 0;}
+
+#team_slider_especiales .labs_especiales_info_container h3
+{
+	font-family: "Tungsten";
+	font-size: 40px;
+	color: #cdcdcd;
+	letter-spacing: 1px;
+	text-align: center;
+	padding-bottom: 0;
+	line-height: 40px;
+	margin-top: 100px;
+}
+#team_slider_especiales .labs_especiales_info_container .special_text
+{
+	font-family: "Tungsten";
+	font-size: 18px;
+	color: #cdb33b;
+	letter-spacing: 3px;
+	text-align: center;
+}
+#team_slider_especiales .labs_especiales_info_container .description
+{
+	font-family: "PlexesLightPro";
+	font-size: 14px;
+	color: #ffffff;
+	letter-spacing: 1px;
+	text-align: center;
+	line-height: 21px;
+	width: 80%;
+	margin-left: 10%;
+}
+
+#team_slider_especiales .btn_container .specials_over .home_content_btn p
+{
+	color: #f6d641;
+}
+#team_slider_especiales .btn_container .specials_over .home_content_btn:hover
+{
+	background-color: #f6d641;	
+}
+#team_slider_especiales .btn_container .specials_over .home_content_btn:hover p
+{
+	color: #212224;
+}
+#team_slider_especiales .btn_container .specials_over.current .home_content_btn{ display: block;}
+
+
+#team_slider_especiales .labs_especiales_info_container
+{
+	width: 100%;
+	position: absolute;
+	top: 50px;
+	z-index: 6;			
+}
+#team_slider_especiales .labs_especiales_info_container .paddingl_150
+{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+#team_slider_especiales .labs_especiales_info_container .paddingl_150.current
+{
+	opacity: 1;
+}
+#team_slider_especiales .btn_container{
+	width: 100%;
+	position: absolute;
+	top: 300px;
+	z-index: 7;
+}
+
+.specials_over{opacity: 0;text-align: center;position: absolute;}
+.specials_over.current{opacity: 1;}
+#team_slider_especiales .btn_container .specials_over
+{
+	width: 100%;
+}
+#team_slider_especiales .btn_container .home_content_btn
+{
+	display: inline-block;
+	margin: 0 auto;
+	float: none;
+	background-color: transparent;
+}
+#team_slider_especiales .btn_container .specials_over .home_content_btn p
+{
+	color: #f6d641;
+}
+#team_slider_especiales .btn_container .specials_over .home_content_btn:hover
+{
+	background-color: #f6d641;	
+}
+#team_slider_especiales .btn_container .specials_over .home_content_btn:hover p
+{
+	color: #212224;
+}
+#team_slider_especiales .labs_changer_menu_specials
+{
+	margin-top: 100px;
+}
+/* mobile landscape */
+@media screen and (min-width:425px){
+	#team_slider_especiales{height: 150%;}
+}
+
+/* ipad */
+@media screen and (min-width:768px){
+	.labs_changer_menu_container
+	{
+		height: auto;
+	}
+	#labs_home_logo
+	{
+		position: relative;
+		width: 150px;
+		display: block;		
+		float: left;
+		margin-left: 70px;
+		margin-top: 70px;
+	}
+	#labs_slider_home .main_container p
+	{
+		
+		height: 86px;
+		width: 340px;		
+		vertical-align: middle;
+		font-family: "Tungsten";
+		font-size: 18px;
+		color: #999999;		
+		margin: 70px 70px 0 14px;	
+		position: relative;
+		float: right;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		text-align: right;
+	}
+	#labs_slider_desarrollo{ height: 1200px;}
+
+	.labs_changer_item .bg_figure
+	{
+		height: 600px;
+	}
+	.labs_right_container
+	{
+		width: 60%;
+		left: 20%;
+	}
+	.labs_right .home_content_btn
+	{
+		float: right;
+    	margin-right: 30px;
+	}
+	.labs_info_container h3
+	{
+		font-size: 72px;
+	}
+	.labs_info_container h3 span
+	{
+		font-size: 72px;
+	}
+	.labs_info_container .description
+	{
+		font-size: 14px;
+	}
+	.labs_info_container ul li
+	{
+		font-size: 14px;
+	}
+	
+	#team_slider_especiales
+	{
+		height: 100%;
+	}
+	#team_slider_especiales .labs_changer_menu_specials
+	{
+		margin-top: 50px;
+	}
+	#team_slider_especiales .labs_especiales_info_container h3
+	{
+		font-size: 78px;
+		line-height: 78px;
+	}
+
+	#team_slider_especiales .labs_especiales_info_container .special_text
+	{
+		font-size: 18px;
+	}
+	#team_slider_especiales .labs_especiales_info_container .description
+	{
+		font-size: 14px;
+		width: 400px;
+		width: 50%;
+		margin-left: 25%;
+		margin-bottom: 20px;
+	}
+	#team_slider_especiales .btn_container
+	{
+		top: 380px;
+	}
+	#team_slider_especiales .bg
+	{
+		background-size: 140% auto;
+	}
+	.labs_changer_menu_item
+	{
+		font-size: 16px;
+	}
+}
+
+@media screen and (min-width:1024px){
+	
+	.labs_changer_container
+	{
+		margin-top: 0;
+	}
+	.labs_changer_item
+	{
+		height: 100%;
+	}
+	.labs_changer_item .bg_figure
+	{
+		width: 100%;
+		height: 100%;
+		position: absolute;	
+		top: 0;		
+		z-index: 2;
+	}
+	#labs_slider_desarrollo{ height: 768px;}
+	#slmf_labs_slider_container{overflow: hidden;}
+	.bullets
+	{
+		width: 70px;
+		height: 200px;
+		position: fixed;			
+		right: 0;
+		top: 50%;
+		margin-right: 0;
+		margin-top: -100px;
+		z-index: 8;
+		background-color: transparent;
+	}
+	.bullets .bullet_item
+	{
+		width: 80px;
+		height: 40px;
+		display: block;
+		position: relative;	
+		text-align: right;
+	}
+	.bullets .bullet_item .p_container
+	{
+		width: 80px;
+		height: 16px;
+		float: right;
+		display: block;
+		overflow: hidden;
+		margin-bottom: 5px;
+		margin-right: 30px;
+	}
+	.bullets .bullet_item p
+	{
+		font-family: "Tungsten";
+		font-size: 16px;
+		color: #ffffff;
+		margin: 0;
+		padding: 0;
+		line-height: 16px;
+		text-align: right;	
+		letter-spacing: 2px;
+		float: right;
+		display: block;
+	}
+
+	.bullets .bullet_item .under
+	{
+		width: 100%;
+		height: 2px;
+		background-color: #ffffff;
+		float: right;
+		margin-right: 30px;
+	}
+	
+
+	#labs_slider_energia{ height: 100%;}
+	#labs_slider_desarrollo{ height: 100%;}
+	#labs_slider_regula{ height: 100%;}
+	
+	.labs_left .labs_changer_item .bg_figure { left: 0px;background-position: 0 center ;}
+
+	.labs_right .labs_changer_item .bg_figure { left: 40%;width: 70%;background-position: center ;}
+	.labs_right_container
+	{
+		width: 60%;
+		height: 100%;
+		position: absolute;	
+		top: 0;
+		z-index: 7;
+		left: 0;
+	}
+	.labs_left .labs_right_container { left: 40%;}
+	.labs_right.labs_right_container { right: 0;}
+
+	.labs_changer_item
+	{
+		height: 700px;
+		top: 50%;
+    	margin-top: -350px;
+	}
+	.labs_changer_item .bg_figure
+	{
+		height: 700px;
+	}
+	.labs_left .labs_changer_item .bg_figure
+	{
+		background-position: -80px center;
+	}
+	
+	.labs_changer_menu
+	{
+		position: relative;
+		margin-top: 50px;
+	}
+	.labs_stage_container
+	{
+		width: 90%;
+		vertical-align: middle;
+		position: absolute;
+    	top: 50%;
+    	margin-top: -50%;
+	}
+	.labs_changer_menu_container
+	{
+		height: auto;
+	}
+		
+	
+	
+
+	.labs_stage_container
+	{
+		width: 500px;
+		left: 50%;
+		margin-left: -250px;
+	}
+	#team_slider_especiales .bg
+	{
+		width: 1024px;height: 757px;left: 50%;top: 50%;margin-left: -512px;margin-top: -378px;
+		background-size: 100%;
+	}
+	.labs_stage_container
+	{
+		top: 25%;
+		margin-top: 0;
+	}
+	#team_slider_especiales .labs_especiales_info_container
+	{
+		top: 0;
+	}
+	#team_slider_especiales .btn_container
+	{
+		width: 1024px;
+		height: 600px;
+		position: absolute;
+		z-index: 12;
+		left: 50%;
+		top: 50%;
+		margin-left: -512px;
+		margin-top: -300px;
+
+	}
+
+	#team_slider_especiales .btn_container .specials_over
+	{
+		position: absolute;	
+	}
+	#team_slider_especiales .btn_container .specials_over .home_content_btn{ 
+		
+		display: none;
+		margin-top: 280px;
+		padding: 3px 0;
+	    border: 1px solid #f6d641;
+	    color: #f6d641;
+	    font-size: 16px;
+	    letter-spacing: 0.212em;        
+	    text-align: center;
+	    background-color: transparent;
+	}
+	#team_slider_especiales .btn_container #boldness_over
+	{
+		width: 18%;
+		height: 50%;	
+		left: 21%;
+		top: 37%;
+		/*background-color: rgba(155,155,0,0.3);*/
+	}
+	#team_slider_especiales .btn_container #mad_over
+	{
+		width: 21%;
+		height: 50%;	
+		left: 39%;
+		top: 37%;
+		/*background-color: rgba(0,155,0,0.3);*/
+	}
+	#team_slider_especiales .btn_container #ripped_over
+	{
+		width: 21%;
+		height: 50%;	
+		left: 60%;
+		top: 37%;
+		/*background-color: rgba(0,0,155,0.3);*/
+	}
+	#team_slider_especiales .labs_changer_menu_container
+	{
+		display: none;
+	}
+}
+
+@media screen and (min-width:1450px){
+
+	#labs_hysteria .bg_figure{  background-image: url("../Content/img/slmf-labs/LABS_hysteria_figure_xl.png");}
+	#labs_hysteria_l .bg_figure{  background-image: url("../Content/img/slmf-labs/LABS_hysteria-l_figure_xl.png");}
+	#labs_ardor .bg_figure{  background-image: url("../Content/img/slmf-labs/LABS_ardor_figure_xl.png");}
+	
+	#labs_provoke .bg_figure{ background-image: url("../Content/img/slmf-labs/LABS_provoke_figure_xl.png");}
+	#labs_tenacious .bg_figure{  background-image: url("../Content/img/slmf-labs/LABS_tenacious_figure_xl.png");}	
+	#labs_pride .bg_figure{ background-image: url("../Content/img/slmf-labs/LABS_pride_figure_xl.png");}
+
+	#labs_temper .bg_figure{  background-image: url("../Content/img/slmf-labs/LABS_temper_figure_xl.png");}	
+	#labs_revival .bg_figure{  background-image: url("../Content/img/slmf-labs/LABS_revival_figure_xl.png");}
+	#labs_relief .bg_figure{ background-image: url("../Content/img/slmf-labs/LABS_relief_figure_xl.png");}
+}

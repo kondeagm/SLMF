@@ -1,0 +1,117 @@
+﻿@model SLMFCMS.Models.DietaAlimentacion
+@using SLMFCMS.Models
+@{
+    ViewBag.Title = "Agregar un Alimento a la Comida de la Dieta";
+}
+@{
+    ApplicationDbContext db = new ApplicationDbContext();
+    DietaTempos bdComida = db.DietaTempos.Find(Model.DietaTemposID);
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12">
+            <div id="row-header-index" class="row">
+                <div id="div-titulo" class="col-md-7">
+                    <h4>@ViewBag.Title</h4>
+                </div>
+                <div class="col-md-3">
+                    &nbsp;
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-save" type="submit" title="Guardar">Guardar</button>
+                </div>
+                <div id="div-search" class="col-md-1">
+                    @Html.ActionLink("Cancelar", "Details", "DietaTempos", routeValues: new { id = Model.DietaTemposID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "btn btn-cancel", @title = "Cancelar" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr id="header-divisor" />
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.DietaTemposID)
+        <div class="row">
+            <div class="col-md-3 lbltitulo">
+                @Html.LabelFor(model => model.DietaTempos.DietaID)
+            </div>
+            <div class="col-md-2 lbltitulo">
+                @Html.LabelFor(model => model.DietaTempos.ID)
+            </div>
+            <div class="col-md-1 lbltitulo">
+                @Html.LabelFor(model => model.DietaTempos.Hora)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 txt-area-display-with-border area-border-3">
+                @Html.DisplayFor(s => bdComida.Dieta.Nombre)
+            </div>
+            <div class="col-md-2 txt-area-display-with-border area-border-2">
+                @Html.DisplayFor(s => bdComida.Tempo.NombreCompleto)
+            </div>
+            <div class="col-md-1 txt-area-display-with-border area-border-1">
+                @if (String.IsNullOrEmpty(Convert.ToString(bdComida.Hora)))
+                {
+                    @Html.Label("")
+                }
+                else
+                {
+                    if (bdComida.Hora < 10)
+                    {
+                        @Html.Label("0", htmlAttributes: new { @style = "font-weight: normal;" })
+                    }
+                    @Html.DisplayFor(s => bdComida.Hora)
+                    @Html.Label(":00 hrs", htmlAttributes: new { @style = "font-weight: normal;" })
+                }
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1 lbltitulo">
+                @Html.LabelFor(model => model.Cantidad)
+            </div>
+            <div class="col-md-2 lbltitulo">
+                @Html.LabelFor(model => model.PorcionID)
+            </div>
+            <div class="col-md-4 lbltitulo">
+                @Html.LabelFor(model => model.AlimentoID)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 margen-off">
+                @Html.TextBoxFor(model => model.Cantidad, new { @class = "txt-box-input-5-1" })
+            </div>
+            <div id="selector-table-1" class="col-md-2 margen-off">
+                @Html.DropDownList("PorcionID", String.Empty)
+            </div>
+            <div id="selector-table-1" class="col-md-4 margen-off">
+                @Html.DropDownList("AlimentoID", String.Empty)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Cantidad, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.PorcionID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.AlimentoID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

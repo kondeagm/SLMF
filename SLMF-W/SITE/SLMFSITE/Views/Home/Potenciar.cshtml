@@ -1,0 +1,513 @@
+﻿@using SLMFSITE
+@{
+    ViewBag.Title = "SLMF - Potenciar";
+    ViewBag.BodyClass = "potenciar-home";
+    ViewBag.NavPilarsClass = "";
+}
+@{var vLink = "";}
+@{var vLinkLogo = Convert.ToString(Session["AppAssetsURL"]) + "slmf-logo.jpg";}
+@section MetaTags {
+    <meta name="description" content="">
+    <meta property="og:description" content="Nuestro sitio está en construcción, y no sólo por un cambio de imagen: te ofreceremos programas de entrenamiento, dietas y todo lo necesario para que también tú estés entre los más fuertes.">
+    <meta property="og:image" content="@vLinkLogo">
+    <meta property="og:url" content="http://sololosmasfuertes.com">
+    <meta property="og:title" content="SÓLO LOS MÁS FUERTES">
+}
+
+@section LocalCss {
+    @Styles.Render("~/power-discipline/css")
+}
+
+<div id="slmf-community-tohidde" class="full-all">
+    <div id="potenciar">
+        <div class="allLoader">
+            <div class="hidden">
+                <div id="background" class="wrapper">
+                </div>
+                <!-- H O M E -->
+                <div class="home wrapper">
+                    <header class="title">
+                        <h1 class="transparent">ALIMENTATE!</h1>
+                        <h3 class="transparent">CONSTANCIA Y DISCIPLINA</h3>
+                        <h2 class="transparent">La alimentación no sólo debe nutrir las células del organismo para que éste se desarrolle y mantenga, sino que, además, debe cubrir el gasto derivado del esfuerzo extra.</h2>
+                    </header>
+                </div>
+                <!-- N A V I G A T I O N   B A R -->
+                <nav class="navigation-bar">
+                    <div class="nav-wrapper">
+                        <div class="top-bar">
+                            <ul class="section-captions">
+                                <li class="energia-caption">
+                                    <span class="icon-nav-menu">
+                                        <svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+                                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="88px" height="98px"
+                                             viewBox="0 0 88 98" enable-background="new 0 0 88 98" xml:space="preserve">
+                                        <g>
+                                        <path d="M51.17,50.244c-1.166,0-2.246,0.365-3.136,0.984l-6.193-6.138c0.602-0.882,0.955-1.948,0.955-3.096
+                                                    c0-3.037-2.462-5.5-5.5-5.5s-5.5,2.463-5.5,5.5c0,1.104,0.328,2.129,0.888,2.99l-6.278,5.945c-0.908-0.664-2.024-1.061-3.235-1.061
+                                                    c-3.038,0-5.5,2.463-5.5,5.5s2.462,5.5,5.5,5.5s5.5-2.463,5.5-5.5c0-1.104-0.328-2.129-0.888-2.99l6.278-5.944
+                                                    c0.908,0.663,2.024,1.06,3.235,1.06c1.166,0,2.246-0.365,3.136-0.984l6.193,6.138c-0.603,0.883-0.955,1.947-0.955,3.096
+                                                    c0,3.037,2.462,5.5,5.5,5.5s5.5-2.463,5.5-5.5c0-1.221-0.402-2.344-1.075-3.258l5.733-6.115c0.856,0.55,1.873,0.874,2.967,0.874
+                                                    c3.038,0,5.5-2.463,5.5-5.5c0-3.039-2.462-5.5-5.5-5.5s-5.5,2.461-5.5,5.5c0,1.221,0.402,2.345,1.075,3.257l-5.733,6.115
+                                                    C53.28,50.568,52.264,50.244,51.17,50.244z" />
+                                        <path d="M44,2.792L4.205,25.769v45.95L44,94.695l39.546-22.832l0.25-0.145v-45.95L44,2.792z M82.796,71.141L44,93.541l-38.795-22.4
+                                                    V26.346L44,3.947l38.796,22.399V71.141z" />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <a href="#" data-reveal-section="energia" class="title">ENERGIA</a>
+                                </li>
+                                <li class="desarrollo-caption">
+                                    <span class="icon-nav-menu">
+                                        <svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+                                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="88px" height="98px"
+                                             viewBox="0 0 88 98" enable-background="new 0 0 88 98" xml:space="preserve">
+                                        <g>
+                                        <path d="M44.375,43.975c-1.093,0-2.108,0.322-2.964,0.872l-6.381-6.381C35.641,37.58,36,36.507,36,35.35c0-3.037-2.462-5.5-5.5-5.5
+                                                    s-5.5,2.463-5.5,5.5s2.462,5.5,5.5,5.5c1.157,0,2.23-0.359,3.116-0.97l6.336,6.336c-0.674,0.913-1.077,2.037-1.077,3.259
+                                                    c0,1.198,0.388,2.304,1.038,3.207l-6.316,6.373C32.714,58.453,31.648,58.1,30.5,58.1c-3.038,0-5.5,2.463-5.5,5.5s2.462,5.5,5.5,5.5
+                                                    s5.5-2.463,5.5-5.5c0-1.166-0.365-2.245-0.984-3.135l6.339-6.396c0.867,0.571,1.904,0.906,3.02,0.906
+                                                    c1.222,0,2.346-0.403,3.259-1.077l6.462,6.462c-0.611,0.886-0.971,1.958-0.971,3.115c0,3.037,2.463,5.5,5.5,5.5s5.5-2.463,5.5-5.5
+                                                    s-2.463-5.5-5.5-5.5c-1.157,0-2.229,0.359-3.115,0.971l-6.507-6.507c0.55-0.856,0.872-1.871,0.872-2.964
+                                                    c0-1.134-0.344-2.187-0.932-3.062l6.585-6.644c0.882,0.602,1.948,0.956,3.097,0.956c3.037,0,5.5-2.463,5.5-5.5s-2.463-5.5-5.5-5.5
+                                                    s-5.5,2.463-5.5,5.5c0,1.166,0.365,2.245,0.984,3.135l-6.566,6.625C46.647,44.351,45.556,43.975,44.375,43.975z" />
+                                        <path d="M43.954,3.46L4.159,26.436v45.951l39.795,22.977L83.5,72.53l0.25-0.144V26.436L43.954,3.46z M82.75,71.809l-38.796,22.4
+                                                    l-38.795-22.4V27.013L43.954,4.614L82.75,27.013V71.809z" />
+                                                </g>
+                                        </svg>
+                                    </span>
+                                    <a href="#" data-reveal-section="desarrollo" class="title">DESARROLLO</a>
+                                </li>
+                                <li class="reguladores-caption">
+                                    <span class="icon-nav-menu">
+                                        <svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+                                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="88px" height="98px"
+                                             viewBox="0 0 88 98" enable-background="new 0 0 88 98" xml:space="preserve">
+                                        <g>
+                                        <path d="M38.501,28.791c0,2.695,1.94,4.934,4.5,5.405v8.814c-2.56,0.471-4.501,2.71-4.501,5.405c0,1.185,0.378,2.278,1.015,3.175
+                                                    l-6.209,6.379c-0.874-0.586-1.925-0.928-3.056-0.928c-3.038,0-5.5,2.463-5.5,5.5s2.462,5.5,5.5,5.5s5.5-2.463,5.5-5.5
+                                                    c0-1.184-0.378-2.277-1.014-3.175l6.209-6.378c0.874,0.584,1.924,0.927,3.055,0.927c1.184,0,2.277-0.378,3.174-1.014l6.63,6.457
+                                                    c-0.586,0.874-0.929,1.925-0.929,3.057c0,3.037,2.463,5.5,5.5,5.5s5.5-2.463,5.5-5.5s-2.463-5.5-5.5-5.5
+                                                    c-1.184,0-2.276,0.378-3.174,1.013l-6.629-6.456c0.585-0.874,0.928-1.926,0.928-3.057c0-2.695-1.94-4.934-4.499-5.405v-8.814
+                                                    c2.56-0.471,4.5-2.709,4.5-5.405c0-3.037-2.462-5.5-5.5-5.5C40.963,23.291,38.501,25.754,38.501,28.791z" />
+                                        <path d="M44,3.46L4.205,26.436v45.951L44,95.363L83.545,72.53l0.25-0.144V26.436L44,3.46z M82.795,71.809L44,94.209l-38.795-22.4
+                                                    V27.013L44,4.614l38.795,22.399V71.809z" />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <a href="#" data-reveal-section="reguladores" class="title">REGULACIÓN</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bottom-bar">
+                            <ul class="section-contents">
+                                <li class="energia-description">
+                                    <img src="../../Content/img/potenciar/food-thumbs/energia.png" alt="">
+                                    <p>
+                                        Los carbohidratos te dan energía química, y los reguladores la transforman en energía mecánica.
+                                    </p>
+                                    <span class="v-line"></span>
+                                </li>
+                                <li class="desarrollo-description">
+                                    <img src="../../Content/img/potenciar/food-thumbs/desarrollo.png" alt="">
+                                    <p>
+                                        Las Mejores fuentes de proteína son de origen animal pero también las hay de origen vegetal.
+                                    </p>
+                                    <span class="v-line"></span>
+                                </li>
+                                <li class="reguladores-description">
+                                    <img src="../../Content/img/potenciar/food-thumbs/reguladores.png" alt="">
+                                    <p>
+                                        Las principales fuentes de energía son: Las legumbres, verduras ricas en almidón y los cereales integrales.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- S E C T I O N S -->
+                <div class="sections transparent" data-active-section="">
+                    <div class="section-wrapper">
+                        <!-- TITLES -->
+                        <div class="titles">
+                            <header>
+                                <h1 class="reguladores">REGULADORES</h1>
+                                <h1 class="desarrollo">DESARROLLO</h1>
+                                <h1 class="energia">ENERGIA</h1>
+                            </header>
+                            <a href="#" data-reveal-section="home" class="btn-back">
+                                <div class="btn-arrow"></div>
+                            </a>
+                        </div>
+                        <!-- SIDEBARS -->
+                        <div class="sidebars">
+                            <!-- Sidebar Reguladores -->
+                            <div class="sidebar-info reguladores ">
+                                <div class="sidebar-icon">
+                                    <svg version="1.1" xmlns:svg="http://www.w3.org/2000/svg"
+                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="88px" height="98px"
+                                         viewBox="0 0 88 98" enable-background="new 0 0 88 98" xml:space="preserve">
+                                    <g>
+                                    <path d="M38.501,28.791c0,2.695,1.94,4.934,4.5,5.405v8.814c-2.56,0.471-4.501,2.71-4.501,5.405c0,1.185,0.378,2.278,1.015,3.175
+                                                l-6.209,6.379c-0.874-0.586-1.925-0.928-3.056-0.928c-3.038,0-5.5,2.463-5.5,5.5s2.462,5.5,5.5,5.5s5.5-2.463,5.5-5.5
+                                                c0-1.184-0.378-2.277-1.014-3.175l6.209-6.378c0.874,0.584,1.924,0.927,3.055,0.927c1.184,0,2.277-0.378,3.174-1.014l6.63,6.457
+                                                c-0.586,0.874-0.929,1.925-0.929,3.057c0,3.037,2.463,5.5,5.5,5.5s5.5-2.463,5.5-5.5s-2.463-5.5-5.5-5.5
+                                                c-1.184,0-2.276,0.378-3.174,1.013l-6.629-6.456c0.585-0.874,0.928-1.926,0.928-3.057c0-2.695-1.94-4.934-4.499-5.405v-8.814
+                                                c2.56-0.471,4.5-2.709,4.5-5.405c0-3.037-2.462-5.5-5.5-5.5C40.963,23.291,38.501,25.754,38.501,28.791z" />
+                                    <path d="M44,3.46L4.205,26.436v45.951L44,95.363L83.545,72.53l0.25-0.144V26.436L44,3.46z M82.795,71.809L44,94.209l-38.795-22.4
+                                                V27.013L44,4.614l38.795,22.399V71.809z" />
+                                        </g>
+                                    </svg>
+                                </div>
+                                <h2 class="keyword">META<br>BOLISMO</h2>
+                                <p>
+                                    Los carbohidratos te dan energía <br>
+                                    química, <em>y los reguladores la</em><br>
+                                    <em>transforman en</em><strong> energía mecánica</strong><br>
+                                    Intervienen en la contracción<br>
+                                    muscular, el aprovechamiento de los<br>
+                                    nutrientes, el desarrollo muscular y<br>
+                                    la oxidación de las grasas.
+                                </p>
+                            </div>
+                            <!-- Sidebar Desarrollo -->
+                            <div class="sidebar-info desarrollo">
+                                <div class="sidebar-icon">
+                                    <svg version="1.1" xmlns:svg="http://www.w3.org/2000/svg"
+                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="88px" height="98px"
+                                         viewBox="0 0 88 98" enable-background="new 0 0 88 98" xml:space="preserve">
+                                    <g>
+                                    <path d="M44.375,43.975c-1.093,0-2.108,0.322-2.964,0.872l-6.381-6.381C35.641,37.58,36,36.507,36,35.35c0-3.037-2.462-5.5-5.5-5.5
+                                                s-5.5,2.463-5.5,5.5s2.462,5.5,5.5,5.5c1.157,0,2.23-0.359,3.116-0.97l6.336,6.336c-0.674,0.913-1.077,2.037-1.077,3.259
+                                                c0,1.198,0.388,2.304,1.038,3.207l-6.316,6.373C32.714,58.453,31.648,58.1,30.5,58.1c-3.038,0-5.5,2.463-5.5,5.5s2.462,5.5,5.5,5.5
+                                                s5.5-2.463,5.5-5.5c0-1.166-0.365-2.245-0.984-3.135l6.339-6.396c0.867,0.571,1.904,0.906,3.02,0.906
+                                                c1.222,0,2.346-0.403,3.259-1.077l6.462,6.462c-0.611,0.886-0.971,1.958-0.971,3.115c0,3.037,2.463,5.5,5.5,5.5s5.5-2.463,5.5-5.5
+                                                s-2.463-5.5-5.5-5.5c-1.157,0-2.229,0.359-3.115,0.971l-6.507-6.507c0.55-0.856,0.872-1.871,0.872-2.964
+                                                c0-1.134-0.344-2.187-0.932-3.062l6.585-6.644c0.882,0.602,1.948,0.956,3.097,0.956c3.037,0,5.5-2.463,5.5-5.5s-2.463-5.5-5.5-5.5
+                                                s-5.5,2.463-5.5,5.5c0,1.166,0.365,2.245,0.984,3.135l-6.566,6.625C46.647,44.351,45.556,43.975,44.375,43.975z" />
+                                    <path d="M43.954,3.46L4.159,26.436v45.951l39.795,22.977L83.5,72.53l0.25-0.144V26.436L43.954,3.46z M82.75,71.809l-38.796,22.4
+                                                l-38.795-22.4V27.013L43.954,4.614L82.75,27.013V71.809z" />
+                                            </g>
+                                    </svg>
+                                </div>
+                                <h2 class="keyword">PROTEINAS</h2>
+                                <p>
+                                    <em>Las mejores fuentes de proteina</em><br>
+                                    <strong>son de origen animal</strong> pero también<br>
+                                    las hay de origen vegetal.<br>
+                                    <br>
+                                    No olvides que también los<br>
+                                    carbohidratos juegan un papel<br>
+                                    importante en el desarrollo <br>
+                                    muscular.<br>
+                                </p>
+                            </div>
+                            <!-- Sidebar Energía -->
+                            <div class="sidebar-info energia">
+                                <div class="sidebar-icon">
+                                    <svg version="1.1" xmlns:svg="http://www.w3.org/2000/svg"
+                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="88px" height="98px"
+                                         viewBox="0 0 88 98" enable-background="new 0 0 88 98" xml:space="preserve">
+                                    <g>
+                                    <path d="M51.17,50.244c-1.166,0-2.246,0.365-3.136,0.984l-6.193-6.138c0.602-0.882,0.955-1.948,0.955-3.096
+                                                        c0-3.037-2.462-5.5-5.5-5.5s-5.5,2.463-5.5,5.5c0,1.104,0.328,2.129,0.888,2.99l-6.278,5.945c-0.908-0.664-2.024-1.061-3.235-1.061
+                                                        c-3.038,0-5.5,2.463-5.5,5.5s2.462,5.5,5.5,5.5s5.5-2.463,5.5-5.5c0-1.104-0.328-2.129-0.888-2.99l6.278-5.944
+                                                        c0.908,0.663,2.024,1.06,3.235,1.06c1.166,0,2.246-0.365,3.136-0.984l6.193,6.138c-0.603,0.883-0.955,1.947-0.955,3.096
+                                                        c0,3.037,2.462,5.5,5.5,5.5s5.5-2.463,5.5-5.5c0-1.221-0.402-2.344-1.075-3.258l5.733-6.115c0.856,0.55,1.873,0.874,2.967,0.874
+                                                        c3.038,0,5.5-2.463,5.5-5.5c0-3.039-2.462-5.5-5.5-5.5s-5.5,2.461-5.5,5.5c0,1.221,0.402,2.345,1.075,3.257l-5.733,6.115
+                                                        C53.28,50.568,52.264,50.244,51.17,50.244z" />
+                                    <path d="M44,2.792L4.205,25.769v45.95L44,94.695l39.546-22.832l0.25-0.145v-45.95L44,2.792z M82.796,71.141L44,93.541l-38.795-22.4
+                                                        V26.346L44,3.947l38.796,22.399V71.141z" />
+                                                </g>
+                                    </svg>
+                                </div>
+                                <h2 class="keyword">CARBO<br>HIDRATOS</h2>
+                                <p>
+                                    Las principales fuentes de energía<br>
+                                    son: <em>Las</em> <strong>legumbres</strong>,<strong>verduras</strong> <em>ricas</em><br>
+                                    <em>en almidón y los</em> <strong>cereales</strong><br>
+                                    <strong>integrales.</strong> Si no son suficientes,<br>
+                                    tendremos fatiga muscular<br>
+                                    y defensas bajas.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- ITEMS -->
+                        <div class="items">
+                            <div class="food">
+                                <img class="desarrollo salmon proceso" src="../../Content/img/potenciar/food/salmon.png">
+                                <img class="desarrollo meat nutrientes" src="../../Content/img/potenciar/food/meat.png">
+                                <img class="energia spaguetti proceso" src="../../Content/img/potenciar/food/spaguetti.png">
+                                <img class="energia apples nutrientes" src="../../Content/img/potenciar/food/apples.png">
+                                <img class="reguladores broccoli proceso" src="../../Content/img/potenciar/food/broccoli.png">
+                                <img class="reguladores berries nutrientes" src="../../Content/img/potenciar/food/berries.png">
+                            </div>
+                            <div class="products">
+                            </div>
+                        </div>
+                        <!-- ACCORDIONS -->
+                        <div class="accordions">
+                            <!-- Accordion Reguladores -->
+                            <div class="accordion reguladores">
+                                <ul class="tab-sections">
+                                    <li data-tab-name="proceso" class="tab tab-proceso tab-active">
+                                        <a class="tab-link" data-tab-expands="proceso" href="#">PROCESO</a>
+                                        <div class="tab-content" data-content-height="238">
+                                            <em>TRANSPORTE DE PROTEÍNAS</em>
+                                            <p>
+                                                Durante el ejercicio, las vitaminas y minerales intervienen en procesos como la contracción muscular y el transporte de proteínas. Ayudan en la construcción muscular, en la reparación de los tejidos y en la oxidación de las grasas. <br>
+                                                Si tienes una deficiencia de vitaminas, los carbohidratos no te darán energía: te harán engordar.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li data-tab-name="nutrientes" class="tab tab-nutrientes">
+                                        <a class="tab-link" data-tab-expands="nutrientes" href="#">NUTRIENTES</a>
+                                        <div class="tab-content" data-content-height="290">
+                                            <em>VITAMINAS, MINERALES Y ANTIOXIDANTES</em>
+                                            <p>
+                                                Sus principales fuentes son las frutas y las verduras.
+                                            </p>
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Naranja</td>
+                                                        <td>Espinaca</td>
+                                                        <td>Nueces</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Chiles</td>
+                                                        <td>Brócoli</td>
+                                                        <td>Almendras</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Pimiento</td>
+                                                        <td>Coliflor</td>
+                                                        <td>Yogurt</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tomate</td>
+                                                        <td>Arróz Integral</td>
+                                                        <td>Leche</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Uva</td>
+                                                        <td>Lentejas</td>
+                                                        <td>Queso</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Plátano</td>
+                                                        <td>Habas</td>
+                                                        <td>Té verde</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Fresas</td>
+                                                        <td>Avena</td>
+                                                        <td>Café</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sandía</td>
+                                                        <td>Germen</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </li>
+                                    <li data-tab-name="suplementos" class="tab tab-suplementos">
+                                        <a class="tab-link" data-tab-expands="suplementos" href="#">SUPLEMENTOS</a>
+                                        <div class="tab-content" data-content-height="193">
+                                            <em>MULTIVITAMINICOS Y ANTIOXIDANTES</em>
+                                            <p>
+                                                Entre otros beneficios, protegen el corazón, suben las defensas, bajan la presión arterial y ayudan a bajar de peso.
+                                            </p>
+                                            <ul data-json-group="reguladores" class="supplements">
+                                                <li>BCAA</li>
+                                                <li>GLUTAMINA</li>
+                                                <li>CLA</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Accordion Desarrollo -->
+                            <div class="accordion desarrollo">
+                                <ul class="tab-sections">
+                                    <li data-tab-name="proceso" class="tab tab-proceso tab-active">
+                                        <a class="tab-link" data-tab-expands="proceso" href="#">PROCESO</a>
+                                        <div class="tab-content" data-content-height="218">
+                                            <em>¿POR QUE CONSUMIMOS PROTEINAS?</em>
+                                            <p>
+                                                Porque forman y reparan la masa muscular; es decir, te ayudan a conseguir volumen. Las proteínas participan en el movimiento y en la formación de enzimas, hormonas y neurotransmisores. También mantienen el PH y nos dan energía en eventos de larga duración o cuando no consumimos suficientes.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li data-tab-name="nutrientes" class="tab tab-nutrientes">
+                                        <a class="tab-link" data-tab-expands="nutrientes" href="#">NUTRIENTES</a>
+                                        <div class="tab-content" data-content-height="314">
+                                            <em>AMINOACIDOS Y ENZIMAS</em>
+                                            <p>
+                                                Su función principal es el desarrollo del
+                                                organismo.
+                                            </p>
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Salmón</td>
+                                                        <td>Cebada</td>
+                                                        <td>Ajonjolí</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Atún</td>
+                                                        <td>Centeno</td>
+                                                        <td>Pepitas</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Pollo</td>
+                                                        <td>Amaranto</td>
+                                                        <td>Nueces</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Pavo</td>
+                                                        <td>Arroz</td>
+                                                        <td>Almendras</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Leche</td>
+                                                        <td>Frijoles</td>
+                                                        <td>Avellanas</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Queso</td>
+                                                        <td>Habas</td>
+                                                        <td>Cacahuates</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Yogurt</td>
+                                                        <td>Garbanzos</td>
+                                                        <td>Piñones</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Trigo</td>
+                                                        <td>Lentejas</td>
+                                                        <td>Pistaches</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Maíz</td>
+                                                        <td>Chícharos</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </li>
+                                    <li data-tab-name="suplementos" class="tab tab-suplementos">
+                                        <a class="tab-link" data-tab-expands="suplementos" href="#">SUPLEMENTOS</a>
+                                        <div class="tab-content" data-content-height="193">
+                                            <em>VOLUMEN, FUERZA Y ENERGIA</em>
+                                            <p>
+                                                Básicamente necesitas proteína para
+                                                construir masa muscular y creatina para
+                                                tener más fuerza y reponer energía.
+                                            </p>
+                                            <ul data-json-group="desarrollo" class="supplements">
+                                                <li>CREATINA</li>
+                                                <li>L-CARNITINA</li>
+                                                <li>TERMOGENICO</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Accordion Energía -->
+                            <div class="accordion energia">
+                                <ul class="tab-sections">
+                                    <li data-tab-name="proceso" class="tab tab-proceso tab-active">
+                                        <a class="tab-link" data-tab-expands="proceso" href="#">PROCESO</a>
+                                        <div class="tab-content" data-content-height="198">
+                                            <em>SON NUESTRO COMBUSTIBLE</em>
+                                            <p>
+                                                Los necesitamos para entrenar y para
+                                                recuperarnos. Para atletas de alto
+                                                rendimiento, los energéticos abarcan
+                                                entre el 50y el 60% del plan de alimentación. No importa qué tan duro trabajes en el gimnasio, si no comes las cantidades adecuadas.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li data-tab-name="nutrientes" class="tab tab-nutrientes">
+                                        <a class="tab-link" data-tab-expands="nutrientes" href="#">NUTRIENTES</a>
+                                        <div class="tab-content" data-content-height="282">
+                                            <em>POLISACARIDOS Y AZUCARES SIMPLES</em>
+                                            <p>
+                                                Glucosa, fructosa, galactosa, maltosa,
+                                                sacarosa y lactosa. Los polisacáricos,
+                                                especialmente el almidón, son el combustible
+                                                elegido por los deportistas.
+                                            </p>
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Miel</td>
+                                                        <td>Manzana</td>
+                                                        <td>Plátano</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Uvas</td>
+                                                        <td>Leche</td>
+                                                        <td>Arroz</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Ciruelas</td>
+                                                        <td>Queso</td>
+                                                        <td>Pasta</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Cerezas</td>
+                                                        <td>Yogurt</td>
+                                                        <td>Pan</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Pera</td>
+                                                        <td>Nata</td>
+                                                        <td>Lentejas</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> </td>
+                                                        <td>Habas</td>
+                                                        <td> </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </li>
+                                    <li data-tab-name="suplementos" class="tab tab-suplementos">
+                                        <a class="tab-link" data-tab-expands="suplementos" href="#">SUPLEMENTOS</a>
+                                        <div class="tab-content" data-content-height="193">
+                                            <em>PRE-ENTRENADORES</em>
+                                            <p>
+                                                Dilatan los vasos sanguíneos para mejorar
+                                                la circulación de la sangre y asi oxigenar los
+                                                músculos.
+                                            </p>
+                                            <ul data-json-group="energia" class="supplements">
+                                                <li><a href="#">Product1</a></li>
+                                                <li><a href="#">Product2</a></li>
+                                                <li><a href="#">Product3</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SECTIONS BACKGROUND -->
+                    <div class="wood-background"></div>
+                </div>
+            </div>
+        </div>
+        <div class="loader2 center-all">
+            <span>0</span>
+        </div>
+    </div>
+</div>
+@section LocalScript {
+    @Scripts.Render("~/power-discipline/scripts")
+    @Html.Raw(System.Web.HttpUtility.HtmlDecode(@ViewBag.Loader))
+}

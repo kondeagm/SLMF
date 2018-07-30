@@ -1,0 +1,88 @@
+﻿@model SLMFCMS.Models.Plan
+@{
+    ViewBag.Title = "Agregar un Plan";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12">
+            <div id="row-header-index" class="row">
+                <div id="div-titulo" class="col-md-7">
+                    <h4>@ViewBag.Title</h4>
+                </div>
+                <div class="col-md-3">
+                    &nbsp;
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-save" type="submit" title="Guardar">Guardar</button>
+                </div>
+                <div id="div-search" class="col-md-1">
+                    @Html.ActionLink("Cancelar", "Index", "Plan", routeValues: new { pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "btn btn-cancel", @title = "Cancelar" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr id="header-divisor" />
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Visible)
+        @Html.HiddenFor(model => model.FileImage)
+        <div class="row">
+            <div class="col-md-2 lbltitulo">
+                @Html.LabelFor(model => model.DisciplinaID)
+            </div>
+            <div class="col-md-2 lbltitulo">
+                @Html.LabelFor(model => model.Nombre)
+            </div>
+            <div class="col-md-2 lbltitulo">
+                @Html.LabelFor(model => model.Leyenda)
+            </div>
+        </div>
+        <div class="row">
+            <div id="selector-table-1" class="col-md-2 margen-off">
+                @Html.DropDownList("DisciplinaID", String.Empty)
+            </div>
+            <div class="col-md-2 margen-off">
+                @Html.TextBoxFor(model => model.Nombre, new { @class = "txt-box-input-col2-row1" })
+            </div>
+            <div class="col-md-3 margen-off">
+                @Html.TextBoxFor(model => model.Leyenda, new { @class = "txt-box-input-col3-row1" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 lbltitulo">
+                @Html.LabelFor(model => model.Descripcion)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 margen-off">
+                @Html.TextAreaFor(model => model.Descripcion, new { @class = "txt-area-input-col8-row4" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.DisciplinaID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Leyenda, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

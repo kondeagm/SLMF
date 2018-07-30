@@ -1,0 +1,47 @@
+﻿@model SLMFCMS.Models.Rutina
+@using System.Web.Helpers
+@{
+    ViewBag.Title = "Detalles de la Rutina";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div id="row-header-index" class="row">
+            <div id="div-titulo" class="col-md-7">
+                <h4>@ViewBag.Title</h4>
+            </div>
+            <div class="col-md-4">
+                &nbsp;
+            </div>
+            <div id="div-search" class="col-md-1">
+                @Html.ActionLink(" ", "Index", "Rutina", routeValues: new { pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-arrow-left fa-2x btn-accion-inv", @title = "Regresar" })
+            </div>
+        </div>
+    </div>
+</div>
+<hr id="header-divisor" />
+<div class="row">
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.GrupoMusculosID)
+    </div>
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.Nombre)
+    </div>
+    <div class="col-md-6 lbltitulo">
+        @Html.LabelFor(model => model.Descripcion)
+    </div>
+    <div class="col-md-2 lbltitulo" style="margin-bottom:5px; text-align: right;">
+        @Html.Label("Descanso Pasivo")
+        @Html.DisplayFor(model => model.Inactividad)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.GrupoMusculos.Nombre)
+    </div>
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+    <div class="col-md-8 txt-area-display-with-border area-border-8-4">
+        @Html.DisplayFor(model => model.Descripcion)
+    </div>
+</div>

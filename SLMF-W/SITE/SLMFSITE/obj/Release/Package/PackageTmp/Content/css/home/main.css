@@ -1,0 +1,240 @@
+
+section.submenu-disciplines{width:504px;position:relative;margin:0 auto;height:73px;}
+section.submenu-disciplines a{color:#999999;float:left;text-align:center;width:33.33%;color:#999999;font-family:"Tungsten A","Tungsten B";font-weight:500;font-style:normal;font-size:18px;letter-spacing:0.04em;position:relative;transform:scale(1.8,1.8);-ms-transform:scale(1.8,1.8);-webkit-transform:scale(1.8,1.8);-moz-transform:scale(1.8,1.8);-o-transform:scale(1.8,1.8);visibility:hidden;opacity:0;margin-top:22px;}
+section.submenu-disciplines a.available{cursor:pointer;}
+section.submenu-disciplines a:hover span.text,section.submenu-disciplines a.active span.text{color:#fff;}
+section.submenu-disciplines span.text{-webkit-transition:0.3s;-moz-transition:0.3s;-ms-transition:0.3s;-o-transition:0.3s;transition:0.3s;font-family:"Tungsten A","Tungsten B";font-weight:500;font-style:normal;letter-spacing:0.13em;font-size:16px;color:#fff;width:100%;float:left;line-height:19px;visibility:hidden;opacity:0;}
+section.submenu-disciplines span.text.first{margin-top:6px;}
+section.submenu-disciplines span.icon{width:49px;height:45px;float:left;background:no-repeat scroll transparent;margin:15px 59px 17px 59px;}
+section.submenu-disciplines .hover{position:absolute;width:49px;height:45px;margin-left:59px;visibility:hidden;margin-top:15px;opacity:0;}
+section.submenu-disciplines .hover .hover-left,section.submenu-disciplines .hover .hover-right{height:100%;transform:skewX(-45deg);-webkit-transform:skewX(-45deg);-ms-transform:skewX(-45deg);position:absolute;float:left;overflow:hidden;background-color:transparent;width:28px;height:100%;}
+section.submenu-disciplines .hover .hover-right{margin-left:27px;}
+section.submenu-disciplines .hover .hover-right .hover-content{margin-left:-27px;}
+section.submenu-disciplines .hover .hover-content{height:100%;transform:skewX(45deg);-webkit-transform:skewX(45deg);-ms-transform:skewX(45deg);position:absolute;float:left;overflow:hidden;background-color:transparent;width:48px;height:45px;float:left;background:no-repeat scroll 0 -45px transparent;}
+section.submenu-disciplines{width:504px;position:relative;margin:0 auto;height:73px;}
+section.submenu-disciplines a{color:#999999;float:left;text-align:center;width:33.33%;color:#999999;font-family:"Tungsten A","Tungsten B";font-weight:500;font-style:normal;font-size:18px;letter-spacing:0.04em;position:relative;transform:scale(1.8,1.8);-ms-transform:scale(1.8,1.8);-webkit-transform:scale(1.8,1.8);-moz-transform:scale(1.8,1.8);-o-transform:scale(1.8,1.8);visibility:hidden;opacity:0;margin-top:22px;}
+section.submenu-disciplines a.available{cursor:pointer;}
+section.submenu-disciplines a:hover span.text,section.submenu-disciplines a.active span.text{color:#fff;}
+section.submenu-disciplines span.text{-webkit-transition:0.3s;-moz-transition:0.3s;-ms-transition:0.3s;-o-transition:0.3s;transition:0.3s;font-family:"Tungsten A","Tungsten B";font-weight:500;font-style:normal;letter-spacing:0.13em;font-size:16px;color:#fff;width:100%;float:left;line-height:19px;visibility:hidden;opacity:0;}
+section.submenu-disciplines span.text.first{margin-top:6px;}
+section.submenu-disciplines span.icon{width:49px;height:45px;float:left;background:no-repeat scroll transparent;margin:15px 59px 17px 59px;}
+section.submenu-disciplines .hover{position:absolute;width:49px;height:45px;margin-left:59px;visibility:hidden;margin-top:15px;opacity:0;}
+section.submenu-disciplines .hover .hover-left,section.submenu-disciplines .hover .hover-right{height:100%;transform:skewX(-45deg);-webkit-transform:skewX(-45deg);-ms-transform:skewX(-45deg);position:absolute;float:left;overflow:hidden;background-color:transparent;width:28px;height:100%;}
+section.submenu-disciplines .hover .hover-right{margin-left:27px;}
+section.submenu-disciplines .hover .hover-right .hover-content{margin-left:-27px;}
+section.submenu-disciplines .hover .hover-content{height:100%;transform:skewX(45deg);-webkit-transform:skewX(45deg);-ms-transform:skewX(45deg);position:absolute;float:left;overflow:hidden;background-color:transparent;width:48px;height:45px;float:left;background:no-repeat scroll 0 -45px transparent;}
+.from-hidde{opacity:0;visibility:none;}
+.from-none{display:none;}
+.from-none section.submenu-pilars a{transform:scale(0,0);-ms-transform:scale(0,0);-webkit-transform:scale(0,0);-moz-transform:scale(0,0);-o-transform:scale(0,0);}
+section.submenu-pilars{position:absolute;width:467px;margin:0px 125px 0px 125px;float:left;top:100%;margin-top:-109px;background-color:rgba(255,255,255,0);}
+section.submenu-pilars a{width:33.33%;height:85px;text-align:center;float:left;position:relative;padding-top:27px;}
+section.submenu-pilars div{font-family:"Tungsten A","Tungsten B";font-weight:500;font-style:normal;letter-spacing:0.04em;}
+section.submenu-pilars .display{position:absolute;width:133px;height:36px;margin:0 16px;overflow:hidden;}
+section.submenu-pilars .text{line-height:34px;border:1px solid #94863e;color:#f6d641;font-family:"Tungsten A","Tungsten B";font-weight:500;font-style:normal;font-size:15px;letter-spacing:0.3em;height:34px;position:relative;}
+section.submenu-pilars .hover{width:131px;margin:0 16px;border-left:1px solid #7d6d65;border-right:1px solid #7d6d65;float:left;height:34px;visibility:visible;opacity:1;}
+section.submenu-pilars .hover div{line-height:1em;}
+section.submenu-pilars .ico{margin-top:-27px;opacity:0;visibility:hidden;}
+section.submenu-pilars .ico svg{margin-top:-24px;top:8px;position:relative;width:62px;}
+section.submenu-pilars .title{font-weight:400;margin-top:3px;font-size:25px;letter-spacing:0.15em;color:#fff;padding-top:80px;opacity:0;visibility:hidden;}
+section.submenu-pilars .subtitle{color:#f6d641;letter-spacing:0.27em;opacity:0;visibility:hidden;margin-top:6px;font-size:13px;}
+body{background:url(../../img/bg-gradient.jpg) repeat-x scroll 0 0 #393939;overflow:hidden;}
+body .loader{left:95px;}
+
+.body-discipline .diagonal{overflow:visible!important;}
+#home-discipline > .bg > img{top:0;left:95px;right:0;margin:auto;position:absolute;}
+.home-discipline-bg{position:absolute;left:45px;}
+.home-discipline-bg img{min-width:1024px;min-height:600px;}
+.home-bg{text-align:center;width:100%;height:100%;position:absolute;min-width:1024px;}
+.home-bg .mask{width:100%;height:100%;transform:skewX(30deg);-webkit-transform:skewX(30deg);-ms-transform:skewX(30deg);position:absolute;float:left;overflow:hidden;background-color:transparent;position:relative;overflow:visible;}
+.home-bg .slide{background:no-repeat scroll center 0 transparent;left:47px;}
+.home-bg .diagonal{height:100%;transform:skewX(-30deg);-webkit-transform:skewX(-30deg);-ms-transform:skewX(-30deg);position:absolute;float:left;overflow:hidden;background-color:transparent;width:33.34%;overflow:visible;}
+.home-bg .slmf .diagonal,.home-bg .active .diagonal{opacity:1;visibility:visible;margin-top:0;margin-left:0;}
+.home-bg .slmf .diagonal img,.home-bg .active .diagonal img{margin-left:-95px;}
+.home-bg .bg{height:100%;width:300%;margin-top:0px;position:absolute;background:url(../../img/bg-gradient.jpg) repeat-x black;height:100%;transform:skewX(0deg);-webkit-transform:skewX(0deg);-ms-transform:skewX(0deg);position:absolute;float:left;overflow:hidden;background-color:transparent;}
+.home-bg .bg img{min-width:1024px;min-height:600px;}
+.home-bg .bbd,.home-bg .mma,.home-bg .cft{left:50px;}
+.home-bg .slide{width:100%;height:100%;position:absolute;}
+.home-bg .slide .diagonal-0{left:-27.8%;}
+.home-bg .slide .diagonal-0 .bg{left:83.33%;}
+.home-bg .slide .diagonal-1{left:0.01%;}
+.home-bg .slide .diagonal-1 .bg{left:0;}
+.home-bg .slide .diagonal-2{left:33.3333%;}
+.home-bg .slide .diagonal-2 .bg{left:-100%;}
+.home-bg .slide .diagonal-3{left:66.66%;}
+.home-bg .slide .diagonal-3 .bg{left:-200%;}
+.home-bg .slide .diagonal-4{left:99.99%;}
+.home-bg .slide .diagonal-4 .bg{left:-300%;}
+.home-content{margin:auto;position:absolute;top:0;left:0;bottom:0;right:0;height:600px;width:726px;height:521px;left:95px;z-index:3;}
+.home-content header{height:418px;}
+.home-content header .header-content:first-child .bottom{visibility:visible;opacity:1;}
+.home-content header .header-content:first-child .top{visibility:visible;opacity:1;}
+.home-content .logo{position:relative;margin:0 auto;width:67px;left:-36px;top:-45px;opacity:0;visibility:hidden;}
+.home-content .header-content{margin-top:54px;position:absolute;z-index: 1;}
+.home-content .bottom,.home-content .description{visibility:hidden;opacity:0;}
+.home-content .description-mask{overflow:hidden;height:50px;position:relative;float:left;width:100%;}
+.home-content .top{padding-top:0;width:100%;height:198px;margin:0 auto 4px auto;position:relative;visibility:hidden;opacity:0;margin-top:-6px;}
+.home-content .top .diagonal{height:100%!important;width:150px;position:absolute;overflow:hidden;float:left;opacity:0;height:100%;transform:skewX(-30deg);-webkit-transform:skewX(-30deg);-ms-transform:skewX(-30deg);position:absolute;float:left;overflow:hidden;background-color:transparent;}
+.home-content .top .diagonal.d1{top:90px;left:-52px;margin-left:0px;}
+.home-content .top .diagonal.d1 .inner{margin-left:0px;}
+.home-content .top .diagonal.d2{top:-90px;left:52px;margin-left:150px;}
+.home-content .top .diagonal.d2 .inner{margin-left:-150px;}
+.home-content .top .diagonal.d3{top:90px;left:-52px;margin-left:300px;}
+.home-content .top .diagonal.d3 .inner{margin-left:-300px;}
+.home-content .top .diagonal.d4{top:-90px;left:52px;margin-left:450px;}
+.home-content .top .diagonal.d4 .inner{margin-left:-450px;}
+.home-content .inner{height:100%;transform:skewX(30deg);-webkit-transform:skewX(30deg);-ms-transform:skewX(30deg);position:absolute;float:left;overflow:hidden;background-color:transparent;text-shadow:2px 1px 0px #151515;overflow:hidden;}
+.home-content .inner,.home-content h2{font-family:"JLSOverKillHammerSCNormal";font-weight:normal;font-style:normal;color:#f6d641;font-size:198px;line-height:1em;position:relative;letter-spacing:-0.025em;}
+.home-content h1{font-family:"Tungsten A","Tungsten B";font-weight:500;font-style:normal;font-size:41px;text-align:center;letter-spacing:0.3em;margin:0;padding-top:0;padding-bottom:28px;float:left;width:100%;text-shadow:2px 1px 0px #151515;}
+.home-content h3{position:relative;color:#f6d641;font-family:"Tungsten A","Tungsten B";font-weight:500;font-style:normal;font-size:19px;text-align:center;letter-spacing:0.35em;padding-bottom:18px;width:726px;float:left;text-shadow:2px 1px 0px #151515;opacity:0;visibility:hidden;}
+.home-content p{color:#dadada;font-size:14px;text-align:center;width:726px;float:left;margin:0 auto;padding:0;letter-spacing:0.03em;text-shadow:2px 1px 0px #151515;}
+.home-content p.tip{font-size:12px;color:#8e8e8e;text-shadow:none;padding-top:3px;}
+.home-content .slmf.header-content{margin-top:0;}
+.home-content .slmf h3{top:45px;}
+.home-content .slmf p{opacity:0;visibility:hidden;}
+.home-content .slmf .top{width:762px;height:206px;margin-top:39px;margin-bottom:7px;}
+.home-content .slmf .top .diagonal{width:181px;opacity:0;}
+.home-content .slmf .top .diagonal.d1{margin-left:0;}
+.home-content .slmf .top .diagonal.d1 .inner{margin-left:0px;}
+.home-content .slmf .top .diagonal.d2{margin-left:180px;}
+.home-content .slmf .top .diagonal.d2 .inner{margin-left:-180px;}
+.home-content .slmf .top .diagonal.d3{margin-left:360px;}
+.home-content .slmf .top .diagonal.d3 .inner{margin-left:-360px;}
+.home-content .slmf .top .diagonal.d4{width:268px;margin-left:539px;}
+.home-content .slmf .top .diagonal.d4 .inner{margin-left:-539px;}
+.home-content .cft .top{width:552px;}
+.home-content .cft .top .diagonal{width:151px;}
+.home-content .cft .top .diagonal.d1 .inner{margin-left:28px;}
+.home-content .cft .top .diagonal.d2 .inner{margin-left:-122px;}
+.home-content .cft .top .diagonal.d3 .inner{margin-left:-272px;}
+.home-content .cft .top .diagonal.d4 .inner{margin-left:-422px;}
+.home-content .mma .top{width:640px;}
+.home-content .mma .top .diagonal{width:181px;}
+.home-content .mma .top .diagonal.d1{margin-left:0;}
+.home-content .mma .top .diagonal.d1 .inner{margin-left:35px;}
+.home-content .mma .top .diagonal.d2{margin-left:180px;}
+.home-content .mma .top .diagonal.d2 .inner{margin-left:-145px;}
+.home-content .mma .top .diagonal.d3{margin-left:360px;}
+.home-content .mma .top .diagonal.d3 .inner{margin-left:-325px;}
+.home-content .mma .top .diagonal.d4{margin-left:539px;}
+.home-content .mma .top .diagonal.d4 .inner{margin-left:-504px;}
+.home-content .bbd .top{width:560px;}
+.home-content .bbd .top .diagonal{width:151px;}
+.home-content .bbd .top .diagonal .inner{width:495px;}
+.home-content .bbd .top .diagonal.d1 .inner{margin-left:36px;}
+.home-content .bbd .top .diagonal.d2 .inner{margin-left:-114px;}
+.home-content .bbd .top .diagonal.d3 .inner{margin-left:-264px;}
+.home-content .bbd .top .diagonal.d4 .inner{margin-left:-414px;}
+
+.home-content .kai.header-content{margin-top:0;}
+.home-content .kai h3{top:45px;}
+.home-content .kai p{opacity:0;visibility:hidden;}
+.home-content .kai .top{width:762px;height:206px;margin-top:39px;margin-bottom:7px;}
+.home-content .kai .top .diagonal{width:181px;opacity:0;}
+.home-content .kai .top .diagonal.d1{margin-left:0;}
+.home-content .kai .top .diagonal.d1 .inner{margin-left:0px;}
+.home-content .kai .top .diagonal.d2{margin-left:180px;}
+.home-content .kai .top .diagonal.d2 .inner{margin-left:-180px;}
+.home-content .kai .top .diagonal.d3{margin-left:360px;}
+.home-content .kai .top .diagonal.d3 .inner{margin-left:-360px;}
+.home-content .kai .top .diagonal.d4{width:268px;margin-left:539px;}
+.home-content .kai .top .diagonal.d4 .inner{margin-left:-539px;}
+
+.home-content .header-content.active{opacity:1;visibility:visible;display:block;}
+.home-content .header-content.active .top{opacity:1;visibility:visible;display:block;}
+.home-content .header-content.active .top .diagonal{left:0;top:0;visibility:visible;opacity:1;}
+.home-content .header-content.active .bottom{visibility:visible;opacity:1;display:block;}
+.home-content .header-content.active .description.active{visibility:visible;opacity:1;display:block;}
+.home-content .header-content.active .diagonal-full{width:auto;overflow:visible;}
+.from-loader .home-bg .slide{opacity:0;visibility:hidden;}
+.from-loader .home-content header .header-content:first-child .top,.from-loader .home-content header .header-content:first-child h1,.from-loader .home-content header .header-content:first-child h3{opacity:0;visibility:hidden;}
+.from-loader .home-content header .header-content:first-child .top{left:-200px;}
+.from-loader .home-content header .header-content:first-child h1{left:-100px;position:relative;}
+.from-loader .home-content header .header-content:first-child h3{left:-100px;position:relative;}
+.from-loader .home-content header .header-content:first-child p{top:100%;position:relative;}
+.Firefox .home-content .inner,.Firefox .home-content h2{line-height:150px;}
+.ie .home-content .inner,.ie .home-content h2{line-height:145px;}
+section.submenu-pilars a{opacity:0;visibility:hidden;margin-top:9px;transform:scale(1.6,1.6);-ms-transform:scale(1.6,1.6);-webkit-transform:scale(1.6,1.6);-moz-transform:scale(1.6,1.6);-o-transform:scale(1.6,1.6);}
+
+.header-content.team .top .diagonal .inner
+{
+	height: 190px;
+	width: 726px;
+	font-family: "Slmfnormal";
+	font-size: 105px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 87px;
+}
+.header-content.team .top .diagonal .inner span
+{	
+	font-family: "Slmfnormal";
+	font-size: 125px;
+	color: #f6d641;
+	text-align: center;
+	line-height: 125px;
+
+}
+.header-content.team h3
+{
+	font-family: "Tungsten";
+	font-size: 19px;
+	color: #ffffff;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	opacity: 1;
+	visibility: visible;
+}
+.header-content.team .tip a
+{
+	font-family: "Tungsten";
+	font-size: 16px;		
+	color: #f6d641;
+	display: block;
+	text-decoration: underline;
+	letter-spacing: 4px;
+	padding-top: 15px;
+}
+
+.header-content.labs .top{ height: 130px;margin-top: 35px;}
+.header-content.labs .top .diagonal .inner
+{
+	
+	width: 726px;
+	font-family: "Slmfnormal";
+	font-size: 105px;
+	color: #f6d641;
+	text-align: center;
+	letter-spacing: 10px;
+}
+.header-content.labs .top .diagonal .inner span
+{	
+	font-family: "Slmfnormal";
+	font-size: 105px;
+	color: #ffffff;	
+
+}
+.header-content.labs h3
+{
+	font-family: "Tungsten";
+	font-size: 19px;
+	color: #f6d641;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	opacity: 1;
+	visibility: visible;
+}
+.header-content.labs .tip a
+{
+	font-family: "Tungsten";
+	font-size: 16px;		
+	color: #f6d641;
+	display: block;
+	text-decoration: underline;
+	letter-spacing: 4px;
+	padding-top: 15px;
+}
+@media screen and (max-height:800px){
+	.home-content{top:0px;}
+}
+html.ie .home-content .header-content .top{padding-bottom:8px;}
+html.ie ul.team a{background:black;opacity:0.01;}

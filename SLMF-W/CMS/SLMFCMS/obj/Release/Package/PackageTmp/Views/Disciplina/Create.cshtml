@@ -1,0 +1,118 @@
+﻿@model SLMFCMS.Models.Disciplina
+@{
+    ViewBag.Title = "Agregar una Disciplina";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12">
+            <div id="row-header-index" class="row">
+                <div id="div-titulo" class="col-md-7">
+                    <h4>@ViewBag.Title</h4>
+                </div>
+                <div class="col-md-3">
+                    &nbsp;
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-save" type="submit" title="Guardar">Guardar</button>
+                </div>
+                <div id="div-search" class="col-md-1">
+                    @Html.ActionLink("Cancelar", "Index", "Disciplina", routeValues: new { pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "btn btn-cancel", @title = "Cancelar" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr id="header-divisor" />
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.FileImage)
+        @Html.HiddenFor(model => model.ImageEntrenar)
+        @Html.HiddenFor(model => model.IconImage)
+        @Html.HiddenFor(model => model.SiglasImage)
+        @Html.HiddenFor(model => model.Visible)
+        <div class="row">
+            <div class="col-md-1 lbltitulo">
+                @Html.LabelFor(model => model.Siglas)
+            </div>
+            <div class="col-md-3 lbltitulo">
+                @Html.LabelFor(model => model.Nombre)
+            </div>
+            <div class="col-md-6 lbltitulo">
+                @Html.LabelFor(model => model.Slogan)
+            </div>
+            <div class="col-md-2 lbltitulo">
+                @Html.LabelFor(model => model.ColorCode)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 margen-off">
+                @Html.TextBoxFor(model => model.Siglas, new { @class = "txt-box-input-7-1" })
+            </div>
+            <div class="col-md-3 margen-off">
+                @Html.TextBoxFor(model => model.Nombre, new { @class = "txt-box-input-30-1" })
+            </div>
+            <div class="col-md-6 margen-off">
+                @Html.TextBoxFor(model => model.Slogan, new { @class = "txt-box-input-50-1" })
+            </div>
+            <div class="col-md-2 margen-off">
+                @Html.TextBoxFor(model => model.ColorCode, new { @class = "color{hash:true, pickerMode:'HVS', pickerPosition:'right', pickerFaceColor:'#757575', pickerFace:3, pickerBorder:0, pickerInsetColor:'black', pickerClosable:true} txt-box-input-10-1" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 lbltitulo">
+                @Html.LabelFor(model => model.Proposito)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 margen-off">
+                @Html.TextAreaFor(model => model.Proposito, new { @class = "txt-area-input-300-2" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-11 lbltitulo">
+                @Html.LabelFor(model => model.LogoSVG) (33.7px Ancho por 19.3px Alto )
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-11 margen-off">
+                @Html.TextAreaFor(model => model.LogoSVG, new { @class = "txt-area-input-900-4" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Siglas, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Slogan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.ColorCode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Proposito, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.LogoSVG, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

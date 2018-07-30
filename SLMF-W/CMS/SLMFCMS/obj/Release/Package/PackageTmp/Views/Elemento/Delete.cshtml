@@ -1,0 +1,48 @@
+﻿@model SLMFCMS.Models.Elemento
+@using System.Web.Helpers
+@{
+    ViewBag.Title = "Eliminar el Elemento del Ejercicio";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12">
+            <div id="row-header-index" class="row">
+                <div id="div-titulo" class="col-md-7">
+                    <h4>@ViewBag.Title</h4>
+                </div>
+                <div class="col-md-3">
+                    &nbsp;
+                </div>
+                <div class="col-md-1">
+                    @if (Model.EjerciciosConElElemento.Count == 0)
+                    {
+                        <button class="btn btn-delete" type="submit" title="Eliminar">Eliminar</button>
+                    }
+                </div>
+                <div id="div-search" class="col-md-1">
+                    @Html.ActionLink("Cancelar", "Index", "Elemento", routeValues: new { pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "btn btn-cancel", @title = "Cancelar" })
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<hr id="header-divisor" />
+<div class="row">
+    <div class="col-md-1 lbltitulo">
+        @Html.LabelFor(model => model.Abreviacion)
+    </div>
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.Nombre)
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-1 txt-area-display-with-border area-border-1">
+        @Html.DisplayFor(model => model.Abreviacion)
+    </div>
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+</div>

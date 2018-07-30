@@ -1,0 +1,122 @@
+﻿@model PagedList.IPagedList<SLMFCMS.Models.Evento>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Eventos";
+}
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm("Index", "Evento", FormMethod.Get))
+        {
+        <div id="row-header-index" class="row">
+            <div id="div-add" class="col-md-1">
+                @Html.ActionLink(" ", "Create", "Evento", routeValues: null, htmlAttributes: new { @class = "fa fa-plus-square fa-2x btn-accion", @title = "Agregar un Evento" })
+            </div>
+            <div id="div-titulo" class="col-md-7">
+                <h4>@ViewBag.Title</h4>
+            </div>
+            @if (String.IsNullOrEmpty(ViewBag.CurrentFilter))
+                {
+            <div id="div-search" class="col-md-3">
+                @Html.TextBox("sSearchString", ViewBag.CurrentFilter as string, htmlAttributes: new { @class = "form-control search-box", autocomplete = "off" })
+            </div>
+                }
+                else
+                {
+            <div id="div-search" class="col-md-3">
+                @Html.TextBox("sSearchString", ViewBag.CurrentFilter as string, htmlAttributes: new { @class = "form-control search-box disabled", disabled = "disabled" })
+            </div>
+                }
+            <div id="div-find" class="col-md-1">
+                @if (String.IsNullOrEmpty(ViewBag.CurrentFilter))
+                    {
+                <button id="btn-search" type="submit" class="fa fa-search fa-2x" />
+                    }
+                    else
+                    {
+                @Html.ActionLink(" ", "Index", "Evento", new { sSortOrder = "", sCurrentFilter = "" }, new { @class = "fa fa-times fa-2x btn-accion-inv" })
+                    }
+            </div>
+        </div>
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table webGrid">
+            <tr class="webGridHeader">
+                <th>
+                    Titulo
+                </th>
+                <th>
+                    @Html.ActionLink("Nombre", "Index", new { sSortOrder = ViewBag.NameSortParm, sCurrentFilter = ViewBag.CurrentFilter }, new { @class = "ancla-sort" })
+                </th>
+                <th>
+                    @Html.ActionLink("Disciplina", "Index", new { sSortOrder = ViewBag.DisciplinaSortParm, sCurrentFilter = ViewBag.CurrentFilter }, new { @class = "ancla-sort" })
+                </th>
+                <th>
+                    @Html.ActionLink("Fecha", "Index", new { sSortOrder = ViewBag.FechaSortParm, sCurrentFilter = ViewBag.CurrentFilter }, new { @class = "ancla-sort" })
+                </th>
+                <th>
+                    Lugar
+                </th>
+                <th>
+                    Dirección
+                </th>
+                <th class="columnPagerwebGrid">
+                    @if (@Model.PageCount > 1)
+                    {
+                        @Html.PagedListPager(Model, pagina => Url.Action("Index", new { pagina, sSortOrder = ViewBag.CurrentSort, sCurrentFilter = ViewBag.CurrentFilter }),
+                    new PagedListRenderOptions
+                    {
+                        DisplayLinkToFirstPage = PagedListDisplayMode.IfNeeded,
+                        DisplayLinkToLastPage = PagedListDisplayMode.IfNeeded,
+                        LinkToFirstPageFormat = "1",
+                        LinkToLastPageFormat = @Model.PageCount.ToString(),
+                        LinkToPreviousPageFormat = String.Format("«"),
+                        LinkToNextPageFormat = String.Format("»"),
+                        MaximumPageNumbersToDisplay = 2,
+                        DisplayEllipsesWhenNotShowingAllPageNumbers = false,
+                        DisplayLinkToIndividualPages = true
+                    })
+                    }
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Titulo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Disciplina.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Lugar)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Direccion)
+                    </td>
+                    <td class="columnActionwebGrid">
+                        @Html.ActionLink(" ", "Edit", "Evento", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-pencil-square fa-2x btn-accion", @title = "Editar el Evento" })
+                        @Html.ActionLink(" ", "Details", "Evento", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-info-circle fa-2x btn-accion", @title = "Detalles del Evento" })
+                        @Html.ActionLink(" ", "Delete", "Evento", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-minus-square fa-2x btn-accion", @title = "Borrar el Evento" })
+                        @if (item.Visible == true)
+                        {
+                            @Html.ActionLink(" ", "Hide", "Evento", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-eye fa-2x btn-accion", @title = "Evento Visible" })
+                        }
+                        @if (item.Visible == false)
+                        {
+                            @Html.ActionLink(" ", "Show", "Evento", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-eye-slash fa-2x btn-accion", @title = "Evento Oculto" })
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

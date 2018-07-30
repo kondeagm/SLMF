@@ -1,0 +1,331 @@
+﻿@model SLMFSITE.Models.Plan
+@{
+    ViewBag.Title = "SLMF - " + Model.Disciplina.Nombre + " - " + Model.Nombre;
+    ViewBag.BodyClass = "body-dashboard";
+    ViewBag.NavPilarsClass = "";
+}
+@{var vLinkLogo = Convert.ToString(Session["AppAssetsURL"]) + "slmf-logo.jpg";}
+@{var vLink = "";}
+
+@section MetaTags {
+    <meta name="description" content="Nuestro sitio está en construcción, y no sólo por un cambio de imagen: te ofreceremos programas de entrenamiento, dietas y todo lo necesario para que también tú estés entre los más fuertes.">
+    <meta property="og:description" content="Nuestro sitio está en construcción, y no sólo por un cambio de imagen: te ofreceremos programas de entrenamiento, dietas y todo lo necesario para que también tú estés entre los más fuertes.">
+    <meta property="og:image" content="@vLinkLogo">
+    <meta property="og:url" content="http://sololosmasfuertes.com">
+    <meta property="og:title" content="SLMF - Entrenar">
+}
+@section LocalCss {
+    @Styles.Render("~/plan/css")
+}
+
+<div id="slmf-community-tohidde" class="full-all">
+    <div id="dashboard" class="dashboard animating">
+        <div id='plan-finish-overlay' class="plan-finish-overlay login-overlay full-all"></div>
+        <div id="plan-finish" class="login-form plan-finish center-all autoalpha-0">
+            <h1 class="tungsten-semibold">Enhorabuena</h1>
+            <h6 class="tungsten-semibold">HAS CONCLUIDO TU PLAN DE ENTRENAMIENTO</h6>
+            <p>Puedes visitar otros planes de entrenamiento.</p>
+            <input type="button" id="bt-plan-fihish-close" value="CANCELAR" class="tungsten-bold">
+            <input type="submit" id="bt-plan-fihish-train" value="ACEPTAR" class="tungsten-bold">
+        </div>
+        <div class="allLoader">
+            <div class="hidden">
+                <div id="dashboard-scroll" class="dashboard-scroll alpha-0">
+                    <div class="dashboard-wraper">
+                        <section id="dashboard-info" class="wraper dashboard-info bg">
+                            <div id="bg-info" style="background-image: url();" class="bg"></div>
+
+                            <div class="diagonal diagonal-left"></div>
+                            <div id="header-info" class="container center-all">
+                                @{vLink = Convert.ToString(Session["AppURL"]) + @Model.Disciplina.Nombre.Replace(" ", "-").ToLower();}
+                                <a href="@vLink/entrenar/" id="bt-back-section" data-slide="0" class="bt-scroll-next-slide bt-back-arrow">
+                                    <span class="bottom">
+                                        <span class="arrow"><span class="arrow-content arrow-prev-white"></span></span>
+                                        <span class="text">REGRESAR</span>
+                                    </span>
+                                    <span class="top">
+                                        <span class="text">A PLANES</span>
+                                    </span>
+                                </a>
+                                <header id="info-h1">
+                                    <h1>
+                                        <span class="first"></span>
+                                        <span class="second"></span>
+                                    </h1>
+                                    <h1>
+                                        <span class="first simple-shadow"></span>
+                                        <span class="second simple-shadow"></span>
+                                    </h1>
+                                </header>
+                                <div class="content">
+                                    <div class="padding">
+                                        <h3 id="info-h3" class="normal-shadow"></h3>
+                                        <span class="mask">
+                                            <p id="info-p" class="normal-shadow mask"></p>
+                                        </span>
+                                        <ul id="info-data" class="data">
+                                            <li>
+                                                <div class="top svg gender" id='info-data-gender'>
+                                                </div>
+                                                <div class="bottom">SEXO</div>
+                                            </li>
+                                            <li>
+                                                <div width="62" height="62" id="circle-nivel" class="top">
+                                                    <div class='circle-text'></div>
+                                                </div>
+                                                <div class="bottom">NIVEL</div>
+                                            </li>
+                                            <li>
+                                                <div width="62" height="62" id="circle-dias" class="top">
+                                                    <div class='circle-text'></div>
+                                                </div>
+                                                <div class="bottom">SEMANAS</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shape-right"></div><a href="#" id="bt-next-info" data-slide="1" class="bt-scroll-next-slide bt-next-arrow"><span class="top"><span>VER</span></span><span class="bottom"><span>PLAN</span><span class="arrow"><span class="arrow-content arrow-next-yellow"></span></span></span></a>
+                        </section>
+                        <section id="dashboard-anatomia" class="wraper dashboard-anatomia">
+                            <div class="container-body center-horizontal">
+                                <div id="anatomy-slides" class="slides">
+                                </div>
+                            </div>
+                            <div id="dashboard-anatomia-min" class="dashboard-anatomia-min full-all">
+                                <div class="diagonal diagonal-left"></div>
+                                <div class="muscles-info">
+                                    <div class="spots-group alpha-0">
+                                        <div class="bg-fill"></div>
+                                        <div class="circle spot">
+                                            <div class="cross">
+                                                <div class="cross-v"></div>
+                                                <div class="cross-h"></div>
+                                            </div>
+                                            <div class="description">
+                                                <div class="v-center">
+                                                    <h3>DELTOIDE</h3>
+                                                    <p>Rota, eleva y retracta el homoplato.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2 class="muscles-title alpha-0">
+                                        <span>TREN<br></span>FRONTAL<br> SUPERIOR
+                                    </h2>
+                                    <a href="#" id="bt-close-anatomy" class="bt-close-anatomy alpha-0">
+                                        <span class="arrow"><span class="tnt-arrow-animation arrow-content arrow-prev-white"></span></span>
+                                        <span class="text">REGRESAR</span>
+                                    </a>
+                                </div>
+                                <header id="dashboard-anatomia-header" class="center-all">
+                                    <h2 id="anatomy-h2"><span class="top">D</span><span class="bottom"></span></h2>
+                                    <div class="padding">
+                                        <h3 id="anatomy-h3" class="simple-shadow"></h3>
+                                        <p id="anatomy-p"></p>
+                                        <a href="#" id="bt-iniciar" data-slide="2" class="bt-big tungsten-semibold">INICIAR</a>
+                                        <a href="#" id="bt-toggle-anatomy" class="underline-link">
+                                            VER ANATOMÍA
+                                        </a>
+                                    </div>
+                                </header>
+                            </div>
+                            <div class="shape-right"></div><a href="#" id="bt-prev-anatomy" data-slide="2" class="bt-scroll-next-slide bt-next-arrow"><span class="top"><span>VER</span><span class="arrow"><span class="arrow-content arrow-next-white"></span></span></span><span class="bottom">ENTRENAMIENTO</span></a><a id="bt-next-anatomy" data-slide="0" class="bt-scroll-next-slide bt-back-arrow"><span class="bottom"><span class="arrow"><span class="arrow-content arrow-prev-white"></span></span><span class="text">VER</span></span><span class="top"><span class="text">INFO</span></span></a>
+                        </section>
+                        <section id="dashboard-entrenamiento" class="wraper dashboard-entrenamiento showingInfo">
+                            <div class="allLoader">
+                                <div class="hidden">
+                                    <div id="dashboard-entrenamiento-iframe">
+                                        <div class="safe"></div>
+                                    </div>
+                                    <div id="dashboard-entrenamiento-thumbnailprotip" class="thumbnails full-all"></div>
+                                    <ul id="dashboard-entrenamiento-thumbnails" class="thumbnails full-all"></ul>
+                                    <div id="dashboard-entrenamiento-captionbg" class="caption-bg full-all"></div>
+                                    <div id="dashboard-entrenamiento-caption" class="caption center-all">
+                                        <div id="dashboard-entrenamiento-instructions" class="instructions">
+                                            <h4>INSTRUCCIONES</h4>
+                                            <ul id="dashboard-entrenamiento-instructionslist"></ul>
+                                        </div>
+                                        <div class="instructions-border"></div>
+                                        <div id="play-vimeo" class="play"><span></span></div>
+                                        <div id="dashboard-entrenamiento-captionprotip" class="caption-protip autoalpha-0">
+                                            <h4 class="protip">PRO TIP</h4>
+                                            <h6 class="tungsten-semibold">
+                                                <span class="tungsten-bold" id="dashboard-protip-title"></span>
+                                            </h6>
+                                            <div class="instructions">
+                                                <p id='dashboard-protip-description'></p>
+                                                <span class="protip-author" id="dashboard-protip-author"></span>
+                                            </div>
+                                        </div>
+                                        <a href="#" id="bt-dashboard-entrenamiento-protip" class="bt-dashboard-entrenamiento-top">
+                                            <div class="play"><span></span></div>
+                                            <h5> <span>PRO</span>TIP</h5>
+                                        </a>
+                                        <a href="#" id="bt-dashboard-entrenamiento-exercices" class="bt-dashboard-entrenamiento-top">
+                                            <div class="play"><span></span></div>
+                                            <h5> EJERCICIOS </h5>
+                                        </a>
+                                    </div>
+                                    <a href="#" id="bt-dashboard-entrenamiento-info" class="bt-dashboard-entrenamiento-info info autoalpha-0">
+                                        <div class="circle">
+                                            <span class="center-all"></span>
+                                            <span class="center-all"></span>
+                                        </div>
+                                        <h4>INSTRUCCIONES</h4>
+                                    </a>
+                                    <a href="#" id="entrenamiento-list-hover" class="entrenamiento-list-hover info">
+                                        <h4>EJERCICIOS</h4>
+                                        <div class="circle2">
+                                            <span class="arrow-content arrow-prev-yellow"></span>
+                                        </div>
+                                    </a>
+                                    <div id="entrenamiento-list-videos" class="entrenamiento-list-videos">
+                                        <div class="bg full-all"></div>
+
+                                        <div class="vertical-navigation vertical-navigation-generic center-vertical">
+                                            <a href="#" id="bt-traininglist-up" class="up null">
+                                                <span></span>
+                                            </a>
+                                            <a href="#" id="bt-traininglist-down" class="down">
+                                                <span></span>
+                                            </a>
+                                        </div>
+    
+                                        <ul class="list"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shape-left"></div>
+                            <div class="shape-right"></div>
+                            <div id="loader-entrenamiento" class="loader2 center-all">
+                                <span>0</span>
+                            </div>
+                            <a href="#" id="bt-next-nav-training" data-slide="3" class="bt-scroll-next-slide bt-next-arrow">
+                                <span class="top">
+                                    <span>VER</span>
+                                    <span class="arrow">
+                                        <span class="arrow-content arrow-next-white"></span>
+                                    </span>
+                                </span>
+                                <span class="bottom">COMIDAS</span>
+                            </a>
+                            <a id="bt-back-nav-training" data-slide="1" class="bt-scroll-next-slide bt-back-arrow">
+                                <span class="bottom">
+                                    <span class="arrow">
+                                        <span class="arrow-content arrow-prev-white"></span>
+                                    </span>
+                                    <span class="text">VER</span>
+                                </span>
+                                <span class="top">
+                                    <span class="text">ANATOMÍA</span>
+                                </span>
+                            </a>
+                        </section>
+                        <section id="dashboard-comidas" class="wraper dashboard-comidas">
+                            <div id="diet-bg" class="bg"></div>
+
+                            <div class="content">
+                                <div id="dashboard-comidas-diet" class="diet">
+                                    <div class="diet-wrapper center-vertical">
+                                        <header>
+                                            <h2 id="diet-h2" class="simple-shadow">DIETA</h2>
+                                            <h3 id="diet-h3" class="simple-shadow"></h3>
+                                        </header>
+                                        <div class="list">
+                                            <div class="scrollbar">
+                                                <div class="track">
+                                                    <div class="thumb">
+                                                        <div class="end"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="viewport">
+                                                <div id="dient-description" class="overview">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-wraper">
+
+                                    <div class="content-fixed center-vertical banner_super">
+                                        <ul class="list-colors" id='list-colors'></ul>
+                                        <div class="slmfbanner_container"></div>
+                                        <div id='dashboard-comidas-nav' , class='dashboard-comidas-nav'>
+                                            <div class="bt-scroll-prev-slide">
+                                                <span class="arrow">
+                                                    <span class='arrow-content arrow-prev-yellow'></span>
+                                                </span>
+                                            </div>
+
+                                            <div class="bt-scroll-next-slide">
+                                                <span class="arrow">
+                                                    <span class='arrow-content arrow-next-yellow'></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="dashboard-comidas-headers-container" class="content-fixed center-vertical hide-overflow">
+                                        <ul id="dashboard-comidas-headers" class="list-headers"></ul>
+                                    </div>
+                                    <div id="dashboard-comidas-scroll" class="content-scroll center-vertical"></div>
+                                </div>
+                            </div><a id="bt-back-nav-diet" data-slide="2" class="bt-scroll-next-slide bt-back-arrow"><span class="bottom"><span class="arrow"><span class="arrow-content arrow-prev-white"></span></span><span class="text">VER</span></span><span class="top"><span class="text">EJERCICIOS</span></span></a>
+                        </section>
+                    </div>
+                    <div id="dashboard-calendar" class="dashboard-calendar">
+                        <div class="bg full-all alpha-0"></div>
+                        <div id="dashboard-calendar-line" class="line full-all"></div>
+                    </div>
+                    <div id="dashboard-menu" class="dashboard-menu">
+                        <a href="#" class="open">
+                            <div class="circle"><span></span><span></span><span></span></div>
+                            <h4 class="menu">MENU</h4>
+                        </a>
+                    </div>
+                    <div id="dashboard-overlay" class="dashboard-overlay">
+                        <div id="dashboard-overlay-bg" class="dashboard-overlay-bg center-all"></div>
+                        <div id="dashboard-overlay-close" class="dashboard-overlay-close">
+                            <a href="#" class="close">
+                                <div class="circle"><span></span><span></span></div>
+                            </a>
+                        </div>
+                        <nav id="dashboard-nav">
+                            <ul>
+                                <li>
+                                    <a href="#" data-slide="0" class="active">
+                                        <h4>INFO</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" data-slide="1">
+                                        <h4>ANATOMÍA</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" data-slide="2">
+                                        <h4>ENTRENAMIENTO</h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" data-slide="3">
+                                        <h4>DIETA</h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div id="loader-main" class="loader2 center-all">
+                <span>0</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section LocalScript {
+    @Scripts.Render("~/home-plan/scripts")
+    @Html.Raw(System.Web.HttpUtility.HtmlDecode(@ViewBag.Loader))
+}

@@ -1,0 +1,160 @@
+﻿@model SLMFCMS.Models.PlanDiaEjercicioSeries
+@using SLMFCMS.Models
+@{
+    ViewBag.Title = "Editar la Serie del Ejercicio del Día de Entrenamiento";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12">
+            <div id="row-header-index" class="row">
+                <div id="div-titulo" class="col-md-7">
+                    <h4>@ViewBag.Title</h4>
+                </div>
+                <div class="col-md-3">
+                    &nbsp;
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-save" type="submit" title="Guardar">Guardar</button>
+                </div>
+                <div id="div-search" class="col-md-1">
+                    @Html.ActionLink("Cancelar", "Series", "PlanDiaEjercicios", routeValues: new { id = Model.PlanDiaEjerciciosID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "btn btn-cancel", @title = "Cancelar" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr id="header-divisor" />
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.Secuencia)
+        @Html.HiddenFor(model => model.PlanDiaEjerciciosID)
+        <div class="row">
+            <div class="col-md-2 lbltitulo">
+                @Html.LabelFor(model => model.PlanDiaEjercicios.PlanDias.Plan.DisciplinaID)
+            </div>
+            <div class="col-md-2 lbltitulo">
+                @Html.LabelFor(model => model.PlanDiaEjercicios.PlanDias.PlanID)
+            </div>
+            <div class="col-md-1 lbltitulo">
+                @Html.LabelFor(model => model.PlanDiaEjercicios.PlanDias.Dia)
+            </div>
+            <div class="col-md-3 lbltitulo">
+                @Html.LabelFor(model => model.PlanDiaEjercicios.PlanDias.RutinaID)
+            </div>
+            <div class="col-md-3 lbltitulo">
+                @Html.LabelFor(model => model.PlanDiaEjercicios.PlanDias.DietaID)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 txt-area-display-with-border area-border-2">
+                @Html.DisplayFor(model => model.PlanDiaEjercicios.PlanDias.Plan.Disciplina.Nombre)
+            </div>
+            <div class="col-md-2 txt-area-display-with-border area-border-2">
+                @Html.DisplayFor(model => model.PlanDiaEjercicios.PlanDias.Plan.Nombre)
+            </div>
+            <div class="col-md-1 txt-area-display-with-border area-border-1">
+                @Html.DisplayFor(model => model.PlanDiaEjercicios.PlanDias.Dia)
+            </div>
+            <div class="col-md-3 txt-area-display-with-border area-border-3">
+                @Html.DisplayFor(model => model.PlanDiaEjercicios.PlanDias.Rutina.Nombre)
+            </div>
+            <div class="col-md-3 txt-area-display-with-border area-border-3">
+                @Html.DisplayFor(model => model.PlanDiaEjercicios.PlanDias.Dieta.Nombre)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 lbltitulo">
+                @Html.LabelFor(model => model.PlanDiaEjercicios.Secuencia)
+            </div>
+            <div class="col-md-5 lbltitulo">
+                @Html.LabelFor(model => model.PlanDiaEjercicios.EjercicioID)
+            </div>
+            <div class="col-md-1 lbltitulo">
+                @Html.LabelFor(model => model.PlanDiaEjercicios.Series)
+            </div>
+            <div class="col-md-3 lbltitulo">
+                @Html.LabelFor(model => model.PlanDiaEjercicios.Repeticiones)
+            </div>
+            <div class="col-md-1 lbltitulo">
+                @Html.LabelFor(model => model.PlanDiaEjercicios.Descanso)
+            </div>
+            <div class="col-md-1 lbltitulo">
+                @Html.LabelFor(model => model.PlanDiaEjercicios.Nivel)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 txt-area-display-with-border area-border-1 text-center">
+                @Html.DisplayFor(model => model.PlanDiaEjercicios.Secuencia)
+            </div>
+            <div class="col-md-5 txt-area-display-with-border area-border-5">
+                @Html.DisplayFor(model => model.PlanDiaEjercicios.Ejercicio.NombreCompleto)
+            </div>
+            <div class="col-md-1 txt-area-display-with-border area-border-1 text-center">
+                @Html.DisplayFor(model => model.PlanDiaEjercicios.Series)
+            </div>
+            <div class="col-md-3 txt-area-display-with-border area-border-3">
+                @Html.DisplayFor(model => model.PlanDiaEjercicios.Repeticiones) @Html.DisplayFor(model => model.PlanDiaEjercicios.UnidadEjercicio.Nombre)
+            </div>
+            <div class="col-md-1 txt-area-display-with-border area-border-1 text-center">
+                @Html.DisplayFor(model => model.PlanDiaEjercicios.Descanso) @Html.Label("Min", htmlAttributes: new { @class = "lbltitulo" })
+            </div>
+            <div class="col-md-1 txt-area-display-with-border area-border-1 text-center">
+                @Html.DisplayFor(model => model.PlanDiaEjercicios.Nivel)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 lbltitulo">
+                @Html.LabelFor(model => model.Secuencia)
+            </div>
+            <div class="col-md-5 lbltitulo">
+                @Html.LabelFor(model => model.PlanDiaEjercicios.EjercicioID)
+            </div>
+            <div class="col-md-3 lbltitulo">
+                @Html.DisplayFor(model => model.PlanDiaEjercicios.UnidadEjercicio.Nombre)
+            </div>
+            <div class="col-md-1 lbltitulo">
+                @Html.LabelFor(model => model.PlanDiaEjercicios.Nivel)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 txt-area-display-with-border area-border-1 text-center">
+                @Html.DisplayFor(model => model.PlanDiaEjercicios.Secuencia)
+            </div>
+            <div class="col-md-5 txt-area-display-with-border area-border-5">
+                @Html.DisplayFor(model => model.PlanDiaEjercicios.Ejercicio.NombreCompleto)
+            </div>
+            <div id="selector-table-1" class="col-md-3 margen-off">
+                @Html.TextBoxFor(model => model.Repeticiones, new { @class = "txt-box-input-7-1" })
+            </div>
+            <div id="selector-table-1" class="col-md-1 margen-off">
+                @Html.DropDownList("Nivel")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Repeticiones, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Nivel, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

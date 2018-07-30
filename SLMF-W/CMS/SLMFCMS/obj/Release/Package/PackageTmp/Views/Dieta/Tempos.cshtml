@@ -1,0 +1,102 @@
+﻿@model SLMFCMS.Models.Dieta
+@using System.Web.Helpers
+@{var grid = new WebGrid(Model.TemposDeLaDieta.OrderBy(s => s.Tempo.Secuencia), canPage: true, rowsPerPage: 6,
+    selectionFieldName: "ID", ajaxUpdateContainerId: "gridContent");}
+@{int noPaginas = grid.PageCount;}
+@{int nPagina = grid.PageIndex + 1;}
+@{int nRecords = grid.TotalRowCount;}
+@{
+    ViewBag.Title = "Comidas de la Dieta";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div id="row-header-index" class="row">
+            <div id="div-titulo" class="col-md-7">
+                <h4>@ViewBag.Title</h4>
+            </div>
+            <div class="col-md-4">
+                &nbsp;
+            </div>
+            <div id="div-search" class="col-md-1">
+                @Html.ActionLink(" ", "Index", "Dieta", routeValues: new { pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-arrow-left fa-2x btn-accion-inv", @title = "Regresar" })
+            </div>
+        </div>
+    </div>
+</div>
+<hr id="header-divisor" />
+<div class="row">
+    <div class="col-md-3 lbltitulo">
+        @Html.LabelFor(model => model.Nombre)
+    </div>
+    <div class="col-md-8 lbltitulo">
+        @Html.LabelFor(model => model.Descripcion)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 txt-area-display-with-border area-border-3">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+    <div class="col-md-8 txt-area-display-with-border area-border-8-4">
+        @Html.DisplayFor(model => model.Descripcion)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row row-detalle-add">
+    <div class="col-md-12">
+        <span>
+            @Html.ActionLink(" ", "Create", "DietaTempos", routeValues: new { pagina = ViewBag.Pagina, page = ViewBag.Page, dieta = Model.ID }, htmlAttributes: new { @class = "fa fa-plus-square fa-2x btn-accion", @title = "Agrega una Comida a la Dieta" })
+        </span>
+        @Html.LabelFor(model => model.TemposDeLaDieta, htmlAttributes: new { @class = "lbltitulo" })
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        @if (noPaginas > 0)
+        {
+            @grid.GetHtml(tableStyle: "table webGrid",
+                mode: WebGridPagerModes.NextPrevious,
+                headerStyle: "webGridHeader webGridHeaderBack",
+                fillEmptyRows: true,
+                alternatingRowStyle: "",
+                selectedRowStyle: "",
+                previousText: "Previo",
+                nextText: "Siguiente",
+                columns: grid.Columns(
+                grid.Column("", header: "Tempo del Alimento", canSort: false,
+                    format:
+                    @<text>
+                        @item.Tempo.NombreCompleto
+                        @if (String.IsNullOrEmpty(Convert.ToString(item.Hora)))
+                        {
+                            @Html.Label("")
+                        }
+                        else
+                        {
+                            @Html.Label("(", htmlAttributes: new { @style = "font-weight: normal;" })
+                            if (item.Hora < 10)
+                            {
+                                @Html.Label("0", htmlAttributes: new { @style = "font-weight: normal;" })
+                            }
+                            @item.Hora@Html.Label(":00 aprox)", htmlAttributes: new { @style = "font-weight: normal;" })
+                        }
+                    </text>),
+                grid.Column("NoAlimentos", header: "No. Alimentos", canSort: false),
+                grid.Column("", header: "", canSort: false, style: "columnActionwebGrid",
+                    format:
+                    @<text>
+                        @Html.ActionLink(" ", "Edit", "DietaTempos", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-pencil-square fa-2x btn-accion", @title = "Editar la Comida de la Dieta" })
+                        @Html.ActionLink(" ", "Details", "DietaTempos", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-info-circle fa-2x btn-accion " + item.CSSNoData, @title = "Detalles de la Comida de la Dieta" })
+                        @if (item.AlimentosDelTempo.Count == 0)
+                        {
+                            @Html.ActionLink(" ", "Delete", "DietaTempos", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-minus-square fa-2x btn-accion", @title = "Borrar la Comida de la Dieta" })
+                        }
+                    </text>)
+                                                          )
+                                                      )
+        }
+    </div>
+</div>

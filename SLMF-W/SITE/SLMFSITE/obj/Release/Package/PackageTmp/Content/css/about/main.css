@@ -1,0 +1,258 @@
+html { overflow: hidden;}
+#section-about p,#section-about a,#section-about li,#section-about td span,#section-about em{line-height:1.7em;color:#c1c1c1;}
+.body-about .section-about{margin-left:95px;width:auto;height:100%;min-width:1024px;position:relative;overflow-x:hidden;}
+.body-about .section-wrapper{position:relative;width:100%;height:100%;}
+.body-about .section-wrapper .vertical-navigation{position:absolute;width:7px;height:77px;right:-20px;z-index:2;margin-top:36px;}
+.body-about .section-wrapper .vertical-navigation a{float:left;width:100%;height:25px;overflow:hidden;}
+.body-about .section-wrapper .vertical-navigation a span{float:left;position:relative;width:7px;height:25px;background:url(../../img/icon/arrows-updown.png) no-repeat scroll 0 0 transparent;}
+.body-about .section-wrapper a.null{pointer-events:none;}
+.body-about .section-wrapper .vertical-navigation a.up span{top:10px;}
+.body-about .section-wrapper .vertical-navigation a.up.null span{background-position:-7px 0px;}
+.body-about .section-wrapper .vertical-navigation a.down{margin-top:26px;}
+.body-about .section-wrapper .vertical-navigation a.down span{top:-10px;background-position:0 -25px;}
+.body-about .section-wrapper .vertical-navigation a.down.null span{background-position:-7px -25px;}
+.body-about .section-wrapper .wrapper-franja{z-index:10;display:table;height:100%;position:relative;}
+.body-about .section-wrapper .wrapper-franja div{position:absolute;margin:auto;height:879px;width:95%;top:0;bottom:0;left:0;right:0;}
+.body-about .section-wrapper .background-tiling{z-index:0;position:absolute;width:200%;height:100%;background:url("../../img/about/background-tile.jpg") repeat-x center;background-size:100% 100%;}
+.body-about .section-wrapper .slide{overflow:hidden;width:200%;height:100%;background:url("../../img/about/center_background.jpg") no-repeat;background-position:center 0;position:absolute;background-size:auto 100%;}
+.body-about .section-wrapper .slide .strong-statement{font-family:"Tungsten A","Tungsten B";font-size:57px;color:white;line-height:0.9em;font-weight:600;margin-top:10px;letter-spacing:0.015em;}
+.body-about .section-wrapper .slide .strong-statement strong{color:#f7d72b;font:inherit;letter-spacing:0.015em;}
+.body-about .section-wrapper .slide .slide-content{z-index:3;position:absolute;width:50%;height:100%;}
+.body-about .section-wrapper .slide a.bt-back-arrow,.body-about .section-wrapper .slide a.bt-scroll-next-slide{position:absolute;display:block;opacity:0;visibility:hidden;top:50px;cursor:pointer;cursor:hand;}
+.body-about .section-wrapper .slide a.bt-back-arrow span,.body-about .section-wrapper .slide a.bt-scroll-next-slide span{text-shadow:1px 1px 0px #000;}
+.body-about .section-wrapper .slide a.bt-back-arrow span .text,.body-about .section-wrapper .slide a.bt-back-arrow span .arrow-content,.body-about .section-wrapper .slide a.bt-scroll-next-slide span .text,.body-about .section-wrapper .slide a.bt-scroll-next-slide span .arrow-content{opacity:1;visibility:visible;}
+.body-about .section-wrapper .slide a#right-back-link span.bottom span.text{color:white!important;}
+.body-about .section-wrapper .slide a#right-back-link span.top span.text{color:#f6d641;}
+.body-about .section-wrapper .slide .center-logo{position:absolute;width:100%;height:100%;}
+.body-about .section-wrapper .slide .center-logo img{width:5.5%;margin:auto;position:absolute;top:11px;bottom:0;left:0;right:0;}
+.body-about .section-wrapper .slide .wrapper-franja{width:700px;}
+.body-about .section-wrapper .slide .wrapper-franja img{height:879px;}
+.body-about .section-wrapper .slide ul.section-menu li{text-shadow:1px 1px 0px #000;text-align:left;margin-bottom:17px;width:100%;float:left;position:relative;}
+.body-about .section-wrapper .slide ul.section-menu li span{float:left;width:1px;height:36px;border-left:1px solid #7f8081;position:absolute;opacity:0;visibility:hidden;}
+.body-about .section-wrapper .slide ul.section-menu li a{color:#b0b0b0;font-weight:600;font-size:16px;letter-spacing:0.25em;font-family:"Tungsten A","Tungsten B";line-height:36px;position:relative;}
+.body-about .section-wrapper .slide ul.section-menu li a:hover{color:white;}
+.body-about .section-wrapper .slide ul.section-menu li a:active,.body-about .section-wrapper .slide ul.section-menu li a.active{color:#f7d72b;}
+.body-about .section-wrapper .slide .wrapper-back-link{width:5%;position:absolute;float:right;height:40%;z-index:2;left:-31.5%;right:0;margin:0 auto;z-index:666;}
+.body-about .section-wrapper .slide .wrapper-back-link #left-back-link{width:100px;bottom:0;margin:0 auto;position:relative;}
+.body-about .section-wrapper .slide .active-section{width:345px;height:600px;display:block;position:absolute;}
+.body-about .section-wrapper .slide .active-section .active-title{color:white;letter-spacing:0.29em;font-size:20px;font-family:"Tungsten A","Tungsten B";display:block;left:0;margin-bottom:5px;}
+.body-about .section-wrapper .slide .yellow-back{bottom:0;margin:0;width:540px;height:100%;z-index:1;}
+.body-about .section-wrapper .slide .left-slide{width:50%;height:100%;float:left;}
+.body-about .section-wrapper .slide .left-slide .diagonals-left{position:absolute;width:100%;height:100%;left:0;}
+.body-about .section-wrapper .slide .left-slide .diagonals-left .image{height:100%;transform:skewX(30deg);-webkit-transform:skewX(30deg);-ms-transform:skewX(30deg);position:absolute;float:left;overflow:hidden;background-color:transparent;width:739px;left:0;}
+.body-about .section-wrapper .slide .left-slide .diagonals-left .image .background{height:100%;transform:skewX(-30deg);-webkit-transform:skewX(-30deg);-ms-transform:skewX(-30deg);position:absolute;float:left;overflow:hidden;background-color:#000;width:1855px;left:0;background:url("../../img/about/left-background.jpg") no-repeat scroll right center;}
+.body-about .section-wrapper .slide .left-slide .diagonals-left .yellow-back{height:100%;transform:skewX(30deg);-webkit-transform:skewX(30deg);-ms-transform:skewX(30deg);position:absolute;float:left;overflow:hidden;background-color:#f6d641;left:-265px;width:540px;margin-left:-400px;}
+.body-about .section-wrapper .slide .left-slide .wrapper-franja{float:right;}
+.body-about .section-wrapper .slide .left-slide .wrapper-franja img{float:right;margin-right:15%;}
+.body-about .section-wrapper .slide .left-slide a.bt-scroll-next-slide{float:right;top:192px;right:535px;}
+.body-about .section-wrapper .slide .left-slide .slide-content .wrapper-section{float:left;width:auto;position:absolute;left:370px;margin:auto;top:98px;bottom:0;height:580px;}
+.body-about .section-wrapper .slide .left-slide .slide-content ul.section-menu{z-index:2;float:left;width:100px;padding-top:24px;}
+.body-about .section-wrapper .slide .left-slide .slide-content ul.section-menu a{float:right;position:relative;}
+.body-about .section-wrapper .slide .left-slide .slide-content ul.section-menu a.active{right:-12px;}
+.body-about .section-wrapper .slide .left-slide .slide-content ul.section-menu li{text-align:left;}
+.body-about .section-wrapper .slide .left-slide .slide-content ul.section-menu li span{right:-27px;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section{margin-left:97px;position:relative;float:left;width:350px;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section{position:absolute;width:100%;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section .step-show,.body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section .step-big{opacity:1;visibility:visible;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section p{padding-bottom:18px;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section p strong{color:#f7d72b;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section p em{color:white;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section .strong-statement{font-family:"Tungsten A","Tungsten B";font-weight:500;text-align:right;font-size:92px;width:100%;position:relative;float:left;margin-top:0;letter-spacing:0.042em;left:-31px;line-height:0.98em;margin-top:-2px;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section .strong-statement strong{letter-spacing:0.102em;position:relative;top:2px;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section .list-title{position:relative;margin-bottom:0;float:left;left:0px;margin-top:20px;margin-left:20px;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section ul.aqui-encontraras{float:left;width:100%;left:27px;margin-left:22px;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section ul.aqui-encontraras li{margin-left:17px;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section ul.aqui-encontraras li:before{font-size:9px;content:"●";color:#f7d72b;display:inline-block;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section ul.aqui-encontraras li em{display:inline-block;padding-top:1px;float:right;width:94%;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section .simbologia{height:85px;width:100%;margin-left:0px;margin-top:13px;float:left;position:relative;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section .simbologia svg{margin:10px 50px 10px 0;float:left;width:63px;height:64px;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section .simbologia svg:first-child{margin-left:20px;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section .simbologia svg:last-child{margin-right:0;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .historia-section{position:absolute;width:100%;display:none;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .historia-section p{font-size:15px;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .historia-section .part-1,.body-about .section-wrapper .slide .left-slide .slide-content .active-section .historia-section .part-2{position:absolute;width:100%;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .historia-section .part-2{position:absolute;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .historia-section .part-2 strong{color:#f7d72b;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .historia-section .part-1{display:none;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .historia-section .part-1 .strong-statement{color:#cccccc;font-size:29px;font-family:"Tungsten A","Tungsten B";font-weight:300;font-style:normal;letter-spacing:0.11em;margin-bottom:20px;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .historia-section .part-1 .strong-statement strong{line-height:1em;letter-spacing:0.11em;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .historia-section .part-1 img.logo-strong-nutrition{margin-top:26px;margin-bottom:29px;margin-right:26px;margin-left:14px;width:auto;display:inline-block;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .historia-section .part-1 img.logo-medal-morriz{display:inline-block;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .manifiesto-section{display:none;position:absolute;width:100%;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .manifiesto-section .slmf-logo{height:67px;width:223px;padding-bottom:40px;margin-top:10px;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .manifiesto-section p{font-size:20px;font-family:"Tungsten A","Tungsten B";font-weight:300;font-style:normal;letter-spacing:0.05em;padding-bottom:0;padding-right:50px;line-height:1.99em;text-transform:uppercase;text-shadow:1px 1px 0px #000;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .manifiesto-section .strong-statement{color:white;font-size:28px;letter-spacing:0.09em;line-height:1.2em;padding-bottom:5px;padding-right:10px;font-weight:500;text-shadow:1px 1px 0px #000;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .pilares-section{width:390px;position:absolute;display:none;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .pilares-section .step-big{opacity:1;visibility:visible;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .pilares-section .row{top:-10px;position:relative;left:-20px;margin-bottom:16px;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .pilares-section .row .icon{display:inline-block;width:40px;height:40px;vertical-align:top;margin-top:15px;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .pilares-section .row .content{display:inline-block;width:310px;margin-left:14px;}
+.body-about .section-wrapper .slide .left-slide .slide-content .active-section .pilares-section .row .content strong{font-family:"Tungsten A","Tungsten B";color:#f7d72b;font-size:36px;font-weight:600;letter-spacing:0.1em;}
+.body-about .section-wrapper .slide .left-slide .navigator span{float:right;margin-right:10%;}
+.body-about .section-wrapper .slide .left-slide .navigator .arrow-left{right:3px;background:url(../../img/icon/arrows.png) no-repeat scroll transparent;background-position:20px -14px;height:7px;width:39px;display:block;position:relative;}
+.body-about .section-wrapper .slide .right-slide{width:50%;height:100%;float:left;}
+.body-about .section-wrapper .slide .right-slide .vertical-navigation{margin-top:45px;left:-25px;}
+.body-about .section-wrapper .slide .right-slide .diagonals-right{position:absolute;height:100%;width:100%;right:0;}
+.body-about .section-wrapper .slide .right-slide .diagonals-right .image{height:100%;transform:skewX(-30deg);-webkit-transform:skewX(-30deg);-ms-transform:skewX(-30deg);position:absolute;float:left;overflow:hidden;background-color:transparent;width:739px;right:0;}
+.body-about .section-wrapper .slide .right-slide .diagonals-right .image .background{height:100%;transform:skewX(30deg);-webkit-transform:skewX(30deg);-ms-transform:skewX(30deg);position:absolute;float:left;overflow:hidden;background-color:#000;width:1855px;right:0;background:url("../../img/about/right-background.jpg") no-repeat scroll right center;}
+.body-about .section-wrapper .slide .right-slide .diagonals-right .yellow-back{height:100%;transform:skewX(-30deg);-webkit-transform:skewX(-30deg);-ms-transform:skewX(-30deg);position:absolute;float:left;overflow:hidden;background-color:#f6d641;float:right;right:-265px;width:540px;margin-right:-400px;}
+.body-about .section-wrapper .slide .right-slide .wrapper-franja{float:left;}
+.body-about .section-wrapper .slide .right-slide .wrapper-franja img{float:left;margin-left:15%;-webkit-transform:scaleX(-1);-ms-transform:scaleX(-1);transform:scaleX(-1);-webkit-filter:FlipH;filter:FlipH;-ms-filter:"FlipH";}
+.body-about .section-wrapper .slide .right-slide a.bt-back-arrow{float:left;top:192px;left:581px;margin-top:0;width:110px;}
+.body-about .section-wrapper .slide .right-slide .slide-content .wrapper-section{float:right;position:absolute;right:370px;margin:auto;top:98px;bottom:0;height:580px;}
+.body-about .section-wrapper .slide .right-slide .slide-content ul.share-bar{display:inline-block;position:absolute;height:20px;margin:auto;right:-75px;bottom:29px;}
+.body-about .section-wrapper .slide .right-slide .slide-content ul.share-bar li{display:inline-block;}
+.body-about .section-wrapper .slide .right-slide .slide-content ul.share-bar li path{fill:#c1c1c1;}
+.body-about .section-wrapper .slide .right-slide .slide-content ul.share-bar li a{padding:0px 20px;float:left;}
+.body-about .section-wrapper .slide .right-slide .slide-content ul.share-bar li span{border-left:1px solid #c1c1c1;float:left;height:13px;}
+.body-about .section-wrapper .slide .right-slide .slide-content ul.share-bar li a:hover path{fill:#f6d641;}
+.body-about .section-wrapper .slide .right-slide .slide-content ul.share-bar li svg{float:left;}
+.body-about .section-wrapper .slide .right-slide .slide-content ul.share-bar li.caption{vertical-align:top;margin-right:-20px;width:100%;padding-left:35px;}
+.body-about .section-wrapper .slide .right-slide .slide-content ul.section-menu{float:left;padding-top:24px;width:125px;}
+.body-about .section-wrapper .slide .right-slide .slide-content ul.section-menu a{float:left;position:relative;}
+.body-about .section-wrapper .slide .right-slide .slide-content ul.section-menu a.active{left:-12px;}
+.body-about .section-wrapper .slide .right-slide .slide-content ul.section-menu li span{left:-27px;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section{margin-right:97px;position:relative;float:left;width:325px;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .logros-section{width:100%;position:absolute;display:none;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .logros-section ul.corona{margin-bottom:40px;margin-left:20px;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .logros-section ul.corona.first{margin-top:12px;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .logros-section ul.corona li{text-shadow:0px 0px 0.1px #000;display:block;position:relative;margin-left:110px;margin-top:-12px;font-family:"Tungsten A","Tungsten B";font-weight:500;font-style:normal;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .logros-section ul.corona li:first-child{color:#f7d72b;font-weight:600;font-size:54px;position:absolute;width:100px;height:100px;margin-left:0;padding-left:36px;background:url(../../img/about/corona.png) no-repeat scroll transparent;background-position:0 11px;letter-spacing:0.33em;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .logros-section ul.corona li:nth-child(2){font-size:20px;color:#7a7a7a;letter-spacing:0.23em;font-weight:bolder;margin-top:-1px;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .logros-section ul.corona li:nth-child(3){font-size:20px;color:#cccccc;letter-spacing:0.11em;font-weight:300;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .logros-section ul.corona li:nth-child(4){font-family:"PlexesLightPro";font-size:14px;color:#999999;letter-spacing:0.05em;font-weight:normal;margin-top:-9px;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .logros-section ul.otros-logros{margin-left:64px;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .logros-section ul.otros-logros li{font-family:"Tungsten A","Tungsten B";font-weight:300;font-style:normal;font-size:18px;color:#cccccc;letter-spacing:0.06em;line-height:0;margin-bottom:17px;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .logros-section ul.otros-logros li strong{color:#f7d72b;font-family:inherit;font-size:18px;letter-spacing:0.24em;line-height:1.1em;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .logros-section ul.otros-logros li strong:after{content:"";display:block;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .logros-section ul.otros-logros li:after{content:"";display:block;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .filosofia-section{display:none;width:100%;font-family:"Tungsten A","Tungsten B";font-weight:600;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .filosofia-section .quote-title{font-size:70px;font-weight:500;font-family:inherit;color:white;line-height:1em;letter-spacing:0.062em;width:100%;text-shadow:1px 1px 0px #000;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .filosofia-section .quote-title strong{font-size:inherit;font-family:inherit;color:#f7d72b;text-shadow:1px 1px 0px #000;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .filosofia-section blockquote{margin-top:80px;font-size:20px;font-family:"Tungsten A","Tungsten B";font-weight:300;font-style:normal;letter-spacing:0.05em;padding-bottom:0;padding-right:50px;line-height:1.99em;text-transform:uppercase;text-shadow:1px 1px 0px #000;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .filosofia-section .author{font-size:16px;color:#f6d641;float:left;line-height:2.3em;font-family:inherit;letter-spacing:0.06em;left:5px;position:relative;text-shadow:1px 1px 0px #000;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .biosection{position:absolute;width:100%;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .biosection .title{width:100%;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .biosection .title,.body-about .section-wrapper .slide .right-slide .slide-content .active-section .biosection .title strong{letter-spacing:0.11em;font-weight:300;text-shadow:1px 1px 0px #000;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .biosection .strong-statement{float:left;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .biosection .bio-section-p1,.body-about .section-wrapper .slide .right-slide .slide-content .active-section .biosection .bio-section-p2{width:100%;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .biosection .bio-section-p1 .strong-statement,.body-about .section-wrapper .slide .right-slide .slide-content .active-section .biosection .bio-section-p1 .strong-statement strong,.body-about .section-wrapper .slide .right-slide .slide-content .active-section .biosection .bio-section-p2 .strong-statement,.body-about .section-wrapper .slide .right-slide .slide-content .active-section .biosection .bio-section-p2 .strong-statement strong{font-weight:500;letter-spacing:0.05em;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .biosection .bio-section-p2{display:none;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .biosection .bio-section-p2 .strong-statement,.body-about .section-wrapper .slide .right-slide .slide-content .active-section .biosection .bio-section-p2 .strong-statement strong{font-size:48px;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .biosection .bio-section-p1 .step-big,.body-about .section-wrapper .slide .right-slide .slide-content .active-section .biosection .bio-section-p1 .step-show{opacity:1;visibility:visible;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .title{font-weight:300;font-family:"Tungsten A","Tungsten B";font-size:29px;margin-bottom:15px;}
+.body-about .section-wrapper .slide .right-slide .slide-content .active-section .title strong{color:#f7d72b;font-weight:600;font-size:inherit;font-family:inherit;}
+.body-about .section-wrapper .slide .right-slide .navigator span{float:left;margin-left:10%;}
+.body-about .section-wrapper .slide .right-slide .navigator span:first-child{width:300px;}
+.body-about .section-wrapper .slide .right-slide .navigator .arrow-right{left:3px;background:url(../../img/icon/arrows.png) no-repeat scroll transparent;background-position:-20px 0px;height:7px;width:39px;display:block;position:relative;}
+.body-about .section-wrapper .slide .navigator{top:0;position:absolute;z-index:2;bottom:0;height:171px;margin:auto;}
+.body-about .section-wrapper .slide .navigator span{clear:both;font-family:"Tungsten A","Tungsten B";}
+.body-about .section-wrapper .slide .navigator span.nav-sub-title{color:white;font-size:35px;letter-spacing:0.2em;line-height:1em;text-shadow:1px 1px 0px #000;}
+.body-about .section-wrapper .slide .navigator span.nav-title{color:#F7D72B;font-weight:600;font-size:170px;line-height:0.9em;letter-spacing:0.02em;text-shadow:1px 1px 0px #000;}
+.body-about #slide,.body-about #center-logo img,.body-about #center-go-left .nav-title,.body-about #center-go-right .nav-title,.body-about #center-go-left .nav-sub-title,.body-about #center-go-right .nav-sub-title,.body-about #center-go-left .arrow-left,.body-about #center-go-right .arrow-right,.body-about .background-tiling{opacity:0;visibility:hidden;}
+.body-about #center-go-left .arrow-left,.body-about #center-go-right .arrow-right{top:5000%;}
+.body-about #center-logo img{transform:scale(1.6,1.6);-ms-transform:scale(1.6,1.6);-webkit-transform:scale(1.6,1.6);-moz-transform:scale(1.6,1.6);-o-transform:scale(1.6,1.6);}
+.body-about #center-go-left,.body-about #center-go-right{position:relative;height:100%;}
+.body-about #left-arrow{left:-100%;}
+.body-about #right-arrow{right:-100%;}
+.body-about #center-go-left{float:right;right:185px;}
+.body-about #center-go-right{float:left;left:185px;}
+.body-about .left-slide .step-show,.body-about .right-slide .step-show{float:left;position:relative;opacity:0;visibility:hidden;}
+.body-about .left-slide .step-big,.body-about .right-slide .step-big{position:relative;opacity:0;visibility:hidden;}
+@media screen and (max-width:1700px){
+  .body-about #center-go-left{right:165px;}
+  .body-about #center-go-right{left:165px;}
+  .body-about .section-wrapper .wrapper-franja div{height:680px;}
+  .body-about .section-wrapper .slide .wrapper-franja{width:510px;}
+  .body-about .section-wrapper .slide .wrapper-franja img{height:100%;}
+  .body-about .section-wrapper .slide .navigator{height:176px;top:24px;}
+  .body-about .section-wrapper .slide .navigator span.nav-sub-title{font-size:30px;}
+  .body-about .section-wrapper .slide .navigator span.nav-title{font-size:140px;}
+  .body-about .section-wrapper .slide .left-slide a.bt-scroll-next-slide{top:18%;right:87%;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .wrapper-section{top:0;left:240px;z-index:11;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section{margin-left:72px;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section p.to-slim{width:320px;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section .strong-statement{font-size:80px;left:-50px;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section .pilares-section .row{margin-bottom:0;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section .pilares-section .row .icon{margin-left:8px;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section .pilares-section .row .content{margin-left:6px;}
+  .body-about .section-wrapper .slide .left-slide .wrapper-franja img{margin-right:21%;}
+  .body-about .section-wrapper .slide .left-slide .diagonals-left .image{width:580px;}
+  .body-about .section-wrapper .slide .right-slide a.bt-back-arrow{top:18%;left:97%;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .wrapper-section{top:0;right:240px;z-index:11;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .active-section{margin-right:72px;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .active-section .mision-section .strong-statement{font-size:80px;right:-50px;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .active-section .pilares-section .row{margin-bottom:0;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .active-section .pilares-section .row .icon{margin-right:8px;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .active-section .pilares-section .row .content{margin-right:6px;}
+  .body-about .section-wrapper .slide .right-slide .wrapper-franja img{margin-left:21%;}
+  .body-about .section-wrapper .slide .right-slide .diagonals-right .image{width:580px;}
+  .body-about .section-wrapper .slide .right-slide .diagonals-right .image .background{background-size:auto 100%;}
+}
+@media screen and (max-width:1500px){
+  .body-about #center-go-left{right:159px;}
+  .body-about #center-go-right{left:159px;}
+  .body-about .section-wrapper .wrapper-franja div{height:565px;}
+  .body-about .section-wrapper .slide .navigator{height:161px;top:24px;}
+  .body-about .section-wrapper .slide .navigator span.nav-sub-title{font-size:27px;}
+  .body-about .section-wrapper .slide .navigator span.nav-title{font-size:125px;}
+  .body-about .section-wrapper .slide .left-slide a.bt-scroll-next-slide{top:16%;right:72%;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .wrapper-section{top:0;left:168px;z-index:11;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section{margin-left:47px;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section p.to-slim{width:320px;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section .strong-statement{font-size:80px;left:-50px;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section .pilares-section .row{margin-bottom:0;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section .pilares-section .row .icon{margin-left:8px;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section .pilares-section .row .content{margin-left:6px;}
+  .body-about .section-wrapper .slide .left-slide .wrapper-franja img{margin-right:21%;}
+  .body-about .section-wrapper .slide .left-slide .diagonals-left .image{width:510px;}
+  .body-about .section-wrapper .slide .right-slide a.bt-back-arrow{top:16%;left:79%;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .wrapper-section{top:0;right:168px;z-index:11;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .active-section{margin-right:47px;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .active-section .filosofia-section .quote-title{font-size:58px;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .active-section .mision-section .strong-statement{font-size:80px;right:-50px;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .active-section .bio-section-p1 .strong-statement{font-size:48px;margin-top:0;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .active-section .pilares-section .row{margin-bottom:0;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .active-section .pilares-section .row .icon{margin-right:8px;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .active-section .pilares-section .row .content{margin-right:6px;}
+  .body-about .section-wrapper .slide .right-slide .wrapper-franja img{margin-left:21%;}
+  .body-about .section-wrapper .slide .right-slide .diagonals-right .image{width:510px;}
+  .body-about .section-wrapper .slide .right-slide .diagonals-right .image .background{background-size:auto 100%;}
+}
+@media screen and (max-width:1260px){
+  .body-about #center-go-left{right:124px;}
+  .body-about #center-go-right{left:124px;}
+  .body-about .section-wrapper .wrapper-franja div{height:465px;}
+  .body-about .section-wrapper .slide .wrapper-franja{width:380px;}
+  .body-about .section-wrapper .slide .wrapper-franja img{height:100%;}
+  .body-about .section-wrapper .slide .navigator{height:148px;top:24px;}
+  .body-about .section-wrapper .slide .navigator span.nav-title{font-size:110px;}
+  .body-about .section-wrapper .slide .navigator span.nav-sub-title{font-size:24px;}
+  .body-about .section-wrapper .slide .left-slide a.bt-scroll-next-slide{top:16%;right:66%;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .wrapper-section{top:0;left:68px;z-index:11;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section{margin-left:47px;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section p.to-slim{width:320px;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section .mision-section .strong-statement{font-size:80px;left:-50px;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section .pilares-section .row{margin-bottom:0;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section .pilares-section .row .icon{margin-left:8px;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section .pilares-section .row .content{margin-left:6px;}
+  .body-about .section-wrapper .slide .left-slide .wrapper-franja img{margin-right:21%;}
+  .body-about .section-wrapper .slide .left-slide .diagonals-left .image{width:410px;}
+  .body-about .section-wrapper .slide .right-slide a.bt-back-arrow{top:16%;left:77%;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .wrapper-section{top:0;right:68px;z-index:11;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .active-section{margin-right:22px;width:310px;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .active-section .mision-section .strong-statement{font-size:80px;right:-50px;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .active-section .pilares-section .row{margin-bottom:0;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .active-section .pilares-section .row .icon{margin-right:8px;}
+  .body-about .section-wrapper .slide .right-slide .slide-content .active-section .pilares-section .row .content{margin-right:6px;}
+  .body-about .section-wrapper .slide .right-slide .wrapper-franja img{margin-left:21%;}
+  .body-about .section-wrapper .slide .right-slide .diagonals-right .image{width:410px;}
+  .body-about .section-wrapper .slide .right-slide .diagonals-right .image .background{background-size:auto 100%;}
+}
+@media screen and (max-height:635px){
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section .historia-section .part-1 img.logo-strong-nutrition{width:167px;margin-top:6px;}
+  .body-about .section-wrapper .slide .left-slide .slide-content .active-section .historia-section .part-1 img.logo-medal-morriz{width:60px;top:-13px;position:relative;}
+}
+@media screen and (min-height:1024px){
+  .body-about .background{background-size:auto 100%!important;}
+}

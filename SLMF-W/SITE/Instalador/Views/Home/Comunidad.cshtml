@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "SLMF - Comunidad";
+    ViewBag.BodyClass = "body-comunidad";
+    ViewBag.NavPilarsClass = "collapsed";
+}
+@{var vLinkLogo = Convert.ToString(Session["AppAssetsURL"]) + "slmf-logo.jpg";}
+@{var vLink = "";}
+
+@section MetaTags {
+    <meta name="description" content="Nuestro sitio está en construcción, y no sólo por un cambio de imagen: te ofreceremos programas de entrenamiento, dietas y todo lo necesario para que también tú estés entre los más fuertes.">
+    <meta property="og:description" content="Nuestro sitio está en construcción, y no sólo por un cambio de imagen: te ofreceremos programas de entrenamiento, dietas y todo lo necesario para que también tú estés entre los más fuertes.">
+    <meta property="og:image" content="@vLinkLogo">
+    <meta property="og:url" content="http://sololosmasfuertes.com">
+    <meta property="og:title" content="SLMF - Comunidad">
+}
+@section LocalCss {
+    @Styles.Render("~/comunidad/css")
+}
+<div id="slmf-community-tohidde" class="full-all">
+    <div id="community" class="community full-all">
+        <div class="allLoader">
+            <div class="hidden">
+                <section id="comunity-content" class="content alpha-0">
+                    <div class="slider">
+                        <article class="article s-all">
+                            <div class="top"><a href="#" target="_blank" class="channel" style="display: none;"><img src="/Content/img/comunidad-slmf/youtube.svg" alt="YouTube"></a></div>
+                            <div class="bottom-left-nav"><a href="#"><span class="arrow-content arrow-prev-white"></span></a><a href="#"><span class="arrow-content arrow-next-white"></span></a></div>
+                        </article>
+                        <article class="article s-youtube">
+                            <div class="top"><a href="#" target="_blank" class="channel"><img src="/Content/img/comunidad-slmf/youtube.svg" alt="YouTube"></a></div>
+                            <div class="bottom-left-nav"><a href="#"><span class="arrow-content arrow-prev-white"></span></a><a href="#"><span class="arrow-content arrow-next-white"></span></a></div>
+                        </article>
+                        <article class="article s-twitter">
+                            <div class="top"><a href="#" target="_blank" class="channel"><img src="/Content/img/comunidad-slmf/twitter.svg" alt="Twitter"></a></div>
+                            <div class="bottom-left-nav"><a href="#"><span class="arrow-content arrow-prev-white"></span></a><a href="#"><span class="arrow-content arrow-next-white"></span></a></div>
+                        </article>
+                        <article class="article s-instagram">
+                            <div class="top"><a href="#" target="_blank" class="channel"><img src="/Content/img/comunidad-slmf/instagram.svg" alt="Instagram"></a></div>
+                            <div class="bottom-left-nav"><a href="#"><span class="arrow-content arrow-prev-white"></span></a><a href="#"><span class="arrow-content arrow-next-white"></span></a></div>
+                        </article>
+                    </div>
+                    <div id="community-navigation" class="navigation">
+                        <span class="filter">FILTRAR POR:</span>
+                        <ul>
+                            <li>
+                                <a href="#" data-show=".s-all" class="active">
+                                    <span class="icons">
+                                        Todos
+                                    </span>
+                                    <span class="pipe"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-show=".s-youtube">
+                                    <span class="icons">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="18.023px" height="13.246px" viewBox="0 0 18.023 13.246" enable-background="new 0 0 18.023 13.246" xml:space="preserve"> <path fill="#FFFFFF" d="M18.021,3.053c0,0-0.079-1.273-0.635-1.834c-0.705-0.735-1.445-0.864-1.807-0.907  C12.981,0.125,9.138,0,9.138,0h-0.01c0,0-3.896,0.125-6.493,0.312C2.271,0.354,1.48,0.422,0.775,1.156  C0.219,1.718,0.112,3.021,0.112,3.021S0,4.549,0,6.045v1.4c0,1.496,0.112,2.991,0.112,2.991s0.143,1.273,0.7,1.834  c0.705,0.736,1.615,0.712,2.028,0.79c1.485,0.142,6.304,0.186,6.304,0.186s3.894-0.006,6.492-0.192  c0.363-0.044,1.152-0.047,1.857-0.783c0.558-0.561,0.531-1.834,0.531-1.834S18,8.941,18,7.445v-1.4  C18,4.549,18.021,3.053,18.021,3.053z M8,9.383V4.214l4.305,2.585L8,9.383z"></path> </svg>
+                                    </span>
+                                    <span class="pipe"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-show=".s-twitter">
+                                    <span class="icons">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="16.095px" height="13.082px" viewBox="0 0 16.095 13.082" enable-background="new 0 0 16.095 13.082" xml:space="preserve"> <path fill="#303030" d="M13.483,1.089c0,0,1.148-0.217,2.166-0.802c0,0-0.346,1.191-1.473,1.82c0,0,1.387-0.151,1.918-0.52  c0,0-0.855,1.365-1.658,1.604c0,0,0.52,3.988-2.904,7.391C8.107,13.986,2.753,13.466,0,11.668c0,0,2.341,0.367,4.854-1.324  c0,0-2.123,0.108-3.164-2.254c0,0,1.02,0.087,1.691-0.13c0,0-2.623-0.519-2.797-3.229c0,0,0.715,0.391,1.475,0.368  c0,0-2.473-1.69-0.998-4.356c0,0,2.71,3.186,6.829,3.424c0,0-0.607-2.579,1.798-3.771C12.095-0.797,13.483,1.089,13.483,1.089z"></path> </svg>
+                                    </span>
+                                    <span class="pipe"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-show=".s-instagram">
+                                    <span class="icons">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="13.27px" height="13.082px" viewBox="0 0 13.27 13.082" enable-background="new 0 0 13.27 13.082" xml:space="preserve"> <path fill="#303030" d="M13.27,1.99c0-1.111-0.899-2.012-2.011-2.012H2.008C0.9-0.021,0,0.879,0,1.99v9.106  c0,1.11,0.9,2.007,2.008,2.007h9.251c1.111,0,2.011-0.896,2.011-2.007V1.99z M11.573,3.838c0,0.15-0.119,0.271-0.271,0.271H9.264  c-0.149,0-0.27-0.121-0.27-0.271v-2.04c0-0.147,0.12-0.269,0.27-0.269h2.039c0.151,0,0.271,0.121,0.271,0.269V3.838z M6.646,4.182  c1.357,0,2.462,1.103,2.462,2.458c0,1.357-1.104,2.461-2.462,2.461c-1.355,0-2.461-1.104-2.461-2.461  C4.186,5.284,5.291,4.182,6.646,4.182z M11.867,11.072c0,0.353-0.263,0.631-0.616,0.631H2.003c-0.353,0-0.604-0.278-0.604-0.631  V5.363h1.639c-0.145,0.44-0.223,0.828-0.223,1.278c0,2.112,1.721,3.83,3.832,3.83c2.113,0,3.832-1.718,3.832-3.83  c0-0.448-0.077-0.838-0.221-1.278h1.609V11.072z"></path> </svg>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="loader"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+</div>
+@section LocalScript {
+    @Scripts.Render("~/comunidad/scripts")
+}

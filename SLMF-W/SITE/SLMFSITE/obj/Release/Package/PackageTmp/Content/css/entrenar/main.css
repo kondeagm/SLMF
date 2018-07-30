@@ -1,0 +1,100 @@
+.Firefox #entrenar #background-wrapper #plans-test .menu span.label{position:relative;top:8px;}
+.Firefox #entrenar #background-wrapper #plans-test .menu a.button-view-plans{margin-top:15px;}
+#entrenar{width:100%;height:100%;overflow:hidden;}
+#entrenar .no-plans{text-align:center;padding:140px 0;font-size:60px;letter-spacing:0.05em;color:#fff;}
+#entrenar #background-wrapper{background:url(../../img/competir/background.jpg) scroll repeat-x 0 0 transparent;width:100%;height:100%;}
+#entrenar #background-wrapper #main-page{width:100%;height:100%;position:relative;z-index:0;}
+#entrenar #background-wrapper .test-wrapper{width:100%;height:208px;background:#f6d641;}
+#entrenar #background-wrapper #plans-test{width:940px;height:100%;position:relative;}
+#entrenar #background-wrapper #plans-test .menu{height: 52px; width: 904px; position: absolute; margin: auto 19px;}
+#entrenar #background-wrapper #plans-test .menu span{display:inline-block;}
+#entrenar #background-wrapper #plans-test .menu .tooltip{position:absolute;width:415px;height:23px;padding:4px;padding-top:3px;font-size:14px;color:#958843;font-weight:600;top: -40px; left: -4px;}
+#entrenar #background-wrapper #plans-test .menu .label{font-family:"Tungsten A","Tungsten B";font-size:23px;letter-spacing:0.03em;font-weight:600;color:#212224;}
+#entrenar #background-wrapper #plans-test .menu ul{display:inline-block;position:relative;width:120px;height:35px;cursor:pointer; margin-left: -1px;}
+#entrenar #background-wrapper #plans-test .menu ul li{top:17px;bottom:0;margin:auto;width:88px;height:30px;position:absolute;text-align:center;background:#212224;padding-top:3px;}
+#entrenar #background-wrapper #plans-test .menu ul li:not(:last-child){display:none;}
+#entrenar #background-wrapper #plans-test .menu ul li > span{font-family:"Tungsten A","Tungsten B";font-size:23px;letter-spacing:0.05em;color:white;width:100%;height:37px;left:0;top:0;line-height:34px;position:absolute;}
+#entrenar #background-wrapper #plans-test .menu ul li > span:hover{color:#f6d641;}
+#entrenar #background-wrapper #plans-test .menu ul li.none{background:#958843;text-transform:uppercase;font-size:11px;}
+#entrenar #background-wrapper #plans-test .menu ul li.none .combo{display:block;position:absolute;width:10px;height:100%;top:0;right:0;margin:auto;}
+#entrenar #background-wrapper #plans-test .menu ul li.none:before{content:"Selecciona";font-family:"PlexesLightPro";font-weight:normal;font-style:normal;display:block;top:0;bottom:0;height:17px;width:100%;position:absolute;margin:auto;color:#f7d72b;}
+#entrenar #background-wrapper #plans-test .menu ul.expanded li.selected > span{color:#f6d641!important;}
+#entrenar #background-wrapper #plans-test .menu ul#gender,#entrenar #background-wrapper #plans-test .menu ul#gender li{width:80px;}
+#entrenar #background-wrapper #plans-test .menu ul#complexion,#entrenar #background-wrapper #plans-test .menu ul#complexion li{width:90px;}
+#entrenar #background-wrapper #plans-test .menu ul#level,#entrenar #background-wrapper #plans-test .menu ul#level li{width:118px;}
+#entrenar #background-wrapper #plans-test .menu ul#body-target,#entrenar #background-wrapper #plans-test .menu ul#body-target li{width:100px;}
+#entrenar #background-wrapper #plans-test .menu a.button-view-plans{opacity:0.4;background:transparent;width:137px;height:35px;display:inline-block;position:absolute;margin-top:9px;margin-left:9px;border:1px solid #212224;cursor:default;}
+#entrenar #background-wrapper #plans-test .menu a.button-view-plans span{color:#212224;font-size:14px;font-family:"Tungsten A","Tungsten B";letter-spacing:0.28em;top:0;bottom:0;margin:auto;width:100%;height:23px;position:absolute;text-align:center;}
+#entrenar #background-wrapper #plans-test .menu a.button-view-plans.active:hover{background:#212224;cursor:pointer;}
+#entrenar #background-wrapper #plans-test .menu a.button-view-plans.active:hover span{color:#f6d641;}
+#entrenar #background-wrapper #plans-test .menu a.button-view-plans.active{opacity:1;}
+#entrenar #background-wrapper .content-wrapper{overflow:hidden;width:100%;height:100%;position:relative;z-index:1;}
+#entrenar #background-wrapper .filters-wrapper{width:100%;height:93px;background:#212224;position:relative;z-index:3;}
+#entrenar #background-wrapper #plans-filters{width:745px;height:93px;left:0;right:0;position:relative;z-index:0;margin:auto;}
+#entrenar #background-wrapper #plans-filters ul{width:520px;height:100%;float:left;}
+#entrenar #background-wrapper #plans-filters ul li{display:inline-block;width:100px;height:100%;position:relative;}
+#entrenar #background-wrapper #plans-filters ul li a{-webkit-transition:0.15s;-moz-transition:0.15s;-ms-transition:0.15s;-o-transition:0.15s;transition:0.15s;color:#464646;top:0;left:0;right:0;bottom:0;margin:auto;width:48px;height:51px;padding-top:37px;font-size:11px;position:absolute;text-align:center;display:block;border-bottom:3px solid transparent;}
+#entrenar #background-wrapper #plans-filters ul li a:hover{color:#f6d641;}
+#entrenar #background-wrapper #plans-filters ul li a.selected{color:#f6d641;border-bottom:3px solid #f6d641;}
+#entrenar #background-wrapper #plans-filters ul li:not(:first-child):after{content:" ";display:block;background:#171819;width:1px;height:8px;top:0;bottom:0;margin:auto;position:absolute;}
+#entrenar #background-wrapper #plans-filters .buttons-container{display:inline-block;height:100%;}
+#entrenar #background-wrapper #plans-filters .buttons-container a{height:100%;width:170px;display:block;position:relative;display:inline-block;}
+#entrenar #background-wrapper #plans-filters .buttons-container a span{top:0;bottom:0;margin:auto;position:absolute;}
+#entrenar #background-wrapper #plans-filters .buttons-container a .icon{width:32px;height:20px;left:35px;}
+#entrenar #background-wrapper #plans-filters .buttons-container a .icon svg{fill:#f6d641;}
+#entrenar #background-wrapper #plans-filters .buttons-container a .caption{font-family:"Tungsten A","Tungsten B";font-size:15px;font-weight:400;letter-spacing:0.1em;color:white;height:25px;width:70px;left:52px;right:0;}
+#entrenar #background-wrapper #plans-filters .buttons-container a:hover{background:#535353;}
+#entrenar #background-wrapper #plans-filters .buttons-container a:hover .caption{color:#f6d641;}
+#entrenar #background-wrapper #plans-filters .buttons-container a.active{background:#535353;}
+#entrenar #background-wrapper #plans-filters .buttons-container a.active .icon svg{fill:#f7d72b;}
+#entrenar #background-wrapper #plans-filters .buttons-container a.active .caption{color:white;}
+#entrenar #background-wrapper #plans-filters .buttons-container a.active:hover .caption{color:white;}
+#entrenar #background-wrapper #plans-filters .buttons-container a.active:after{content:" ";display:block;height:1px;width:1px;right:0;bottom:0;margin:auto;position:absolute;border-color:transparent transparent #f6d641 transparent;border-width:0 0 10px 10px;border-style:solid;}
+#entrenar #background-wrapper #plans-result{overflow:hidden;position:relative;background:#393939;width:100%;height:100%;}
+#entrenar #background-wrapper #plans-result > ul{width:100%;height:100%;position:relative;}
+#entrenar #background-wrapper #plans-result > ul > li:hover{cursor:pointer;}
+#entrenar #background-wrapper #plans-result > ul > li:hover .result-wrapper .result-header .icon_a div{background-image:url("../../img/entrenar/volumen_1.svg");}
+#entrenar #background-wrapper #plans-result > ul > li:hover .result-wrapper .result-header .icon_b div{background-image:url("../../img/entrenar/definicion_1.svg");}
+#entrenar #background-wrapper #plans-result > ul > li{width:100%;height:200px;background:#232325;display:none;}
+#entrenar #background-wrapper #plans-result > ul > li .over-fx-bar{width:0%;background:#f6d641;height:100%;position:absolute;right:0;}
+#entrenar #background-wrapper #plans-result > ul > li .over-fx-bar:after{content:"";display:block;width:250px;height:100%;position:absolute;height:100%;transform:skewX(-45deg);-webkit-transform:skewX(-45deg);-ms-transform:skewX(-45deg);position:absolute;float:left;overflow:hidden;background-color:#f6d641;left:-100px;}
+#entrenar #background-wrapper #plans-result > ul > li .background-ribbon{display:block;height:40px;width:100%;position:absolute;background:#323232;bottom:0;border-top:1px solid #212224;border-bottom:1px solid #212224;}
+#entrenar #background-wrapper #plans-result > ul > li .result-wrapper{width:1024px;height:100%;left:0;right:0;margin:auto;}
+#entrenar #background-wrapper #plans-result > ul > li .result-wrapper .result-header .icon{position:relative;display:block;height:100%;width:125px;left:0;float:left;}
+#entrenar #background-wrapper #plans-result > ul > li .result-wrapper .result-header .icon div{display:block;width:64px;height:64px;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;}
+#entrenar #background-wrapper #plans-result > ul > li .result-wrapper .result-header .icon_a div{-webkit-transition-delay:0.15s;-moz-transition-delay:0.15s;-ms-transition-delay:0.15s;-o-transition-delay:0.15s;transition-delay:0.15s;background:url("../../img/entrenar/volumen_0.svg") no-repeat scroll center center transparent;}
+#entrenar #background-wrapper #plans-result > ul > li .result-wrapper .result-header .icon_b div{-webkit-transition-delay:0.15s;-moz-transition-delay:0.15s;-ms-transition-delay:0.15s;-o-transition-delay:0.15s;transition-delay:0.15s;background:url("../../img/entrenar/definicion_0.svg") no-repeat scroll center center transparent;}
+#entrenar #background-wrapper #plans-result > ul > li .result-wrapper .result-header .title{float:right;width:85%;color:white;font-family:"Tungsten A","Tungsten B";font-size:63px;font-weight:600;line-height:0.8em;margin-top:50px;letter-spacing:0.1em;}
+#entrenar #background-wrapper #plans-result > ul > li .result-wrapper .result-header .title .subtitle{color:#f7d72b;font-size:16px;font-family:"Tungsten A","Tungsten B";letter-spacing:0.3em;}
+#entrenar #background-wrapper #plans-result > ul > li .result-header{position:relative;height:160px;}
+#entrenar #background-wrapper #plans-result > ul > li .result-header .plan-label{position:absolute;width:150px;height:100%;line-height:160px;right:0;font-family:"Tungsten A","Tungsten B";font-weight:500;font-style:normal;font-size:18px;letter-spacing:0.08em;color:#362f2d;}
+#entrenar #background-wrapper #plans-result > ul > li .result-header .plan-label .arrow-container{height:100%;width:40px;}
+#entrenar #background-wrapper #plans-result > ul > li .result-header .plan-label .arrow-container:after{content:"";display:block;top:0px;bottom:0;margin:auto 0;left:64px;right:30px;position:absolute;width:39px;height:7px;background:url(../../img/icon/arrows.png) no-repeat scroll transparent;float:left;background-position:-20px -46px;}
+#entrenar #background-wrapper #plans-result > ul > li .result-footer{height:40px;width:100%;display:block;background:transparent;bottom:0;position:relative;margin:auto;}
+#entrenar #background-wrapper #plans-result > ul > li .result-footer ul:first-child{border-left:1px solid #212224;}
+#entrenar #background-wrapper #plans-result > ul > li .result-footer ul li{width:23.5%;display:inline-block;border-right:1px solid #212224;}
+#entrenar #background-wrapper #plans-result > ul > li .result-footer ul li span{width:50%;display:block;height:40px;color:#888888;line-height:40px;font-size:11px;left:0;right:0;margin:auto;}
+#entrenar #background-wrapper #plans-result > ul > li .result-footer ul li span em{font-family:"Tungsten A","Tungsten B";color:#f7d42c;font-size:14px;padding-left:15px;letter-spacing:0.2em;line-height:19px;top:0;bottom:0;margin:auto;position:absolute;width:80px;height:20px;}
+#entrenar #background-wrapper #plans-result > ul li.visible{display:block;}
+header{width:100%;height:100%;}
+header .content{margin:auto;position:absolute;top:20px;left:0;bottom:0;right:0;height:600px;width:680px;height:370px;}
+header .content-left,header .content-right{position:relative;float:left;}
+header .content-left{width:155px;}
+header .content-right{width:675px;}
+header h1{font-family:"Tungsten A","Tungsten B";font-weight:600;font-style:normal;font-size:170px;color:#f6d641;text-transform:uppercase;padding:0;margin-top:-4px;margin-bottom:53px;letter-spacing:0.089em;left:-6px;position:relative;}
+header h2{font-size:24px;left:0;padding-bottom:17px;letter-spacing:0.27em;}
+header p{font-size:14px;letter-spacing:0.014em;padding-bottom:29px;line-height:1.75em;margin-top:4px;}
+header .left,header .right{position:relative;width:297px;height:252px;float:left;}
+header .left{margin-right:75px;}
+.diagonal{width:40%;left:-10%;overflow:hidden;height:100%;transform:skewX(-30deg);-webkit-transform:skewX(-30deg);-ms-transform:skewX(-30deg);position:absolute;float:left;overflow:hidden;background-color:#212224;}
+.diagonal-bg{width:200%;height:100%;transform:skewX(30deg);-webkit-transform:skewX(30deg);-ms-transform:skewX(30deg);position:absolute;float:left;overflow:hidden;background-color:#212224;}
+.diagonal-bg img{height:100%;min-height:700px;width:auto;position:relative;left:-140px;}
+.bt-scroll-next-slide{display:block;width:57px;margin-top:6px;}
+.bt-scroll-next-slide span.top,.bt-scroll-next-slide span.bottom{width:50px;}
+#btn-show-test{color:#f7d72b;border-color:#f7d72b;margin-top:5px;}
+#btn-show-test:hover{background:#212224;color:#f6d641;border-color:#212224;}
+.arrow{float:right!important;width:7px!important;}
+.plans-list-label{height:100%;float:left;line-height:94px;font-size:15px;font-weight:400;letter-spacing:0.1em;font-family:"Tungsten A","Tungsten B";}
+@media screen and (min-width:1300px){
+  body #entrenar header .diagonal img{left:-115px;}
+}

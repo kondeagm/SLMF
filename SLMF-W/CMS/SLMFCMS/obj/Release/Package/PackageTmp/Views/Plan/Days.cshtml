@@ -1,0 +1,94 @@
+﻿@model SLMFCMS.Models.Plan
+@using System.Web.Helpers
+@{var grid = new WebGrid(Model.DiasDelPlan, defaultSort: "ID", canPage: true, rowsPerPage: 6,
+    selectionFieldName: "ID", ajaxUpdateContainerId: "gridContent");}
+@{int noPaginas = grid.PageCount;}
+@{int nPagina = grid.PageIndex + 1;}
+@{int nRecords = grid.TotalRowCount;}
+@{
+    ViewBag.Title = "Calendario del Plan";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div id="row-header-index" class="row">
+            <div id="div-titulo" class="col-md-7">
+                <h4>@ViewBag.Title</h4>
+            </div>
+            <div class="col-md-4">
+                &nbsp;
+            </div>
+            <div id="div-search" class="col-md-1">
+                @Html.ActionLink(" ", "Index", "Plan", routeValues: new { pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-arrow-left fa-2x btn-accion-inv", @title = "Regresar" })
+            </div>
+        </div>
+    </div>
+</div>
+<hr id="header-divisor" />
+<div class="row">
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.DisciplinaID)
+    </div>
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.Nombre)
+    </div>
+    <div class="col-md-8 lbltitulo">
+        @Html.LabelFor(model => model.Descripcion)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.Disciplina.Nombre)
+    </div>
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+    <div class="col-md-8 txt-area-display-with-border area-border-8-4">
+        @Html.DisplayFor(model => model.Descripcion)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row row-detalle-add">
+    <div class="col-md-12">
+        <span>
+            @Html.ActionLink(" ", "Create", "PlanDias", routeValues: new { pagina = ViewBag.Pagina, page = ViewBag.Page, plan = Model.ID }, htmlAttributes: new { @class = "fa fa-plus-square fa-2x btn-accion", @title = "Agrega un Día de Entrenamiento al Plan" })
+        </span>
+        @Html.LabelFor(model => model.DiasDelPlan, htmlAttributes: new { @class = "lbltitulo" })
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        @if (noPaginas > 0)
+        {
+            @grid.GetHtml(tableStyle: "table webGrid",
+                mode: WebGridPagerModes.NextPrevious,
+                headerStyle: "webGridHeader webGridHeaderBack",
+                fillEmptyRows: true,
+                alternatingRowStyle: "",
+                selectedRowStyle: "",
+                previousText: "Previo",
+                nextText: "Siguiente",
+                columns: grid.Columns(
+                     grid.Column("Dia", header: "Dia", canSort: true, style: "txt-center"),
+                grid.Column("Rutina.Nombre", "Rutina", canSort: true),
+                grid.Column("Dieta.Nombre", "Dieta", canSort: true),
+                grid.Column("ProTip.Nombre", "Pro-Tip", canSort: true),
+                     grid.Column("NoEjercicios", "Ejercicios", canSort: true, style: "txt-center"),
+                grid.Column("", header: "", canSort: false, style: "columnActionwebGrid",
+                    format:
+                    @<text>
+                        @Html.ActionLink(" ", "Edit", "PlanDias", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-pencil-square fa-2x btn-accion", @title = "Editar el día del Plan" })
+                        @Html.ActionLink(" ", "Exercices", "PlanDias", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-cubes fa-2x btn-accion " + item.CSSSinEjercicios, @title = "Ejercicios del día del Plan" })
+                        @if (item.EjerciciosDelDia.Count == 0)
+                        {
+                            @Html.ActionLink(" ", "Delete", "PlanDias", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-minus-square fa-2x btn-accion", @title = "Borrar el día del Plan" })
+                        }
+                    </text>)
+                                                                                   )
+                                                                               )
+        }
+    </div>
+</div>

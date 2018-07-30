@@ -1,0 +1,937 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\wworks\2016\SLMF\SITE\Instalador</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>05/17/2016 15:56:26</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>05/17/2016 16:02:04</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>05/17/2016 16:02:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>05/17/2016 15:48:33</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>05/17/2016 15:56:27</publishTime>
+    </File>
+    <File Include="bin/SLMFSITE.dll">
+      <publishTime>05/27/2016 13:58:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>05/17/2016 15:48:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>05/17/2016 15:48:33</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>05/17/2016 15:48:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>05/17/2016 15:48:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>05/17/2016 15:48:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>05/17/2016 15:48:33</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>05/17/2016 15:48:33</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>05/17/2016 15:56:27</publishTime>
+    </File>
+    <File Include="Content/css/404/main.css">
+      <publishTime>05/25/2016 11:43:13</publishTime>
+    </File>
+    <File Include="Content/css/about/main.css">
+      <publishTime>05/25/2016 11:43:13</publishTime>
+    </File>
+    <File Include="Content/css/competir/main.css">
+      <publishTime>05/25/2016 11:43:13</publishTime>
+    </File>
+    <File Include="Content/css/comunidad-slmf/main.css">
+      <publishTime>05/25/2016 11:43:13</publishTime>
+    </File>
+    <File Include="Content/css/dashboard/main.css">
+      <publishTime>05/25/2016 11:43:13</publishTime>
+    </File>
+    <File Include="Content/css/entrenar/main.css">
+      <publishTime>05/25/2016 11:43:13</publishTime>
+    </File>
+    <File Include="Content/css/home/main.css">
+      <publishTime>05/25/2016 11:43:13</publishTime>
+    </File>
+    <File Include="Content/css/layout.css">
+      <publishTime>05/25/2016 11:43:13</publishTime>
+    </File>
+    <File Include="Content/css/potenciar/main.css">
+      <publishTime>05/25/2016 11:43:13</publishTime>
+    </File>
+    <File Include="Content/css/potenciar/main.css.map">
+      <publishTime>05/25/2016 11:43:13</publishTime>
+    </File>
+    <File Include="Content/css/slmf-labs/main.css">
+      <publishTime>05/25/2016 11:43:13</publishTime>
+    </File>
+    <File Include="Content/css/slmf-team-file/main.css">
+      <publishTime>05/25/2016 11:43:13</publishTime>
+    </File>
+    <File Include="Content/css/slmf-team/main.css">
+      <publishTime>05/25/2016 11:43:13</publishTime>
+    </File>
+    <File Include="Content/fonts/295CF1_B_0.eot">
+      <publishTime>05/25/2016 11:43:16</publishTime>
+    </File>
+    <File Include="Content/fonts/295CF1_B_0.ttf">
+      <publishTime>05/25/2016 11:43:16</publishTime>
+    </File>
+    <File Include="Content/fonts/295CF1_B_0.woff">
+      <publishTime>05/25/2016 11:43:15</publishTime>
+    </File>
+    <File Include="Content/fonts/29D657_0_0.eot">
+      <publishTime>05/25/2016 11:43:15</publishTime>
+    </File>
+    <File Include="Content/fonts/29D657_0_0.ttf">
+      <publishTime>05/25/2016 11:43:16</publishTime>
+    </File>
+    <File Include="Content/fonts/29D657_0_0.woff">
+      <publishTime>05/25/2016 11:43:15</publishTime>
+    </File>
+    <File Include="Content/fonts/2AF262_0_0.eot">
+      <publishTime>05/25/2016 11:43:15</publishTime>
+    </File>
+    <File Include="Content/fonts/2AF262_0_0.ttf">
+      <publishTime>05/25/2016 11:43:15</publishTime>
+    </File>
+    <File Include="Content/fonts/2AF262_0_0.woff">
+      <publishTime>05/25/2016 11:43:14</publishTime>
+    </File>
+    <File Include="Content/fonts/2AF293_0_0.eot">
+      <publishTime>05/25/2016 11:43:14</publishTime>
+    </File>
+    <File Include="Content/fonts/2AF293_0_0.ttf">
+      <publishTime>05/25/2016 11:43:15</publishTime>
+    </File>
+    <File Include="Content/fonts/2AF293_0_0.woff">
+      <publishTime>05/25/2016 11:43:14</publishTime>
+    </File>
+    <File Include="Content/fonts/slmf_icons-webfont.eot">
+      <publishTime>05/25/2016 11:43:14</publishTime>
+    </File>
+    <File Include="Content/fonts/slmf_icons-webfont.svg">
+      <publishTime>05/25/2016 11:43:14</publishTime>
+    </File>
+    <File Include="Content/fonts/slmf_icons-webfont.ttf">
+      <publishTime>05/25/2016 11:43:14</publishTime>
+    </File>
+    <File Include="Content/fonts/slmf_icons-webfont.woff">
+      <publishTime>05/25/2016 11:43:14</publishTime>
+    </File>
+    <File Include="Content/fonts/slmf_normal-webfont.eot">
+      <publishTime>05/25/2016 11:43:14</publishTime>
+    </File>
+    <File Include="Content/fonts/slmf_normal-webfont.svg">
+      <publishTime>05/25/2016 11:43:14</publishTime>
+    </File>
+    <File Include="Content/fonts/slmf_normal-webfont.ttf">
+      <publishTime>05/25/2016 11:43:14</publishTime>
+    </File>
+    <File Include="Content/fonts/slmf_normal-webfont.woff">
+      <publishTime>05/25/2016 11:43:14</publishTime>
+    </File>
+    <File Include="Content/fonts/slmf_normal-webfont.woff2">
+      <publishTime>05/25/2016 11:43:13</publishTime>
+    </File>
+    <File Include="Content/img/about/background-tile.jpg">
+      <publishTime>05/25/2016 11:43:16</publishTime>
+    </File>
+    <File Include="Content/img/about/center_background.jpg">
+      <publishTime>05/25/2016 11:43:17</publishTime>
+    </File>
+    <File Include="Content/img/about/corona.png">
+      <publishTime>05/25/2016 11:43:16</publishTime>
+    </File>
+    <File Include="Content/img/about/franjas.png">
+      <publishTime>05/25/2016 11:43:16</publishTime>
+    </File>
+    <File Include="Content/img/about/gray_mask.png">
+      <publishTime>05/25/2016 11:43:16</publishTime>
+    </File>
+    <File Include="Content/img/about/left-background.jpg">
+      <publishTime>05/25/2016 11:43:16</publishTime>
+    </File>
+    <File Include="Content/img/about/logo.png">
+      <publishTime>05/25/2016 11:43:16</publishTime>
+    </File>
+    <File Include="Content/img/about/morriz-medal.png">
+      <publishTime>05/25/2016 11:43:16</publishTime>
+    </File>
+    <File Include="Content/img/about/right-background.jpg">
+      <publishTime>05/25/2016 11:43:16</publishTime>
+    </File>
+    <File Include="Content/img/about/strong-nutrition.png">
+      <publishTime>05/25/2016 11:43:16</publishTime>
+    </File>
+    <File Include="Content/img/about/yellow_mask.png">
+      <publishTime>05/25/2016 11:43:16</publishTime>
+    </File>
+    <File Include="Content/img/bg-gradient.jpg">
+      <publishTime>05/25/2016 11:43:16</publishTime>
+    </File>
+    <File Include="Content/img/competir/background.jpg">
+      <publishTime>05/25/2016 11:43:17</publishTime>
+    </File>
+    <File Include="Content/img/competir/bbd-a-1.png">
+      <publishTime>05/25/2016 11:43:17</publishTime>
+    </File>
+    <File Include="Content/img/competir/bbd-b-1.png">
+      <publishTime>05/25/2016 11:43:17</publishTime>
+    </File>
+    <File Include="Content/img/competir/bbd-c-1.png">
+      <publishTime>05/25/2016 11:43:17</publishTime>
+    </File>
+    <File Include="Content/img/competir/cft-a-1.png">
+      <publishTime>05/25/2016 11:43:17</publishTime>
+    </File>
+    <File Include="Content/img/competir/cft-b-1.png">
+      <publishTime>05/25/2016 11:43:17</publishTime>
+    </File>
+    <File Include="Content/img/competir/cft-c-1.png">
+      <publishTime>05/25/2016 11:43:17</publishTime>
+    </File>
+    <File Include="Content/img/competir/dash-tile.png">
+      <publishTime>05/25/2016 11:43:17</publishTime>
+    </File>
+    <File Include="Content/img/competir/mma-a-1.png">
+      <publishTime>05/25/2016 11:43:17</publishTime>
+    </File>
+    <File Include="Content/img/competir/mma-b-1.png">
+      <publishTime>05/25/2016 11:43:17</publishTime>
+    </File>
+    <File Include="Content/img/competir/mma-b-2.png">
+      <publishTime>05/25/2016 11:43:17</publishTime>
+    </File>
+    <File Include="Content/img/competir/mma-c-1.png">
+      <publishTime>05/25/2016 11:43:17</publishTime>
+    </File>
+    <File Include="Content/img/competir/mma-c-2.png">
+      <publishTime>05/25/2016 11:43:17</publishTime>
+    </File>
+    <File Include="Content/img/competir/pin.png">
+      <publishTime>05/25/2016 11:43:17</publishTime>
+    </File>
+    <File Include="Content/img/comunidad-slmf/bg.jpg">
+      <publishTime>05/25/2016 11:43:18</publishTime>
+    </File>
+    <File Include="Content/img/comunidad-slmf/instagram.svg">
+      <publishTime>05/25/2016 11:43:17</publishTime>
+    </File>
+    <File Include="Content/img/comunidad-slmf/twitter.svg">
+      <publishTime>05/25/2016 11:43:17</publishTime>
+    </File>
+    <File Include="Content/img/comunidad-slmf/youtube.svg">
+      <publishTime>05/25/2016 11:43:17</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/anatomia/bg-anatomia-brazo-hombro-0.jpg">
+      <publishTime>05/25/2016 11:43:21</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/anatomia/bg-anatomia-brazo-hombro-1.jpg">
+      <publishTime>05/25/2016 11:43:20</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/anatomia/bg-anatomia-espalda-0.jpg">
+      <publishTime>05/25/2016 11:43:20</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/anatomia/bg-anatomia-espalda-1.jpg">
+      <publishTime>05/25/2016 11:43:20</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/anatomia/bg-anatomia-pecho-abdomen-0.jpg">
+      <publishTime>05/25/2016 11:43:20</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/anatomia/bg-anatomia-pecho-abdomen-1.jpg">
+      <publishTime>05/25/2016 11:43:20</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/anatomia/bg-anatomia-pierna-0.jpg">
+      <publishTime>05/25/2016 11:43:19</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/anatomia/bg-anatomia-pierna-1.jpg">
+      <publishTime>05/25/2016 11:43:19</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/anatomia/muscle.jpg">
+      <publishTime>05/25/2016 11:43:19</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/anatomia/muscle_a.png">
+      <publishTime>05/25/2016 11:43:18</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/anatomia/muscle_b.png">
+      <publishTime>05/25/2016 11:43:19</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/anatomia/muscle_c.png">
+      <publishTime>05/25/2016 11:43:18</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/anatomia/muscle_d.png">
+      <publishTime>05/25/2016 11:43:18</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/anatomia/muscle_e.png">
+      <publishTime>05/25/2016 11:43:18</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/anatomia/muscle_gray.png">
+      <publishTime>05/25/2016 11:43:18</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/comidas/arrows.png">
+      <publishTime>05/25/2016 11:43:21</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/comidas/b1-1.jpg">
+      <publishTime>05/25/2016 11:43:21</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/comidas/b1.jpg">
+      <publishTime>05/25/2016 11:43:21</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/comidas/b2.jpg">
+      <publishTime>05/25/2016 11:43:21</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/comidas/b3-1.jpg">
+      <publishTime>05/25/2016 11:43:21</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/comidas/b3.jpg">
+      <publishTime>05/25/2016 11:43:21</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/comidas/b4.jpg">
+      <publishTime>05/25/2016 11:43:21</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/comidas/banner.png">
+      <publishTime>05/25/2016 11:43:21</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/comidas/slider.jpg">
+      <publishTime>05/25/2016 11:43:20</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/comidas/slider2.jpg">
+      <publishTime>05/25/2016 11:43:20</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/cursor-arrow-left.cur">
+      <publishTime>05/25/2016 11:43:18</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/cursor-arrow-left.png">
+      <publishTime>05/25/2016 11:43:18</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/cursor-arrow-right.cur">
+      <publishTime>05/25/2016 11:43:18</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/cursor-arrow-right.png">
+      <publishTime>05/25/2016 11:43:18</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/dash-tile.png">
+      <publishTime>05/25/2016 11:43:18</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/dash-title-active.png">
+      <publishTime>05/25/2016 11:43:18</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/entrenamiento/SLMF_TrainingThumbs1.jpg">
+      <publishTime>05/25/2016 11:43:21</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/entrenamiento/SLMF_TrainingThumbs2.jpg">
+      <publishTime>05/25/2016 11:43:21</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/info/bg-bbd.jpg">
+      <publishTime>05/25/2016 11:43:22</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/info/bg.jpg">
+      <publishTime>05/25/2016 11:43:21</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/info/fitness.jpg">
+      <publishTime>05/25/2016 11:43:22</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/info/fitness2.jpg">
+      <publishTime>05/25/2016 11:43:21</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/_cursor-arrow-left.cur">
+      <publishTime>05/25/2016 11:43:18</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/_cursor-arrow-left.png">
+      <publishTime>05/25/2016 11:43:18</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/_cursor-arrow-right.cur">
+      <publishTime>05/25/2016 11:43:18</publishTime>
+    </File>
+    <File Include="Content/img/dashboard/_cursor-arrow-right.png">
+      <publishTime>05/25/2016 11:43:18</publishTime>
+    </File>
+    <File Include="Content/img/entrenar/definicion_0.svg">
+      <publishTime>05/25/2016 11:43:22</publishTime>
+    </File>
+    <File Include="Content/img/entrenar/definicion_1.svg">
+      <publishTime>05/25/2016 11:43:22</publishTime>
+    </File>
+    <File Include="Content/img/entrenar/volumen_0.svg">
+      <publishTime>05/25/2016 11:43:22</publishTime>
+    </File>
+    <File Include="Content/img/entrenar/volumen_1.svg">
+      <publishTime>05/25/2016 11:43:22</publishTime>
+    </File>
+    <File Include="Content/img/favicon.png">
+      <publishTime>05/25/2016 11:43:16</publishTime>
+    </File>
+    <File Include="Content/img/home/bg-bbd.jpg">
+      <publishTime>05/25/2016 11:43:24</publishTime>
+    </File>
+    <File Include="Content/img/home/bg-kai-medium.jpg">
+      <publishTime>05/25/2016 11:43:23</publishTime>
+    </File>
+    <File Include="Content/img/home/bg-kai.jpg">
+      <publishTime>05/25/2016 11:43:23</publishTime>
+    </File>
+    <File Include="Content/img/home/bg-labs-medium.jpg">
+      <publishTime>05/25/2016 11:43:23</publishTime>
+    </File>
+    <File Include="Content/img/home/bg-labs.jpg">
+      <publishTime>05/25/2016 11:43:23</publishTime>
+    </File>
+    <File Include="Content/img/home/bg-slmf-medium.jpg">
+      <publishTime>05/25/2016 11:43:23</publishTime>
+    </File>
+    <File Include="Content/img/home/bg-slmf.jpg">
+      <publishTime>05/25/2016 11:43:22</publishTime>
+    </File>
+    <File Include="Content/img/home/kai-1600x1000.jpg">
+      <publishTime>05/25/2016 11:43:23</publishTime>
+    </File>
+    <File Include="Content/img/home/slmf-labsl-logo.svg">
+      <publishTime>05/25/2016 11:43:22</publishTime>
+    </File>
+    <File Include="Content/img/icon/arrows-updown.png">
+      <publishTime>05/25/2016 11:43:24</publishTime>
+    </File>
+    <File Include="Content/img/icon/arrows.png">
+      <publishTime>05/25/2016 11:43:24</publishTime>
+    </File>
+    <File Include="Content/img/icon/slmf-simple.svg">
+      <publishTime>05/25/2016 11:43:24</publishTime>
+    </File>
+    <File Include="Content/img/pattern.png">
+      <publishTime>05/25/2016 11:43:16</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/background.jpg">
+      <publishTime>05/25/2016 11:43:25</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/bottles/bottle_1.png">
+      <publishTime>05/25/2016 11:43:26</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/bottles/bottle_2.png">
+      <publishTime>05/25/2016 11:43:26</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/bottles/bottle_3.png">
+      <publishTime>05/25/2016 11:43:25</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/food-thumbs/desarrollo.png">
+      <publishTime>05/25/2016 11:43:27</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/food-thumbs/energia.png">
+      <publishTime>05/25/2016 11:43:27</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/food-thumbs/reguladores.png">
+      <publishTime>05/25/2016 11:43:27</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/food/apples.png">
+      <publishTime>05/25/2016 11:43:27</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/food/apples_.png">
+      <publishTime>05/25/2016 11:43:27</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/food/berries.png">
+      <publishTime>05/25/2016 11:43:27</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/food/broccoli.png">
+      <publishTime>05/25/2016 11:43:26</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/food/cheese.png">
+      <publishTime>05/25/2016 11:43:27</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/food/meat.png">
+      <publishTime>05/25/2016 11:43:26</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/food/salmon.png">
+      <publishTime>05/25/2016 11:43:26</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/food/spaguetti.png">
+      <publishTime>05/25/2016 11:43:26</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/icon_bullet_items.png">
+      <publishTime>05/25/2016 11:43:25</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/icon_hexagon.png">
+      <publishTime>05/25/2016 11:43:25</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/icon_section_nutrientes.png">
+      <publishTime>05/25/2016 11:43:25</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/icon_section_proceso.png">
+      <publishTime>05/25/2016 11:43:25</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/icon_section_suplementos.png">
+      <publishTime>05/25/2016 11:43:25</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/slmf-buy-over.svg">
+      <publishTime>05/25/2016 11:43:25</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/slmf-buy.svg">
+      <publishTime>05/25/2016 11:43:24</publishTime>
+    </File>
+    <File Include="Content/img/potenciar/wood_background.png">
+      <publishTime>05/25/2016 11:43:25</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/bg.jpg">
+      <publishTime>05/25/2016 11:43:30</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/LABS_ardor_figure.png">
+      <publishTime>05/25/2016 11:43:31</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/LABS_ardor_figure_xl.png">
+      <publishTime>05/25/2016 11:43:30</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/LABS_bold_figure.png">
+      <publishTime>05/25/2016 11:43:30</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/LABS_desarrollo_logo.png">
+      <publishTime>05/25/2016 11:43:30</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/LABS_desarrollo_text.png">
+      <publishTime>05/25/2016 11:43:29</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/LABS_energia_logo.png">
+      <publishTime>05/25/2016 11:43:29</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/LABS_energia_text.png">
+      <publishTime>05/25/2016 11:43:29</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/LABS_energy_revival_figure.png">
+      <publishTime>05/25/2016 11:43:30</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/LABS_especiales_figure.png">
+      <publishTime>05/25/2016 11:43:29</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/LABS_home_bg.png">
+      <publishTime>05/25/2016 11:43:29</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/LABS_home_figures.png">
+      <publishTime>05/25/2016 11:43:29</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/LABS_hysteria_figure.png">
+      <publishTime>05/25/2016 11:43:29</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/LABS_hysteria_figure_xl.png">
+      <publishTime>05/25/2016 11:43:29</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/LABS_provoke_figure.png">
+      <publishTime>05/25/2016 11:43:28</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/LABS_provoke_figure_xl.png">
+      <publishTime>05/25/2016 11:43:28</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/LABS_regula_text.png">
+      <publishTime>05/25/2016 11:43:28</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/LABS_relief_figure.png">
+      <publishTime>05/25/2016 11:43:28</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/LABS_temper_figure.png">
+      <publishTime>05/25/2016 11:43:28</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/LABS_tenacious_figure.png">
+      <publishTime>05/25/2016 11:43:28</publishTime>
+    </File>
+    <File Include="Content/img/slmf-labs/slmf-labsl-logo.svg">
+      <publishTime>05/25/2016 11:43:27</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team-file/guirnalda-copa.svg">
+      <publishTime>05/25/2016 11:43:34</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team-file/guirnalda.svg">
+      <publishTime>05/25/2016 11:43:34</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team-file/ifbb-pro.png">
+      <publishTime>05/25/2016 11:43:34</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/bg-tooltip.png">
+      <publishTime>05/25/2016 11:43:34</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/bg.jpg">
+      <publishTime>05/25/2016 11:43:34</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/diagonal.png">
+      <publishTime>05/25/2016 11:43:34</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/ejercicio-fondo-diagonal.png">
+      <publishTime>05/25/2016 11:43:34</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/greene.png">
+      <publishTime>05/25/2016 11:43:33</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/kai.png">
+      <publishTime>05/25/2016 11:43:33</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/pruebadiagonal.png">
+      <publishTime>05/25/2016 11:43:33</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/pruebafondodiagonal.png">
+      <publishTime>05/25/2016 11:43:33</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/SLMF_kai_green.png">
+      <publishTime>05/25/2016 11:43:33</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/SLMF_team_figures.png">
+      <publishTime>05/25/2016 11:43:33</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/SLMF_team_title_greene.png">
+      <publishTime>05/25/2016 11:43:33</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/SLMF_team_title_kai.png">
+      <publishTime>05/25/2016 11:43:33</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_brillo.png">
+      <publishTime>05/25/2016 11:43:33</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_charro_diagonal.jpg">
+      <publishTime>05/25/2016 11:43:33</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_charro_diagonal.png">
+      <publishTime>05/25/2016 11:43:32</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_charro_figure.png">
+      <publishTime>05/25/2016 11:43:32</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_charro_fondo.jpg">
+      <publishTime>05/25/2016 11:43:32</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_charro_text.png">
+      <publishTime>05/25/2016 11:43:32</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_charro_text1.png">
+      <publishTime>05/25/2016 11:43:32</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_charro_text2.png">
+      <publishTime>05/25/2016 11:43:32</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_graham_figure.png">
+      <publishTime>05/25/2016 11:43:32</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_graham_fondo.png">
+      <publishTime>05/25/2016 11:43:32</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_graham_text.png">
+      <publishTime>05/25/2016 11:43:32</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_home_figures1.png">
+      <publishTime>05/25/2016 11:43:32</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_home_figures2.png">
+      <publishTime>05/25/2016 11:43:32</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_home_figures3.png">
+      <publishTime>05/25/2016 11:43:32</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_home_fondo.png">
+      <publishTime>05/25/2016 11:43:31</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_kai_figure.png">
+      <publishTime>05/25/2016 11:43:32</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_kai_fondo.png">
+      <publishTime>05/25/2016 11:43:31</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_kai_text.png">
+      <publishTime>05/25/2016 11:43:31</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_tank_figure.png">
+      <publishTime>05/25/2016 11:43:31</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_tank_fondo.png">
+      <publishTime>05/25/2016 11:43:31</publishTime>
+    </File>
+    <File Include="Content/img/slmf-team/TEAM_tank_text.png">
+      <publishTime>05/25/2016 11:43:31</publishTime>
+    </File>
+    <File Include="Content/img/slmf.svg">
+      <publishTime>05/25/2016 11:43:16</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>05/25/2016 11:43:13</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>05/25/2016 11:43:12</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>05/25/2016 11:43:13</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>05/25/2016 11:43:12</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>05/25/2016 11:43:12</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>05/25/2016 11:43:12</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>05/17/2016 15:48:27</publishTime>
+    </File>
+    <File Include="Models/SLMFDB.edmx.diagram">
+      <publishTime>05/17/2016 16:02:08</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>05/17/2016 16:02:06</publishTime>
+    </File>
+    <File Include="Scripts/about/intro.js">
+      <publishTime>05/25/2016 11:43:10</publishTime>
+    </File>
+    <File Include="Scripts/about/main.js">
+      <publishTime>05/25/2016 11:43:10</publishTime>
+    </File>
+    <File Include="Scripts/about/main.min.js">
+      <publishTime>05/25/2016 11:43:10</publishTime>
+    </File>
+    <File Include="Scripts/about/navigation.js">
+      <publishTime>05/25/2016 11:43:10</publishTime>
+    </File>
+    <File Include="Scripts/about/slide.js">
+      <publishTime>05/25/2016 11:43:10</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>05/25/2016 11:43:10</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>05/25/2016 11:43:10</publishTime>
+    </File>
+    <File Include="Scripts/competir/main.min.js">
+      <publishTime>05/25/2016 11:43:10</publishTime>
+    </File>
+    <File Include="Scripts/comunidad-slmf/main.min.js">
+      <publishTime>05/25/2016 11:43:10</publishTime>
+    </File>
+    <File Include="Scripts/dashboard/main.min.js">
+      <publishTime>05/25/2016 11:43:10</publishTime>
+    </File>
+    <File Include="Scripts/entrenar/main.min.js">
+      <publishTime>05/25/2016 11:45:52</publishTime>
+    </File>
+    <File Include="Scripts/entrenar/_main.min.js">
+      <publishTime>05/18/2016 13:04:44</publishTime>
+    </File>
+    <File Include="Scripts/header.js">
+      <publishTime>05/25/2016 11:43:10</publishTime>
+    </File>
+    <File Include="Scripts/home-discipline/main.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/home-discipline/main.min.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/home-discipline/nav-pilars.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/home/main.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/home/main.min.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/home/nav-disciplines.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.2.3.js">
+      <publishTime>05/25/2016 11:43:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.2.3.min.js">
+      <publishTime>05/25/2016 11:43:09</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.2.3.min.map">
+      <publishTime>05/25/2016 11:43:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>05/25/2016 11:43:09</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>05/25/2016 11:43:09</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>05/25/2016 11:43:09</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>05/25/2016 11:43:09</publishTime>
+    </File>
+    <File Include="Scripts/login/main.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/login/main.js_r">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/main.js">
+      <publishTime>06/23/2016 11:45:18</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.8.3.js">
+      <publishTime>05/25/2016 11:43:09</publishTime>
+    </File>
+    <File Include="Scripts/npm.js">
+      <publishTime>05/25/2016 11:43:09</publishTime>
+    </File>
+    <File Include="Scripts/plugins.js">
+      <publishTime>05/25/2016 11:43:09</publishTime>
+    </File>
+    <File Include="Scripts/potenciar/main.min.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>05/25/2016 11:43:09</publishTime>
+    </File>
+    <File Include="Scripts/respond.matchmedia.addListener.js">
+      <publishTime>05/25/2016 11:43:09</publishTime>
+    </File>
+    <File Include="Scripts/respond.matchmedia.addListener.min.js">
+      <publishTime>05/25/2016 11:43:09</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>05/25/2016 11:43:09</publishTime>
+    </File>
+    <File Include="Scripts/slmf-labs/main.min.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/slmf-team-file/main.min.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/slmf-team/main.min.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/train/filter-test.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/train/main.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/train/main.min.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/vendor/._jquery.html5-placeholder-shim.js">
+      <publishTime>05/25/2016 11:43:12</publishTime>
+    </File>
+    <File Include="Scripts/vendor/froogaloop2.min.js">
+      <publishTime>05/25/2016 11:43:12</publishTime>
+    </File>
+    <File Include="Scripts/vendor/jquery-ui.min.js">
+      <publishTime>05/25/2016 11:43:12</publishTime>
+    </File>
+    <File Include="Scripts/vendor/jquery.gray.min.js">
+      <publishTime>05/25/2016 11:43:12</publishTime>
+    </File>
+    <File Include="Scripts/vendor/jquery.html5-placeholder-shim.js">
+      <publishTime>05/25/2016 11:43:12</publishTime>
+    </File>
+    <File Include="Scripts/vendor/jquery.nicescroll.min.js">
+      <publishTime>05/25/2016 11:43:12</publishTime>
+    </File>
+    <File Include="Scripts/vendor/jquery.scrollmagic.debug.js">
+      <publishTime>05/25/2016 11:43:12</publishTime>
+    </File>
+    <File Include="Scripts/vendor/jquery.scrollmagic.min.js">
+      <publishTime>05/25/2016 11:43:12</publishTime>
+    </File>
+    <File Include="Scripts/vendor/jquery.superscrollorama.min.js">
+      <publishTime>05/25/2016 11:43:12</publishTime>
+    </File>
+    <File Include="Scripts/vendor/jquery.tinyscrollbarMod.min.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/vendor/jquery.touchSwipe.min.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/vendor/modernizr-2.6.2.min.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/vendor/moment.min.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/vendor/raphael.min.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/vendor/scrollHandler.js">
+      <publishTime>05/25/2016 11:43:12</publishTime>
+    </File>
+    <File Include="Scripts/vendor/ScrollToPlugin_1.7.3.min.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/vendor/underscore-min.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/vendor/waypoints.min.js">
+      <publishTime>05/25/2016 11:43:11</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>05/25/2016 11:46:06</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>05/25/2016 11:43:08</publishTime>
+    </File>
+    <File Include="Views/Home/Competir.cshtml">
+      <publishTime>05/25/2016 11:43:08</publishTime>
+    </File>
+    <File Include="Views/Home/Comunidad.cshtml">
+      <publishTime>05/25/2016 11:43:08</publishTime>
+    </File>
+    <File Include="Views/Home/Disciplina.cshtml">
+      <publishTime>05/25/2016 11:43:08</publishTime>
+    </File>
+    <File Include="Views/Home/Entrenar.cshtml">
+      <publishTime>05/25/2016 11:43:08</publishTime>
+    </File>
+    <File Include="Views/Home/Error400.cshtml">
+      <publishTime>05/25/2016 11:43:08</publishTime>
+    </File>
+    <File Include="Views/Home/Error401.cshtml">
+      <publishTime>05/25/2016 11:43:08</publishTime>
+    </File>
+    <File Include="Views/Home/Error404.cshtml">
+      <publishTime>05/25/2016 11:43:08</publishTime>
+    </File>
+    <File Include="Views/Home/FailError.cshtml">
+      <publishTime>05/25/2016 11:43:07</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>05/25/2016 11:43:08</publishTime>
+    </File>
+    <File Include="Views/Home/Plan.cshtml">
+      <publishTime>05/25/2016 11:43:07</publishTime>
+    </File>
+    <File Include="Views/Home/Potenciar.cshtml">
+      <publishTime>05/25/2016 11:43:07</publishTime>
+    </File>
+    <File Include="Views/Home/SLMF_Labs.cshtml">
+      <publishTime>06/23/2016 11:42:29</publishTime>
+    </File>
+    <File Include="Views/Home/SLMF_Team.cshtml">
+      <publishTime>05/25/2016 11:43:07</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>05/18/2016 13:04:42</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>05/25/2016 11:43:08</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>05/25/2016 11:43:07</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>05/25/2016 11:43:07</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/23/2016 11:46:43</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

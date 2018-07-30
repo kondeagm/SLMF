@@ -1,0 +1,61 @@
+﻿@model SLMFCMS.Models.Tempo
+@using System.Web.Helpers
+@{
+    ViewBag.Title = "Eliminar el Tiempo de Alimentación";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12">
+            <div id="row-header-index" class="row">
+                <div id="div-titulo" class="col-md-7">
+                    <h4>@ViewBag.Title</h4>
+                </div>
+                <div class="col-md-3">
+                    &nbsp;
+                </div>
+                <div class="col-md-1">
+                    @if (Model.DietasConElTempo.Count == 0)
+                    {
+                        <button class="btn btn-delete" type="submit" title="Eliminar">Eliminar</button>
+                    }
+                </div>
+                <div id="div-search" class="col-md-1">
+                    @Html.ActionLink("Cancelar", "Index", "Tempo", routeValues: new { pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "btn btn-cancel", @title = "Cancelar" })
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<hr id="header-divisor" />
+<div class="row">
+    <div class="col-md-1 lbltitulo">
+        @Html.LabelFor(model => model.Secuencia)
+    </div>
+    <div class="col-md-1 lbltitulo">
+        @Html.LabelFor(model => model.Prefijo)
+    </div>
+    <div class="col-md-4 lbltitulo">
+        @Html.LabelFor(model => model.Nombre)
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-1 txt-area-display-with-border area-border-1">
+        @Html.DisplayFor(model => model.Secuencia)
+    </div>
+    <div class="col-md-1 txt-area-display-with-border area-border-1">
+        @Html.DisplayFor(model => model.Prefijo)
+    </div>
+    <div class="col-md-4 txt-area-display-with-border area-border-4">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+    <div class="col-md-1">
+        &nbsp;
+    </div>
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.Complementario)
+        @Html.DisplayFor(model => model.Complementario)
+    </div>
+</div>

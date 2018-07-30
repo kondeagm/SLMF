@@ -1,0 +1,83 @@
+﻿@model SLMFCMS.Models.Evento
+@using System.Web.Helpers
+@{
+    ViewBag.Title = "Eliminar el Evento";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12">
+            <div id="row-header-index" class="row">
+                <div id="div-titulo" class="col-md-7">
+                    <h4>@ViewBag.Title</h4>
+                </div>
+                <div class="col-md-3">
+                    &nbsp;
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-delete" type="submit" title="Eliminar">Eliminar</button>
+                </div>
+                <div id="div-search" class="col-md-1">
+                    @Html.ActionLink("Cancelar", "Index", "Evento", routeValues: new { pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "btn btn-cancel", @title = "Cancelar" })
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<hr id="header-divisor" />
+<div class="row">
+    <div class="col-md-3 lbltitulo">
+        @Html.LabelFor(model => model.Disciplina.Nombre)
+    </div>
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.Fecha)
+    </div>
+    <div class="col-md-3 lbltitulo">
+        @Html.LabelFor(model => model.Titulo)
+    </div>
+    <div class="col-md-4 lbltitulo">
+        @Html.LabelFor(model => model.Nombre)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 txt-area-display-with-border area-border-3">
+        @Html.DisplayFor(model => model.Disciplina.Nombre)
+    </div>
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.Fecha)
+    </div>
+    <div class="col-md-3 txt-area-display-with-border area-border-3">
+        @Html.DisplayFor(model => model.Titulo)
+    </div>
+    <div class="col-md-4 txt-area-display-with-border area-border-4">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 lbltitulo">
+        @Html.LabelFor(model => model.Lugar)
+    </div>
+    <div class="col-md-4 lbltitulo">
+        @Html.LabelFor(model => model.Direccion)
+    </div>
+    <div class="col-md-5 lbltitulo">
+        @Html.LabelFor(model => model.URL)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 txt-area-display-with-border area-border-3">
+        @Html.DisplayFor(model => model.Lugar)
+    </div>
+    <div class="col-md-4 txt-area-display-with-border area-border-4">
+        @Html.DisplayFor(model => model.Direccion)
+    </div>
+    <div class="col-md-5 txt-area-display-with-border area-border-5">
+        @Html.DisplayFor(model => model.URL)
+    </div>
+</div>

@@ -1,0 +1,626 @@
+
+body.body-dashboard{overflow:hidden;min-height:600px;}
+.loader2 span{color:#222;}
+.dashboard{width:100%;min-width:1024px;height:100%;position:absolute;float:left;}
+.dashboard span.mask{overflow:hidden;width:100%;height:100%;position:relative;float:left;}
+.dashboard p{font-size:15px;color:#c0c0c0;}
+.dashboard .bt-scroll-next-slide{display:block;right:0;top:100%;position:absolute;margin-top:-120px;z-index:20;cursor:pointer;}
+.dashboard .bt-back-arrow .bottom .text{color:#fff;}
+.dashboard .bt-back-arrow .top .text{color:#f6d641;}
+.dashboard .bt-back-arrow{left:15px;}
+.dashboard .bt-back-arrow .text,.dashboard .bt-back-arrow .arrow-content{opacity:1;visibility:visible;}
+.dashboard .dashboard-scroll{margin:0 0 0 95px;position:relative;height:100%;overflow-x:hidden;background:url(../../img/bg-gradient.jpg) repeat-x scroll 0 0 #393939;background-size:contain;}
+.dashboard .dashboard-wraper{-webkit-transform:translateZ(0);width:400%;height:100%;position:relative;z-index:1;}
+.dashboard section.wraper{position:relative;width:25%;height:100%;min-height:600px;float:left;overflow:hidden;}
+.dashboard .dashboard-nav{position:absolute;right:0;width:95px;height:100%;background-color:#474747;z-index:1;}
+.dashboard .dashboard-nav li{text-align:center;}
+.dashboard .dashboard-nav a{float:left;width:100%;height:50px;line-height:50px;background-color:#474747;}
+.dashboard .dashboard-nav a.active{color:#f6d641;}
+.dashboard .dashboard-nav a:hover{background-color:#f6d641;color:#474747;}
+.dashboard .diagonal{height:100%;transform:skewX(-30deg);-webkit-transform:skewX(-30deg);-ms-transform:skewX(-30deg);position:absolute;float:left;overflow:hidden;background-color:transparent;}
+.dashboard .diagonal-inverted{height:100%;transform:skewX(30deg);-webkit-transform:skewX(30deg);-ms-transform:skewX(30deg);position:absolute;float:left;overflow:hidden;background-color:transparent;}
+.dashboard .bg{background-attachment:scroll;background-repeat:no-repeat;background-size:auto 100%;}
+.dashboard .shape-left,.dashboard .shape-right{width:600px;height:615px;position:absolute;}
+.dashboard .shape-left{top:0;left:-486px;height:100%;transform:skewX(-30deg);-webkit-transform:skewX(-30deg);-ms-transform:skewX(-30deg);position:absolute;float:left;overflow:hidden;background-color:#393939;}
+.dashboard .shape-right{bottom:0;right:-486px;height:100%;transform:skewX(-30deg);-webkit-transform:skewX(-30deg);-ms-transform:skewX(-30deg);position:absolute;float:left;overflow:hidden;background-color:#393939;}
+.dashboard .list .left,.dashboard .list .left sub,.dashboard .circle-2,.dashboard h5 span{font-family:"Tungsten A","Tungsten B";font-weight:500;font-style:normal;}
+.dashboard .dashboard-overlay-bg{background-color:#020202;opacity:0.9;}
+.dashboard .dashboard-menu,.dashboard .dashboard-overlay-close{display:none;position:fixed;left:128px;top:30px;z-index:100;}
+.dashboard .dashboard-menu .circle,.dashboard .dashboard-overlay-close .circle{position:absolute;width:27px;height:27px;float:left;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;border:2px solid #fff;top:-6px;}
+.dashboard .dashboard-menu a,.dashboard .dashboard-overlay-close a{position:relative;padding:0!important;float:left;}
+.dashboard .dashboard-menu a.open,.dashboard .dashboard-menu a.close,.dashboard .dashboard-overlay-close a.open,.dashboard .dashboard-overlay-close a.close{width:80px;height:40px;}
+.dashboard .dashboard-menu a.open span,.dashboard .dashboard-menu a.close span,.dashboard .dashboard-overlay-close a.open span,.dashboard .dashboard-overlay-close a.close span{width:9px;position:relative;float:left;height:1px;margin-bottom:3px;background-color:#fff;top:9px;left:6px;margin-left:3px;margin-right:3px;}
+.dashboard .dashboard-menu a.close,.dashboard .dashboard-overlay-close a.close{top:5px;left:-2px;}
+.dashboard .dashboard-menu a.close .circle,.dashboard .dashboard-overlay-close a.close .circle{top:-11px;left:2px;}
+.dashboard .dashboard-menu a.close span,.dashboard .dashboard-overlay-close a.close span{margin:0;position:absolute;left:9px;top:13px;}
+.dashboard .dashboard-menu a.close span:first-child,.dashboard .dashboard-overlay-close a.close span:first-child{transform:rotate(45deg);-ms-transform:rotate(45deg);-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);}
+.dashboard .dashboard-menu a.close span:last-child,.dashboard .dashboard-overlay-close a.close span:last-child{transform:rotate(-45deg);-ms-transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);}
+.dashboard .dashboard-menu a.close:hover .circle,.dashboard .dashboard-menu a.open:hover .circle,.dashboard .dashboard-overlay-close a.close:hover .circle,.dashboard .dashboard-overlay-close a.open:hover .circle{background-color:#f6d641;border-color:#f6d641;}
+.dashboard .dashboard-menu a.close:hover span,.dashboard .dashboard-menu a.open:hover span,.dashboard .dashboard-overlay-close a.close:hover span,.dashboard .dashboard-overlay-close a.open:hover span{background-color:#000;}
+.dashboard .dashboard-menu a.open h4,.dashboard .dashboard-overlay-close a.open h4{color:white;letter-spacing:0.3em;padding:4px 0 4px 43px;font-size:14px;position:absolute;}
+.dashboard .dashboard-overlay{position:fixed;width:100%;height:100%;z-index:100;top:0;text-align:center;display:none;}
+.dashboard .dashboard-overlay nav{margin:auto;position:absolute;top:0;left:0;bottom:0;right:0;height:600px;height:55px;margin-left:-95px;}
+.dashboard .dashboard-overlay ul{text-align:center;display:inline-block;}
+.dashboard .dashboard-overlay li{display:block;position:relative;float:left;text-align:center;}
+.dashboard .dashboard-overlay a{padding:0 20px;float:left;}
+.dashboard .dashboard-overlay a h4{color:#ccc;}
+.dashboard .dashboard-overlay a:hover h4{color:#fff;}
+.dashboard .dashboard-overlay a:active h4,.dashboard .dashboard-overlay a.active h4{color:#f6d641;}
+.dashboard .dashboard-info .bt-scroll-next-slide{width:96px;}
+.dashboard .dashboard-info .bg{position:absolute;float:left;overflow:hidden;background-color:transparent;background-position:center 0;background-attachment:scroll;transform:scale(1.2,1.2);-ms-transform:scale(1.2,1.2);-webkit-transform:scale(1.2,1.2);-moz-transform:scale(1.2,1.2);-o-transform:scale(1.2,1.2);top:44px;width:100%;height:100%;}
+.dashboard .dashboard-info .shape-right{background-color:#212224;}
+.dashboard .dashboard-info .diagonal-left{background-color:#f6d641;width:1700px;position:absolute;left:-2420px;right:0;margin:auto;z-index:1;}
+.dashboard .dashboard-info .diagonal-center{width:100%;background:#393939;}
+.dashboard .dashboard-info .diagonal-inverted{background-position:center 0;background-attachment:scroll;background-size:cover;width:100%;}
+.dashboard .dashboard-info .container{width:664px;height:553px;top:-14px;}
+.dashboard .dashboard-info .bt-back-arrow{left:-123px;top:-3px;margin-top:0!important;position:relative;width:105px;}
+.dashboard .dashboard-info .bt-back-arrow span.arrow{left:0;}
+.dashboard .dashboard-info .bt-back-arrow span.bottom span.text{color:#fff;}
+.dashboard .dashboard-info .bt-back-arrow span.top span.text{color:#362f2d;}
+.dashboard .dashboard-info .bt-back-arrow span.text{text-shadow:initial;}
+.dashboard .dashboard-info header,.dashboard .dashboard-info .content{width:100%;float:left;}
+.dashboard .dashboard-info .padding{padding-left:40px;}
+.dashboard .dashboard-info p{width:510px;color:#c0c0c0;text-align:center;left:35px;position:relative;padding:0;}
+.dashboard .dashboard-info header{margin-top:34px;position:relative;left:-82px;}
+.dashboard .dashboard-info h1{width:200%;margin:0;padding:0;z-index:2;position:relative;}
+.dashboard .dashboard-info h1 span{position:relative;font-size:150px;left:0;}
+.dashboard .dashboard-info h1 span.second{color:#f6d641;left:32px;}
+.dashboard .dashboard-info h1:last-child{position:absolute;z-index:0;}
+.dashboard .dashboard-info h3{color:#fff;float:left;margin-top:48px;width:100%;font-size:29px;position:relative;z-index:1;}
+.dashboard .dashboard-info ul.data{float:left;width:510px;height:80px;position:absolute;top:100%;margin-top:-80px;left:75px;}
+.dashboard .dashboard-info ul.data li{float:left;width:62px;height:100%;margin:0 54px;position:relative;}
+.dashboard .dashboard-info ul.data .svg svg{transform:scale(0.8,0.8);-ms-transform:scale(0.8,0.8);-webkit-transform:scale(0.8,0.8);-moz-transform:scale(0.8,0.8);-o-transform:scale(0.8,0.8);top:-8px;position:relative;left:12px;}
+.dashboard .dashboard-info ul.data .top{width:100%;height:62px;margin-bottom:4px;}
+.dashboard .dashboard-info ul.data .circle-text{font-size:42px;font-family:"Tungsten A","Tungsten B";color:#fff;position:absolute;width:100%;height:62px;line-height:62px;top:0;text-align:center;}
+.dashboard .dashboard-info ul.data .bottom{width:100%;text-align:center;color:#f6d641;font-size:11px;}
+@media screen and (max-width:1200px) and (max-height:700px){
+  .dashboard-info .bt-back-arrow{left:-70px!important;top:11px!important;}
+}
+.dashboard .dashboard-anatomia{overflow:hidden;background:#212224;}
+.dashboard .dashboard-anatomia .bt-scroll-next-slide{width:130px;}
+.dashboard .dashboard-anatomia .bt-back-arrow{width:77px;left:0;}
+.dashboard .dashboard-anatomia a.bt-close-anatomy:hover .text {
+	color: #f6db58;
+}
+
+.dashboard .dashboard-anatomia .tnt-arrow-animation {
+	-webkit-transition: background-position-x 120ms ease-out;
+    -moz-transition: background-position-x 120ms ease-out;
+    -o-transition: background-position-x 120ms ease-out;
+    transition: background-position-x 120ms ease-out;
+}
+
+.dashboard .dashboard-anatomia .hidden {
+	display: none;
+}
+
+.dashboard .dashboard-anatomia a.bt-close-anatomy:hover .arrow .arrow-content {
+	background-position-x: 6px;
+}
+
+.dashboard .dashboard-anatomia .bt-close-anatomy { width: 110px; height: 20px; position: absolute; left: 45px; top: 75px; z-index: 3;}
+.dashboard .dashboard-anatomia .bt-close-anatomy .arrow {  float: left; position: absolute; top: 6px; }
+.dashboard .dashboard-anatomia .bt-close-anatomy .arrow .arrow-prev-white { background-position: 20px -14px; }
+.dashboard .dashboard-anatomia .bt-close-anatomy .text {
+	float: right;
+	font-family: "Tungsten A","Tungsten B";
+	font-weight: 500;
+	font-style: normal;
+	font-size: 18px;
+	line-height: 1.1em;
+	letter-spacing: 0.08em;
+ }
+
+
+
+ .dashboard .dashboard-anatomia .muscles-info {
+ 	position: absolute;
+ 	width: 100%;
+ 	height: 100%;
+ }
+
+ .dashboard .dashboard-anatomia .muscles-info .spots-group {
+ 	position: absolute;
+ 	width: 1300px;
+	height: 100%;
+	left: 0;
+	right: 0;
+	margin: auto;
+	z-index: 1;
+ }
+
+ .dashboard .dashboard-anatomia .muscles-info .spot {
+ 	position: absolute;
+ 	height: 19px;
+ 	width: 19px;
+ 	border: 1px solid white;
+ 	overflow: hidden;
+ }
+
+.dashboard .dashboard-anatomia .muscles-info .bg {
+	opacity: 0;
+ 	position: absolute;
+ 	width: 100%;
+ 	height: 100%;
+ 	border-radius: 50%;
+ 	background: url('/Content/img/dashboard/anatomia/muscle_a.png') center no-repeat; 	
+ }
+
+ .dashboard .dashboard-anatomia .muscles-info .bg-fill {
+ 	background: white;
+ 	height: 100%;
+ 	width: 100%;
+ 	border-radius: 50%;
+ 	position: absolute;
+ }
+
+.dashboard .dashboard-anatomia .muscles-info .cross {
+ 	position: absolute;
+ 	pointer-events: none;
+ 	width: 100%;
+ 	height: 100%;
+ } 
+
+ .dashboard .dashboard-anatomia .muscles-info .cross-v {
+	position: absolute;
+	width: 1px;
+	height: 7px;
+	top: 0px;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+	background: #f6db58;
+ }
+
+ .dashboard .dashboard-anatomia .muscles-info .cross-h {
+	position: absolute;
+	width: 7px;
+	height: 1px;
+	top: 0px;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+	background: #f6db58;
+ }
+
+ .dashboard .dashboard-anatomia .muscles-info .muscles-title, .dashboard .dashboard-anatomia .muscles-info .wline {
+ 	color: #f6db58;
+	font-size: 44px;
+	margin: 0;
+	top: 110px;
+	left: 100px;
+	text-shadow: 1px 1px 0px #000;
+	z-index: 0;
+	font-family: "Tungsten A","Tungsten B";
+  	letter-spacing: 0.084em;
+  	  line-height: 1em;
+ }
+
+
+ .dashboard .dashboard-anatomia .muscles-info .muscles-title span {
+	font-size: 44px;
+	font-weight: 400;
+ }
+
+.dashboard .dashboard-anatomia .muscles-info .description { 
+	position: absolute;
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+.dashboard .dashboard-anatomia .muscles-info .description .v-center {
+	display: table-cell;
+	vertical-align: middle;
+	padding-top: 20px;
+}
+
+
+
+ .dashboard .dashboard-anatomia .muscles-info .description h3 {
+	color: #f6db58;
+	height: 10px;
+	width: 100%;
+	font-size: 16px;
+	text-align: center;
+	font-weight: 100;
+	letter-spacing: 0.3em;
+	text-shadow: 1px 1px 0px #000;
+	pointer-events: none;
+ }
+
+ .dashboard .dashboard-anatomia .muscles-info .description p {
+ 	color: white;
+	width: 100%;
+	font-size: 14px;
+	text-align: center;
+	font-weight: 100;
+	letter-spacing: 0.01em;
+	line-height: 1.3em;
+	text-shadow: 1px 1px 0px #000;
+	pointer-events: none;
+ }
+
+
+.dashboard .dashboard-anatomia .dashboard-anatomia-min{min-width:1230px;z-index:11;}
+.dashboard .dashboard-anatomia .shape-right{z-index:1;background-color:#393939;}
+.dashboard .dashboard-anatomia .diagonal-left{background-color:#393939;width:1700px;position:absolute;left:-2770px;right:0;margin:auto;}
+.dashboard .dashboard-anatomia .nav-close{width:33.33%;right:initial;}
+.dashboard .dashboard-anatomia .nav-anatomy{top:306px;height:140px;width:33.33%;right:initial;}
+.dashboard .dashboard-anatomia .nav-anatomy-content{width:350px;}
+.dashboard .dashboard-anatomia .nav-anatomy-content ul{margin-left:23px;margin-top:17px;}
+.dashboard .dashboard-anatomia .nav-anatomy-content ul li{list-style:disc inside;color:#f6d641;padding:3px 0;}
+.dashboard .dashboard-anatomia .nav-anatomy-content ul a{color:#818182;line-heignt:1em;}
+.dashboard .dashboard-anatomia .nav-anatomy-content ul a:hover{color:#fff;}
+.dashboard .dashboard-anatomia .nav-anatomy-content ul a:active,.dashboard .dashboard-anatomia .nav-anatomy-content ul a.active{color:#f6d641;}
+.dashboard .dashboard-anatomia .container-body{overflow:hidden;position:absolute;margin:auto;top:0;bottom:0;right:0;width:100%;}
+.dashboard .dashboard-anatomia .slides{width:100%;position:absolute;height:100%;}
+.dashboard .dashboard-anatomia .slide{width:100%;height:100%;display:none;position:absolute;}
+.dashboard .dashboard-anatomia .slide.active{display:block;}
+.dashboard .dashboard-anatomia .slide-left,.dashboard .dashboard-anatomia .slide-right{position:relative;height:100%;float:left;}
+.dashboard .dashboard-anatomia .slide-left{width:33.33%;left:0;z-index:1;}
+.dashboard .dashboard-anatomia .slide-right{width:66.66%;right:0;}
+.dashboard .dashboard-anatomia .slide-bg{background:no-repeat scroll right top transparent;position:absolute;width:100%;height:100%;}
+.dashboard .dashboard-anatomia .slide-bg img{height:1800px;}
+.dashboard .dashboard-anatomia .slide-header{display:none;height:600px;width:350px;}
+.dashboard .dashboard-anatomia .slide-hotspots{width:1400px;width:100%;height:100%;}
+.dashboard .dashboard-anatomia .line{height:1px;background:#b2b2b2;float:left;top:14px;position:relative;}
+.dashboard .dashboard-anatomia .line-1{width:20px;}
+.dashboard .dashboard-anatomia .line-2{width:190px;}
+.dashboard .dashboard-anatomia .hp{width:352px;position:absolute;z-index:3;-webkit-transform-origin:100% 0%;}
+.dashboard .dashboard-anatomia .hp.hp-diagonal-down .line-2{transform:rotate(12deg);-ms-transform:rotate(12deg);-webkit-transform:rotate(12deg);-moz-transform:rotate(12deg);-o-transform:rotate(12deg);transform-origin:0% 50%;-ms-transform-origin:0% 50%;-webkit-transform-origin:0% 50%;-moz-transform-origin:0% 50%;-o-transform-origin:0% 50%;}
+.dashboard .dashboard-anatomia .hp.hp-diagonal-up .line-2{transform:rotate(-12deg);-ms-transform:rotate(-12deg);-webkit-transform:rotate(-12deg);-moz-transform:rotate(-12deg);-o-transform:rotate(-12deg);transform-origin:0% 50%;-ms-transform-origin:0% 50%;-webkit-transform-origin:0% 50%;-moz-transform-origin:0% 50%;-o-transform-origin:0% 50%;}
+.dashboard .dashboard-anatomia .hp-left .circle{right:46px;}
+.dashboard .dashboard-anatomia .hp-left .line{left:-65px;}
+.dashboard .dashboard-anatomia .hp-left .circle-muscle{right:-27px;top:-69px;}
+.dashboard .dashboard-anatomia .hp-left.hp-diagonal-down .circle{right:50px;top:44px;}
+.dashboard .dashboard-anatomia .hp-left.hp-diagonal-down .circle-muscle{right:-23px;top:-28px;}
+.dashboard .dashboard-anatomia .hp-left.hp-diagonal-up .circle{right:50px;top:-37px;}
+.dashboard .dashboard-anatomia .hp-left.hp-diagonal-up .circle-muscle{right:-23px;top:-109px;}
+.dashboard .dashboard-anatomia .hp-right .hp-header{float:right;position:relative;}
+.dashboard .dashboard-anatomia .hp-right .circle{left:-22px;}
+.dashboard .dashboard-anatomia .hp-right .line{right:0;}
+.dashboard .dashboard-anatomia .hp-right .circle-muscle{left:-94px;top:-70px;}
+.dashboard .dashboard-anatomia .hp-right.hp{width:363px;}
+.dashboard .dashboard-anatomia .hp-right.hp-diagonal-down .hp-header{top:41px;position:relative;}
+.dashboard .dashboard-anatomia .hp-right.hp-diagonal-down .line-1{top:54px;left:-4px;}
+.dashboard .dashboard-anatomia .hp-right.hp-diagonal-down .circle{left:-22px;top:2px;}
+.dashboard .dashboard-anatomia .hp-right.hp-diagonal-down .circle-muscle{left:-93px;top:-69px;}
+.dashboard .dashboard-anatomia .hp-right.hp-diagonal-up .hp-header{top:-37px;}
+.dashboard .dashboard-anatomia .hp-right.hp-diagonal-up .line-1{top:-25px;left:-5px;}
+.dashboard .dashboard-anatomia .hp-right.hp-diagonal-up .circle{left:-22px;top:4px;}
+.dashboard .dashboard-anatomia .hp-right.hp-diagonal-up .circle-muscle{left:-94px;top:-69px;}
+.dashboard .dashboard-anatomia .hp-header{width:140px;float:left;}
+.dashboard .dashboard-anatomia .hp-header strong{font-size:16px;letter-spacing:0.35em;}
+.dashboard .dashboard-anatomia .hp-header p{width:100%;}
+.dashboard .dashboard-anatomia .circle{float:left;width:20px;height:20px;position:absolute;border:1px solid #b2b2b2;top:3px;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;}
+.dashboard .dashboard-anatomia .circle span{position:absolute;float:left;background:#f6d641;}
+.dashboard .dashboard-anatomia .circle span.vertical{width:9px;height:1px;left:6px;top:10px;}
+.dashboard .dashboard-anatomia .circle span.horizontal{width:1px;height:9px;top:6px;left:10px;}
+.dashboard .dashboard-anatomia .circle-muscle{width:165px;height:165px;z-index:11;transform:scale(0,0);-ms-transform:scale(0,0);-webkit-transform:scale(0,0);-moz-transform:scale(0,0);-o-transform:scale(0,0);}
+.dashboard .dashboard-anatomia header{width:398px;height:370px;left:-680px;top:-103px;}
+.dashboard .dashboard-anatomia header a.bt-anatomia{position:relative;}
+.dashboard .dashboard-anatomia header p{padding-bottom:32px;}
+.dashboard .dashboard-anatomia header p a{text-decoration:underline;font-size:15px;}
+.dashboard .dashboard-anatomia header p a:hover{color:#f6d641;}
+.dashboard .dashboard-anatomia .padding{padding:0 50px;}
+.dashboard .dashboard-anatomia .bt-big{padding:3px 0;border:1px solid #f6d641;color:#f6d641;font-size:16px;letter-spacing:0.212em;width:135px;float:left;text-align:center;}
+.dashboard .dashboard-anatomia .bt-big:hover{background:#f6d641;color:#212224;}
+.dashboard .dashboard-anatomia h2{padding:0 0 14px 0;margin-top:-24px;}
+.dashboard .dashboard-anatomia h2 span{font-weight:600;font-size:210px;}
+.dashboard .dashboard-anatomia h3{letter-spacing:0.45em;padding-bottom:12px;position:relative; width: 550px;}
+.dashboard .dashboard-anatomia h4,.dashboard .dashboard-anatomia h4 span{font-size:134px;padding:0;margin-top:60px;margin-bottom:23px;color:#fff;letter-spacing:0.05em;}
+.dashboard .dashboard-anatomia h4{color:#f6d641;position:relative;left:-5px;}
+.dashboard .dashboard-anatomia h4.small,.dashboard .dashboard-anatomia h4.small span{width:600px;font-size:70px;}
+.dashboard .dashboard-anatomia h5{font-size:19px;color:#ffffff;margin-top:3px;letter-spacing:0.35em;}
+.dashboard .dashboard-anatomia p{width:345px;}
+.dashboard .dashboard-anatomia p,.dashboard .dashboard-anatomia strong{color:#cccccc;}
+
+.dashboard .dashboard-anatomia a.underline-link {
+	  font-size: 16px;
+	  color: #ffffff;
+	  border-bottom: 1px solid white;
+	  font-family: "Tungsten A","Tungsten B";
+	  letter-spacing: 0.19em;
+	  float: right;
+	  margin-right: 15px;
+	  height: 25px;
+	  margin-top: 6px;
+}
+
+@media screen and (min-height:930px){
+  .dashboard .dashboard-anatomia header{height:480px;}
+  .dashboard .dashboard-anatomia header p{padding-bottom:52px;}
+  .dashboard .dashboard-anatomia h2{padding-bottom:24px;}
+  .dashboard .dashboard-anatomia h3{padding-bottom:22px;}
+  .dashboard .dashboard-anatomia h4,.dashboard .dashboard-anatomia h4 span{margin-bottom:43px;}
+  .dashboard .dashboard-anatomia .nav-anatomy{top:386px;}
+}
+@media screen and (max-height:1350px){
+  .dashboard-anatomia .slides .slide-bg img{height:1350px;}
+}
+@media screen and (max-height:1250px){
+  .dashboard-anatomia .slides .slide-bg img{height:1250px;}
+}
+@media screen and (max-height:1150px){
+  .dashboard-anatomia .slides .slide-bg img{height:1150px;}
+}
+@media screen and (max-height:1050px){
+  .dashboard-anatomia .slides .slide-bg img{height:1050px;}
+}
+@media screen and (max-height:950px){
+  .dashboard-anatomia .slides .slide-bg img{height:950px;}
+}
+@media screen and (max-height:850px){
+  .dashboard-anatomia .slides .slide-bg img{height:850px;}
+}
+@media screen and (max-height:845px){
+  .dashboard-anatomia .slides .slide-bg img{height:845px;}
+}
+@media screen and (max-height:750px){
+  .dashboard-anatomia .slides .slide-bg img{height:750px;}
+}
+@media screen and (max-height:703px){
+  .dashboard .dashboard-anatomia .slides .slide-bg img{height:703px;}
+}
+@media screen and (max-height:653px){
+  .dashboard-anatomia .slides .slide-bg img{height:653px;}
+}
+.dashboard .dashboard-entrenamiento{background:#000; /* Tiny Scrollbar */}
+.dashboard .dashboard-entrenamiento h4{font-size:20px;color:#b2b2b2;letter-spacing:0.3em;padding:0;margin-bottom:14px;right:-2px;position:relative;}
+.dashboard .dashboard-entrenamiento h4.protip{letter-spacing:0.15em;}
+.dashboard .dashboard-entrenamiento h6{margin-top:-26px;color:#fff;}
+.dashboard .dashboard-entrenamiento h6,.dashboard .dashboard-entrenamiento h6 span{font-size:50px;}
+.dashboard .dashboard-entrenamiento h6 span{color:#f6d641;}
+.dashboard .dashboard-entrenamiento .bt-scroll-next-slide{width:89px;}
+.dashboard .dashboard-entrenamiento .bt-back-arrow{width:80px;}
+.dashboard .dashboard-entrenamiento #dashboard-entrenamiento-thumbnailprotip{display:none;}
+.dashboard .dashboard-entrenamiento #bt-dashboard-entrenamiento-exercices{display:none;}
+.dashboard .dashboard-entrenamiento a.bt-dashboard-entrenamiento-top{position:absolute;height:28px;right:-156px;float:right;bottom:0;}
+.dashboard .dashboard-entrenamiento a.bt-dashboard-entrenamiento-top:hover .play{background:#f6d641;}
+.dashboard .dashboard-entrenamiento a.bt-dashboard-entrenamiento-top .play{width:28px;height:28px;position:relative;float:left;margin:0 10px 0 0;}
+.dashboard .dashboard-entrenamiento a.bt-dashboard-entrenamiento-top .play span{margin:9px 6px;border-width:5px 0 5px 8px;}
+.dashboard .dashboard-entrenamiento a.bt-dashboard-entrenamiento-top h5,.dashboard .dashboard-entrenamiento a.bt-dashboard-entrenamiento-top h5 span{font-size:20px;float:left;height:28px;line-height:28px;}
+.dashboard .dashboard-entrenamiento a.bt-dashboard-entrenamiento-top h5{color:#fff;}
+.dashboard .dashboard-entrenamiento a.bt-dashboard-entrenamiento-top h5 span{color:#f6d641;font-weight:600;letter-spacing:0.072em;}
+.dashboard .dashboard-entrenamiento a.bt-dashboard-entrenamiento-info{position:absolute;z-index:1;left:50px;top:60px;display:none;}
+.dashboard .dashboard-entrenamiento .info h4{font-size:14px;float:left;line-height:29px;}
+.dashboard .dashboard-entrenamiento .info .circle,.dashboard .dashboard-entrenamiento .info .circle2{width:27px;height:27px;float:left;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;border:2px solid #b2b2b2;margin-right:10px;position:relative;}
+.dashboard .dashboard-entrenamiento .info .circle span{background-color:#f6d641;position:absolute;}
+.dashboard .dashboard-entrenamiento .info .circle span:first-child{width:9px;height:1px;}
+.dashboard .dashboard-entrenamiento .info .circle span:last-child{width:1px;height:9px;}
+.dashboard .dashboard-entrenamiento .info:hover .circle{background-color:#f6d641;border-color:#f6d641;}
+.dashboard .dashboard-entrenamiento .info:hover span{background-color:#363737;}
+.dashboard .dashboard-entrenamiento .entrenamiento-list-hover{position:absolute;z-index:1;right:-140px;top:61px;width:140px;}
+.dashboard .dashboard-entrenamiento .entrenamiento-list-hover .circle2{margin-left:12px;}
+.dashboard .dashboard-entrenamiento .entrenamiento-list-hover .circle2 span{width:10px;top:10px;position:relative;left:8px;}
+.dashboard .dashboard-entrenamiento .shape-right{z-index:1;bottom:-200px;}
+.dashboard .dashboard-entrenamiento .shape-left{z-index:1;top:-200px;}
+.dashboard .dashboard-entrenamiento .videos{width:100%;height:100%;position:absolute;overflow:hidden;background:#000;}
+.dashboard .dashboard-entrenamiento .videos li{position:absolute;width:100%;height:100%;overflow:hidden;top:25%;background:#000;}
+.dashboard .dashboard-entrenamiento .videos li:last-child{top:0%;}
+.dashboard .dashboard-entrenamiento .videos .safe{display:inline-block;padding:0;margin:0;width:100%;padding-top:56.25%;height:0px;position:relative;}
+.dashboard .dashboard-entrenamiento .videos.protip{display:none;}
+.dashboard .dashboard-entrenamiento .thumbnails li{position:absolute;width:100%;height:100%;top:24%;}
+.dashboard .dashboard-entrenamiento .thumbnails li:last-child{top:0;}
+.dashboard .dashboard-entrenamiento .thumbnails,.dashboard .dashboard-entrenamiento .thumbnails li{background:no-repeat scroll center 0 #070707;overflow:hidden;}
+.dashboard .dashboard-entrenamiento .caption{width:470px;height:260px;right:383px;}
+.dashboard .dashboard-entrenamiento .caption-bg{background:#000;opacity:0.7;}
+.dashboard .dashboard-entrenamiento .caption-protip{position:absolute;display:none;text-align:right;width:296px;}
+.dashboard .dashboard-entrenamiento iframe{position:absolute;top:0px;left:0px;right:0px;bottom:0px;width:100%;height:100%;}
+.dashboard .dashboard-entrenamiento video{width:100%;height:auto;}
+.dashboard .dashboard-entrenamiento .play{-webkit-transition:0.15s;-moz-transition:0.15s;-ms-transition:0.15s;-o-transition:0.15s;transition:0.15s;width:90px;height:90px;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;cursor:pointer;background:#fff;position:relative;float:left;margin:28px 0px 34px 68px;}
+.dashboard .dashboard-entrenamiento .play:hover{background:#f6d641;}
+.dashboard .dashboard-entrenamiento .play span{width:0;height:0;border-style:solid;border-width:12px 0 12px 20px;border-color:transparent transparent transparent #212224;float:left;position:absolute;margin:auto;top:0;bottom:0;left:5px;right:0;}
+.dashboard .dashboard-entrenamiento .protip .instructions{border:0 none;}
+.dashboard .dashboard-entrenamiento .protip-author{float:left;position:absolute;bottom:90px;text-align:right;right:14px;}
+.dashboard .dashboard-entrenamiento .instructions-border{border-right:1px dotted #333333;width:1px;height:100%;float:left;}
+.dashboard .dashboard-entrenamiento .instructions{width:295px;height:260px;top:108px;position:relative;float:left;text-align:right;padding-right:15px;top:0;}
+.dashboard .dashboard-entrenamiento .instructions ul{padding-right:10px;float:left;position:relative;width:289px;}
+.dashboard .dashboard-entrenamiento .instructions li{position:absolute;width:100%;height:100%;display:none;}
+.dashboard .dashboard-entrenamiento .instructions li:last-child{display:block;}
+.dashboard .dashboard-entrenamiento .instructions .el{position:relative;}
+.dashboard .dashboard-entrenamiento .instructions h5,.dashboard .dashboard-entrenamiento .instructions h5 span{font-size:50px;line-height:1em;}
+.dashboard .dashboard-entrenamiento .instructions h5{color:#fff;letter-spacing:0.08em;}
+.dashboard .dashboard-entrenamiento .instructions h5 span{color:#f6d641;letter-spacing:0.07em;position:relative;left:5px;}
+.dashboard .dashboard-entrenamiento .instructions p{color:#fff;right:3px;position:relative;margin-top:2px;padding-bottom:0;height:27px;float:left;width:100%;}
+.dashboard .dashboard-entrenamiento .instructions-level{position:relative;width:100%;height:100px;float:left;overflow:hidden;}
+.dashboard .dashboard-entrenamiento .instructions-level .left,.dashboard .dashboard-entrenamiento .instructions-level .right,.dashboard .dashboard-entrenamiento .instructions-level .right-top,.dashboard .dashboard-entrenamiento .instructions-level .right-bottom{float:left;position:relative;}
+.dashboard .dashboard-entrenamiento .instructions-level .right-top,.dashboard .dashboard-entrenamiento .instructions-level .right-bottom{width:100%;}
+.dashboard .dashboard-entrenamiento .instructions-level .left{width:72px;margin-top:63px;font-size:20px;line-height:1em;text-align:left;letter-spacing:0.06em;color:#999999;}
+.dashboard .dashboard-entrenamiento .instructions-level .right{width:223px;height:100px;}
+.dashboard .dashboard-entrenamiento .instructions-level .right-bottom span{width:33.33%;float:left;text-align:left;font-size:11px;letter-spacing:0.07em;line-height:1em;margin-top:6px;}
+.dashboard .dashboard-entrenamiento .instructions-level .right-top{height:84px;}
+.dashboard .dashboard-entrenamiento .instructions-level .right-top div{position:absolute;height:2px;float:left;background-color:#999999;}
+.dashboard .dashboard-entrenamiento .instructions-level .l-1{width:39px;top:71px;transform:rotate(-36deg);-ms-transform:rotate(-36deg);-webkit-transform:rotate(-36deg);-moz-transform:rotate(-36deg);-o-transform:rotate(-36deg);left:-4px;}
+.dashboard .dashboard-entrenamiento .instructions-level .l-2{width:39px;top:62px;transform:rotate(7deg);-ms-transform:rotate(7deg);-webkit-transform:rotate(7deg);-moz-transform:rotate(7deg);-o-transform:rotate(7deg);left:30px;}
+.dashboard .dashboard-entrenamiento .instructions-level .l-3{width:56px;top:47px;transform:rotate(-39deg);-ms-transform:rotate(-39deg);-webkit-transform:rotate(-39deg);-moz-transform:rotate(-39deg);-o-transform:rotate(-39deg);left:62px;}
+.dashboard .dashboard-entrenamiento .instructions-level .l-4{width:43px;top:32px;transform:rotate(7deg);-ms-transform:rotate(7deg);-webkit-transform:rotate(7deg);-moz-transform:rotate(7deg);-o-transform:rotate(7deg);left:111px;}
+.dashboard .dashboard-entrenamiento .instructions-level .l-5{width:79px;top:17px;transform:rotate(-26deg);-ms-transform:rotate(-26deg);-webkit-transform:rotate(-26deg);-moz-transform:rotate(-26deg);-o-transform:rotate(-26deg);left:149px;}
+.dashboard .dashboard-entrenamiento .instructions-level .level-1 .right-bottom span:nth-child(1){color:#fff;}
+.dashboard .dashboard-entrenamiento .instructions-level .level-1 .l-1{background-color:#f6d641;}
+.dashboard .dashboard-entrenamiento .instructions-level .level-2 .right-bottom span:nth-child(2){color:#fff;}
+.dashboard .dashboard-entrenamiento .instructions-level .level-2 .l-1,.dashboard .dashboard-entrenamiento .instructions-level .level-2 .l-2,.dashboard .dashboard-entrenamiento .instructions-level .level-2 .l-3{background-color:#f6d641;}
+.dashboard .dashboard-entrenamiento .instructions-level .level-3 .right-bottom span:nth-child(3){color:#fff;}
+.dashboard .dashboard-entrenamiento .instructions-level .level-3 .l-1,.dashboard .dashboard-entrenamiento .instructions-level .level-3 .l-2,.dashboard .dashboard-entrenamiento .instructions-level .level-3 .l-3,.dashboard .dashboard-entrenamiento .instructions-level .level-3 .l-4,.dashboard .dashboard-entrenamiento .instructions-level .level-3 .l-5{background-color:#f6d641;}
+.dashboard .dashboard-entrenamiento .entrenamiento-list-videos{position:absolute;width:375px;height:100%;background:100%;right:0;}
+.dashboard .dashboard-entrenamiento .entrenamiento-list-videos .bg{background:#000;opacity:0.34;display:none;}
+.dashboard .dashboard-entrenamiento ul.list{width:345px;position:relative;z-index:1;float:right; top: 50%;}
+.dashboard .dashboard-entrenamiento ul.list a,.dashboard .dashboard-entrenamiento ul.list li{float:left;width:100%; height: 260px;}
+.dashboard .dashboard-entrenamiento ul.list a{opacity:0.3;-webkit-transition:0.15s;-moz-transition:0.15s;-ms-transition:0.15s;-o-transition:0.15s;transition:0.15s;}
+.dashboard .dashboard-entrenamiento ul.list a.active,.dashboard .dashboard-entrenamiento ul.list a:hover{opacity:1 !important;}
+.dashboard .dashboard-entrenamiento ul.list a:hover h5 span{color:#f6d641 !important;}
+.dashboard .dashboard-entrenamiento ul.list li:last-child{margin-bottom:0px;}
+.dashboard .dashboard-entrenamiento ul.list li:first-child{margin-top:-171px;}
+.dashboard .dashboard-entrenamiento ul.list .left{float:left;width:151px;}
+.dashboard .dashboard-entrenamiento ul.list .right{float:left;width:194px;}
+.dashboard .dashboard-entrenamiento ul.list h5{text-align:right;}
+.dashboard .dashboard-entrenamiento ul.list h5 span{font-size:260px;color:#818182;line-height:1em;}
+.dashboard .dashboard-entrenamiento ul.list strong,.dashboard .dashboard-entrenamiento ul.list p{width:100%;float:left;color:#fff;line-height:1em;}
+.dashboard .dashboard-entrenamiento ul.list p,.dashboard .dashboard-entrenamiento ul.list p span{font-size:15px;}
+.dashboard .dashboard-entrenamiento ul.list p{padding:0;margin-top:3px;}
+.dashboard .dashboard-entrenamiento ul.list p span{padding-left:5px;}
+.dashboard .dashboard-entrenamiento ul.list .top,.dashboard .dashboard-entrenamiento ul.list .bottom{opacity:0.4;letter-spacing:0.1em;}
+.dashboard .dashboard-entrenamiento ul.list .top{margin-top:52px;font-size:19px;}
+.dashboard .dashboard-entrenamiento ul.list .bottom{margin-top:9px;font-size:18px;}
+.dashboard .dashboard-entrenamiento ul.list .middle{font-size:43px;width:156px;padding-right:38px;line-height:1em;margin-top:7px;}
+.dashboard .dashboard-entrenamiento .entrenamiento-list-videos .viewport{width:100%;height:100%;position:absolute;}
+.dashboard .dashboard-entrenamiento .entrenamiento-list-videos .overview{list-style:none;position:absolute;left:0;top:0;padding:0;margin:0;}
+.dashboard .dashboard-entrenamiento .entrenamiento-list-videos .track{height:250px;width:13px;position:relative;padding:0 1px;}
+.dashboard .dashboard-entrenamiento .entrenamiento-list-videos .thumb{background:#f6d641;width:16px;height:30px;cursor:pointer;overflow:hidden;position:absolute;top:0;left:-5px;-webkit-border-radius:15px;-moz-border-radius:15px;border-radius:15px;}
+.dashboard .dashboard-entrenamiento .entrenamiento-list-videos .thumb::after,.dashboard .dashboard-entrenamiento .entrenamiento-list-videos .thumb::before{content:"";position:absolute;width:0;height:0;border-style:solid;left:4px;}
+.dashboard .dashboard-entrenamiento .entrenamiento-list-videos .thumb::after{top:20px;border-color:#666 transparent transparent transparent;border-width:5px 4px 0 4px;}
+.dashboard .dashboard-entrenamiento .entrenamiento-list-videos .thumb::before{top:5px;border-color:transparent transparent #666 transparent;border-width:0 4px 5px 4px;}
+.dashboard .dashboard-entrenamiento .entrenamiento-list-videos .thumb:hover,.dashboard .dashboard-entrenamiento .entrenamiento-list-videos .thumb.ui-draggable-dragging{background:#666;}
+.dashboard .dashboard-entrenamiento .entrenamiento-list-videos .thumb:hover::after,.dashboard .dashboard-entrenamiento .entrenamiento-list-videos .thumb.ui-draggable-dragging::after{border-color:#ccc transparent transparent transparent;}
+.dashboard .dashboard-entrenamiento .entrenamiento-list-videos .thumb:hover::before,.dashboard .dashboard-entrenamiento .entrenamiento-list-videos .thumb.ui-draggable-dragging::before{border-color:transparent transparent #ccc transparent;}
+.dashboard .dashboard-entrenamiento .entrenamiento-list-videos .disable{display:none;}
+.dashboard .dashboard-entrenamiento .noSelect{user-select:none;-o-user-select:none;-moz-user-select:none;-khtml-user-select:none;-webkit-user-select:none;}
+.dashboard .dashboard-entrenamiento .vertical-navigation{right:355px;margin:auto;top:-108px;}
+@media screen and (min-height:1024px){
+  .dashboard .dashboard-entrenamiento .thumbnails li{background-size:auto 100%;}
+}
+.dashboard .dashboard-comidas{/* Tiny Scrollbar */}
+.dashboard .dashboard-comidas h2{font-size:157px;padding-bottom:14px;left:-5px;}
+.dashboard .dashboard-comidas h3{font-size:19px;letter-spacing:0.245em;}
+.dashboard .dashboard-comidas h4,.dashboard .dashboard-comidas h4 span{color:#212224;position:relative;padding:0;line-height:1em;}
+.dashboard .dashboard-comidas h4{font-size:50px;z-index:1;}
+.dashboard .dashboard-comidas h4 span{font-size:70px;}
+.dashboard .dashboard-comidas p{padding-bottom:10px;}
+.dashboard .dashboard-comidas .dashboard-comidas-banner{z-index:1;}
+.dashboard .dashboard-comidas .dashboard-comidas-banner-content{height:500px;overflow:hidden;position:absolute;}
+.dashboard .dashboard-comidas .bg{position:absolute;float:left;overflow:hidden;background-color:transparent;background-position:center 0;background-attachment:scroll;transform:scale(1.2,1.2);-ms-transform:scale(1.2,1.2);-webkit-transform:scale(1.2,1.2);-moz-transform:scale(1.2,1.2);-o-transform:scale(1.2,1.2);top:44px;height:100%;width:200%;left:-100%;}
+.dashboard .dashboard-comidas a.banner{overflow:hidden;position:absolute;bottom:0;float:left;z-index:2;}
+.dashboard .dashboard-comidas .content{height:100%;margin:0 50px 0 0px;position:relative; overflow: hidden;}
+.dashboard .dashboard-comidas .content-wraper{float:left;height:100%;}
+.dashboard .dashboard-comidas .content-scroll,.dashboard .dashboard-comidas .content-fixed{float:left;width:100%;height:500px;top:-28px;}
+.dashboard .dashboard-comidas .content-fixed.banner_super{float:left;width:100%;height:500px;top:-28px;z-index: 11;}
+.dashboard .dashboard-comidas .content-scroll{overflow:hidden;}
+.dashboard .dashboard-comidas table{height:370px;bottom:-35px;position:absolute;}
+.dashboard .dashboard-comidas tr{vertical-align:top;height:100%;}
+.dashboard .dashboard-comidas .circle-1,.dashboard .dashboard-comidas .circle-2{-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;float:left;}
+.dashboard .dashboard-comidas .circle-1{width:10px;height:10px;margin-top:2px;margin-right:6px;}
+.dashboard .dashboard-comidas .circle-2{width:21px;height:21px;margin-right:16px;color:#1d1d1d;text-align:center;line-height:1.5em;letter-spacing:0em;float:left;position:absolute;top:0;bottom:0;margin:auto;margin-right:16px;}
+.dashboard .dashboard-comidas ul.list-colors{width:180px;position:relative;float:left;margin-top: 20px;}
+.dashboard .dashboard-comidas ul.list-colors li{float:left;margin-bottom:16px;line-height:1em;color:#999;font-size:14px;padding-right:22px;}
+.dashboard .dashboard-comidas ul.list-colors li:last-child{margin-bottom:0;}
+.dashboard .dashboard-comidas-nav{position: absolute; width: 200px; height: 10px; top: 214px;left: -16px;z-index: 1;}
+.dashboard .dashboard-comidas-nav .bt-scroll-next-slide,.dashboard .dashboard-comidas-nav .bt-scroll-prev-slide{margin: 0 !important; height: 10px; top: 0px;float: left;}
+.dashboard .dashboard-comidas-nav .bt-scroll-next-slide{right: -20px;}
+.dashboard .dashboard-comidas-nav .arrow-content{margin: 0; cursor: pointer;}
+.dashboard .dashboard-comidas-nav .arrow-next-yellow{background-position: -17px -7px;}
+.dashboard .dashboard-comidas-nav .arrow-next-yellow.null{background-position: -17px -60px !important; cursor: auto !important;}
+.dashboard .dashboard-comidas-nav .arrow-prev-yellow{background-position: 17px -39px}
+.dashboard .dashboard-comidas-nav .arrow-prev-yellow.null{background-position: 17px -32px !important; cursor: auto !important;}
+.dashboard .dashboard-comidas-nav .arrow{display: block; overflow: hidden; float: left;}
+
+
+.dashboard .dashboard-comidas ul.list-headers{position:absolute;top:135px;margin-left:-1px;width:1200px;}
+.dashboard .dashboard-comidas ul.list-headers li{float:left;}
+.dashboard .dashboard-comidas ul.list-headers li.pre{width:214px;}
+.dashboard .dashboard-comidas ul.list-headers li.during{width:284px;}
+.dashboard .dashboard-comidas ul.list-headers li.post{width:238px;}
+.dashboard .dashboard-comidas header,.dashboard .dashboard-comidas .list{width:100%;position:relative;float:left;}
+.dashboard .dashboard-comidas .list .left,.dashboard .dashboard-comidas .list .right{float:left;}
+.dashboard .dashboard-comidas .list .left{width:55px;height:100px;margin:10px 24px 0 6px;text-align:center;font-size:25px;color:#666666;letter-spacing:0.05em;}
+.dashboard .dashboard-comidas .list .left sub{font-size:15px;letter-spacing:0.08em;top:0px;color:#666666;left:1px;}
+.dashboard .dashboard-comidas .list .right{width:209px;}
+.dashboard .dashboard-comidas .list li{background:url("/Content/img/dashboard/dash-tile.png") repeat-x scroll 0 60px transparent;padding:10px 6px; /* border-bottom:1px dotted #656464; */
+color:#ffffff;float:left;width:100%;line-height:1.5em;height:62px;display:table;position:relative;}
+.dashboard .dashboard-comidas .list li:last-child{background:none;}
+.dashboard .dashboard-comidas .clock{width:52px;height:52px;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;border:2px solid #353535;margin-bottom:12px;float:left;position:relative;}
+.dashboard .dashboard-comidas .clock .bg{position:absolute;float:right;width:44px;height:44px;background:#484848;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;opacity:0.5;left:4px;top:4px;}
+.dashboard .dashboard-comidas .clock span{width:2px;height:100%;float:left;}
+.dashboard .dashboard-comidas .clock span.hour,.dashboard .dashboard-comidas .clock span.minutes{margin:0 25px;position:absolute;left:0;}
+.dashboard .dashboard-comidas .clock span.hour span,.dashboard .dashboard-comidas .clock span.minutes span{width:100%;float:left;background:#353535;position:absolute;}
+.dashboard .dashboard-comidas .minutes{transform:rotate(90deg);-ms-transform:rotate(90deg);-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-o-transform:rotate(90deg);}
+.dashboard .dashboard-comidas .minutes span{height:35%;top:16%;}
+.dashboard .dashboard-comidas .hour{transform:rotate(52deg);-ms-transform:rotate(52deg);-webkit-transform:rotate(52deg);-moz-transform:rotate(52deg);-o-transform:rotate(52deg);}
+.dashboard .dashboard-comidas .hour span{height:16%;top:35%;}
+.dashboard .dashboard-comidas .diet{width:330px;height:100%;margin-left:33px;margin-right:20px;position:relative;float:left;}
+.dashboard .dashboard-comidas .diet header,.dashboard .dashboard-comidas .diet .list{top:-26px;}
+.dashboard .dashboard-comidas .diet-wrapper{height:435px;padding-right:23px;top:-93px;}
+.dashboard .dashboard-comidas .work{top:27px;position:relative;margin-right:40px;}
+.dashboard .dashboard-comidas .work span.top{width:100%;height:83px;float:left;}
+.dashboard .dashboard-comidas .work .list{}
+.dashboard .dashboard-comidas .work .list,.dashboard .dashboard-comidas .list .viewport{height:337px;}
+.dashboard .dashboard-comidas .work .list li:last-child{border:0 none;}
+.dashboard .dashboard-comidas .work .scrollbar{top:0px;}
+.dashboard .dashboard-comidas .work.pre{width:175px;}
+.dashboard .dashboard-comidas .work.during{width:245px;}
+.dashboard .dashboard-comidas .work.post{width:195px;}
+.dashboard .dashboard-comidas .work.meals{width:295px;}
+.dashboard .dashboard-comidas .list li span.list-left{display:table-cell;vertical-align:middle;width:165px;line-height:1.5em;color:#fff;margin-left:37px;}
+.dashboard .dashboard-comidas .list li .list-text{display:table;height:62px;margin-left:43px;}
+.dashboard .dashboard-comidas .work.pre .list,.dashboard .dashboard-comidas .work.during .list,.dashboard .dashboard-comidas .work.post .list{overflow:hidden;}
+.dashboard .dashboard-comidas .meal{width:500px;height:510px;}
+.dashboard .dashboard-comidas .meal header{height:100px;}
+.dashboard .dashboard-comidas .meal .list{height:400px;}
+.dashboard .dashboard-comidas .list .viewport,.dashboard .dashboard-comidas .content-container .viewport{width:100%;overflow:hidden;position:relative;}
+.dashboard .dashboard-comidas .content-container .viewport-horizontal{height:100%;}
+.dashboard .dashboard-comidas .content-container .overview,.dashboard .dashboard-comidas .list .overview{list-style:none;position:relative;left:0;top:0;padding:0;margin:0;width:100%;height:100%;}
+.dashboard .dashboard-comidas .content-container .overview ul,.dashboard .dashboard-comidas .list .overview ul{position: relative;}
+
+.dashboard .dashboard-comidas .list .navigation{position:absolute;width:7px;height:77px;right:-20px;top:5px;z-index:2;}
+.dashboard .dashboard-comidas .list .navigation div{float:left;width:100%;height:25px;overflow:hidden;}
+.dashboard .dashboard-comidas .list .navigation div.down{margin-top:26px;}
+.dashboard .dashboard-comidas .list .navigation div.down span{background-position:0 -32px;}
+.dashboard .dashboard-comidas .list .navigation div.down.null span{background-position:-7px -32px !important;}
+.dashboard .dashboard-comidas .list .navigation div.up span{background-position:0px 7px;}
+.dashboard .dashboard-comidas .list .navigation div.up.null span{background-position:-7px 7px !important;}
+.dashboard .dashboard-comidas .list .navigation span{cursor:pointer;float:left;position:relative;width:7px;height:25px;background:url(../../img/icon/arrows-updown.png) no-repeat scroll 0 0 transparent;}
+.dashboard .dashboard-comidas .list .navigation div.null span{cursor:default;}
+.dashboard .dashboard-comidas .content-container .scrollbar,.dashboard .dashboard-comidas .list .scrollbar{position:absolute;background-position:0 0;float:right;z-index:1;}
+.dashboard .dashboard-comidas .content-container .scrollbar{width:100%;height:6px;}
+.dashboard .dashboard-comidas .content-container .track,.dashboard .dashboard-comidas .list .track{height:100%;position:relative;padding:0;right:0;float:right;}
+.dashboard .dashboard-comidas .content-container .thumb,.dashboard .dashboard-comidas .list .thumb{-webkit-border-radius:15px;-moz-border-radius:15px;border-radius:15px;background:#212224;height:20px;cursor:pointer;overflow:hidden;position:absolute;top:0;user-select:none;-o-user-select:none;-moz-user-select:none;-khtml-user-select:none;-webkit-user-select:none;right:20px;}
+.dashboard .dashboard-comidas .content-container .thumb::after,.dashboard .dashboard-comidas .content-container .thumb::before,.dashboard .dashboard-comidas .list .thumb::after,.dashboard .dashboard-comidas .list .thumb::before{content:"";position:absolute;width:7px;height:4px;left:4px;background:url("../../img/dashboard/comidas/arrows.png") no-repeat scroll 0 0 transparent;}
+.dashboard .dashboard-comidas .content-container .thumb .end,.dashboard .dashboard-comidas .list .thumb .end{overflow:hidden;height:5px;}
+@media screen and (max-height:640px){
+  .dashboard .dashboard-comidas .diet-wrapper{top:-55px;}
+}
+.calendar-arrow-left table h5:hover{color:#575757!important;}
+.calendar-arrow-right table h5:hover{color:#575757!important;}
+.dashboard-calendar{width:100%;height:61px;bottom:-100px;position:fixed;overflow:hidden;z-index:2;}
+.dashboard-calendar .line{background:url("/Content/img/dashboard/dash-tile.png") repeat-x transparent;height:2px;position:fixed;top:initial;}
+.dashboard-calendar .bg{background-color:#000;position:fixed;top:initial;}
+.dashboard-calendar table{height:61px;}
+.dashboard-calendar td{background-position:-76px 0px;position:relative;z-index:1;}
+.dashboard-calendar td:first-child span:first-child{display:none;}
+.dashboard-calendar td.active{background:url("/Content/img/dashboard/dash-title-active.png") repeat-x transparent;background-position:0px 0px;}
+.dashboard-calendar td span{font-family:"PlexesLightPro";position:absolute;float:left;}
+.dashboard-calendar td span:first-child{top:0;left:0px;width:1px;height:100%;}
+.dashboard-calendar td span:last-child{left:-3px;font-size:12px;bottom:3px;color:#575757;width:100%;}
+.dashboard-calendar .content{position:relative;width:76px;height:61px;line-height:61px;text-align:center;font-size:25px;font-weight:400;margin:auto;top:0;bottom:0;color:#575757;}
+.dashboard-calendar h5{position:relative;z-index:1;cursor:pointer;}
+.dashboard-calendar h5.active{color:#f6d641;}
+.dashboard-calendar h5:hover{color:#949494;}
+.slmfbanner_container
+{
+	width: 425px;
+	height: 125px;
+	float: left;
+	margin-left: 10px;
+	opacity: 0;
+	position: relative;
+}
+.slmfbanner_container a
+{
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+@media screen and (max-height:750px){
+  .dashboard .dashboard-entrenamiento .shape-left,.dashboard .dashboard-anatomia .shape-left,.dashboard .dashboard-info .shape-left{top:-135px;}
+  .dashboard .dashboard-entrenamiento .shape-right,.dashboard .dashboard-anatomia .shape-right,.dashboard .dashboard-info .shape-right{bottom:-150px;}
+}
+.dashboard .plan-finish-overlay{z-index: 100;}
+.dashboard .plan-finish {z-index: 101;width: 503px;height: 230px;}
+.dashboard .plan-finish input[type="button"]{left: 60px;}
+.dashboard .plan-finish input[type="submit"]{right: 60px; float: right;} 
+.dashboard .plan-finish p{padding-top: 25px; margin-left: 3px;}

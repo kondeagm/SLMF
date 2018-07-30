@@ -1,0 +1,1128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D51C21AB-7795-4301-AE63-2F1F917EE7EE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SLMFCMS</RootNamespace>
+    <AssemblyName>SLMFCMS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGridMvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGridMvc.1.0.0\lib\net40\WebGridMvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\HtmlHelpers.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccesorioController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AlimentoController.cs" />
+    <Compile Include="Controllers\BannerController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\CMSUsuarioController.cs" />
+    <Compile Include="Controllers\ContenidoEstaticoController.cs" />
+    <Compile Include="Controllers\CuestionarioController.cs" />
+    <Compile Include="Controllers\DietaAlimentacionController.cs" />
+    <Compile Include="Controllers\DietaController.cs" />
+    <Compile Include="Controllers\DietaTemposController.cs" />
+    <Compile Include="Controllers\DisciplinaController.cs" />
+    <Compile Include="Controllers\EjercicioController.cs" />
+    <Compile Include="Controllers\ElementoController.cs" />
+    <Compile Include="Controllers\EventoController.cs" />
+    <Compile Include="Controllers\GrupoMusculosController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MusculoController.cs" />
+    <Compile Include="Controllers\NutrienteController.cs" />
+    <Compile Include="Controllers\PlanController.cs" />
+    <Compile Include="Controllers\PlanDiaEjerciciosController.cs" />
+    <Compile Include="Controllers\PlanDiaEjercicioSeriesController.cs" />
+    <Compile Include="Controllers\PlanDiasController.cs" />
+    <Compile Include="Controllers\PlatilloController.cs" />
+    <Compile Include="Controllers\PorcionController.cs" />
+    <Compile Include="Controllers\PosicionController.cs" />
+    <Compile Include="Controllers\PreguntaController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Controllers\ProTipController.cs" />
+    <Compile Include="Controllers\RedSocialController.cs" />
+    <Compile Include="Controllers\RespuestaController.cs" />
+    <Compile Include="Controllers\RutinaController.cs" />
+    <Compile Include="Controllers\SuplementoController.cs" />
+    <Compile Include="Controllers\TempoController.cs" />
+    <Compile Include="Controllers\UnidadEjercicioController.cs" />
+    <Compile Include="Functions\Funcion.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604222321285_InitialCreate.cs" />
+    <Compile Include="Migrations\201604222321285_InitialCreate.Designer.cs">
+      <DependentUpon>201604222321285_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604271805544_AddTableDisciplina.cs" />
+    <Compile Include="Migrations\201604271805544_AddTableDisciplina.Designer.cs">
+      <DependentUpon>201604271805544_AddTableDisciplina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605021750490_AddTableCuestionario.cs" />
+    <Compile Include="Migrations\201605021750490_AddTableCuestionario.Designer.cs">
+      <DependentUpon>201605021750490_AddTableCuestionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605021813458_AddTablePregunta.cs" />
+    <Compile Include="Migrations\201605021813458_AddTablePregunta.Designer.cs">
+      <DependentUpon>201605021813458_AddTablePregunta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605021849442_AddTableRespuesta.cs" />
+    <Compile Include="Migrations\201605021849442_AddTableRespuesta.Designer.cs">
+      <DependentUpon>201605021849442_AddTableRespuesta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605022203035_AddTableRedSocial.cs" />
+    <Compile Include="Migrations\201605022203035_AddTableRedSocial.Designer.cs">
+      <DependentUpon>201605022203035_AddTableRedSocial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605022214018_AddTableContenidoEstatico.cs" />
+    <Compile Include="Migrations\201605022214018_AddTableContenidoEstatico.Designer.cs">
+      <DependentUpon>201605022214018_AddTableContenidoEstatico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605022356117_AddTableTempo.cs" />
+    <Compile Include="Migrations\201605022356117_AddTableTempo.Designer.cs">
+      <DependentUpon>201605022356117_AddTableTempo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030010214_AddTablePorcion.cs" />
+    <Compile Include="Migrations\201605030010214_AddTablePorcion.Designer.cs">
+      <DependentUpon>201605030010214_AddTablePorcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030020500_AddTableNutriente.cs" />
+    <Compile Include="Migrations\201605030020500_AddTableNutriente.Designer.cs">
+      <DependentUpon>201605030020500_AddTableNutriente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030050413_AddTableAlimento.cs" />
+    <Compile Include="Migrations\201605030050413_AddTableAlimento.Designer.cs">
+      <DependentUpon>201605030050413_AddTableAlimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030120425_AddTableProducto.cs" />
+    <Compile Include="Migrations\201605030120425_AddTableProducto.Designer.cs">
+      <DependentUpon>201605030120425_AddTableProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030148596_AddTableDieta.cs" />
+    <Compile Include="Migrations\201605030148596_AddTableDieta.Designer.cs">
+      <DependentUpon>201605030148596_AddTableDieta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030215395_AddTableDietaTempos.cs" />
+    <Compile Include="Migrations\201605030215395_AddTableDietaTempos.Designer.cs">
+      <DependentUpon>201605030215395_AddTableDietaTempos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030253434_AddTableDietaAlimentacion.cs" />
+    <Compile Include="Migrations\201605030253434_AddTableDietaAlimentacion.Designer.cs">
+      <DependentUpon>201605030253434_AddTableDietaAlimentacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030306151_AddTableGrupoMusculos.cs" />
+    <Compile Include="Migrations\201605030306151_AddTableGrupoMusculos.Designer.cs">
+      <DependentUpon>201605030306151_AddTableGrupoMusculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030323033_AddTableMusculo.cs" />
+    <Compile Include="Migrations\201605030323033_AddTableMusculo.Designer.cs">
+      <DependentUpon>201605030323033_AddTableMusculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030338590_AddTableAccesorio.cs" />
+    <Compile Include="Migrations\201605030338590_AddTableAccesorio.Designer.cs">
+      <DependentUpon>201605030338590_AddTableAccesorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030352414_AddTableElemento.cs" />
+    <Compile Include="Migrations\201605030352414_AddTableElemento.Designer.cs">
+      <DependentUpon>201605030352414_AddTableElemento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030402196_AddTablePosicion.cs" />
+    <Compile Include="Migrations\201605030402196_AddTablePosicion.Designer.cs">
+      <DependentUpon>201605030402196_AddTablePosicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030421177_AddTableUnidadEjercicio.cs" />
+    <Compile Include="Migrations\201605030421177_AddTableUnidadEjercicio.Designer.cs">
+      <DependentUpon>201605030421177_AddTableUnidadEjercicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030510119_AddTableEjercicio.cs" />
+    <Compile Include="Migrations\201605030510119_AddTableEjercicio.Designer.cs">
+      <DependentUpon>201605030510119_AddTableEjercicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030523170_AddTableRutina.cs" />
+    <Compile Include="Migrations\201605030523170_AddTableRutina.Designer.cs">
+      <DependentUpon>201605030523170_AddTableRutina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030536400_AddTableProTip.cs" />
+    <Compile Include="Migrations\201605030536400_AddTableProTip.Designer.cs">
+      <DependentUpon>201605030536400_AddTableProTip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030555478_AddTableEvento.cs" />
+    <Compile Include="Migrations\201605030555478_AddTableEvento.Designer.cs">
+      <DependentUpon>201605030555478_AddTableEvento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030611049_AddTablePlan.cs" />
+    <Compile Include="Migrations\201605030611049_AddTablePlan.Designer.cs">
+      <DependentUpon>201605030611049_AddTablePlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030644247_AddTablePlanDias.cs" />
+    <Compile Include="Migrations\201605030644247_AddTablePlanDias.Designer.cs">
+      <DependentUpon>201605030644247_AddTablePlanDias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030722176_AddTablePlanDiaEjercicios.cs" />
+    <Compile Include="Migrations\201605030722176_AddTablePlanDiaEjercicios.Designer.cs">
+      <DependentUpon>201605030722176_AddTablePlanDiaEjercicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030734148_AddTablePlanDiaEjercicioSeries.cs" />
+    <Compile Include="Migrations\201605030734148_AddTablePlanDiaEjercicioSeries.Designer.cs">
+      <DependentUpon>201605030734148_AddTablePlanDiaEjercicioSeries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030752357_AddTablePlanEtiquetas.cs" />
+    <Compile Include="Migrations\201605030752357_AddTablePlanEtiquetas.Designer.cs">
+      <DependentUpon>201605030752357_AddTablePlanEtiquetas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605030810143_AddTableUsuario.cs" />
+    <Compile Include="Migrations\201605030810143_AddTableUsuario.Designer.cs">
+      <DependentUpon>201605030810143_AddTableUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605031417437_AddTableBanner.cs" />
+    <Compile Include="Migrations\201605031417437_AddTableBanner.Designer.cs">
+      <DependentUpon>201605031417437_AddTableBanner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605042137184_UpdateTableDisciplina.cs" />
+    <Compile Include="Migrations\201605042137184_UpdateTableDisciplina.Designer.cs">
+      <DependentUpon>201605042137184_UpdateTableDisciplina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Accesorio.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Alimento.cs" />
+    <Compile Include="Models\Banner.cs" />
+    <Compile Include="Models\CMS\CMSResetPass.cs" />
+    <Compile Include="Models\CMS\CMSUserList.cs" />
+    <Compile Include="Models\ContenidoEstatico.cs" />
+    <Compile Include="Models\Cuestionario.cs" />
+    <Compile Include="Models\DietaAlimentacion.cs" />
+    <Compile Include="Models\DietaTempos.cs" />
+    <Compile Include="Models\Dieta.cs" />
+    <Compile Include="Models\Disciplina.cs" />
+    <Compile Include="Models\Ejercicio.cs" />
+    <Compile Include="Models\Elemento.cs" />
+    <Compile Include="Models\Evento.cs" />
+    <Compile Include="Models\GrupoMusculos.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Musculo.cs" />
+    <Compile Include="Models\Nutriente.cs" />
+    <Compile Include="Models\Plan.cs" />
+    <Compile Include="Models\PlanDiaEjercicios.cs" />
+    <Compile Include="Models\PlanDiaEjercicioSeries.cs" />
+    <Compile Include="Models\PlanDias.cs" />
+    <Compile Include="Models\Porcion.cs" />
+    <Compile Include="Models\Posicion.cs" />
+    <Compile Include="Models\Pregunta.cs" />
+    <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\ProTip.cs" />
+    <Compile Include="Models\RedSocial.cs" />
+    <Compile Include="Models\Respuesta.cs" />
+    <Compile Include="Models\Rutina.cs" />
+    <Compile Include="Models\Tempo.cs" />
+    <Compile Include="Models\UnidadEjercicio.cs" />
+    <Compile Include="Models\PlanEtiquetas.cs" />
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-slate.css" />
+    <Content Include="Content\bootstrap-slate.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\img\done.png" />
+    <Content Include="Content\img\loader.gif" />
+    <Content Include="Content\img\SLMF-Entrenar-SN.jpg" />
+    <Content Include="Content\img\SLMF-Icono-SN.png" />
+    <Content Include="Content\img\SLMF-Imagen-1280-720-SN.jpg" />
+    <Content Include="Content\img\SLMF-Imagen-1420-1024-SN.jpg" />
+    <Content Include="Content\img\SLMF-Imagen-166-166-SN.jpg" />
+    <Content Include="Content\img\SLMF-Imagen-425-125-SN.jpg" />
+    <Content Include="Content\img\SLMF-Portada-SN.jpg" />
+    <Content Include="Content\img\SLMF-ProTip-SN.jpg" />
+    <Content Include="Content\img\SLMF-Siglas-SN.png" />
+    <Content Include="Content\img\SLMF-Suplementos-SN.jpg" />
+    <Content Include="Content\img\slmf.svg" />
+    <Content Include="Content\img\switch.png" />
+    <Content Include="Content\img\uploading.gif" />
+    <Content Include="Content\lightbox.css" />
+    <Content Include="Content\lightbox.min.css">
+      <DependentUpon>lightbox.css</DependentUpon>
+    </Content>
+    <Content Include="Content\multi-select.css" />
+    <Content Include="Content\multi-select.min.css">
+      <DependentUpon>multi-select.css</DependentUpon>
+    </Content>
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\PagedList.min.css">
+      <DependentUpon>PagedList.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.min.css">
+      <DependentUpon>Site.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\tools.css" />
+    <Content Include="Content\tools.min.css">
+      <DependentUpon>tools.css</DependentUpon>
+    </Content>
+    <Content Include="favicon.png" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="CodeTemplates\MvcControllerWithContext\Controller.cs.t4" />
+    <Content Include="img\close.png" />
+    <Content Include="img\loading.gif" />
+    <Content Include="img\next.png" />
+    <Content Include="img\prev.png" />
+    <Content Include="sass\screen.sass" />
+    <Content Include="sass\lightbox.sass" />
+    <Content Include="sass\_variables.sass" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Scripts\banner-upload-image.js" />
+    <Content Include="Scripts\calendar-day-picker.min.js.map">
+      <DependentUpon>calendar-day-picker.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\diet-upload-image.min.js.map">
+      <DependentUpon>diet-upload-image.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\discipline-upload-acronym.min.js.map">
+      <DependentUpon>discipline-upload-acronym.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\discipline-upload-icon.min.js.map">
+      <DependentUpon>discipline-upload-icon.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\discipline-upload-image.min.js.map">
+      <DependentUpon>discipline-upload-image.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\discipline-upload-training.min.js.map">
+      <DependentUpon>discipline-upload-training.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\exercice-upload-image.min.js.map">
+      <DependentUpon>exercice-upload-image.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\groupmuscle-upload-image.min.js.map">
+      <DependentUpon>groupmuscle-upload-image.min.js</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\InstallCMS-SLMF.pubxml" />
+    <None Include="Scripts\jquery-2.2.3.intellisense.js" />
+    <Content Include="Scripts\calendar-day-picker.js" />
+    <Content Include="Scripts\calendar-day-picker.min.js">
+      <DependentUpon>calendar-day-picker.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\diet-upload-image.js" />
+    <Content Include="Scripts\diet-upload-image.min.js">
+      <DependentUpon>diet-upload-image.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\discipline-upload-acronym.js" />
+    <Content Include="Scripts\discipline-upload-acronym.min.js">
+      <DependentUpon>discipline-upload-acronym.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\discipline-upload-icon.js" />
+    <Content Include="Scripts\discipline-upload-icon.min.js">
+      <DependentUpon>discipline-upload-icon.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\discipline-upload-image.js" />
+    <Content Include="Scripts\discipline-upload-image.min.js">
+      <DependentUpon>discipline-upload-image.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\discipline-upload-training.js" />
+    <Content Include="Scripts\discipline-upload-training.min.js">
+      <DependentUpon>discipline-upload-training.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\exercice-upload-image.js" />
+    <Content Include="Scripts\exercice-upload-image.min.js">
+      <DependentUpon>exercice-upload-image.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\groupmuscle-upload-image.js" />
+    <Content Include="Scripts\groupmuscle-upload-image.min.js">
+      <DependentUpon>groupmuscle-upload-image.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-2.2.3.js" />
+    <Content Include="Scripts\jquery-2.2.3.min.js" />
+    <Content Include="Scripts\jquery-2.2.3.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\jquery.filedrop.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jscolor\arrow.gif" />
+    <Content Include="Scripts\jscolor\cross.gif" />
+    <Content Include="Scripts\jscolor\hs.png" />
+    <Content Include="Scripts\jscolor\hv.png" />
+    <Content Include="Scripts\jscolor\jscolor.js" />
+    <Content Include="Scripts\lightbox-2.6.js" />
+    <Content Include="Scripts\lightbox-2.6.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\muscle-upload-image.js" />
+    <Content Include="Scripts\muscle-upload-image.min.js">
+      <DependentUpon>muscle-upload-image.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plan-upload-image.js" />
+    <Content Include="Scripts\plan-upload-image.min.js">
+      <DependentUpon>plan-upload-image.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\product-upload-image.js" />
+    <Content Include="Scripts\product-upload-image.min.js">
+      <DependentUpon>product-upload-image.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\protip-upload-image.js" />
+    <Content Include="Scripts\protip-upload-image.min.js">
+      <DependentUpon>protip-upload-image.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\tinymce\jquery.tinymce.min.js" />
+    <Content Include="Scripts\tinymce\license.txt" />
+    <Content Include="Scripts\tinymce\plugins\advlist\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\anchor\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autolink\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autoresize\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autosave\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\bbcode\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\charmap\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\codesample\css\prism.css" />
+    <Content Include="Scripts\tinymce\plugins\codesample\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\code\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\colorpicker\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\colorpicker\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\css\dialog.css" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\img\buttons.png" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\img\icons.gif" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\img\items.gif" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\img\menu_arrow.gif" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\img\menu_check.gif" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\img\progress.gif" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\img\tabs.gif" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\tiny_mce_popup.js" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\utils\editable_selects.js" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\utils\form_utils.js" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\utils\mctabs.js" />
+    <Content Include="Scripts\tinymce\plugins\compat3x\utils\validate.js" />
+    <Content Include="Scripts\tinymce\plugins\contextmenu\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\directionality\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\example\dialog.html" />
+    <Content Include="Scripts\tinymce\plugins\example\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\example\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\example_dependency\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\example_dependency\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\fullpage\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\fullscreen\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\hr\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\imagetools\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\imagetools\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\image\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\importcss\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\insertdatetime\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\layer\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\layer\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\legacyoutput\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\link\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\lists\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="Scripts\tinymce\plugins\media\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\nonbreaking\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\noneditable\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\pagebreak\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\paste\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\preview\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\print\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\save\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\searchreplace\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\spellchecker\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\tabfocus\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\table\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\template\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\textcolor\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\textpattern\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\textpattern\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\img\address.gif" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\img\article.gif" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\img\aside.gif" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\img\blockquote.gif" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\img\div.gif" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\img\dl.gif" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\img\figure.gif" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\img\h1.gif" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\img\h2.gif" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\img\h3.gif" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\img\h4.gif" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\img\h5.gif" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\img\h6.gif" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\img\hgroup.gif" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\img\ol.gif" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\img\p.gif" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\img\pre.gif" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\img\section.gif" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\img\ul.gif" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\visualchars\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\wordcount\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="Scripts\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="Scripts\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="Scripts\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="Scripts\tinymce\themes\modern\theme.js" />
+    <Content Include="Scripts\tinymce\themes\modern\theme.min.js" />
+    <Content Include="Scripts\tinymce\tinymce.js" />
+    <Content Include="Scripts\tinymce\tinymce.min.js" />
+    <Content Include="Scripts\webGrid.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.json" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.json" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\readme.md" />
+    <Content Include="Scripts\tinymce\langs\readme.md" />
+    <Content Include="Views\Shared\_ClientMenu.cshtml" />
+    <Content Include="Views\Shared\_DeveloperMenu.cshtml" />
+    <Content Include="Views\Shared\_Home.cshtml" />
+    <Content Include="Views\Disciplina\Create.cshtml" />
+    <Content Include="Views\Disciplina\Delete.cshtml" />
+    <Content Include="Views\Disciplina\Details.cshtml" />
+    <Content Include="Views\Disciplina\Edit.cshtml" />
+    <Content Include="Views\Disciplina\Index.cshtml" />
+    <Content Include="Views\Disciplina\AddImage.cshtml" />
+    <Content Include="Views\Disciplina\AddIcon.cshtml" />
+    <Content Include="Views\Disciplina\AddAcronym.cshtml" />
+    <Content Include="Views\Disciplina\AddImageTraining.cshtml" />
+    <Content Include="Views\Disciplina\DeleteImage.cshtml" />
+    <Content Include="Views\Disciplina\DeleteIcon.cshtml" />
+    <Content Include="Views\Disciplina\DeleteAcronym.cshtml" />
+    <Content Include="Views\Disciplina\DeleteImageTraining.cshtml" />
+    <Content Include="Views\Cuestionario\Create.cshtml" />
+    <Content Include="Views\Cuestionario\Delete.cshtml" />
+    <Content Include="Views\Cuestionario\Details.cshtml" />
+    <Content Include="Views\Cuestionario\Edit.cshtml" />
+    <Content Include="Views\Cuestionario\Index.cshtml" />
+    <Content Include="Views\Pregunta\Create.cshtml" />
+    <Content Include="Views\Pregunta\Delete.cshtml" />
+    <Content Include="Views\Pregunta\Details.cshtml" />
+    <Content Include="Views\Pregunta\Edit.cshtml" />
+    <Content Include="Views\Respuesta\Create.cshtml" />
+    <Content Include="Views\Respuesta\Delete.cshtml" />
+    <Content Include="Views\Respuesta\Details.cshtml" />
+    <Content Include="Views\Respuesta\Edit.cshtml" />
+    <Content Include="Views\RedSocial\Create.cshtml" />
+    <Content Include="Views\RedSocial\Delete.cshtml" />
+    <Content Include="Views\RedSocial\Details.cshtml" />
+    <Content Include="Views\RedSocial\Edit.cshtml" />
+    <Content Include="Views\RedSocial\Index.cshtml" />
+    <Content Include="Views\Producto\Create.cshtml" />
+    <Content Include="Views\Producto\Delete.cshtml" />
+    <Content Include="Views\Producto\Details.cshtml" />
+    <Content Include="Views\Producto\Edit.cshtml" />
+    <Content Include="Views\Producto\Index.cshtml" />
+    <Content Include="Views\Producto\AddImage.cshtml" />
+    <Content Include="Views\Producto\DeleteImage.cshtml" />
+    <Content Include="Views\Nutriente\Create.cshtml" />
+    <Content Include="Views\Nutriente\Delete.cshtml" />
+    <Content Include="Views\Nutriente\Details.cshtml" />
+    <Content Include="Views\Nutriente\Edit.cshtml" />
+    <Content Include="Views\Nutriente\Index.cshtml" />
+    <Content Include="Views\ContenidoEstatico\Create.cshtml" />
+    <Content Include="Views\ContenidoEstatico\Delete.cshtml" />
+    <Content Include="Views\ContenidoEstatico\Details.cshtml" />
+    <Content Include="Views\ContenidoEstatico\Edit.cshtml" />
+    <Content Include="Views\Cliente\Delete.cshtml" />
+    <Content Include="Views\Cliente\Details.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\ProTip\Create.cshtml" />
+    <Content Include="Views\ProTip\Delete.cshtml" />
+    <Content Include="Views\ProTip\Details.cshtml" />
+    <Content Include="Views\ProTip\Edit.cshtml" />
+    <Content Include="Views\ProTip\Index.cshtml" />
+    <Content Include="Views\ProTip\AddImage.cshtml" />
+    <Content Include="Views\ProTip\DeleteImage.cshtml" />
+    <Content Include="Views\Shared\_FoodLayout.cshtml" />
+    <Content Include="Views\Shared\_ClientFoodMenu.cshtml" />
+    <Content Include="Views\Producto\_ViewStart.cshtml" />
+    <Content Include="Views\Nutriente\_ViewStart.cshtml" />
+    <Content Include="Views\Dieta\Create.cshtml" />
+    <Content Include="Views\Dieta\Delete.cshtml" />
+    <Content Include="Views\Dieta\Details.cshtml" />
+    <Content Include="Views\Dieta\Edit.cshtml" />
+    <Content Include="Views\Dieta\Index.cshtml" />
+    <Content Include="Views\Dieta\_ViewStart.cshtml" />
+    <Content Include="Views\Tempo\Create.cshtml" />
+    <Content Include="Views\Tempo\Delete.cshtml" />
+    <Content Include="Views\Tempo\Details.cshtml" />
+    <Content Include="Views\Tempo\Edit.cshtml" />
+    <Content Include="Views\Tempo\Index.cshtml" />
+    <Content Include="Views\Tempo\_ViewStart.cshtml" />
+    <Content Include="Views\Porcion\Create.cshtml" />
+    <Content Include="Views\Porcion\Delete.cshtml" />
+    <Content Include="Views\Porcion\Details.cshtml" />
+    <Content Include="Views\Porcion\Edit.cshtml" />
+    <Content Include="Views\Porcion\Index.cshtml" />
+    <Content Include="Views\Porcion\_ViewStart.cshtml" />
+    <Content Include="Views\Alimento\Create.cshtml" />
+    <Content Include="Views\Alimento\Delete.cshtml" />
+    <Content Include="Views\Alimento\Details.cshtml" />
+    <Content Include="Views\Alimento\Edit.cshtml" />
+    <Content Include="Views\Alimento\Index.cshtml" />
+    <Content Include="Views\Alimento\_ViewStart.cshtml" />
+    <Content Include="Views\Platillo\Create.cshtml" />
+    <Content Include="Views\Platillo\Delete.cshtml" />
+    <Content Include="Views\Platillo\Details.cshtml" />
+    <Content Include="Views\Platillo\Edit.cshtml" />
+    <Content Include="Views\Platillo\Index.cshtml" />
+    <Content Include="Views\Platillo\_ViewStart.cshtml" />
+    <Content Include="Views\Suplemento\Create.cshtml" />
+    <Content Include="Views\Suplemento\Delete.cshtml" />
+    <Content Include="Views\Suplemento\Details.cshtml" />
+    <Content Include="Views\Suplemento\Edit.cshtml" />
+    <Content Include="Views\Suplemento\Index.cshtml" />
+    <Content Include="Views\Suplemento\_ViewStart.cshtml" />
+    <Content Include="Views\Dieta\AddImage.cshtml" />
+    <Content Include="Views\Dieta\DeleteImage.cshtml" />
+    <Content Include="Views\Dieta\Tempos.cshtml" />
+    <Content Include="Views\DietaTempos\Create.cshtml" />
+    <Content Include="Views\DietaTempos\Delete.cshtml" />
+    <Content Include="Views\DietaTempos\Details.cshtml" />
+    <Content Include="Views\DietaTempos\Edit.cshtml" />
+    <Content Include="Views\DietaTempos\_ViewStart.cshtml" />
+    <Content Include="Views\DietaAlimentacion\Create.cshtml" />
+    <Content Include="Views\DietaAlimentacion\Delete.cshtml" />
+    <Content Include="Views\DietaAlimentacion\Details.cshtml" />
+    <Content Include="Views\DietaAlimentacion\Edit.cshtml" />
+    <Content Include="Views\DietaAlimentacion\_ViewStart.cshtml" />
+    <Content Include="Views\Evento\Create.cshtml" />
+    <Content Include="Views\Evento\Delete.cshtml" />
+    <Content Include="Views\Evento\Details.cshtml" />
+    <Content Include="Views\Evento\Edit.cshtml" />
+    <Content Include="Views\Evento\Index.cshtml" />
+    <Content Include="Views\Shared\_WorkOutLayout.cshtml" />
+    <Content Include="Views\Shared\_ClientWorkOutMenu.cshtml" />
+    <Content Include="Views\Rutina\Create.cshtml" />
+    <Content Include="Views\Rutina\Delete.cshtml" />
+    <Content Include="Views\Rutina\Details.cshtml" />
+    <Content Include="Views\Rutina\Edit.cshtml" />
+    <Content Include="Views\Rutina\Index.cshtml" />
+    <Content Include="Views\Rutina\_ViewStart.cshtml" />
+    <Content Include="Views\GrupoMusculos\Create.cshtml" />
+    <Content Include="Views\GrupoMusculos\Delete.cshtml" />
+    <Content Include="Views\GrupoMusculos\Details.cshtml" />
+    <Content Include="Views\GrupoMusculos\Edit.cshtml" />
+    <Content Include="Views\GrupoMusculos\Index.cshtml" />
+    <Content Include="Views\GrupoMusculos\_ViewStart.cshtml" />
+    <Content Include="Views\GrupoMusculos\AddImage.cshtml" />
+    <Content Include="Views\GrupoMusculos\DeleteImage.cshtml" />
+    <Content Include="Views\ProTip\_ViewStart.cshtml" />
+    <Content Include="Views\Musculo\Create.cshtml" />
+    <Content Include="Views\Musculo\Delete.cshtml" />
+    <Content Include="Views\Musculo\Details.cshtml" />
+    <Content Include="Views\Musculo\Edit.cshtml" />
+    <Content Include="Views\Musculo\Index.cshtml" />
+    <Content Include="Views\Musculo\AddImage.cshtml" />
+    <Content Include="Views\Musculo\DeleteImage.cshtml" />
+    <Content Include="Views\Musculo\_ViewStart.cshtml" />
+    <Content Include="Views\UnidadEjercicio\Create.cshtml" />
+    <Content Include="Views\UnidadEjercicio\Delete.cshtml" />
+    <Content Include="Views\UnidadEjercicio\Details.cshtml" />
+    <Content Include="Views\UnidadEjercicio\Edit.cshtml" />
+    <Content Include="Views\UnidadEjercicio\Index.cshtml" />
+    <Content Include="Views\UnidadEjercicio\_ViewStart.cshtml" />
+    <Content Include="Views\Accesorio\Create.cshtml" />
+    <Content Include="Views\Accesorio\Delete.cshtml" />
+    <Content Include="Views\Accesorio\Details.cshtml" />
+    <Content Include="Views\Accesorio\Edit.cshtml" />
+    <Content Include="Views\Accesorio\Index.cshtml" />
+    <Content Include="Views\Accesorio\_ViewStart.cshtml" />
+    <Content Include="Views\Elemento\Create.cshtml" />
+    <Content Include="Views\Elemento\Delete.cshtml" />
+    <Content Include="Views\Elemento\Details.cshtml" />
+    <Content Include="Views\Elemento\Edit.cshtml" />
+    <Content Include="Views\Elemento\Index.cshtml" />
+    <Content Include="Views\Posicion\Create.cshtml" />
+    <Content Include="Views\Posicion\Delete.cshtml" />
+    <Content Include="Views\Posicion\Details.cshtml" />
+    <Content Include="Views\Posicion\Edit.cshtml" />
+    <Content Include="Views\Posicion\Index.cshtml" />
+    <Content Include="Views\Ejercicio\Create.cshtml" />
+    <Content Include="Views\Ejercicio\Delete.cshtml" />
+    <Content Include="Views\Ejercicio\Details.cshtml" />
+    <Content Include="Views\Ejercicio\Edit.cshtml" />
+    <Content Include="Views\Ejercicio\Index.cshtml" />
+    <Content Include="Views\Elemento\_ViewStart.cshtml" />
+    <Content Include="Views\Posicion\_ViewStart.cshtml" />
+    <Content Include="Views\Ejercicio\_ViewStart.cshtml" />
+    <Content Include="Views\Ejercicio\AddImage.cshtml" />
+    <Content Include="Views\Ejercicio\DeleteImage.cshtml" />
+    <Content Include="Views\Plan\Create.cshtml" />
+    <Content Include="Views\Plan\Delete.cshtml" />
+    <Content Include="Views\Plan\Details.cshtml" />
+    <Content Include="Views\Plan\Edit.cshtml" />
+    <Content Include="Views\Plan\Index.cshtml" />
+    <Content Include="Views\Shared\_PlanLayout.cshtml" />
+    <Content Include="Views\Plan\_ViewStart.cshtml" />
+    <Content Include="Views\Plan\DeleteImage.cshtml" />
+    <Content Include="Views\Plan\AddImage.cshtml" />
+    <Content Include="Views\Plan\Tags.cshtml" />
+    <Content Include="Views\Plan\Days.cshtml" />
+    <Content Include="Views\PlanDias\Create.cshtml" />
+    <Content Include="Views\PlanDias\Delete.cshtml" />
+    <Content Include="Views\PlanDias\Edit.cshtml" />
+    <Content Include="Views\PlanDias\_ViewStart.cshtml" />
+    <Content Include="Views\PlanDias\Exercices.cshtml" />
+    <Content Include="Views\PlanDiaEjercicios\Delete.cshtml" />
+    <Content Include="Views\PlanDiaEjercicios\Edit.cshtml" />
+    <Content Include="Views\PlanDiaEjercicios\_ViewStart.cshtml" />
+    <Content Include="Views\PlanDiaEjercicios\Create.cshtml" />
+    <Content Include="Views\PlanDiaEjercicios\Series.cshtml" />
+    <Content Include="Views\PlanDiaEjercicioSeries\Edit.cshtml" />
+    <Content Include="Views\PlanDiaEjercicioSeries\_ViewStart.cshtml" />
+    <Content Include="Views\Banner\Create.cshtml" />
+    <Content Include="Views\Banner\Delete.cshtml" />
+    <Content Include="Views\Banner\Details.cshtml" />
+    <Content Include="Views\Banner\Edit.cshtml" />
+    <Content Include="Views\Banner\Index.cshtml" />
+    <Content Include="Views\Banner\_ViewStart.cshtml" />
+    <Content Include="Views\CMSUsuario\Index.cshtml" />
+    <Content Include="Views\CMSUsuario\ResetPassword.cshtml" />
+    <Content Include="Views\Home\Error404.cshtml" />
+    <Content Include="Views\Home\FailError.cshtml" />
+    <Content Include="Views\Home\Error400.cshtml" />
+    <Content Include="Views\Home\Error401.cshtml" />
+    <Content Include="Scripts\product-upload-image.min.js.map">
+      <DependentUpon>product-upload-image.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\protip-upload-image.min.js.map">
+      <DependentUpon>protip-upload-image.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\plan-upload-image.min.js.map">
+      <DependentUpon>plan-upload-image.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\muscle-upload-image.min.js.map">
+      <DependentUpon>muscle-upload-image.min.js</DependentUpon>
+    </Content>
+    <Content Include="Views\Banner\AddImage.cshtml" />
+    <Content Include="Views\Banner\DeleteImage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201604222321285_InitialCreate.resx">
+      <DependentUpon>201604222321285_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604271805544_AddTableDisciplina.resx">
+      <DependentUpon>201604271805544_AddTableDisciplina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605021750490_AddTableCuestionario.resx">
+      <DependentUpon>201605021750490_AddTableCuestionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605021813458_AddTablePregunta.resx">
+      <DependentUpon>201605021813458_AddTablePregunta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605021849442_AddTableRespuesta.resx">
+      <DependentUpon>201605021849442_AddTableRespuesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605022203035_AddTableRedSocial.resx">
+      <DependentUpon>201605022203035_AddTableRedSocial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605022214018_AddTableContenidoEstatico.resx">
+      <DependentUpon>201605022214018_AddTableContenidoEstatico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605022356117_AddTableTempo.resx">
+      <DependentUpon>201605022356117_AddTableTempo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030010214_AddTablePorcion.resx">
+      <DependentUpon>201605030010214_AddTablePorcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030020500_AddTableNutriente.resx">
+      <DependentUpon>201605030020500_AddTableNutriente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030050413_AddTableAlimento.resx">
+      <DependentUpon>201605030050413_AddTableAlimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030120425_AddTableProducto.resx">
+      <DependentUpon>201605030120425_AddTableProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030148596_AddTableDieta.resx">
+      <DependentUpon>201605030148596_AddTableDieta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030215395_AddTableDietaTempos.resx">
+      <DependentUpon>201605030215395_AddTableDietaTempos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030253434_AddTableDietaAlimentacion.resx">
+      <DependentUpon>201605030253434_AddTableDietaAlimentacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030306151_AddTableGrupoMusculos.resx">
+      <DependentUpon>201605030306151_AddTableGrupoMusculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030323033_AddTableMusculo.resx">
+      <DependentUpon>201605030323033_AddTableMusculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030338590_AddTableAccesorio.resx">
+      <DependentUpon>201605030338590_AddTableAccesorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030352414_AddTableElemento.resx">
+      <DependentUpon>201605030352414_AddTableElemento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030402196_AddTablePosicion.resx">
+      <DependentUpon>201605030402196_AddTablePosicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030421177_AddTableUnidadEjercicio.resx">
+      <DependentUpon>201605030421177_AddTableUnidadEjercicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030510119_AddTableEjercicio.resx">
+      <DependentUpon>201605030510119_AddTableEjercicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030523170_AddTableRutina.resx">
+      <DependentUpon>201605030523170_AddTableRutina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030536400_AddTableProTip.resx">
+      <DependentUpon>201605030536400_AddTableProTip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030555478_AddTableEvento.resx">
+      <DependentUpon>201605030555478_AddTableEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030611049_AddTablePlan.resx">
+      <DependentUpon>201605030611049_AddTablePlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030644247_AddTablePlanDias.resx">
+      <DependentUpon>201605030644247_AddTablePlanDias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030722176_AddTablePlanDiaEjercicios.resx">
+      <DependentUpon>201605030722176_AddTablePlanDiaEjercicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030734148_AddTablePlanDiaEjercicioSeries.resx">
+      <DependentUpon>201605030734148_AddTablePlanDiaEjercicioSeries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030752357_AddTablePlanEtiquetas.resx">
+      <DependentUpon>201605030752357_AddTablePlanEtiquetas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605030810143_AddTableUsuario.resx">
+      <DependentUpon>201605030810143_AddTableUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605031417437_AddTableBanner.resx">
+      <DependentUpon>201605031417437_AddTableBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605042137184_UpdateTableDisciplina.resx">
+      <DependentUpon>201605042137184_UpdateTableDisciplina.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56669</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56669/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

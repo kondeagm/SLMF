@@ -1,0 +1,112 @@
+﻿@model SLMFCMS.Models.PlanDias
+@using SLMFCMS.Models
+@{
+    ViewBag.Title = "Editar el Día del Plan";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12">
+            <div id="row-header-index" class="row">
+                <div id="div-titulo" class="col-md-7">
+                    <h4>@ViewBag.Title</h4>
+                </div>
+                <div class="col-md-3">
+                    &nbsp;
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-save" type="submit" title="Guardar">Guardar</button>
+                </div>
+                <div id="div-search" class="col-md-1">
+                    @Html.ActionLink("Cancelar", "Days", "Plan", routeValues: new { id = Model.PlanID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "btn btn-cancel", @title = "Cancelar" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr id="header-divisor" />
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.PlanID)
+        <div class="row">
+            <div class="col-md-2 lbltitulo">
+                @Html.LabelFor(model => model.Plan.DisciplinaID)
+            </div>
+            <div class="col-md-2 lbltitulo">
+                @Html.LabelFor(model => model.PlanID)
+            </div>
+            <div class="col-md-3 lbltitulo">
+                @Html.LabelFor(model => model.Plan.Leyenda)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 txt-area-display-with-border area-border-2">
+                @Html.DisplayFor(model => model.Plan.Disciplina.Nombre)
+            </div>
+            <div class="col-md-2 txt-area-display-with-border area-border-2">
+                @Html.DisplayFor(model => model.Plan.Nombre)
+            </div>
+            <div class="col-md-2 txt-area-display-with-border area-border-2">
+                @Html.DisplayFor(model => model.Plan.Leyenda)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 lbltitulo">
+                @Html.LabelFor(model => model.Dia)
+            </div>
+            <div class="col-md-3 lbltitulo">
+                @Html.LabelFor(model => model.RutinaID)
+            </div>
+            <div class="col-md-3 lbltitulo">
+                @Html.LabelFor(model => model.DietaID)
+            </div>
+            <div class="col-md-3 lbltitulo">
+                @Html.LabelFor(model => model.ProTipID)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 margen-off">
+                @Html.TextBoxFor(model => model.Dia, new { @class = "txt-box-input-5-1" })
+            </div>
+            <div id="selector-table-1" class="col-md-3 margen-off">
+                @Html.DropDownList("RutinaID")
+            </div>
+            <div id="selector-table-1" class="col-md-3 margen-off">
+                @Html.DropDownList("DietaID")
+            </div>
+            <div id="selector-table-1" class="col-md-3 margen-off">
+                @Html.DropDownList("ProTipID")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Dia, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.RutinaID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.DietaID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.ProTipID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

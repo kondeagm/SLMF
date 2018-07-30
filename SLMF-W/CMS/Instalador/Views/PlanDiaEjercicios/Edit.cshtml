@@ -1,0 +1,172 @@
+﻿@model SLMFCMS.Models.PlanDiaEjercicios
+@using SLMFCMS.Models
+@{
+    ViewBag.Title = "Editar el Ejercicio del Día de Entrenamiento";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12">
+            <div id="row-header-index" class="row">
+                <div id="div-titulo" class="col-md-7">
+                    <h4>@ViewBag.Title</h4>
+                </div>
+                <div class="col-md-3">
+                    &nbsp;
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-save" type="submit" title="Guardar">Guardar</button>
+                </div>
+                <div id="div-search" class="col-md-1">
+                    @Html.ActionLink("Cancelar", "Exercices", "PlanDias", routeValues: new { id = Model.PlanDiasID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "btn btn-cancel", @title = "Cancelar" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr id="header-divisor" />
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.PlanDiasID)
+        <div class="row">
+            <div class="col-md-2 lbltitulo">
+                @Html.LabelFor(model => model.PlanDias.Plan.DisciplinaID)
+            </div>
+            <div class="col-md-2 lbltitulo">
+                @Html.LabelFor(model => model.PlanDias.PlanID)
+            </div>
+            <div class="col-md-1 lbltitulo">
+                @Html.LabelFor(model => model.PlanDias.Dia)
+            </div>
+            <div class="col-md-3 lbltitulo">
+                @Html.LabelFor(model => model.PlanDias.RutinaID)
+            </div>
+            <div class="col-md-3 lbltitulo">
+                @Html.LabelFor(model => model.PlanDias.DietaID)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 txt-area-display-with-border area-border-2">
+                @Html.DisplayFor(model => model.PlanDias.Plan.Disciplina.Nombre)
+            </div>
+            <div class="col-md-2 txt-area-display-with-border area-border-2">
+                @Html.DisplayFor(model => model.PlanDias.Plan.Nombre)
+            </div>
+            <div class="col-md-1 txt-area-display-with-border area-border-1">
+                @Html.DisplayFor(model => model.PlanDias.Dia)
+            </div>
+            <div class="col-md-3 txt-area-display-with-border area-border-3">
+                @Html.DisplayFor(model => model.PlanDias.Rutina.Nombre)
+            </div>
+            <div class="col-md-3 txt-area-display-with-border area-border-3">
+                @Html.DisplayFor(model => model.PlanDias.Dieta.Nombre)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 lbltitulo">
+                @Html.LabelFor(model => model.Secuencia)
+            </div>
+            <div class="col-md-5 lbltitulo">
+                @Html.LabelFor(model => model.EjercicioID)
+            </div>
+            <div class="col-md-1 lbltitulo">
+                @Html.LabelFor(model => model.Series)
+            </div>
+            <div class="col-md-3 lbltitulo">
+                @Html.LabelFor(model => model.Repeticiones)
+            </div>
+            <div class="col-md-1 lbltitulo">
+                @Html.LabelFor(model => model.Descanso)
+            </div>
+            <div class="col-md-1 lbltitulo">
+                @Html.LabelFor(model => model.Nivel)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 margen-off">
+                @Html.TextBoxFor(model => model.Secuencia, new { @class = "txt-box-input-5-1" })
+            </div>
+            <div id="selector-table-1" class="col-md-5 margen-off">
+                @Html.DropDownList("EjercicioID")
+            </div>
+            <div id="selector-table-1" class="col-md-1 margen-off">
+                @Html.DropDownList("Series")
+            </div>
+            <div id="selector-table-1" class="col-md-3 margen-off">
+                @Html.TextBoxFor(model => model.Repeticiones, new { @class = "txt-box-input-7-1" })
+                @Html.DropDownList("UnidadEjercicioID")
+            </div>
+            <div id="selector-table-1" class="col-md-1 margen-off">
+                @Html.DropDownList("Descanso") @Html.Label("Min", htmlAttributes: new { @class = "lbltitulo" })
+            </div>
+            <div id="selector-table-1" class="col-md-1 margen-off">
+                @Html.DropDownList("Nivel")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 lbltitulo">
+                @Html.LabelFor(model => model.Nota)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 margen-off">
+                @Html.TextBoxFor(model => model.Nota, new { @class = "txt-box-input-col3-row1" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Secuencia, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.EjercicioID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Series, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Repeticiones, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.UnidadEjercicioID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Descanso, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Nivel, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Nota, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

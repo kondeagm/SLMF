@@ -1,0 +1,116 @@
+﻿@model SLMFCMS.Models.RedSocial
+@using System.Web.Helpers
+@{var grid = new WebGrid(Model.PostEnLaRedSocial, defaultSort: "ID", canPage: true, rowsPerPage: 6,
+    selectionFieldName: "ID", ajaxUpdateContainerId: "gridContent");}
+@{int noPaginas = grid.PageCount;}
+@{int nPagina = grid.PageIndex + 1;}
+@{int nRecords = grid.TotalRowCount;}
+@{
+    ViewBag.Title = "Detalles de la Red Social";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div id="row-header-index" class="row">
+            <div id="div-titulo" class="col-md-7">
+                <h4>@ViewBag.Title</h4>
+            </div>
+            <div class="col-md-4">
+                &nbsp;
+            </div>
+            <div id="div-search" class="col-md-1">
+                @Html.ActionLink(" ", "Index", "RedSocial", routeValues: new { pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-arrow-left fa-2x btn-accion-inv", @title = "Regresar" })
+            </div>
+        </div>
+    </div>
+</div>
+<hr id="header-divisor" />
+<div class="row">
+    <div class="col-md-3 lbltitulo">
+        @Html.LabelFor(model => model.Nombre)
+    </div>
+    <div class="col-md-3 lbltitulo">
+        @Html.LabelFor(model => model.Identificador)
+    </div>
+    <div class="col-md-4 lbltitulo">
+        @Html.LabelFor(model => model.URL)
+    </div>
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.NoPost)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 txt-area-display-with-border area-border-3">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+    <div class="col-md-3 txt-area-display-with-border area-border-3">
+        @Html.DisplayFor(model => model.Identificador)
+    </div>
+    <div class="col-md-4 txt-area-display-with-border area-border-4">
+        @Html.DisplayFor(model => model.URL)
+    </div>
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.NoPost)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 lbltitulo">
+        @Html.LabelFor(model => model.APPId)
+    </div>
+    <div class="col-md-4 lbltitulo">
+        @Html.LabelFor(model => model.APIKey)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 txt-area-display-with-border area-border-4">
+        @Html.DisplayFor(model => model.APPId)
+    </div>
+    <div class="col-md-4 txt-area-display-with-border area-border-4">
+        @Html.DisplayFor(model => model.APIKey)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row row-detalle-add">
+    <div class="col-md-12">
+        <span>
+            @Html.ActionLink(" ", "Create", "ContenidoEstatico", routeValues: new { pagina = ViewBag.Pagina, page = ViewBag.Page, redsocial = Model.ID }, htmlAttributes: new { @class = "fa fa-plus-square fa-2x btn-accion", @title = "Agrega un Contenido Estatico a la Red Social" })
+        </span>
+        @Html.LabelFor(model => model.PostEnLaRedSocial, htmlAttributes: new { @class = "lbltitulo" })
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        @if (noPaginas > 0)
+        {
+            @grid.GetHtml(tableStyle: "table webGrid",
+                mode: WebGridPagerModes.All,
+                numericLinksCount: 6,
+                headerStyle: "webGridHeader",
+                alternatingRowStyle: "",
+                selectedRowStyle: "",
+                firstText: "«",
+                lastText: "»",
+                previousText: "‹",
+                nextText: "›",
+                columns: grid.Columns(
+                grid.Column("Identificador", "Identificador", canSort: true),
+                grid.Column("", header: "", canSort: false, style: "columnActionwebGrid",
+                    format:
+                    @<text>
+                        @Html.ActionLink(" ", "Edit", "ContenidoEstatico", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-pencil-square fa-2x btn-accion", @title = "Editar el Contenido Estatico de la Red Social" })
+                        @Html.ActionLink(" ", "Details", "ContenidoEstatico", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-info-circle fa-2x btn-accion", @title = "Detalles del Contenido Estatico de la Red Social" })
+                        @Html.ActionLink(" ", "Delete", "ContenidoEstatico", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-minus-square fa-2x btn-accion", @title = "Borrar el Contenido Estatico de la Red Social" })
+                    </text>)
+                                                                                                                             )
+                                                                                                                         )
+        }
+    </div>
+</div>

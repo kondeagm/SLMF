@@ -1,0 +1,604 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2C70B5B6-5D2B-486A-9B4B-7E70C04B15CF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SLMFSITE</RootNamespace>
+    <AssemblyName>SLMFSITE</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Extenciones.cs" />
+    <Compile Include="Functions\Funcion.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Accesorio.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alimento.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Banner.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContenidoEstatico.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cuestionario.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dieta.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DietaAlimentacion.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DietaTempos.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Disciplina.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Ejercicio.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Elemento.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Evento.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GrupoMusculos.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Musculo.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Nutriente.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Plan.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PlanDiaEjercicios.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PlanDiaEjercicioSeries.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PlanDias.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PlanEtiquetas.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Porcion.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Posicion.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pregunta.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Producto.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProTip.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RedSocial.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Respuesta.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rutina.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SLMFDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SLMFDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SLMFDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SLMFDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SLMFDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tempo.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UnidadEjercicio.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Usuario.cs">
+      <DependentUpon>SLMFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\404\main.css" />
+    <Content Include="Content\css\about\main.css" />
+    <Content Include="Content\css\competir\main.css" />
+    <Content Include="Content\css\comunidad-slmf\main.css" />
+    <Content Include="Content\css\dashboard\main.css" />
+    <Content Include="Content\css\entrenar\main.css" />
+    <Content Include="Content\css\home\main.css" />
+    <Content Include="Content\css\layout.css" />
+    <Content Include="Content\css\potenciar\main.css" />
+    <Content Include="Content\css\slmf-labs\main.css" />
+    <Content Include="Content\css\slmf-team-file\main.css" />
+    <Content Include="Content\css\slmf-team\main.css" />
+    <Content Include="Content\fonts\slmf_icons-webfont.svg" />
+    <Content Include="Content\fonts\slmf_normal-webfont.svg" />
+    <Content Include="Content\img\about\background-tile.jpg" />
+    <Content Include="Content\img\about\center_background.jpg" />
+    <Content Include="Content\img\about\corona.png" />
+    <Content Include="Content\img\about\franjas.png" />
+    <Content Include="Content\img\about\gray_mask.png" />
+    <Content Include="Content\img\about\left-background.jpg" />
+    <Content Include="Content\img\about\logo.png" />
+    <Content Include="Content\img\about\morriz-medal.png" />
+    <Content Include="Content\img\about\right-background.jpg" />
+    <Content Include="Content\img\about\strong-nutrition.png" />
+    <Content Include="Content\img\about\yellow_mask.png" />
+    <Content Include="Content\img\bg-gradient.jpg" />
+    <Content Include="Content\img\competir\background.jpg" />
+    <Content Include="Content\img\competir\bbd-a-1.png" />
+    <Content Include="Content\img\competir\bbd-b-1.png" />
+    <Content Include="Content\img\competir\bbd-c-1.png" />
+    <Content Include="Content\img\competir\cft-a-1.png" />
+    <Content Include="Content\img\competir\cft-b-1.png" />
+    <Content Include="Content\img\competir\cft-c-1.png" />
+    <Content Include="Content\img\competir\dash-tile.png" />
+    <Content Include="Content\img\competir\mma-a-1.png" />
+    <Content Include="Content\img\competir\mma-b-1.png" />
+    <Content Include="Content\img\competir\mma-b-2.png" />
+    <Content Include="Content\img\competir\mma-c-1.png" />
+    <Content Include="Content\img\competir\mma-c-2.png" />
+    <Content Include="Content\img\competir\pin.png" />
+    <Content Include="Content\img\comunidad-slmf\bg.jpg" />
+    <Content Include="Content\img\comunidad-slmf\instagram.svg" />
+    <Content Include="Content\img\comunidad-slmf\twitter.svg" />
+    <Content Include="Content\img\comunidad-slmf\youtube.svg" />
+    <Content Include="Content\img\dashboard\anatomia\bg-anatomia-brazo-hombro-0.jpg" />
+    <Content Include="Content\img\dashboard\anatomia\bg-anatomia-brazo-hombro-1.jpg" />
+    <Content Include="Content\img\dashboard\anatomia\bg-anatomia-espalda-0.jpg" />
+    <Content Include="Content\img\dashboard\anatomia\bg-anatomia-espalda-1.jpg" />
+    <Content Include="Content\img\dashboard\anatomia\bg-anatomia-pecho-abdomen-0.jpg" />
+    <Content Include="Content\img\dashboard\anatomia\bg-anatomia-pecho-abdomen-1.jpg" />
+    <Content Include="Content\img\dashboard\anatomia\bg-anatomia-pierna-0.jpg" />
+    <Content Include="Content\img\dashboard\anatomia\bg-anatomia-pierna-1.jpg" />
+    <Content Include="Content\img\dashboard\anatomia\muscle.jpg" />
+    <Content Include="Content\img\dashboard\anatomia\muscle_a.png" />
+    <Content Include="Content\img\dashboard\anatomia\muscle_b.png" />
+    <Content Include="Content\img\dashboard\anatomia\muscle_c.png" />
+    <Content Include="Content\img\dashboard\anatomia\muscle_d.png" />
+    <Content Include="Content\img\dashboard\anatomia\muscle_e.png" />
+    <Content Include="Content\img\dashboard\anatomia\muscle_gray.png" />
+    <Content Include="Content\img\dashboard\comidas\arrows.png" />
+    <Content Include="Content\img\dashboard\comidas\b1-1.jpg" />
+    <Content Include="Content\img\dashboard\comidas\b1.jpg" />
+    <Content Include="Content\img\dashboard\comidas\b2.jpg" />
+    <Content Include="Content\img\dashboard\comidas\b3-1.jpg" />
+    <Content Include="Content\img\dashboard\comidas\b3.jpg" />
+    <Content Include="Content\img\dashboard\comidas\b4.jpg" />
+    <Content Include="Content\img\dashboard\comidas\banner.png" />
+    <Content Include="Content\img\dashboard\comidas\slider.jpg" />
+    <Content Include="Content\img\dashboard\comidas\slider2.jpg" />
+    <Content Include="Content\img\dashboard\cursor-arrow-left.cur" />
+    <Content Include="Content\img\dashboard\cursor-arrow-left.png" />
+    <Content Include="Content\img\dashboard\cursor-arrow-right.cur" />
+    <Content Include="Content\img\dashboard\cursor-arrow-right.png" />
+    <Content Include="Content\img\dashboard\dash-tile.png" />
+    <Content Include="Content\img\dashboard\dash-title-active.png" />
+    <Content Include="Content\img\dashboard\entrenamiento\SLMF_TrainingThumbs1.jpg" />
+    <Content Include="Content\img\dashboard\entrenamiento\SLMF_TrainingThumbs2.jpg" />
+    <Content Include="Content\img\dashboard\info\bg-bbd.jpg" />
+    <Content Include="Content\img\dashboard\info\bg.jpg" />
+    <Content Include="Content\img\dashboard\info\fitness.jpg" />
+    <Content Include="Content\img\dashboard\info\fitness2.jpg" />
+    <Content Include="Content\img\dashboard\_cursor-arrow-left.cur" />
+    <Content Include="Content\img\dashboard\_cursor-arrow-left.png" />
+    <Content Include="Content\img\dashboard\_cursor-arrow-right.cur" />
+    <Content Include="Content\img\dashboard\_cursor-arrow-right.png" />
+    <Content Include="Content\img\entrenar\definicion_0.svg" />
+    <Content Include="Content\img\entrenar\definicion_1.svg" />
+    <Content Include="Content\img\entrenar\volumen_0.svg" />
+    <Content Include="Content\img\entrenar\volumen_1.svg" />
+    <Content Include="Content\img\favicon.png" />
+    <Content Include="Content\img\home\bg-bbd.jpg" />
+    <Content Include="Content\img\home\bg-kai-medium.jpg" />
+    <Content Include="Content\img\home\bg-kai.jpg" />
+    <Content Include="Content\img\home\bg-labs-medium.jpg" />
+    <Content Include="Content\img\home\bg-labs.jpg" />
+    <Content Include="Content\img\home\bg-slmf-medium.jpg" />
+    <Content Include="Content\img\home\bg-slmf.jpg" />
+    <Content Include="Content\img\home\kai-1600x1000.jpg" />
+    <Content Include="Content\img\home\slmf-labsl-logo.svg" />
+    <Content Include="Content\img\icon\arrows-updown.png" />
+    <Content Include="Content\img\icon\arrows.png" />
+    <Content Include="Content\img\icon\slmf-simple.svg" />
+    <Content Include="Content\img\pattern.png" />
+    <Content Include="Content\img\potenciar\background.jpg" />
+    <Content Include="Content\img\potenciar\bottles\bottle_1.png" />
+    <Content Include="Content\img\potenciar\bottles\bottle_2.png" />
+    <Content Include="Content\img\potenciar\bottles\bottle_3.png" />
+    <Content Include="Content\img\potenciar\food-thumbs\desarrollo.png" />
+    <Content Include="Content\img\potenciar\food-thumbs\energia.png" />
+    <Content Include="Content\img\potenciar\food-thumbs\reguladores.png" />
+    <Content Include="Content\img\potenciar\food\apples.png" />
+    <Content Include="Content\img\potenciar\food\apples_.png" />
+    <Content Include="Content\img\potenciar\food\berries.png" />
+    <Content Include="Content\img\potenciar\food\broccoli.png" />
+    <Content Include="Content\img\potenciar\food\cheese.png" />
+    <Content Include="Content\img\potenciar\food\meat.png" />
+    <Content Include="Content\img\potenciar\food\salmon.png" />
+    <Content Include="Content\img\potenciar\food\spaguetti.png" />
+    <Content Include="Content\img\potenciar\icon_bullet_items.png" />
+    <Content Include="Content\img\potenciar\icon_hexagon.png" />
+    <Content Include="Content\img\potenciar\icon_section_nutrientes.png" />
+    <Content Include="Content\img\potenciar\icon_section_proceso.png" />
+    <Content Include="Content\img\potenciar\icon_section_suplementos.png" />
+    <Content Include="Content\img\potenciar\slmf-buy-over.svg" />
+    <Content Include="Content\img\potenciar\slmf-buy.svg" />
+    <Content Include="Content\img\potenciar\wood_background.png" />
+    <Content Include="Content\img\slmf-labs\bg.jpg" />
+    <Content Include="Content\img\slmf-labs\LABS_ardor_figure.png" />
+    <Content Include="Content\img\slmf-labs\LABS_ardor_figure_xl.png" />
+    <Content Include="Content\img\slmf-labs\LABS_bold_figure.png" />
+    <Content Include="Content\img\slmf-labs\LABS_desarrollo_logo.png" />
+    <Content Include="Content\img\slmf-labs\LABS_desarrollo_text.png" />
+    <Content Include="Content\img\slmf-labs\LABS_energia_logo.png" />
+    <Content Include="Content\img\slmf-labs\LABS_energia_text.png" />
+    <Content Include="Content\img\slmf-labs\LABS_energy_revival_figure.png" />
+    <Content Include="Content\img\slmf-labs\LABS_especiales_figure.png" />
+    <Content Include="Content\img\slmf-labs\LABS_home_bg.png" />
+    <Content Include="Content\img\slmf-labs\LABS_home_figures.png" />
+    <Content Include="Content\img\slmf-labs\LABS_hysteria_figure.png" />
+    <Content Include="Content\img\slmf-labs\LABS_hysteria_figure_xl.png" />
+    <Content Include="Content\img\slmf-labs\LABS_provoke_figure.png" />
+    <Content Include="Content\img\slmf-labs\LABS_provoke_figure_xl.png" />
+    <Content Include="Content\img\slmf-labs\LABS_regula_text.png" />
+    <Content Include="Content\img\slmf-labs\LABS_relief_figure.png" />
+    <Content Include="Content\img\slmf-labs\LABS_temper_figure.png" />
+    <Content Include="Content\img\slmf-labs\LABS_tenacious_figure.png" />
+    <Content Include="Content\img\slmf-labs\slmf-labsl-logo.svg" />
+    <Content Include="Content\img\slmf-team-file\guirnalda-copa.svg" />
+    <Content Include="Content\img\slmf-team-file\guirnalda.svg" />
+    <Content Include="Content\img\slmf-team-file\ifbb-pro.png" />
+    <Content Include="Content\img\slmf-team\bg-tooltip.png" />
+    <Content Include="Content\img\slmf-team\bg.jpg" />
+    <Content Include="Content\img\slmf-team\diagonal.png" />
+    <Content Include="Content\img\slmf-team\ejercicio-fondo-diagonal.png" />
+    <Content Include="Content\img\slmf-team\greene.png" />
+    <Content Include="Content\img\slmf-team\kai.png" />
+    <Content Include="Content\img\slmf-team\pruebadiagonal.png" />
+    <Content Include="Content\img\slmf-team\pruebafondodiagonal.png" />
+    <Content Include="Content\img\slmf-team\SLMF_kai_green.png" />
+    <Content Include="Content\img\slmf-team\SLMF_team_figures.png" />
+    <Content Include="Content\img\slmf-team\SLMF_team_title_greene.png" />
+    <Content Include="Content\img\slmf-team\SLMF_team_title_kai.png" />
+    <Content Include="Content\img\slmf-team\TEAM_brillo.png" />
+    <Content Include="Content\img\slmf-team\TEAM_charro_diagonal.jpg" />
+    <Content Include="Content\img\slmf-team\TEAM_charro_diagonal.png" />
+    <Content Include="Content\img\slmf-team\TEAM_charro_figure.png" />
+    <Content Include="Content\img\slmf-team\TEAM_charro_fondo.jpg" />
+    <Content Include="Content\img\slmf-team\TEAM_charro_text.png" />
+    <Content Include="Content\img\slmf-team\TEAM_charro_text1.png" />
+    <Content Include="Content\img\slmf-team\TEAM_charro_text2.png" />
+    <Content Include="Content\img\slmf-team\TEAM_graham_figure.png" />
+    <Content Include="Content\img\slmf-team\TEAM_graham_fondo.png" />
+    <Content Include="Content\img\slmf-team\TEAM_graham_text.png" />
+    <Content Include="Content\img\slmf-team\TEAM_home_figures1.png" />
+    <Content Include="Content\img\slmf-team\TEAM_home_figures2.png" />
+    <Content Include="Content\img\slmf-team\TEAM_home_figures3.png" />
+    <Content Include="Content\img\slmf-team\TEAM_home_fondo.png" />
+    <Content Include="Content\img\slmf-team\TEAM_kai_figure.png" />
+    <Content Include="Content\img\slmf-team\TEAM_kai_fondo.png" />
+    <Content Include="Content\img\slmf-team\TEAM_kai_text.png" />
+    <Content Include="Content\img\slmf-team\TEAM_tank_figure.png" />
+    <Content Include="Content\img\slmf-team\TEAM_tank_fondo.png" />
+    <Content Include="Content\img\slmf-team\TEAM_tank_text.png" />
+    <Content Include="Content\img\slmf.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <EntityDeploy Include="Models\SLMFDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SLMFDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SLMFDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SLMFDB.edmx</DependentUpon>
+      <LastGenOutput>SLMFDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SLMFDB.edmx.diagram">
+      <DependentUpon>SLMFDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\SLMFDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SLMFDB.edmx</DependentUpon>
+      <LastGenOutput>SLMFDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="Content\css\potenciar\main.css.map" />
+    <Content Include="Content\fonts\295CF1_B_0.eot" />
+    <Content Include="Content\fonts\295CF1_B_0.ttf" />
+    <Content Include="Content\fonts\295CF1_B_0.woff" />
+    <Content Include="Content\fonts\29D657_0_0.eot" />
+    <Content Include="Content\fonts\29D657_0_0.ttf" />
+    <Content Include="Content\fonts\29D657_0_0.woff" />
+    <Content Include="Content\fonts\2AF262_0_0.eot" />
+    <Content Include="Content\fonts\2AF262_0_0.ttf" />
+    <Content Include="Content\fonts\2AF262_0_0.woff" />
+    <Content Include="Content\fonts\2AF293_0_0.eot" />
+    <Content Include="Content\fonts\2AF293_0_0.ttf" />
+    <Content Include="Content\fonts\2AF293_0_0.woff" />
+    <Content Include="Content\fonts\slmf_icons-webfont.eot" />
+    <Content Include="Content\fonts\slmf_icons-webfont.ttf" />
+    <Content Include="Content\fonts\slmf_icons-webfont.woff" />
+    <Content Include="Content\fonts\slmf_normal-webfont.eot" />
+    <Content Include="Content\fonts\slmf_normal-webfont.ttf" />
+    <Content Include="Content\fonts\slmf_normal-webfont.woff" />
+    <Content Include="Content\fonts\slmf_normal-webfont.woff2" />
+    <None Include="Properties\PublishProfiles\InstallSITE-SLMF.pubxml" />
+    <None Include="Scripts\jquery-2.2.3.intellisense.js" />
+    <Content Include="Scripts\about\intro.js" />
+    <Content Include="Scripts\about\main.js" />
+    <Content Include="Scripts\about\main.min.js" />
+    <Content Include="Scripts\about\navigation.js" />
+    <Content Include="Scripts\about\slide.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\competir\main.min.js" />
+    <Content Include="Scripts\comunidad-slmf\main.min.js" />
+    <Content Include="Scripts\dashboard\main.min.js" />
+    <Content Include="Scripts\entrenar\main.min.js" />
+    <Content Include="Scripts\header.js" />
+    <Content Include="Scripts\home-discipline\main.js" />
+    <Content Include="Scripts\home-discipline\main.min.js" />
+    <Content Include="Scripts\home-discipline\nav-pilars.js" />
+    <Content Include="Scripts\home\main.js" />
+    <Content Include="Scripts\home\main.min.js" />
+    <Content Include="Scripts\home\nav-disciplines.js" />
+    <Content Include="Scripts\jquery-2.2.3.js" />
+    <Content Include="Scripts\jquery-2.2.3.min.js" />
+    <Content Include="Scripts\jquery-2.2.3.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\login\main.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\plugins.js" />
+    <Content Include="Scripts\potenciar\main.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\slmf-labs\main.min.js" />
+    <Content Include="Scripts\slmf-team-file\main.min.js" />
+    <Content Include="Scripts\slmf-team\main.min.js" />
+    <Content Include="Scripts\train\filter-test.js" />
+    <Content Include="Scripts\train\main.js" />
+    <Content Include="Scripts\train\main.min.js" />
+    <Content Include="Scripts\vendor\._jquery.html5-placeholder-shim.js" />
+    <Content Include="Scripts\vendor\froogaloop2.min.js" />
+    <Content Include="Scripts\vendor\jquery-ui.min.js" />
+    <Content Include="Scripts\vendor\jquery.gray.min.js" />
+    <Content Include="Scripts\vendor\jquery.html5-placeholder-shim.js" />
+    <Content Include="Scripts\vendor\jquery.nicescroll.min.js" />
+    <Content Include="Scripts\vendor\jquery.scrollmagic.debug.js" />
+    <Content Include="Scripts\vendor\jquery.scrollmagic.min.js" />
+    <Content Include="Scripts\vendor\jquery.superscrollorama.min.js" />
+    <Content Include="Scripts\vendor\jquery.tinyscrollbarMod.min.js" />
+    <Content Include="Scripts\vendor\jquery.touchSwipe.min.js" />
+    <Content Include="Scripts\vendor\modernizr-2.6.2.min.js" />
+    <Content Include="Scripts\vendor\moment.min.js" />
+    <Content Include="Scripts\vendor\raphael.min.js" />
+    <Content Include="Scripts\vendor\scrollHandler.js" />
+    <Content Include="Scripts\vendor\ScrollToPlugin_1.7.3.min.js" />
+    <Content Include="Scripts\vendor\underscore-min.js" />
+    <Content Include="Scripts\vendor\waypoints.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\login\main.js_r" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Competir.cshtml" />
+    <Content Include="Views\Home\Comunidad.cshtml" />
+    <Content Include="Views\Home\Disciplina.cshtml" />
+    <Content Include="Views\Home\Entrenar.cshtml" />
+    <Content Include="Views\Home\Plan.cshtml" />
+    <Content Include="Views\Home\Potenciar.cshtml" />
+    <Content Include="Views\Home\SLMF_Team.cshtml" />
+    <Content Include="Views\Home\SLMF_Labs.cshtml" />
+    <Content Include="Views\Home\Error400.cshtml" />
+    <Content Include="Views\Home\Error401.cshtml" />
+    <Content Include="Views\Home\Error404.cshtml" />
+    <Content Include="Views\Home\FailError.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Scripts\dashboard\anatomy\" />
+    <Folder Include="Scripts\dashboard\info\" />
+    <Folder Include="Scripts\dashboard\meals\" />
+    <Folder Include="Scripts\dashboard\training\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62933</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62933/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

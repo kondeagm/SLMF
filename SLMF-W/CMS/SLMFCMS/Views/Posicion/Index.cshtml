@@ -1,0 +1,93 @@
+﻿@model PagedList.IPagedList<SLMFCMS.Models.Posicion>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Posiciones del Ejercicio";
+}
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm("Index", "Posicion", FormMethod.Get))
+        {
+            <div id="row-header-index" class="row">
+                <div id="div-add" class="col-md-1">
+                    @Html.ActionLink(" ", "Create", "Posicion", routeValues: null, htmlAttributes: new { @class = "fa fa-plus-square fa-2x btn-accion", @title = "Agregar una Posición" })
+                </div>
+                <div id="div-titulo" class="col-md-7">
+                    <h4>@ViewBag.Title</h4>
+                </div>
+                @if (String.IsNullOrEmpty(ViewBag.CurrentFilter))
+                {
+                    <div id="div-search" class="col-md-3">
+                        @Html.TextBox("sSearchString", ViewBag.CurrentFilter as string, htmlAttributes: new { @class = "form-control search-box", autocomplete = "off" })
+                    </div>
+                }
+                else
+                {
+                    <div id="div-search" class="col-md-3">
+                        @Html.TextBox("sSearchString", ViewBag.CurrentFilter as string, htmlAttributes: new { @class = "form-control search-box disabled", disabled = "disabled" })
+                    </div>
+                }
+                <div id="div-find" class="col-md-1">
+                    @if (String.IsNullOrEmpty(ViewBag.CurrentFilter))
+                    {
+                        <button id="btn-search" type="submit" class="fa fa-search fa-2x" />
+                    }
+                    else
+                    {
+                        @Html.ActionLink(" ", "Index", "Posicion", new { sSortOrder = "", sCurrentFilter = "" }, new { @class = "fa fa-times fa-2x btn-accion-inv" })
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table webGrid">
+            <tr class="webGridHeader">
+                <th>
+                    Abreviatura
+                </th>
+                <th>
+                    @Html.ActionLink("Nombre", "Index", new { sSortOrder = ViewBag.IdSortParm, sCurrentFilter = ViewBag.CurrentFilter }, new { @class = "ancla-sort" })
+                </th>
+                <th class="columnPagerwebGrid">
+                    @if (@Model.PageCount > 1)
+                    {
+                        @Html.PagedListPager(Model, pagina => Url.Action("Index", new { pagina, sSortOrder = ViewBag.CurrentSort, sCurrentFilter = ViewBag.CurrentFilter }),
+                    new PagedListRenderOptions
+                    {
+                        DisplayLinkToFirstPage = PagedListDisplayMode.IfNeeded,
+                        DisplayLinkToLastPage = PagedListDisplayMode.IfNeeded,
+                        LinkToFirstPageFormat = "1",
+                        LinkToLastPageFormat = @Model.PageCount.ToString(),
+                        LinkToPreviousPageFormat = String.Format("«"),
+                        LinkToNextPageFormat = String.Format("»"),
+                        MaximumPageNumbersToDisplay = 2,
+                        DisplayEllipsesWhenNotShowingAllPageNumbers = false,
+                        DisplayLinkToIndividualPages = true
+                    })
+                    }
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Abreviacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td class="columnActionwebGrid">
+                        @Html.ActionLink(" ", "Edit", "Posicion", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-pencil-square fa-2x btn-accion", @title = "Editar la Posición" })
+                        @Html.ActionLink(" ", "Details", "Posicion", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-info-circle fa-2x btn-accion", @title = "Detalles de la Posición" })
+                        @if (item.EjerciciosEnLaPosicion.Count == 0)
+                        {
+                            @Html.ActionLink(" ", "Delete", "Posicion", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-minus-square fa-2x btn-accion", @title = "Borrar la Posición" })
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

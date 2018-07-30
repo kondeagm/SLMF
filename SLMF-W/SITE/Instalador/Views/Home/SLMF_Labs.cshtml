@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "SLMF - SLMF Labs";
+    ViewBag.BodyClass = "body-slmf-labs-home";
+    ViewBag.NavPilarsClass = "collapsed";
+}
+@{var vLinkBackground = Convert.ToString(Session["AppAssetsURL"]) + "slmf-team/bg.jpg";}
+@{var vLinkLogo = Convert.ToString(Session["AppAssetsURL"]) + "slmf-logo.jpg";}
+@section MetaTags {
+    <meta name="description" content="">
+    <meta property="og:description" content="Nuestro sitio está en construcción, y no sólo por un cambio de imagen: te ofreceremos programas de entrenamiento, dietas y todo lo necesario para que también tú estés entre los más fuertes.">
+    <meta property="og:image" content="@vLinkLogo">
+    <meta property="og:url" content="http://sololosmasfuertes.com">
+    <meta property="og:title" content="SÓLO LOS MÁS FUERTES">
+}
+@section LocalCss {
+    @Styles.Render("~/home-labs/css")
+}
+<iframe id="labs-frame" src="http://slmflabs.com/" style="height:100%;"></iframe>
+<div id="slmf-community-tohidde" class="full-all" style="display: none;">
+    <section id="slmf-team-home" class="slmf-team-home panning">
+        <div class="allLoader">
+            <div class="hidden">
+            </div>
+            <div class="loader2 center-all">
+                <span>0</span>
+            </div>
+        </div>
+    </section>
+</div>
+
+@section LocalScript {
+    @Scripts.Render("~/home-labs/scripts")
+    @Html.Raw(System.Web.HttpUtility.HtmlDecode(@ViewBag.Loader))
+}

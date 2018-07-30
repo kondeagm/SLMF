@@ -1,0 +1,106 @@
+﻿@model SLMFCMS.Models.Respuesta
+@using SLMFCMS.Models
+@{
+    ViewBag.Title = "Editar la Respuesta a la Pregunta del Cuestionario";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12">
+            <div id="row-header-index" class="row">
+                <div id="div-titulo" class="col-md-7">
+                    <h4>@ViewBag.Title</h4>
+                </div>
+                <div class="col-md-3">
+                    &nbsp;
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-save" type="submit" title="Guardar">Guardar</button>
+                </div>
+                <div id="div-search" class="col-md-1">
+                    @Html.ActionLink("Cancelar", "Details", "Pregunta", routeValues: new { id = Model.PreguntaID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "btn btn-cancel", @title = "Cancelar" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr id="header-divisor" />
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.PreguntaID)
+        @Html.HiddenFor(model => model.Filtro)
+        <div class="row">
+            <div class="col-md-2 lbltitulo">
+                @Html.LabelFor(model => model.Pregunta.Cuestionario.DisciplinaID)
+            </div>
+            <div class="col-md-3 lbltitulo">
+                @Html.LabelFor(model => model.Pregunta.CuestionarioID)
+            </div>
+            <div class="col-md-2 lbltitulo">
+                @Html.LabelFor(model => model.Texto)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 txt-area-display-with-border area-border-2">
+                @Html.Label(Model.Pregunta.Cuestionario.Disciplina.Nombre)
+            </div>
+            <div class="col-md-3 txt-area-display-with-border area-border-3">
+                @Html.Label(Model.Pregunta.Cuestionario.Nombre)
+            </div>
+            <div class="col-md-2 txt-area-display-with-border area-border-2">
+                @Html.Label(Model.Pregunta.Texto)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 lbltitulo">
+                @Html.LabelFor(model => model.Texto)
+            </div>
+            <div class="col-md-2 lbltitulo">
+                @Html.LabelFor(model => model.Clase)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 margen-off">
+                @Html.TextBoxFor(model => model.Texto, new { @class = "txt-box-input-20-1" })
+            </div>
+            <div class="col-md-2 margen-off">
+                @Html.TextBoxFor(model => model.Clase, new { @class = "txt-box-input-20-1" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-11 lbltitulo">
+                @Html.LabelFor(model => model.LogoSVG) (35.05px Ancho por 78.92px Alto )
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-11 margen-off">
+                @Html.TextAreaFor(model => model.LogoSVG, new { @class = "txt-area-input-900-4" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Texto, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Clase, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.LogoSVG, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

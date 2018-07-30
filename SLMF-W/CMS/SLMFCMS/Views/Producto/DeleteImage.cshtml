@@ -1,0 +1,97 @@
+﻿@model SLMFCMS.Models.Producto
+@using System.Web.Helpers
+@using SLMFCMS.App_Code
+@using System.Configuration;
+@{
+    ViewBag.Title = "Eliminar la Imagen del Producto";
+}
+@{string sRutaImages = ConfigurationManager.AppSettings["App_FolderProductsImages"];
+string sFileImage = "";}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12">
+            <div id="row-header-index" class="row">
+                <div id="div-titulo" class="col-md-7">
+                    <h4>@ViewBag.Title</h4>
+                </div>
+                <div class="col-md-3">
+                    &nbsp;
+                </div>
+                <div class="col-md-1">
+                    @if (!String.IsNullOrEmpty(Model.FileImage))
+                    {
+                        <button class="btn btn-delete" type="submit" title="Eliminar">Eliminar</button>
+                    }
+                </div>
+                <div id="div-search" class="col-md-1">
+                    @Html.ActionLink("Cancelar", "Details", "Producto", routeValues: new { id = Model.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "btn btn-cancel", @title = "Cancelar" })
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<hr id="header-divisor" />
+<div class="row">
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.NutrienteID)
+    </div>
+    <div class="col-md-3 lbltitulo">
+        @Html.LabelFor(model => model.Nombre)
+    </div>
+    <div class="col-md-6 lbltitulo">
+        @Html.LabelFor(model => model.URL)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.Nutriente.Nombre)
+    </div>
+    <div class="col-md-3 txt-area-display-with-border area-border-3">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+    <div class="col-md-6 txt-area-display-with-border area-border-6">
+        @Html.DisplayFor(model => model.URL)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table webGrid table-partial-logo center-table">
+            <tr class="webGridHeader">
+                <th class="txt-center">
+                    Imagen
+                </th>
+            </tr>
+            <tr>
+                <td class="celda-logo-delete">
+                    <div>
+                        @if (!String.IsNullOrEmpty(Model.FileImage))
+                        {
+                            sFileImage = sRutaImages + Model.FileImage;
+                            <a href="@sFileImage.Replace("~/","../../")" data-lightbox="image-1">
+                                @Html.Image(sFileImage, "Imagen", new { @class = "image-preview-portada" })
+                            </a>
+                        }
+                        else
+                        {
+                            sFileImage = "/Content/img/SLMF-Suplementos-SN.jpg";
+                            <a href="@sFileImage" data-lightbox="image-1">
+                                @Html.Image(sFileImage, "Imagen", new { @class = "image-preview-portada" })
+                            </a>
+                        }
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+@section LocalScript {
+    @Scripts.Render("~/bundles/lightbox")
+}

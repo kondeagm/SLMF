@@ -1,0 +1,838 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SlmfDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Accesorio">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Abreviacion" Type="nvarchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Alimento">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="NutrienteID" Type="int" Nullable="false" />
+    <Property Name="Suplemento" Type="bit" Nullable="false" />
+    <Property Name="Preparado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Banner">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Identificador" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="FileImage" Type="nvarchar" MaxLength="250" />
+    <Property Name="LinkBanner" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Prioridad" Type="int" Nullable="false" />
+    <Property Name="Visible" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContenidoEstatico">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RedSocialID" Type="int" Nullable="false" />
+    <Property Name="Identificador" Type="nvarchar" MaxLength="300" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cuestionario">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="DisciplinaID" Type="int" Nullable="false" />
+    <Property Name="Visible" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dieta">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="FileImage" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="DietaAlimentacion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DietaTemposID" Type="int" Nullable="false" />
+    <Property Name="Cantidad" Type="nvarchar" MaxLength="5" />
+    <Property Name="PorcionID" Type="int" />
+    <Property Name="AlimentoID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DietaTempos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DietaID" Type="int" Nullable="false" />
+    <Property Name="TempoID" Type="int" Nullable="false" />
+    <Property Name="Hora" Type="int" />
+  </EntityType>
+  <EntityType Name="Disciplina">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="18" Nullable="false" />
+    <Property Name="Siglas" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Slogan" Type="nvarchar" MaxLength="45" Nullable="false" />
+    <Property Name="Proposito" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="FileImage" Type="nvarchar" MaxLength="250" />
+    <Property Name="IconImage" Type="nvarchar" MaxLength="250" />
+    <Property Name="LogoSVG" Type="nvarchar(max)" />
+    <Property Name="SiglasImage" Type="nvarchar" MaxLength="250" />
+    <Property Name="ColorCode" Type="nvarchar" MaxLength="7" Nullable="false" />
+    <Property Name="ImageEntrenar" Type="nvarchar" MaxLength="250" />
+    <Property Name="Visible" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ejercicio">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="AccesorioID" Type="int" />
+    <Property Name="ElementoID" Type="int" />
+    <Property Name="PosicionID" Type="int" />
+    <Property Name="MusculoID" Type="int" Nullable="false" />
+    <Property Name="VimeoID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FileImage" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Elemento">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="22" Nullable="false" />
+    <Property Name="Abreviacion" Type="nvarchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Evento">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titulo" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Lugar" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="DisciplinaID" Type="int" Nullable="false" />
+    <Property Name="URL" Type="nvarchar" MaxLength="500" />
+    <Property Name="Visible" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GrupoMusculos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="190" Nullable="false" />
+    <Property Name="FileImage" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Musculo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="NombreComun" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="190" Nullable="false" />
+    <Property Name="GrupoMusculosID" Type="int" Nullable="false" />
+    <Property Name="FileImage" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Nutriente">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="ColorCode" Type="nvarchar" MaxLength="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Plan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DisciplinaID" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Leyenda" Type="nvarchar" MaxLength="35" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="FileImage" Type="nvarchar" MaxLength="250" />
+    <Property Name="Visible" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlanDiaEjercicios">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlanDiasID" Type="int" Nullable="false" />
+    <Property Name="Secuencia" Type="int" Nullable="false" />
+    <Property Name="EjercicioID" Type="int" Nullable="false" />
+    <Property Name="Series" Type="int" Nullable="false" />
+    <Property Name="Repeticiones" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="UnidadEjercicioID" Type="int" Nullable="false" />
+    <Property Name="Descanso" Type="int" Nullable="false" />
+    <Property Name="Nivel" Type="int" Nullable="false" />
+    <Property Name="Nota" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="PlanDiaEjercicioSeries">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlanDiaEjerciciosID" Type="int" Nullable="false" />
+    <Property Name="Secuencia" Type="int" Nullable="false" />
+    <Property Name="Repeticiones" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="Nivel" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlanDias">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlanID" Type="int" Nullable="false" />
+    <Property Name="Dia" Type="int" Nullable="false" />
+    <Property Name="RutinaID" Type="int" Nullable="false" />
+    <Property Name="DietaID" Type="int" Nullable="false" />
+    <Property Name="ProTipID" Type="int" Nullable="false" />
+    <Property Name="Descanso" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlanEtiquetas">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlanID" Type="int" Nullable="false" />
+    <Property Name="RespuestaID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Porcion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Abreviacion" Type="nvarchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Posicion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Abreviacion" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="Pregunta">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CuestionarioID" Type="int" Nullable="false" />
+    <Property Name="Texto" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Clase" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="FileImage" Type="nvarchar" MaxLength="250" />
+    <Property Name="URL" Type="nvarchar" MaxLength="500" />
+    <Property Name="NutrienteID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProTip">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Autor" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="VimeoID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FileImage" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="RedSocial">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Identificador" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="URL" Type="nvarchar" MaxLength="500" />
+    <Property Name="APPId" Type="nvarchar" MaxLength="30" />
+    <Property Name="APIKey" Type="nvarchar" MaxLength="500" />
+    <Property Name="NoPost" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Respuesta">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PreguntaID" Type="int" Nullable="false" />
+    <Property Name="Texto" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Clase" Type="nvarchar" MaxLength="20" />
+    <Property Name="Filtro" Type="bit" Nullable="false" />
+    <Property Name="LogoSVG" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Rutina">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="190" Nullable="false" />
+    <Property Name="GrupoMusculosID" Type="int" Nullable="false" />
+    <Property Name="Inactividad" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tempo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Secuencia" Type="int" Nullable="false" />
+    <Property Name="Prefijo" Type="nvarchar" MaxLength="6" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Complementario" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UnidadEjercicio">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Abreviacion" Type="nvarchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FacebookID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Apellidos" Type="nvarchar" MaxLength="80" />
+    <Property Name="Correo" Type="nvarchar" MaxLength="500" />
+    <Property Name="PlanID" Type="int" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="FechaInicioPlan" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_dbo_Alimento_dbo_Nutriente_NutrienteID">
+    <End Role="Nutriente" Type="Self.Nutriente" Multiplicity="1" />
+    <End Role="Alimento" Type="Self.Alimento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nutriente">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Alimento">
+        <PropertyRef Name="NutrienteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ContenidoEstatico_dbo_RedSocial_RedSocialID">
+    <End Role="RedSocial" Type="Self.RedSocial" Multiplicity="1" />
+    <End Role="ContenidoEstatico" Type="Self.ContenidoEstatico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RedSocial">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ContenidoEstatico">
+        <PropertyRef Name="RedSocialID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Cuestionario_dbo_Disciplina_DisciplinaID">
+    <End Role="Disciplina" Type="Self.Disciplina" Multiplicity="1" />
+    <End Role="Cuestionario" Type="Self.Cuestionario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplina">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Cuestionario">
+        <PropertyRef Name="DisciplinaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_DietaAlimentacion_dbo_Alimento_AlimentoID">
+    <End Role="Alimento" Type="Self.Alimento" Multiplicity="1" />
+    <End Role="DietaAlimentacion" Type="Self.DietaAlimentacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Alimento">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DietaAlimentacion">
+        <PropertyRef Name="AlimentoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_DietaAlimentacion_dbo_DietaTempos_DietaTemposID">
+    <End Role="DietaTempos" Type="Self.DietaTempos" Multiplicity="1" />
+    <End Role="DietaAlimentacion" Type="Self.DietaAlimentacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DietaTempos">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DietaAlimentacion">
+        <PropertyRef Name="DietaTemposID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_DietaAlimentacion_dbo_Porcion_PorcionID">
+    <End Role="Porcion" Type="Self.Porcion" Multiplicity="0..1" />
+    <End Role="DietaAlimentacion" Type="Self.DietaAlimentacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Porcion">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DietaAlimentacion">
+        <PropertyRef Name="PorcionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_DietaTempos_dbo_Dieta_DietaID">
+    <End Role="Dieta" Type="Self.Dieta" Multiplicity="1" />
+    <End Role="DietaTempos" Type="Self.DietaTempos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dieta">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DietaTempos">
+        <PropertyRef Name="DietaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_DietaTempos_dbo_Tempo_TempoID">
+    <End Role="Tempo" Type="Self.Tempo" Multiplicity="1" />
+    <End Role="DietaTempos" Type="Self.DietaTempos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tempo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DietaTempos">
+        <PropertyRef Name="TempoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Ejercicio_dbo_Accesorio_AccesorioID">
+    <End Role="Accesorio" Type="Self.Accesorio" Multiplicity="0..1" />
+    <End Role="Ejercicio" Type="Self.Ejercicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Accesorio">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ejercicio">
+        <PropertyRef Name="AccesorioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Ejercicio_dbo_Elemento_ElementoID">
+    <End Role="Elemento" Type="Self.Elemento" Multiplicity="0..1" />
+    <End Role="Ejercicio" Type="Self.Ejercicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Elemento">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ejercicio">
+        <PropertyRef Name="ElementoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Ejercicio_dbo_Musculo_MusculoID">
+    <End Role="Musculo" Type="Self.Musculo" Multiplicity="1" />
+    <End Role="Ejercicio" Type="Self.Ejercicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Musculo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ejercicio">
+        <PropertyRef Name="MusculoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Ejercicio_dbo_Posicion_PosicionID">
+    <End Role="Posicion" Type="Self.Posicion" Multiplicity="0..1" />
+    <End Role="Ejercicio" Type="Self.Ejercicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Posicion">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ejercicio">
+        <PropertyRef Name="PosicionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Evento_dbo_Disciplina_DisciplinaID">
+    <End Role="Disciplina" Type="Self.Disciplina" Multiplicity="1" />
+    <End Role="Evento" Type="Self.Evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplina">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Evento">
+        <PropertyRef Name="DisciplinaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Musculoes_dbo_GrupoMusculos_GrupoMusculosID">
+    <End Role="GrupoMusculos" Type="Self.GrupoMusculos" Multiplicity="1" />
+    <End Role="Musculo" Type="Self.Musculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GrupoMusculos">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Musculo">
+        <PropertyRef Name="GrupoMusculosID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Plan_dbo_Disciplina_DisciplinaID">
+    <End Role="Disciplina" Type="Self.Disciplina" Multiplicity="1" />
+    <End Role="Plan" Type="Self.Plan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplina">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Plan">
+        <PropertyRef Name="DisciplinaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PlanDiaEjercicios_dbo_Ejercicio_EjercicioID">
+    <End Role="Ejercicio" Type="Self.Ejercicio" Multiplicity="1" />
+    <End Role="PlanDiaEjercicios" Type="Self.PlanDiaEjercicios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ejercicio">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PlanDiaEjercicios">
+        <PropertyRef Name="EjercicioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PlanDiaEjercicios_dbo_PlanDias_PlanDiasID">
+    <End Role="PlanDias" Type="Self.PlanDias" Multiplicity="1" />
+    <End Role="PlanDiaEjercicios" Type="Self.PlanDiaEjercicios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlanDias">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PlanDiaEjercicios">
+        <PropertyRef Name="PlanDiasID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PlanDiaEjercicios_dbo_UnidadEjercicio_UnidadEjercicioID">
+    <End Role="UnidadEjercicio" Type="Self.UnidadEjercicio" Multiplicity="1" />
+    <End Role="PlanDiaEjercicios" Type="Self.PlanDiaEjercicios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnidadEjercicio">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PlanDiaEjercicios">
+        <PropertyRef Name="UnidadEjercicioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PlanDiaEjercicioSeries_dbo_PlanDiaEjercicios_PlanDiaEjerciciosID">
+    <End Role="PlanDiaEjercicios" Type="Self.PlanDiaEjercicios" Multiplicity="1" />
+    <End Role="PlanDiaEjercicioSeries" Type="Self.PlanDiaEjercicioSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlanDiaEjercicios">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PlanDiaEjercicioSeries">
+        <PropertyRef Name="PlanDiaEjerciciosID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PlanDias_dbo_Dieta_DietaID">
+    <End Role="Dieta" Type="Self.Dieta" Multiplicity="1" />
+    <End Role="PlanDias" Type="Self.PlanDias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dieta">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PlanDias">
+        <PropertyRef Name="DietaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PlanDias_dbo_Plan_PlanID">
+    <End Role="Plan" Type="Self.Plan" Multiplicity="1" />
+    <End Role="PlanDias" Type="Self.PlanDias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PlanDias">
+        <PropertyRef Name="PlanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PlanDias_dbo_ProTip_ProTipID">
+    <End Role="ProTip" Type="Self.ProTip" Multiplicity="1" />
+    <End Role="PlanDias" Type="Self.PlanDias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProTip">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PlanDias">
+        <PropertyRef Name="ProTipID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PlanDias_dbo_Rutina_RutinaID">
+    <End Role="Rutina" Type="Self.Rutina" Multiplicity="1" />
+    <End Role="PlanDias" Type="Self.PlanDias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rutina">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PlanDias">
+        <PropertyRef Name="RutinaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PlanEtiquetas_dbo_Plan_PlanID">
+    <End Role="Plan" Type="Self.Plan" Multiplicity="1" />
+    <End Role="PlanEtiquetas" Type="Self.PlanEtiquetas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PlanEtiquetas">
+        <PropertyRef Name="PlanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PlanEtiquetas_dbo_Respuesta_RespuestaID">
+    <End Role="Respuesta" Type="Self.Respuesta" Multiplicity="1" />
+    <End Role="PlanEtiquetas" Type="Self.PlanEtiquetas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Respuesta">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PlanEtiquetas">
+        <PropertyRef Name="RespuestaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Pregunta_dbo_Cuestionario_CuestionarioID">
+    <End Role="Cuestionario" Type="Self.Cuestionario" Multiplicity="1" />
+    <End Role="Pregunta" Type="Self.Pregunta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cuestionario">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Pregunta">
+        <PropertyRef Name="CuestionarioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Producto_dbo_Nutriente_NutrienteID">
+    <End Role="Nutriente" Type="Self.Nutriente" Multiplicity="1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nutriente">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="NutrienteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Respuesta_dbo_Pregunta_PreguntaID">
+    <End Role="Pregunta" Type="Self.Pregunta" Multiplicity="1" />
+    <End Role="Respuesta" Type="Self.Respuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pregunta">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Respuesta">
+        <PropertyRef Name="PreguntaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Rutina_dbo_GrupoMusculos_GrupoMusculosID">
+    <End Role="GrupoMusculos" Type="Self.GrupoMusculos" Multiplicity="1" />
+    <End Role="Rutina" Type="Self.Rutina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GrupoMusculos">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Rutina">
+        <PropertyRef Name="GrupoMusculosID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Usuario_dbo_Plan_PlanID">
+    <End Role="Plan" Type="Self.Plan" Multiplicity="0..1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="PlanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SlmfDBModelStoreContainer">
+    <EntitySet Name="Accesorio" EntityType="Self.Accesorio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Alimento" EntityType="Self.Alimento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Banner" EntityType="Self.Banner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContenidoEstatico" EntityType="Self.ContenidoEstatico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cuestionario" EntityType="Self.Cuestionario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dieta" EntityType="Self.Dieta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DietaAlimentacion" EntityType="Self.DietaAlimentacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DietaTempos" EntityType="Self.DietaTempos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Disciplina" EntityType="Self.Disciplina" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ejercicio" EntityType="Self.Ejercicio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Elemento" EntityType="Self.Elemento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Evento" EntityType="Self.Evento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GrupoMusculos" EntityType="Self.GrupoMusculos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Musculo" EntityType="Self.Musculo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nutriente" EntityType="Self.Nutriente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Plan" EntityType="Self.Plan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlanDiaEjercicios" EntityType="Self.PlanDiaEjercicios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlanDiaEjercicioSeries" EntityType="Self.PlanDiaEjercicioSeries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlanDias" EntityType="Self.PlanDias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlanEtiquetas" EntityType="Self.PlanEtiquetas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Porcion" EntityType="Self.Porcion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Posicion" EntityType="Self.Posicion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pregunta" EntityType="Self.Pregunta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProTip" EntityType="Self.ProTip" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RedSocial" EntityType="Self.RedSocial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Respuesta" EntityType="Self.Respuesta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rutina" EntityType="Self.Rutina" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tempo" EntityType="Self.Tempo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UnidadEjercicio" EntityType="Self.UnidadEjercicio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_Alimento_dbo_Nutriente_NutrienteID" Association="Self.FK_dbo_Alimento_dbo_Nutriente_NutrienteID">
+      <End Role="Nutriente" EntitySet="Nutriente" />
+      <End Role="Alimento" EntitySet="Alimento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ContenidoEstatico_dbo_RedSocial_RedSocialID" Association="Self.FK_dbo_ContenidoEstatico_dbo_RedSocial_RedSocialID">
+      <End Role="RedSocial" EntitySet="RedSocial" />
+      <End Role="ContenidoEstatico" EntitySet="ContenidoEstatico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Cuestionario_dbo_Disciplina_DisciplinaID" Association="Self.FK_dbo_Cuestionario_dbo_Disciplina_DisciplinaID">
+      <End Role="Disciplina" EntitySet="Disciplina" />
+      <End Role="Cuestionario" EntitySet="Cuestionario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_DietaAlimentacion_dbo_Alimento_AlimentoID" Association="Self.FK_dbo_DietaAlimentacion_dbo_Alimento_AlimentoID">
+      <End Role="Alimento" EntitySet="Alimento" />
+      <End Role="DietaAlimentacion" EntitySet="DietaAlimentacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_DietaAlimentacion_dbo_DietaTempos_DietaTemposID" Association="Self.FK_dbo_DietaAlimentacion_dbo_DietaTempos_DietaTemposID">
+      <End Role="DietaTempos" EntitySet="DietaTempos" />
+      <End Role="DietaAlimentacion" EntitySet="DietaAlimentacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_DietaAlimentacion_dbo_Porcion_PorcionID" Association="Self.FK_dbo_DietaAlimentacion_dbo_Porcion_PorcionID">
+      <End Role="Porcion" EntitySet="Porcion" />
+      <End Role="DietaAlimentacion" EntitySet="DietaAlimentacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_DietaTempos_dbo_Dieta_DietaID" Association="Self.FK_dbo_DietaTempos_dbo_Dieta_DietaID">
+      <End Role="Dieta" EntitySet="Dieta" />
+      <End Role="DietaTempos" EntitySet="DietaTempos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_DietaTempos_dbo_Tempo_TempoID" Association="Self.FK_dbo_DietaTempos_dbo_Tempo_TempoID">
+      <End Role="Tempo" EntitySet="Tempo" />
+      <End Role="DietaTempos" EntitySet="DietaTempos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Ejercicio_dbo_Accesorio_AccesorioID" Association="Self.FK_dbo_Ejercicio_dbo_Accesorio_AccesorioID">
+      <End Role="Accesorio" EntitySet="Accesorio" />
+      <End Role="Ejercicio" EntitySet="Ejercicio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Ejercicio_dbo_Elemento_ElementoID" Association="Self.FK_dbo_Ejercicio_dbo_Elemento_ElementoID">
+      <End Role="Elemento" EntitySet="Elemento" />
+      <End Role="Ejercicio" EntitySet="Ejercicio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Ejercicio_dbo_Musculo_MusculoID" Association="Self.FK_dbo_Ejercicio_dbo_Musculo_MusculoID">
+      <End Role="Musculo" EntitySet="Musculo" />
+      <End Role="Ejercicio" EntitySet="Ejercicio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Ejercicio_dbo_Posicion_PosicionID" Association="Self.FK_dbo_Ejercicio_dbo_Posicion_PosicionID">
+      <End Role="Posicion" EntitySet="Posicion" />
+      <End Role="Ejercicio" EntitySet="Ejercicio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Evento_dbo_Disciplina_DisciplinaID" Association="Self.FK_dbo_Evento_dbo_Disciplina_DisciplinaID">
+      <End Role="Disciplina" EntitySet="Disciplina" />
+      <End Role="Evento" EntitySet="Evento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Musculoes_dbo_GrupoMusculos_GrupoMusculosID" Association="Self.FK_dbo_Musculoes_dbo_GrupoMusculos_GrupoMusculosID">
+      <End Role="GrupoMusculos" EntitySet="GrupoMusculos" />
+      <End Role="Musculo" EntitySet="Musculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Plan_dbo_Disciplina_DisciplinaID" Association="Self.FK_dbo_Plan_dbo_Disciplina_DisciplinaID">
+      <End Role="Disciplina" EntitySet="Disciplina" />
+      <End Role="Plan" EntitySet="Plan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PlanDiaEjercicios_dbo_Ejercicio_EjercicioID" Association="Self.FK_dbo_PlanDiaEjercicios_dbo_Ejercicio_EjercicioID">
+      <End Role="Ejercicio" EntitySet="Ejercicio" />
+      <End Role="PlanDiaEjercicios" EntitySet="PlanDiaEjercicios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PlanDiaEjercicios_dbo_PlanDias_PlanDiasID" Association="Self.FK_dbo_PlanDiaEjercicios_dbo_PlanDias_PlanDiasID">
+      <End Role="PlanDias" EntitySet="PlanDias" />
+      <End Role="PlanDiaEjercicios" EntitySet="PlanDiaEjercicios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PlanDiaEjercicios_dbo_UnidadEjercicio_UnidadEjercicioID" Association="Self.FK_dbo_PlanDiaEjercicios_dbo_UnidadEjercicio_UnidadEjercicioID">
+      <End Role="UnidadEjercicio" EntitySet="UnidadEjercicio" />
+      <End Role="PlanDiaEjercicios" EntitySet="PlanDiaEjercicios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PlanDiaEjercicioSeries_dbo_PlanDiaEjercicios_PlanDiaEjerciciosID" Association="Self.FK_dbo_PlanDiaEjercicioSeries_dbo_PlanDiaEjercicios_PlanDiaEjerciciosID">
+      <End Role="PlanDiaEjercicios" EntitySet="PlanDiaEjercicios" />
+      <End Role="PlanDiaEjercicioSeries" EntitySet="PlanDiaEjercicioSeries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PlanDias_dbo_Dieta_DietaID" Association="Self.FK_dbo_PlanDias_dbo_Dieta_DietaID">
+      <End Role="Dieta" EntitySet="Dieta" />
+      <End Role="PlanDias" EntitySet="PlanDias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PlanDias_dbo_Plan_PlanID" Association="Self.FK_dbo_PlanDias_dbo_Plan_PlanID">
+      <End Role="Plan" EntitySet="Plan" />
+      <End Role="PlanDias" EntitySet="PlanDias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PlanDias_dbo_ProTip_ProTipID" Association="Self.FK_dbo_PlanDias_dbo_ProTip_ProTipID">
+      <End Role="ProTip" EntitySet="ProTip" />
+      <End Role="PlanDias" EntitySet="PlanDias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PlanDias_dbo_Rutina_RutinaID" Association="Self.FK_dbo_PlanDias_dbo_Rutina_RutinaID">
+      <End Role="Rutina" EntitySet="Rutina" />
+      <End Role="PlanDias" EntitySet="PlanDias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PlanEtiquetas_dbo_Plan_PlanID" Association="Self.FK_dbo_PlanEtiquetas_dbo_Plan_PlanID">
+      <End Role="Plan" EntitySet="Plan" />
+      <End Role="PlanEtiquetas" EntitySet="PlanEtiquetas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PlanEtiquetas_dbo_Respuesta_RespuestaID" Association="Self.FK_dbo_PlanEtiquetas_dbo_Respuesta_RespuestaID">
+      <End Role="Respuesta" EntitySet="Respuesta" />
+      <End Role="PlanEtiquetas" EntitySet="PlanEtiquetas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Pregunta_dbo_Cuestionario_CuestionarioID" Association="Self.FK_dbo_Pregunta_dbo_Cuestionario_CuestionarioID">
+      <End Role="Cuestionario" EntitySet="Cuestionario" />
+      <End Role="Pregunta" EntitySet="Pregunta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Producto_dbo_Nutriente_NutrienteID" Association="Self.FK_dbo_Producto_dbo_Nutriente_NutrienteID">
+      <End Role="Nutriente" EntitySet="Nutriente" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Respuesta_dbo_Pregunta_PreguntaID" Association="Self.FK_dbo_Respuesta_dbo_Pregunta_PreguntaID">
+      <End Role="Pregunta" EntitySet="Pregunta" />
+      <End Role="Respuesta" EntitySet="Respuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Rutina_dbo_GrupoMusculos_GrupoMusculosID" Association="Self.FK_dbo_Rutina_dbo_GrupoMusculos_GrupoMusculosID">
+      <End Role="GrupoMusculos" EntitySet="GrupoMusculos" />
+      <End Role="Rutina" EntitySet="Rutina" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Usuario_dbo_Plan_PlanID" Association="Self.FK_dbo_Usuario_dbo_Plan_PlanID">
+      <End Role="Plan" EntitySet="Plan" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

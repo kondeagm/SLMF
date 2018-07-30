@@ -1,0 +1,42 @@
+﻿@using System.Web.Helpers
+@using SLMFCMS.App_Code
+@if (Request.IsAuthenticated)
+{
+    if (Context.User.IsInRole("PageAdmin"))
+    {
+        <div id="menu-flotado-left" class="body-nav body-nav-vertical body-nav-fixed">
+            <div id="container-menu-left" class="container">
+                <ul>
+                    <li>
+                        @Html.MenuActionLink("Usuarios CMS", "CMSUsuario", "Index", "fa fa-user-secret icon-large")
+                    </li>
+                    <content>
+                        <div style="height: 25px;">
+                        </div>
+                    </content>
+                    <li>
+                        @Html.MenuActionLink("Disciplinas", "Disciplina", "Index", "fa fa-university icon-large")
+                    </li>
+                    <li>
+                        @Html.MenuActionLink("Cuestionarios", "Cuestionario", "Index", "fa fa-file-text-o icon-large")
+                    </li>
+                </ul>
+            </div>
+        </div>
+    }
+    if (Context.User.IsInRole("PageAdmin"))
+    {
+        <div id="menu-flotado-right" class="body-nav body-nav-vertical body-nav-fixed body-nav-right">
+            <div id="container-menu-right" class="container">
+                <ul>
+                    <li>
+                        @Html.MenuActionLink("Comunidad SLMF", "RedSocial", "Index", "fa fa-users icon-large")
+                    </li>
+                    <li>
+                        @Html.MenuActionLink("Clientes SLMF", "Cliente", "Index", "fa fa-user icon-large")
+                    </li>
+                </ul>
+            </div>
+        </div>
+    }
+}

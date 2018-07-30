@@ -1,0 +1,325 @@
+﻿@using System.Configuration;
+<!DOCTYPE html>
+<!--if lt IE 7<html class="no-js lt-ie9 lt-ie8 lt-ie7"> -->
+<!--if IE 7<html class="no-js lt-ie9 lt-ie8"> -->
+<!--if IE 8<html class="no-js lt-ie9"> -->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+@{SLMFSITE.Models.SlmfDBEntities dbV = new SLMFSITE.Models.SlmfDBEntities();}
+@{ var bdVDisciplinas = dbV.Disciplina.Where(s => s.ID > 0);}
+@{ var bdVDisciplinaPrincipal = bdVDisciplinas.Where(s => s.Visible == true).First();}
+@{ var vLink = "";}
+@{string vActiveSeccion = ""; }
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>@ViewBag.Title</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noarchive">
+    <meta name="viewport" content="width=device-width">
+    @RenderSection("MetaTags", required: false)
+    @{var vLinkIcon = Convert.ToString(Session["AppAssetsURL"]) + "favicon.png";}
+    <link rel="icon" type="image/png" href="@vLinkIcon">
+    <link rel="stylesheet" type="text/css" href="http://cloud.typography.com/6766072/778164/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/Content/css/layout.css">
+    <link rel="stylesheet" type="text/css" href="/Content/Site.css">
+    @Scripts.Render("~/script-files/global")
+    @RenderSection("LocalCss", required: false)
+</head>
+<body class="@ViewBag.BodyClass">
+    <header id="header-main">
+        <div class="header-main-content">
+            <nav id="show-disciplines" class="hover-disciplines submenu submenu-hidden">
+                <ul>
+                    @foreach (var item in bdVDisciplinas)
+                    {
+                        <li>
+                            @{vLink = Convert.ToString(Session["AppURL"]) + item.Nombre.Replace(" ", "-").ToLower();}
+                            @{string vStatus = "inactive";
+                            if (item.Visible == true) { vStatus = ""; } else { vLink = "#"; }
+                            }
+                            @{string vActiveDiscipline = "";
+                            if (Convert.ToString(Session["Disciplina"]).ToLower() == item.Nombre.Replace(" ", "-").ToLower()) { vActiveDiscipline = "active"; }
+                            }
+                            @{var vImage = Convert.ToString(Session["ImageAssetsURL"]) + item.SiglasImage;}
+                            <a href="@vLink" class="@vStatus @vActiveDiscipline outline outline-@item.Siglas.ToLower()">
+                                <span class="soon-link"> SOON </span>
+                                @Html.Raw(System.Web.HttpUtility.HtmlDecode(item.LogoSVG))
+                                <img src="@vImage" alt="@item.Siglas.ToLower()" class="to-show">
+                                <span class="line line-top"></span><span class="line line-bottom"></span>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+            @{var vLinkLogo = Convert.ToString(Session["AppAssetsURL"]) + "slmf.svg";}
+            <a id="logo" href="@Convert.ToString(Session["AppURL"])" class="hover-disciplines logo">
+                <img src="@vLinkLogo" alt="SLMF">
+            </a>
+            <nav class="menu-left-1">
+                <ul class="menu-left-1">
+                    @{vActiveSeccion = ""; }
+                    @{if (Convert.ToString(Session["SeccionActiva"]).ToLower() == "about") { vActiveSeccion = "active"; } }
+                    <li><a href="/about" class="@vActiveSeccion"><span></span>ABOUT</a></li>
+                    @{vActiveSeccion = ""; }
+                    @{if (Convert.ToString(Session["SeccionActiva"]).ToLower() == "slmf-team") { vActiveSeccion = "active"; } }
+                    <li><a href="/slmf-team" class="@vActiveSeccion"><span></span>SLMF TEAM</a></li>
+                    <li><a href="https://www.sololosmasfuertes.com/tienda/index.php/" target="_blank"><span></span>TIENDA</a></li>
+                    @{vActiveSeccion = ""; }
+                    @{if (Convert.ToString(Session["SeccionActiva"]).ToLower() == "slmf-labs") { vActiveSeccion = "active"; } }
+                    <li><a href="/slmf-labs" class="@vActiveSeccion"><span></span>LABS</a></li>
+                </ul>
+            </nav>
+            <nav id="navPilars" class="menu-left-2 @ViewBag.NavPilarsClass">
+                @{vLink = Convert.ToString(Session["AppURL"]) + bdVDisciplinaPrincipal.Nombre.Replace(" ", "-").ToLower();}
+                <ul class="menu-left-2">
+                    @{vActiveSeccion = ""; }
+                    @{if (Convert.ToString(Session["SeccionActiva"]).ToLower() == "entrenar") { vActiveSeccion = "active"; } }
+                    <li>
+                        <a href="@vLink/entrenar/" id="menu-pilar-button-entrenar" class="a-svg-menu-entrenar @vActiveSeccion" data-mouse-mirror="#pilar-button-entrenar">
+                            <span>ENTRENAR</span>
+                            <svg x="0px" y="0px" width="72.418px" height="50.964px" viewBox="0 0 72.418 50.964" enable-background="new 0 0 72.418 50.964" xml:space="preserve">
+                            <g>
+                            <path fill="#FFFFFF" d="M33.637,20.877c-0.98,0-1.517-0.756-1.189-1.681l3.536-10.005c0.326-0.925,0.07-1.073-0.569-0.33 L20.946,25.673c-0.641,0.744-0.36,1.352,0.619,1.352h12.776c0.981,0,1.502,0.752,1.16,1.671l-4.32,11.577 c-0.343,0.917-0.106,1.056,0.523,0.302l15.36-18.332c0.629-0.752,0.34-1.366-0.639-1.366H33.637z"></path>
+                                        </g>
+                                    </svg>
+                        </a>
+                    </li>
+                    @{vActiveSeccion = ""; }
+                    @{if (Convert.ToString(Session["SeccionActiva"]).ToLower() == "potenciar") { vActiveSeccion = "active"; } }
+                    <li>
+                        <a href="@vLink/potenciar/" id="menu-pilar-button-potenciar" class="svg-menu-potenciar @vActiveSeccion" data-mouse-mirror="#pilar-button-potenciar">
+                            <span>POTENCIAR</span>
+                            <svg x="0px" y="0px" width="72.418px" height="50.964px" viewBox="0 0 72.418 50.964" enable-background="new 0 0 72.418 50.964" xml:space="preserve"> <g> <g> <g> <path fill="#FFFFFF" d="M29.557,38.561c-0.494-0.229-1.131-0.558-1.416-0.731c0,0,0,0-0.244-0.174 c-0.603-0.438-1.101-0.891-1.524-1.382C26.14,36,26.14,36,26.14,36c-0.201-0.283,0.078-0.543,0.622-0.579 c0,0,1.065-0.07,1.925-0.194c1.147-0.158,2.227-0.406,3.206-0.735c1.501-0.519,2.729-1.167,4.112-2.168 c0.278-0.201,0.364-0.578,0.202-0.879c-0.063-0.115-0.155-0.206-0.259-0.266c-0.176-0.1-0.391-0.123-0.588-0.046 c-0.361,0.14-0.7,0.251-1.034,0.344c-1.515,0.427-3.1,0.514-4.586,0.255c-1.142-0.193-2.222-0.581-3.212-1.151 c-0.262-0.151-0.519-0.316-0.763-0.491c-0.604-0.438-1.101-0.89-1.524-1.381c-0.233-0.272-0.233-0.272-0.233-0.272 c-0.202-0.284,0.078-0.545,0.621-0.581c0,0,1.063-0.07,1.922-0.194c1.149-0.159,2.23-0.406,3.209-0.734 c1.501-0.52,2.729-1.167,4.11-2.168c0.281-0.201,0.364-0.578,0.2-0.879c-0.062-0.115-0.15-0.205-0.258-0.266 c-0.172-0.101-0.39-0.123-0.587-0.045c-0.345,0.133-0.692,0.249-1.032,0.342c-1.515,0.427-3.101,0.515-4.585,0.255 c-1.143-0.192-2.225-0.58-3.215-1.152c-0.264-0.151-0.52-0.316-0.762-0.49c-0.604-0.438-1.104-0.891-1.523-1.381 c-0.235-0.273-0.235-0.273-0.235-0.273c-0.202-0.283,0.078-0.544,0.622-0.58c0,0,1.071-0.071,1.924-0.192 c1.157-0.162,2.235-0.409,3.206-0.736c1.699-0.587,3.907-2.073,3.907-2.073c0.452-0.304,0.905-0.615,1.007-0.692 c0.102-0.077,0.283-0.211,0.402-0.3c0.119-0.088,0.464-0.327,0.766-0.531c0,0,0,0,0.292-0.185 c0.623-0.388,1.224-0.713,1.837-0.993c1.471-0.672,2.862-1.052,4.253-1.16c1.632-0.139,3.263,0.182,4.477,0.883 c0.665,0.385,1.211,0.848,1.639,1.384c0.215,0.267,0.215,0.267,0.215,0.267c0.187,0.306,0.02,0.551-0.372,0.544 c0,0,0,0-0.337,0.017c-0.702,0.039-1.297,0.134-1.828,0.292c-1.067,0.31-1.868,0.795-2.662,1.306 c-1.229,0.81-2.5,1.807-3.729,2.771c-0.272,0.211-0.341,0.594-0.165,0.888c0.063,0.104,0.146,0.185,0.244,0.241 c0.184,0.106,0.413,0.125,0.619,0.034c1.395-0.613,2.714-0.96,4.032-1.063c1.633-0.14,3.264,0.184,4.484,0.886 c0.66,0.386,1.208,0.848,1.631,1.38c0.217,0.267,0.217,0.267,0.217,0.267c0.187,0.306,0.018,0.551-0.374,0.545 c0,0,0,0-0.335,0.017c-0.704,0.039-1.301,0.134-1.829,0.293c-1.06,0.307-1.864,0.792-2.661,1.304 c-1.243,0.822-2.508,1.814-3.728,2.771c-0.27,0.213-0.341,0.593-0.166,0.889c0.063,0.104,0.148,0.186,0.245,0.241 c0.183,0.105,0.411,0.124,0.618,0.034c1.397-0.612,2.716-0.96,4.031-1.063c1.633-0.139,3.263,0.183,4.479,0.885 c0.666,0.386,1.215,0.85,1.639,1.384c0.218,0.267,0.218,0.267,0.218,0.267c0.186,0.306,0.017,0.55-0.375,0.543 c0,0,0,0-0.336,0.017c-0.706,0.039-1.302,0.135-1.83,0.293c-1.06,0.309-1.864,0.793-2.662,1.304 c-1.243,0.822-3.076,2.263-3.076,2.263c-0.428,0.336-1.018,0.799-1.312,1.028s-0.91,0.655-1.37,0.946 c0,0-1.825,1.153-3.269,1.554c-1.512,0.426-3.097,0.514-4.585,0.255C30.731,39.105,29.557,38.561,29.557,38.561z"></path> </g> </g> </g> </svg>
+                        </a>
+                    </li>
+                    @{vActiveSeccion = ""; }
+                    @{if (Convert.ToString(Session["SeccionActiva"]).ToLower() == "competir") { vActiveSeccion = "active"; } }
+                    <li>
+                        <a href="@vLink/competir/" id="menu-pilar-button-competir" class="svg-menu-competir @vActiveSeccion" data-mouse-mirror="#pilar-button-competir">
+                            <span>COMPETIR</span>
+                            <svg x="0px" y="0px" width="72.418px" height="50.964px" viewBox="0 0 72.418 50.964" enable-background="new 0 0 72.418 50.964" xml:space="preserve"> <g> <path fill="#FFFFFF" d="M46.354,25.495c-0.062-0.124-0.179-0.211-0.313-0.239c-0.134-0.026-0.276,0.012-0.382,0.103 c-0.699,0.614-1.635,0.927-2.776,0.927c-0.354,0-0.696-0.032-1.016-0.079c-0.456-0.057-0.388-0.505-0.163-0.737 c0.748-0.66,1.537-1.632,2.158-2.955v-0.002c0.621-1.52,0.618-3.203,0.185-5.001c-0.002-0.015-0.046-0.032-0.048-0.048 c-0.016-0.058-0.052-0.117-0.067-0.177l-0.026-0.057c-1.705-6.315-6.487-8-6.687-8.068c-0.139-0.047-0.291-0.025-0.409,0.06 c-0.118,0.084-0.187,0.219-0.187,0.363c0,7.106-3.602,9.923-5.755,11.608c-0.261,0.204-0.505,0.393-0.717,0.572 c-0.006,0.005-0.01,0.009-0.015,0.013c-2.677,2.061-4.213,5.174-4.213,8.55c0,3.279,1.468,6.339,4.024,8.4 c0.01,0.008,0.02,0.016,0.028,0.023l1.405,0.952c0.008,0.007,0.02,0.013,0.029,0.02c0.271,0.153,0.547,0.293,0.83,0.421 c0.645,0.317,1.199,0.001,0.774-0.447l-0.001-0.012c-0.774-0.795-1.275-1.82-1.488-3.057c-0.003-0.009-0.006-0.021-0.011-0.032 c-0.005-0.042-0.011-0.083-0.018-0.126l-0.005-0.042c-0.651-4.508,1.943-6.902,2.052-7.001c0.074-0.068,0.177-0.095,0.275-0.073 c0.099,0.021,0.18,0.088,0.219,0.181c1.958,4.545,5.039,5.356,6.879,5.84c0.225,0.057,0.43,0.113,0.615,0.169 c0.007,0.001,0.011,0.002,0.011,0.002c1.275,0.325,2.399,0.963,3.317,1.831c1.638-1.892,2.638-4.353,2.638-7.048 C47.497,28.632,47.111,27.006,46.354,25.495z"></path> </g> </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div id="bt-feed" class="copyrights hover-social">
+                <svg x="0px" y="0px" width="73.843px" height="16.998px" viewBox="0 0.757 73.843 16.998" enable-background="new 0 0.757 73.843 16.998" xml:space="preserve"> <g> <image overflow="visible" enable-background="new" width="68" height="21" id="PzWiDh" transform="matrix(0.9853 0 0 0.9524 -129.6523 229.1848)"> </image> </g> <path fill="#9B9A9A" d="M73.843,7.81c0-3.894-3.481-7.053-7.775-7.053s-7.773,3.268-7.773,7.162c0,3.205,2.353,5.974,5.575,6.876 h-0.04c0,0-0.187,1.297-0.512,2.963c0,0,2.228-2.041,3.096-2.848C70.546,14.748,73.843,11.602,73.843,7.81z" /> <g> <path fill="#F6D641" d="M42.472,17.757V4.222H42.47V2.874c0-0.631-0.184-1.132-0.562-1.537c-0.355-0.382-0.86-0.568-1.534-0.58 h-3.397h-6.96H27.05c-0.675,0.011-1.181,0.197-1.535,0.578c-0.379,0.405-0.563,0.907-0.563,1.538v1.35v13.533h4.914V5.502h1.384 v12.253h4.917V5.502h1.384v12.253h4.92V17.757z" /> <path fill="#F6D641" d="M54.615,4.767v-4.01h-7.253c-0.611,0.009-1.104,0.19-1.5,0.561c-0.381,0.356-0.568,0.862-0.578,1.54v2.889 l0,0v12.008l0,0h4.003h0.915v-7.612h4.413V6.15h-4.413V4.767H54.615z" /> <path fill="#F6D641" d="M22.132,13.746v4.011h-7.254c-0.609-0.009-1.1-0.19-1.497-0.561c-0.382-0.358-0.57-0.864-0.578-1.54v-2.889 v-0.001l-0.002-12.01h0.001h4h0.917v12.988L22.132,13.746L22.132,13.746z" /> <path fill="#F6D641" d="M9.988,5.365V0.758H2.386c-0.7,0.01-1.266,0.218-1.72,0.642c-0.44,0.412-0.655,0.992-0.664,1.77v3.319 L0,6.49v1.096h0.002v1.564c0.008,0.778,0.223,1.36,0.664,1.77c0.454,0.426,1.02,0.635,1.72,0.644h2.684v1.586H0v4.605h7.601 c0.702-0.009,1.265-0.218,1.721-0.643c0.439-0.411,0.655-0.991,0.665-1.77v-3.319l0.001-0.001v-0.459v-0.818v-0.584V9.62V9.451 H9.986v-0.08C9.977,8.594,9.763,8.012,9.322,7.603C8.867,7.177,8.303,6.969,7.601,6.96H4.93L4.918,6.954V5.365H9.988z" /> </g> </svg>
+                <p>Copyright © 2013-@DateTime.Now.Year</p>
+            </div>
+        </div>
+    </header>
+    @RenderBody()
+    <div id="slmf-community-overlay" class="slmf-community-overlay full-all alpha-0">
+        @{vLink = Convert.ToString(Session["AppAssetsURL"]) + "comunidad-slmf/bg.jpg";}
+        <div class="community-bg full-all"></div>
+        <img src="@vLink" alt="" class="community-bg2">
+        <div id="slmf-community-overlay-content" class="slmf-community-overlay-content"></div>
+        <div id="community-close" class="community-close">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    @*Login de  la disciplina*@
+    <div id="login" class="login-wrapper">
+        <div id="login-disciplines" class="login-disciplines">
+            <a id="login-disciplines-cft" href="#" class="inactive login-user-hover login-disciplines-cft login-triangle-medium">
+                <div class="login-triangle-inverded-big">
+                    <svg x="0px" y="0px" width="19.5px" height="29.1px" viewBox="0 0 19.5 29.1" style="enable-background:new 0 0 19.5 29.1;" xml:space="preserve" class="to-hidde"> <g> <g> <g> <circle cx="9.7" cy="19.4" r="9.7" class="icon"></circle> <path d="M1.3,10.8c0.9-0.9,2-1.7,3.3-2.3C4.4,7.6,4.2,6.8,4.1,5.9c-0.1-0.6,0-1,0.4-1.4c0.5-0.5,1.3-0.9,2.2-0.9h6.2 c0.9,0,1.7,0.3,2.2,0.9c0.3,0.4,0.5,0.9,0.4,1.4l-0.4,2.6c1.2,0.6,2.3,1.4,3.3,2.3l0.7-4.2c0.3-1.6-0.1-3.2-1.2-4.4 C16.6,0.8,14.8,0,12.8,0H6.6c-2,0-3.8,0.8-4.9,2.1c-1,1.2-1.4,2.8-1.2,4.4C0.8,7.9,1,9.4,1.3,10.8z" class="icon"></path> </g> </g> </g> </svg>
+                    <p class="tungsten-semibold">CROSSFIT</p>
+                </div>
+            </a>
+            <a id="login-disciplines-bbd" href="/bodybuilding" class="login-user-hover login-disciplines-bbd login-triangle-medium">
+                <div class="login-triangle-inverded-big">
+                    <svg x="0px" y="0px" width="33.7px" height="19.3px" viewBox="0 0 33.7 19.3" style="enable-background:new 0 0 33.7 19.3;" xml:space="preserve" class="to-hidde"> <g> <g> <g> <path d="M30,0c-1.1,0-2.4,0.3-2.8,0.6c-0.5,0.3-0.8,1.8-0.8,3.2c0,1.4,0,2.6,0,2.6c0,0,0,1.4,0,3v0.6c0,1.6,0,3,0,3 c0,0,0,1.2,0,2.6c0,1.4,0.4,2.8,0.8,3.2c0.5,0.3,1.7,0.6,2.8,0.6c1.1,0,2.4-0.3,2.8-0.6c0.5-0.3,0.8-2,0.8-3.6V4.2 c0-1.6-0.4-3.3-0.8-3.6C32.4,0.3,31.1,0,30,0z" class="icon"></path> </g> <g> <path d="M3.7,0C2.6,0,1.3,0.3,0.8,0.6C0.4,1,0,2.6,0,4.2v10.8c0,1.6,0.4,3.3,0.8,3.6s1.7,0.6,2.8,0.6 c1.1,0,2.4-0.3,2.8-0.6c0.5-0.3,0.8-2,0.8-3.6V4.2C7.4,2.6,7,1,6.5,0.6C6.1,0.3,4.8,0,3.7,0z" class="icon"></path> </g> <g> <path d="M9.5,9.6c0,1.2,1.3,2.2,3,2.2h8.7c1.6,0,3-1,3-2.2c0-1.2-1.3-2.2-3-2.2h-8.7C10.9,7.5,9.5,8.4,9.5,9.6z" class="icon"></path> </g> </g> </g> </svg>
+                    <p class="tungsten-semibold">BODYBUILDING</p>
+                </div>
+            </a>
+            <a id="login-disciplines-mma" href="#" class="inactive login-user-hover login-disciplines-mma login-triangle-medium">
+                <div class="login-triangle-inverded-big">
+                    <svg x="0px" y="0px" width="23.817px" height="25.978px" viewBox="24.301 12.493 23.817 25.978" enable-background="new 24.301 12.493 23.817 25.978" xml:space="preserve" class="to-hidde"> <g> <g> <g> <g> <g> <path d="M27.396,35.716c0.053,1.516,1.439,2.755,3.082,2.755h11.469c1.642,0,3.027-1.24,3.08-2.755 c0.054-1.516-1.246-2.756-2.888-2.756H30.286C28.645,32.96,27.344,34.201,27.396,35.716z" class="icon"></path> </g> <g> <path d="M46.949,14.413c-0.646-1.056-1.602-1.92-2.125-1.92c-0.524,0-1.211,0.436-1.528,0.968 c-0.317,0.532-0.92,0.968-1.341,0.968c-0.422,0-0.938-0.436-1.15-0.968c-0.212-0.532-0.986-0.968-1.721-0.968 s-1.51,0.436-1.723,0.968c-0.213,0.532-0.729,0.968-1.15,0.968s-0.925-0.436-1.122-0.968c-0.196-0.532-0.983-0.968-1.75-0.968 s-1.553,0.436-1.75,0.968c-0.196,0.532-0.701,0.968-1.122,0.968s-0.925-0.436-1.122-0.968 c-0.196-0.533-0.983-0.968-1.749-0.968s-1.818,0.864-2.343,1.92c-0.522,1.056-0.952,3.264-0.952,4.905v0.971 c0,1.642,0.442,4.253,0.982,5.803l0.658,1.884c0.541,1.55,2.326,2.818,3.967,2.818h12.601c1.642,0,3.427-1.269,3.968-2.818 l0.658-1.884c0.541-1.55,0.983-4.162,0.983-5.803v-0.971C48.122,17.677,47.594,15.469,46.949,14.413z M42.126,21.212 c0,0.395-0.047,0.843-0.104,0.996c-0.06,0.153-0.272,0.465-0.477,0.694c-0.203,0.229-0.512,0.479-0.684,0.557 c-0.172,0.077-1.657,0.14-3.299,0.14h-3.295c-1.643,0-3.125-0.063-3.299-0.14c-0.172-0.078-0.479-0.328-0.683-0.557 s-0.419-0.542-0.478-0.694c-0.058-0.153-0.105-0.601-0.105-0.996c0-0.396,0.048-0.843,0.105-0.996 c0.059-0.153,0.273-0.465,0.478-0.694c0.202-0.229,0.51-0.479,0.683-0.556c0.172-0.078,1.656-0.141,3.299-0.141h3.295 c1.643,0,3.127,0.063,3.299,0.141c0.172,0.077,0.479,0.327,0.684,0.556s0.417,0.542,0.477,0.694 C42.078,20.369,42.126,20.817,42.126,21.212z" class="icon"></path> </g> </g> </g> </g> </g> </svg>
+                    <p class="tungsten-semibold">MIXED MARTIAL ARTS</p>
+                </div>
+            </a>
+        </div>
+        <div id="login-user" class="login-user">
+            <div id="login-user-del" class="login-user-hover login-user-del login-triangle-big">
+                <div class="login-triangle-inverded-big">
+                    <p class="tungsten-semibold">
+                        <br>
+                        <svg x="0px" y="0px" width="11px" height="11px" viewBox="0 0 11 11" style="enable-background:new 0 0 11 11;" xml:space="preserve"> <line stroke="#FFFFFF" x1="0" y1="0" x2="11" y2="11" stroke-width="2" stroke-miterlimit="10"></line> <line stroke="#FFFFFF" x1="11" y1="0" x2="0" y2="11" stroke-width="2" stroke-miterlimit="10"></line> </svg>
+                        <br>
+                        <span class="tungsten-semibold">ELIMINA</span>
+                    </p>
+                </div>
+            </div>
+            <div id="login-user-avatar" class="login-user-hover login-user-avatar login-triangle-big">
+                <div id="login-user-avatar-img" class="login-triangle-inverded-big">
+                    <div class="pattern"></div>
+                    <p id="login-user-avatar-name" class="tungsten-semibold"></p>
+                </div>
+            </div>
+            <div id="login-user-train" class="login-user-hover login-user-train login-triangle-big">
+                <div class="login-triangle-inverded-big">
+                    <div id="login-user-train-dashboardcancel" class="bt-login-train hidden">
+                        <p class="tungsten-semibold">
+                            <span class="login-user-train-cft">
+                                <svg x="0px" y="0px" width="19.5px" height="29.1px" viewBox="0 0 19.5 29.1" style="enable-background:new 0 0 19.5 29.1;" xml:space="preserve" class="to-hidde"> <g> <g> <g> <circle cx="9.7" cy="19.4" r="9.7" class="icon"></circle> <path d="M1.3,10.8c0.9-0.9,2-1.7,3.3-2.3C4.4,7.6,4.2,6.8,4.1,5.9c-0.1-0.6,0-1,0.4-1.4c0.5-0.5,1.3-0.9,2.2-0.9h6.2 c0.9,0,1.7,0.3,2.2,0.9c0.3,0.4,0.5,0.9,0.4,1.4l-0.4,2.6c1.2,0.6,2.3,1.4,3.3,2.3l0.7-4.2c0.3-1.6-0.1-3.2-1.2-4.4 C16.6,0.8,14.8,0,12.8,0H6.6c-2,0-3.8,0.8-4.9,2.1c-1,1.2-1.4,2.8-1.2,4.4C0.8,7.9,1,9.4,1.3,10.8z" class="icon"></path> </g> </g> </g> </svg>
+                            </span>
+                            <span class="login-user-train-bbd">
+                                <svg x="0px" y="0px" width="33.7px" height="19.3px" viewBox="0 0 33.7 19.3" style="enable-background:new 0 0 33.7 19.3;" xml:space="preserve" class="to-hidde"> <g> <g> <g> <path d="M30,0c-1.1,0-2.4,0.3-2.8,0.6c-0.5,0.3-0.8,1.8-0.8,3.2c0,1.4,0,2.6,0,2.6c0,0,0,1.4,0,3v0.6c0,1.6,0,3,0,3 c0,0,0,1.2,0,2.6c0,1.4,0.4,2.8,0.8,3.2c0.5,0.3,1.7,0.6,2.8,0.6c1.1,0,2.4-0.3,2.8-0.6c0.5-0.3,0.8-2,0.8-3.6V4.2 c0-1.6-0.4-3.3-0.8-3.6C32.4,0.3,31.1,0,30,0z" class="icon"></path> </g> <g> <path d="M3.7,0C2.6,0,1.3,0.3,0.8,0.6C0.4,1,0,2.6,0,4.2v10.8c0,1.6,0.4,3.3,0.8,3.6s1.7,0.6,2.8,0.6 c1.1,0,2.4-0.3,2.8-0.6c0.5-0.3,0.8-2,0.8-3.6V4.2C7.4,2.6,7,1,6.5,0.6C6.1,0.3,4.8,0,3.7,0z" class="icon"></path> </g> <g> <path d="M9.5,9.6c0,1.2,1.3,2.2,3,2.2h8.7c1.6,0,3-1,3-2.2c0-1.2-1.3-2.2-3-2.2h-8.7C10.9,7.5,9.5,8.4,9.5,9.6z" class="icon"></path> </g> </g> </g> </svg>
+                            </span>
+                            <span class="login-user-train-mma">
+                                <svg x="0px" y="0px" width="23.817px" height="25.978px" viewBox="24.301 12.493 23.817 25.978" enable-background="new 24.301 12.493 23.817 25.978" xml:space="preserve" class="to-hidde"> <g> <g> <g> <g> <g> <path d="M27.396,35.716c0.053,1.516,1.439,2.755,3.082,2.755h11.469c1.642,0,3.027-1.24,3.08-2.755 c0.054-1.516-1.246-2.756-2.888-2.756H30.286C28.645,32.96,27.344,34.201,27.396,35.716z" class="icon"></path> </g> <g> <path d="M46.949,14.413c-0.646-1.056-1.602-1.92-2.125-1.92c-0.524,0-1.211,0.436-1.528,0.968 c-0.317,0.532-0.92,0.968-1.341,0.968c-0.422,0-0.938-0.436-1.15-0.968c-0.212-0.532-0.986-0.968-1.721-0.968 s-1.51,0.436-1.723,0.968c-0.213,0.532-0.729,0.968-1.15,0.968s-0.925-0.436-1.122-0.968c-0.196-0.532-0.983-0.968-1.75-0.968 s-1.553,0.436-1.75,0.968c-0.196,0.532-0.701,0.968-1.122,0.968s-0.925-0.436-1.122-0.968 c-0.196-0.533-0.983-0.968-1.749-0.968s-1.818,0.864-2.343,1.92c-0.522,1.056-0.952,3.264-0.952,4.905v0.971 c0,1.642,0.442,4.253,0.982,5.803l0.658,1.884c0.541,1.55,2.326,2.818,3.967,2.818h12.601c1.642,0,3.427-1.269,3.968-2.818 l0.658-1.884c0.541-1.55,0.983-4.162,0.983-5.803v-0.971C48.122,17.677,47.594,15.469,46.949,14.413z M42.126,21.212 c0,0.395-0.047,0.843-0.104,0.996c-0.06,0.153-0.272,0.465-0.477,0.694c-0.203,0.229-0.512,0.479-0.684,0.557 c-0.172,0.077-1.657,0.14-3.299,0.14h-3.295c-1.643,0-3.125-0.063-3.299-0.14c-0.172-0.078-0.479-0.328-0.683-0.557 s-0.419-0.542-0.478-0.694c-0.058-0.153-0.105-0.601-0.105-0.996c0-0.396,0.048-0.843,0.105-0.996 c0.059-0.153,0.273-0.465,0.478-0.694c0.202-0.229,0.51-0.479,0.683-0.556c0.172-0.078,1.656-0.141,3.299-0.141h3.295 c1.643,0,3.127,0.063,3.299,0.141c0.172,0.077,0.479,0.327,0.684,0.556s0.417,0.542,0.477,0.694 C42.078,20.369,42.126,20.817,42.126,21.212z" class="icon"></path> </g> </g> </g> </g> </g> </svg>
+                            </span>
+                            CANCELA
+                        </p>
+                    </div>
+                    <div id="login-user-train-dashboardini" class="bt-login-train hidden">
+                        <p class="tungsten-semibold">
+                            <span class="login-user-train-cft">
+                                <svg x="0px" y="0px" width="19.5px" height="29.1px" viewBox="0 0 19.5 29.1" style="enable-background:new 0 0 19.5 29.1;" xml:space="preserve" class="to-hidde"> <g> <g> <g> <circle cx="9.7" cy="19.4" r="9.7" class="icon"></circle> <path d="M1.3,10.8c0.9-0.9,2-1.7,3.3-2.3C4.4,7.6,4.2,6.8,4.1,5.9c-0.1-0.6,0-1,0.4-1.4c0.5-0.5,1.3-0.9,2.2-0.9h6.2 c0.9,0,1.7,0.3,2.2,0.9c0.3,0.4,0.5,0.9,0.4,1.4l-0.4,2.6c1.2,0.6,2.3,1.4,3.3,2.3l0.7-4.2c0.3-1.6-0.1-3.2-1.2-4.4 C16.6,0.8,14.8,0,12.8,0H6.6c-2,0-3.8,0.8-4.9,2.1c-1,1.2-1.4,2.8-1.2,4.4C0.8,7.9,1,9.4,1.3,10.8z" class="icon"></path> </g> </g> </g> </svg>
+                            </span>
+                            <span class="login-user-train-bbd">
+                                <svg x="0px" y="0px" width="33.7px" height="19.3px" viewBox="0 0 33.7 19.3" style="enable-background:new 0 0 33.7 19.3;" xml:space="preserve" class="to-hidde"> <g> <g> <g> <path d="M30,0c-1.1,0-2.4,0.3-2.8,0.6c-0.5,0.3-0.8,1.8-0.8,3.2c0,1.4,0,2.6,0,2.6c0,0,0,1.4,0,3v0.6c0,1.6,0,3,0,3 c0,0,0,1.2,0,2.6c0,1.4,0.4,2.8,0.8,3.2c0.5,0.3,1.7,0.6,2.8,0.6c1.1,0,2.4-0.3,2.8-0.6c0.5-0.3,0.8-2,0.8-3.6V4.2 c0-1.6-0.4-3.3-0.8-3.6C32.4,0.3,31.1,0,30,0z" class="icon"></path> </g> <g> <path d="M3.7,0C2.6,0,1.3,0.3,0.8,0.6C0.4,1,0,2.6,0,4.2v10.8c0,1.6,0.4,3.3,0.8,3.6s1.7,0.6,2.8,0.6 c1.1,0,2.4-0.3,2.8-0.6c0.5-0.3,0.8-2,0.8-3.6V4.2C7.4,2.6,7,1,6.5,0.6C6.1,0.3,4.8,0,3.7,0z" class="icon"></path> </g> <g> <path d="M9.5,9.6c0,1.2,1.3,2.2,3,2.2h8.7c1.6,0,3-1,3-2.2c0-1.2-1.3-2.2-3-2.2h-8.7C10.9,7.5,9.5,8.4,9.5,9.6z" class="icon"></path> </g> </g> </g> </svg>
+                            </span>
+                            <span class="login-user-train-mma">
+                                <svg x="0px" y="0px" width="23.817px" height="25.978px" viewBox="24.301 12.493 23.817 25.978" enable-background="new 24.301 12.493 23.817 25.978" xml:space="preserve" class="to-hidde"> <g> <g> <g> <g> <g> <path d="M27.396,35.716c0.053,1.516,1.439,2.755,3.082,2.755h11.469c1.642,0,3.027-1.24,3.08-2.755 c0.054-1.516-1.246-2.756-2.888-2.756H30.286C28.645,32.96,27.344,34.201,27.396,35.716z" class="icon"></path> </g> <g> <path d="M46.949,14.413c-0.646-1.056-1.602-1.92-2.125-1.92c-0.524,0-1.211,0.436-1.528,0.968 c-0.317,0.532-0.92,0.968-1.341,0.968c-0.422,0-0.938-0.436-1.15-0.968c-0.212-0.532-0.986-0.968-1.721-0.968 s-1.51,0.436-1.723,0.968c-0.213,0.532-0.729,0.968-1.15,0.968s-0.925-0.436-1.122-0.968c-0.196-0.532-0.983-0.968-1.75-0.968 s-1.553,0.436-1.75,0.968c-0.196,0.532-0.701,0.968-1.122,0.968s-0.925-0.436-1.122-0.968 c-0.196-0.533-0.983-0.968-1.749-0.968s-1.818,0.864-2.343,1.92c-0.522,1.056-0.952,3.264-0.952,4.905v0.971 c0,1.642,0.442,4.253,0.982,5.803l0.658,1.884c0.541,1.55,2.326,2.818,3.967,2.818h12.601c1.642,0,3.427-1.269,3.968-2.818 l0.658-1.884c0.541-1.55,0.983-4.162,0.983-5.803v-0.971C48.122,17.677,47.594,15.469,46.949,14.413z M42.126,21.212 c0,0.395-0.047,0.843-0.104,0.996c-0.06,0.153-0.272,0.465-0.477,0.694c-0.203,0.229-0.512,0.479-0.684,0.557 c-0.172,0.077-1.657,0.14-3.299,0.14h-3.295c-1.643,0-3.125-0.063-3.299-0.14c-0.172-0.078-0.479-0.328-0.683-0.557 s-0.419-0.542-0.478-0.694c-0.058-0.153-0.105-0.601-0.105-0.996c0-0.396,0.048-0.843,0.105-0.996 c0.059-0.153,0.273-0.465,0.478-0.694c0.202-0.229,0.51-0.479,0.683-0.556c0.172-0.078,1.656-0.141,3.299-0.141h3.295 c1.643,0,3.127,0.063,3.299,0.141c0.172,0.077,0.479,0.327,0.684,0.556s0.417,0.542,0.477,0.694 C42.078,20.369,42.126,20.817,42.126,21.212z" class="icon"></path> </g> </g> </g> </g> </g> </svg>
+                            </span>
+                            INICIAR
+                        </p>
+                    </div>
+                    <div id="login-user-train-dashboardnew" class="bt-login-train hidden">
+                        <p class="tungsten-semibold">
+                            <span class="login-user-train-cft">
+                                <svg x="0px" y="0px" width="19.5px" height="29.1px" viewBox="0 0 19.5 29.1" style="enable-background:new 0 0 19.5 29.1;" xml:space="preserve" class="to-hidde"> <g> <g> <g> <circle cx="9.7" cy="19.4" r="9.7" class="icon"></circle> <path d="M1.3,10.8c0.9-0.9,2-1.7,3.3-2.3C4.4,7.6,4.2,6.8,4.1,5.9c-0.1-0.6,0-1,0.4-1.4c0.5-0.5,1.3-0.9,2.2-0.9h6.2 c0.9,0,1.7,0.3,2.2,0.9c0.3,0.4,0.5,0.9,0.4,1.4l-0.4,2.6c1.2,0.6,2.3,1.4,3.3,2.3l0.7-4.2c0.3-1.6-0.1-3.2-1.2-4.4 C16.6,0.8,14.8,0,12.8,0H6.6c-2,0-3.8,0.8-4.9,2.1c-1,1.2-1.4,2.8-1.2,4.4C0.8,7.9,1,9.4,1.3,10.8z" class="icon"></path> </g> </g> </g> </svg>
+                            </span>
+                            <span class="login-user-train-bbd">
+                                <svg x="0px" y="0px" width="33.7px" height="19.3px" viewBox="0 0 33.7 19.3" style="enable-background:new 0 0 33.7 19.3;" xml:space="preserve" class="to-hidde"> <g> <g> <g> <path d="M30,0c-1.1,0-2.4,0.3-2.8,0.6c-0.5,0.3-0.8,1.8-0.8,3.2c0,1.4,0,2.6,0,2.6c0,0,0,1.4,0,3v0.6c0,1.6,0,3,0,3 c0,0,0,1.2,0,2.6c0,1.4,0.4,2.8,0.8,3.2c0.5,0.3,1.7,0.6,2.8,0.6c1.1,0,2.4-0.3,2.8-0.6c0.5-0.3,0.8-2,0.8-3.6V4.2 c0-1.6-0.4-3.3-0.8-3.6C32.4,0.3,31.1,0,30,0z" class="icon"></path> </g> <g> <path d="M3.7,0C2.6,0,1.3,0.3,0.8,0.6C0.4,1,0,2.6,0,4.2v10.8c0,1.6,0.4,3.3,0.8,3.6s1.7,0.6,2.8,0.6 c1.1,0,2.4-0.3,2.8-0.6c0.5-0.3,0.8-2,0.8-3.6V4.2C7.4,2.6,7,1,6.5,0.6C6.1,0.3,4.8,0,3.7,0z" class="icon"></path> </g> <g> <path d="M9.5,9.6c0,1.2,1.3,2.2,3,2.2h8.7c1.6,0,3-1,3-2.2c0-1.2-1.3-2.2-3-2.2h-8.7C10.9,7.5,9.5,8.4,9.5,9.6z" class="icon"></path> </g> </g> </g> </svg>
+                            </span>
+                            <span class="login-user-train-mma">
+                                <svg x="0px" y="0px" width="23.817px" height="25.978px" viewBox="24.301 12.493 23.817 25.978" enable-background="new 24.301 12.493 23.817 25.978" xml:space="preserve" class="to-hidde"> <g> <g> <g> <g> <g> <path d="M27.396,35.716c0.053,1.516,1.439,2.755,3.082,2.755h11.469c1.642,0,3.027-1.24,3.08-2.755 c0.054-1.516-1.246-2.756-2.888-2.756H30.286C28.645,32.96,27.344,34.201,27.396,35.716z" class="icon"></path> </g> <g> <path d="M46.949,14.413c-0.646-1.056-1.602-1.92-2.125-1.92c-0.524,0-1.211,0.436-1.528,0.968 c-0.317,0.532-0.92,0.968-1.341,0.968c-0.422,0-0.938-0.436-1.15-0.968c-0.212-0.532-0.986-0.968-1.721-0.968 s-1.51,0.436-1.723,0.968c-0.213,0.532-0.729,0.968-1.15,0.968s-0.925-0.436-1.122-0.968c-0.196-0.532-0.983-0.968-1.75-0.968 s-1.553,0.436-1.75,0.968c-0.196,0.532-0.701,0.968-1.122,0.968s-0.925-0.436-1.122-0.968 c-0.196-0.533-0.983-0.968-1.749-0.968s-1.818,0.864-2.343,1.92c-0.522,1.056-0.952,3.264-0.952,4.905v0.971 c0,1.642,0.442,4.253,0.982,5.803l0.658,1.884c0.541,1.55,2.326,2.818,3.967,2.818h12.601c1.642,0,3.427-1.269,3.968-2.818 l0.658-1.884c0.541-1.55,0.983-4.162,0.983-5.803v-0.971C48.122,17.677,47.594,15.469,46.949,14.413z M42.126,21.212 c0,0.395-0.047,0.843-0.104,0.996c-0.06,0.153-0.272,0.465-0.477,0.694c-0.203,0.229-0.512,0.479-0.684,0.557 c-0.172,0.077-1.657,0.14-3.299,0.14h-3.295c-1.643,0-3.125-0.063-3.299-0.14c-0.172-0.078-0.479-0.328-0.683-0.557 s-0.419-0.542-0.478-0.694c-0.058-0.153-0.105-0.601-0.105-0.996c0-0.396,0.048-0.843,0.105-0.996 c0.059-0.153,0.273-0.465,0.478-0.694c0.202-0.229,0.51-0.479,0.683-0.556c0.172-0.078,1.656-0.141,3.299-0.141h3.295 c1.643,0,3.127,0.063,3.299,0.141c0.172,0.077,0.479,0.327,0.684,0.556s0.417,0.542,0.477,0.694 C42.078,20.369,42.126,20.817,42.126,21.212z" class="icon"></path> </g> </g> </g> </g> </g> </svg>
+                            </span>
+                            INICIAR
+                        </p>
+                    </div>
+                    <a id="login-user-train-train" href="" class="bt-login-train hidden">
+                        <p class="tungsten-semibold">
+                            <span class="login-user-train-cft">
+                                <svg x="0px" y="0px" width="19.5px" height="29.1px" viewBox="0 0 19.5 29.1" style="enable-background:new 0 0 19.5 29.1;" xml:space="preserve" class="to-hidde"> <g> <g> <g> <circle cx="9.7" cy="19.4" r="9.7" class="icon"></circle> <path d="M1.3,10.8c0.9-0.9,2-1.7,3.3-2.3C4.4,7.6,4.2,6.8,4.1,5.9c-0.1-0.6,0-1,0.4-1.4c0.5-0.5,1.3-0.9,2.2-0.9h6.2 c0.9,0,1.7,0.3,2.2,0.9c0.3,0.4,0.5,0.9,0.4,1.4l-0.4,2.6c1.2,0.6,2.3,1.4,3.3,2.3l0.7-4.2c0.3-1.6-0.1-3.2-1.2-4.4 C16.6,0.8,14.8,0,12.8,0H6.6c-2,0-3.8,0.8-4.9,2.1c-1,1.2-1.4,2.8-1.2,4.4C0.8,7.9,1,9.4,1.3,10.8z" class="icon"></path> </g> </g> </g> </svg>
+                            </span>
+                            <span class="login-user-train-bbd">
+                                <svg x="0px" y="0px" width="33.7px" height="19.3px" viewBox="0 0 33.7 19.3" style="enable-background:new 0 0 33.7 19.3;" xml:space="preserve" class="to-hidde"> <g> <g> <g> <path d="M30,0c-1.1,0-2.4,0.3-2.8,0.6c-0.5,0.3-0.8,1.8-0.8,3.2c0,1.4,0,2.6,0,2.6c0,0,0,1.4,0,3v0.6c0,1.6,0,3,0,3 c0,0,0,1.2,0,2.6c0,1.4,0.4,2.8,0.8,3.2c0.5,0.3,1.7,0.6,2.8,0.6c1.1,0,2.4-0.3,2.8-0.6c0.5-0.3,0.8-2,0.8-3.6V4.2 c0-1.6-0.4-3.3-0.8-3.6C32.4,0.3,31.1,0,30,0z" class="icon"></path> </g> <g> <path d="M3.7,0C2.6,0,1.3,0.3,0.8,0.6C0.4,1,0,2.6,0,4.2v10.8c0,1.6,0.4,3.3,0.8,3.6s1.7,0.6,2.8,0.6 c1.1,0,2.4-0.3,2.8-0.6c0.5-0.3,0.8-2,0.8-3.6V4.2C7.4,2.6,7,1,6.5,0.6C6.1,0.3,4.8,0,3.7,0z" class="icon"></path> </g> <g> <path d="M9.5,9.6c0,1.2,1.3,2.2,3,2.2h8.7c1.6,0,3-1,3-2.2c0-1.2-1.3-2.2-3-2.2h-8.7C10.9,7.5,9.5,8.4,9.5,9.6z" class="icon"></path> </g> </g> </g> </svg>
+                            </span>
+                            <span class="login-user-train-mma">
+                                <svg x="0px" y="0px" width="23.817px" height="25.978px" viewBox="24.301 12.493 23.817 25.978" enable-background="new 24.301 12.493 23.817 25.978" xml:space="preserve" class="to-hidde"> <g> <g> <g> <g> <g> <path d="M27.396,35.716c0.053,1.516,1.439,2.755,3.082,2.755h11.469c1.642,0,3.027-1.24,3.08-2.755 c0.054-1.516-1.246-2.756-2.888-2.756H30.286C28.645,32.96,27.344,34.201,27.396,35.716z" class="icon"></path> </g> <g> <path d="M46.949,14.413c-0.646-1.056-1.602-1.92-2.125-1.92c-0.524,0-1.211,0.436-1.528,0.968 c-0.317,0.532-0.92,0.968-1.341,0.968c-0.422,0-0.938-0.436-1.15-0.968c-0.212-0.532-0.986-0.968-1.721-0.968 s-1.51,0.436-1.723,0.968c-0.213,0.532-0.729,0.968-1.15,0.968s-0.925-0.436-1.122-0.968c-0.196-0.532-0.983-0.968-1.75-0.968 s-1.553,0.436-1.75,0.968c-0.196,0.532-0.701,0.968-1.122,0.968s-0.925-0.436-1.122-0.968 c-0.196-0.533-0.983-0.968-1.749-0.968s-1.818,0.864-2.343,1.92c-0.522,1.056-0.952,3.264-0.952,4.905v0.971 c0,1.642,0.442,4.253,0.982,5.803l0.658,1.884c0.541,1.55,2.326,2.818,3.967,2.818h12.601c1.642,0,3.427-1.269,3.968-2.818 l0.658-1.884c0.541-1.55,0.983-4.162,0.983-5.803v-0.971C48.122,17.677,47.594,15.469,46.949,14.413z M42.126,21.212 c0,0.395-0.047,0.843-0.104,0.996c-0.06,0.153-0.272,0.465-0.477,0.694c-0.203,0.229-0.512,0.479-0.684,0.557 c-0.172,0.077-1.657,0.14-3.299,0.14h-3.295c-1.643,0-3.125-0.063-3.299-0.14c-0.172-0.078-0.479-0.328-0.683-0.557 s-0.419-0.542-0.478-0.694c-0.058-0.153-0.105-0.601-0.105-0.996c0-0.396,0.048-0.843,0.105-0.996 c0.059-0.153,0.273-0.465,0.478-0.694c0.202-0.229,0.51-0.479,0.683-0.556c0.172-0.078,1.656-0.141,3.299-0.141h3.295 c1.643,0,3.127,0.063,3.299,0.141c0.172,0.077,0.479,0.327,0.684,0.556s0.417,0.542,0.477,0.694 C42.078,20.369,42.126,20.817,42.126,21.212z" class="icon"></path> </g> </g> </g> </g> </g> </svg>
+                            </span>
+                            ENTRENA
+                        </p>
+                    </a>
+                    <div id="login-user-train-select" class="bt-login-train hidden">
+                        <p class="tungsten-semibold">
+                            <span class="tungsten-semibold">SELECCIONA</span>
+                            <span class="arrow-content arrow-prev-yellow"></span>
+                            <br>
+                            <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="login-logged" class="login-logged login-triangle-small hidden">
+            <div class="login-triangle-inverded-small">
+                <p>
+                    <span class="padlock">
+                        <svg x="0px" y="0px" width="24px" viewBox="-17.295 -7.271 29.295 24.271" enable-background="new -17.295 -7.271 29.295 24.271" xml:space="preserve"> <g> <g> <path fill="#F7D82B" d="M0,8v9h12V8H0z M7,15H5v-5h2V15z" /> <path fill="#F7D82B" d="M4,5c0,0,0-3,2-3c0.915,0,1.419,0.835,1.692,1.625h2.131C9.503,2.145,8.596,0,6,0C2,0,2,5,2,5v2h2V5z" /> </g> </g> <path fill="#F7D82B" d="M-2,8V7.12c-0.837-0.366-1.671-0.739-2.501-1.122c-0.083-0.039-0.17-0.171-0.175-0.264c-0.023-0.567-0.027-1.135-0.03-1.703 c-0.001-0.087,0.015-0.198,0.067-0.257c0.573-0.636,0.793-1.418,0.946-2.23c0.016-0.081,0.031-0.162,0.046-0.237 c0.554-0.127,1.013-0.622,1.041-1.205c0.019-0.383-0.048-0.776-0.116-1.158C-2.771-1.332-2.927-1.556-3.26-1.577 C-3.209-2.083-3.152-2.57-3.113-3.06c0.143-1.778-0.712-3.004-2.254-3.717c-1.685-0.78-3.362-0.646-4.88,0.477 c-1.189,0.879-1.646,2.092-1.439,3.558c0.053,0.377,0.086,0.757,0.13,1.155c-0.425,0.056-0.53,0.383-0.599,0.729 c-0.097,0.489-0.155,0.978,0.095,1.444c0.192,0.361,0.415,0.691,0.831,0.702c0.171,0.562,0.318,1.099,0.5,1.622 c0.079,0.224,0.198,0.455,0.361,0.624c0.23,0.24,0.273,0.497,0.254,0.808c-0.027,0.436-0.027,0.875-0.016,1.312 c0.004,0.195-0.055,0.302-0.237,0.379c-1.36,0.576-2.714,1.168-4.076,1.738c-0.977,0.409-1.984,0.752-2.852,1.377 c2.269,2.943,5.827,4.841,9.829,4.841c1.963,0,3.816-0.463,5.466-1.274V8z" /> </svg>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div id="login-enter" class="login-enter login-triangle-small hidden">
+            <div class="login-triangle-inverded-small">
+                <p>
+                    <span class="padlock">
+                        <svg x="0px" y="0px" width="24px" viewBox="-17.295 -7.271 29.295 24.271" enable-background="new -17.295 -7.271 29.295 24.271" xml:space="preserve"> <g> <g> <path fill="#F7D82B" d="M0,8v9h12V8H0z M7,15H5v-5h2V15z M4,5c0,0,0-3,2-3c1.732,0,2,3,2,3v2h2V5c0,0-0.041-5-4-5C2,0,2,5,2,5v2h2V5z" /> </g> </g> <path fill="#F7D82B" d="M-2,8V7.12c-0.837-0.366-1.671-0.739-2.501-1.122c-0.083-0.039-0.17-0.171-0.175-0.264c-0.023-0.567-0.027-1.135-0.03-1.703 c-0.001-0.087,0.015-0.198,0.067-0.257c0.573-0.636,0.793-1.418,0.946-2.23c0.016-0.081,0.031-0.162,0.046-0.237 c0.554-0.127,1.013-0.622,1.041-1.205c0.019-0.383-0.048-0.776-0.116-1.158C-2.771-1.332-2.927-1.556-3.26-1.577 C-3.209-2.083-3.152-2.57-3.113-3.06c0.143-1.778-0.712-3.004-2.254-3.717c-1.685-0.78-3.362-0.646-4.88,0.477 c-1.189,0.879-1.646,2.092-1.439,3.558c0.053,0.377,0.086,0.757,0.13,1.155c-0.425,0.056-0.53,0.383-0.599,0.729 c-0.097,0.489-0.155,0.978,0.095,1.444c0.192,0.361,0.415,0.691,0.831,0.702c0.171,0.562,0.318,1.099,0.5,1.622 c0.079,0.224,0.198,0.455,0.361,0.624c0.23,0.24,0.273,0.497,0.254,0.808c-0.027,0.436-0.027,0.875-0.016,1.312 c0.004,0.195-0.055,0.302-0.237,0.379c-1.36,0.576-2.714,1.168-4.076,1.738c-0.977,0.409-1.984,0.752-2.852,1.377 c2.269,2.943,5.827,4.841,9.829,4.841c1.963,0,3.816-0.463,5.466-1.274V8z" /> </svg>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div id="login-logout" class="login-logout login-triangle-small hidden login-user-hover ">
+            <div class="login-triangle-inverded-small">
+                <p class="tungsten-semibold">
+                    <span class="overLabel tungsten-semibold">CIERRA</span>
+                </p>
+            </div>
+        </div>
+        <div id="login-login" class="login-login login-triangle-small hidden">
+            <div class="login-triangle-inverded-small">
+                <p class="tungsten-semibold">
+                    <span class="overLabel tungsten-semibold">INICIAR<br>SESIÓN</span>
+                </p>
+            </div>
+        </div>
+        <div id="login-message" class="login-message">
+            <div class="login-triangle-inverded-macro">
+                <div id="message-account-delete" class="login-message-box hidden message-account-delete">
+                    <p>Estás a punto<br>de eliminar tu registro<br>y perderás tu avance<br>de entrenamiento.</p>
+                    <h4>¿ESTÁS SEGURO?</h4>
+                    <p class="decision"><a id="login-account-delete-yes" href="#" class="tungsten-medium">SI</a><span>|</span><a id="login-account-delete-no" href="#" class="tungsten-medium">NO</a></p>
+                </div>
+                <div id="message-account-close" class="login-message-box hidden message-account-close">
+                    <p>Estás a punto<br>de cerrar tu sesión.</p>
+                    <h4>¿ESTÁS SEGURO?</h4>
+                    <p class="decision"><a id="login-account-close-yes" href="#" class="tungsten-medium">SI</a><span>|</span><a id="login-account-close-no" href="#" class="tungsten-medium">NO</a></p>
+                </div>
+                <div id="message-plan-change" class="login-message-box hidden message-plan-change">
+                    <p>Estás por cambiar<br>tu plan actual para<br>iniciar un plan nuevo.</p>
+                    <h4>¿ESTÁS SEGURO?</h4>
+                    <p class="decision"><a id="login-plan-change-yes" href="#" class="tungsten-medium">SI</a><span>|</span><a id="login-plan-change-no" href="#" class="tungsten-medium">NO</a></p>
+                </div>
+                <div id="message-plan-ini" class="login-message-box hidden message-plan-ini">
+                    <p>¿Cuándo deseas<br>comenzar este plan?</p>
+                    <ul>
+                        <li> <div data-init="1" class="tungsten-medium bt-plan-ini">AHORA</div> </li>
+                        <li> <div data-init="-2" class="tungsten-medium bt-plan-ini">MAÑANA</div> </li>
+                        <li> <div data-init="-3" class="tungsten-medium bt-plan-ini">EN 3 DÍAS</div> </li>
+                    </ul>
+                </div>
+                <div id="message-plan-cancel" class="login-message-box hidden message-plan-cancel">
+                    <p>Estás a punto<br>de cancelar tu plan<br>y perderás tu avance<br>de entrenamiento.</p>
+                    <h4>¿ESTÁS SEGURO?</h4>
+                    <p class="decision"><a id="login-plan-cancel-yes" href="#" class="tungsten-medium">SI</a><span>|</span><a id="login-plan-cancel-no" href="#" class="tungsten-medium">NO</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="login-loader"></div>
+    @*Fin Login de  la disciplina*@
+
+    @*Forma de Registro Complementario*@
+    <div id="fb-root"></div>
+    <div id="login-overlay" class="login-overlay full-all autoalpha-0"></div>
+    <div id="login-form" class="login-form center-all autoalpha-0">
+        <h1 class="tungsten-semibold">REGISTRATE</h1>
+        <h6 class="tungsten-semibold">INGRESA LOS SIGUIENTES DATOS PARA REGISTRARTE</h6>
+        <form method="post">
+            <p>Nombre(S)</p>
+            <input type="text" id="login-form-firstname">
+            <p>Apellido(S)</p>
+            <input type="text" id="login-form-lastname">
+            <p>Email</p>
+            <input type="text" id="login-form-email">
+            <input type="button" id="bt-login-form-cancel" value="CANCELAR" class="tungsten-bold">
+            <input type="submit" id="bt-login-form-ok" value="ACEPTAR" class="tungsten-bold">
+        </form>
+    </div>
+    <div id="login-loader"></div>
+    @*Fin de Forma de Registro Complementario*@
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.8/TweenMax.min.js"></script>
+    @Scripts.Render("~/script-files/global-footer")
+    @RenderSection("LocalScript", required: false)
+</body>
+</html>

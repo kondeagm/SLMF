@@ -1,0 +1,122 @@
+﻿@model SLMFCMS.Models.Pregunta
+@using System.Web.Helpers
+@{var grid = new WebGrid(Model.RespuestasDeLaPregunta, defaultSort: "ID", canPage: true, rowsPerPage: 6,
+    selectionFieldName: "ID", ajaxUpdateContainerId: "gridContent");}
+@{int noPaginas = grid.PageCount;}
+@{int nPagina = grid.PageIndex + 1;}
+@{int nRecords = grid.TotalRowCount;}
+@{
+    ViewBag.Title = "Detalle de la Pregunta del Cuestionario";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div id="row-header-index" class="row">
+            <div id="div-titulo" class="col-md-7">
+                <h4>@ViewBag.Title</h4>
+            </div>
+            <div class="col-md-4">
+                &nbsp;
+            </div>
+            <div id="div-search" class="col-md-1">
+                @Html.ActionLink(" ", "Details", "Cuestionario", routeValues: new { id = Model.CuestionarioID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-arrow-left fa-2x btn-accion-inv", @title = "Regresar" })
+            </div>
+        </div>
+    </div>
+</div>
+<hr id="header-divisor" />
+<div class="row">
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.Cuestionario.DisciplinaID)
+    </div>
+    <div class="col-md-3 lbltitulo">
+        @Html.LabelFor(model => model.CuestionarioID)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.Label(Model.Cuestionario.Disciplina.Nombre)
+    </div>
+    <div class="col-md-3 txt-area-display-with-border area-border-3">
+        @Html.Label(Model.Cuestionario.Nombre)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.Texto)
+    </div>
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.Clase)
+    </div>
+    <div class="col-md-8 lbltitulo">
+        @Html.LabelFor(model => model.Descripcion)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.Texto)
+    </div>
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.Clase)
+    </div>
+    <div class="col-md-8 txt-area-display-with-border area-border-8">
+        @Html.DisplayFor(model => model.Descripcion)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row row-detalle-add">
+    <div class="col-md-12">
+        <span>
+            @Html.ActionLink(" ", "Create", "Respuesta", routeValues: new { pagina = ViewBag.Pagina, page = ViewBag.Page, pregunta = Model.ID }, htmlAttributes: new { @class = "fa fa-plus-square fa-2x btn-accion", @title = "Agrega una Respuesta a la Pregunta" })
+        </span>
+        @Html.LabelFor(model => model.RespuestasDeLaPregunta, htmlAttributes: new { @class = "lbltitulo" })
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        @if (noPaginas > 0)
+        {
+            @grid.GetHtml(tableStyle: "table webGrid",
+                mode: WebGridPagerModes.All,
+                numericLinksCount: 6,
+                headerStyle: "webGridHeader",
+                alternatingRowStyle: "",
+                selectedRowStyle: "",
+                firstText: "«",
+                lastText: "»",
+                previousText: "‹",
+                nextText: "›",
+                columns: grid.Columns(
+                grid.Column("Texto", "Respuesta", canSort: true),
+                grid.Column("Clase", "CSS Clase", canSort: false),
+                grid.Column("", header: "", canSort: false, style: "columnActionwebGrid",
+                    format:
+                    @<text>
+                        @Html.ActionLink(" ", "Edit", "Respuesta", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-pencil-square fa-2x btn-accion", @title = "Editar la Respuesta de la Pregunta" })
+                        @Html.ActionLink(" ", "Details", "Respuesta", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-info-circle fa-2x btn-accion", @title = "Detalles de la Respuesta de la Pregunta" })
+                        @if (item.PlanesDeLaEtiqueta.Count == 0)
+                        {
+                            @Html.ActionLink(" ", "Delete", "Respuesta", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-minus-square fa-2x btn-accion", @title = "Borrar la Respuesta de la Pregunta" })
+                        }
+                        @if (item.Filtro == true)
+                        {
+                            @Html.ActionLink(" ", "NoFilter", "Respuesta", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-filter fa-2x btn-accion", @title = "Es un Filtro" })
+                        }
+                        @if (item.Filtro == false)
+                        {
+                            @Html.ActionLink(" ", "Filter", "Respuesta", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-filter fa-rotate-180 fa-2x btn-accion ", @title = "No Es un Filtro" })
+                        }
+                    </text>)
+                                     )
+                                 )
+        }
+    </div>
+</div>

@@ -1,0 +1,118 @@
+﻿@model SLMFCMS.Models.PlanDias
+@using System.Web.Helpers
+@{var grid = new WebGrid(Model.EjerciciosDelDia, defaultSort: "ID", canPage: true, rowsPerPage: 6,
+    selectionFieldName: "ID", ajaxUpdateContainerId: "gridContent");}
+@{int noPaginas = grid.PageCount;}
+@{int nPagina = grid.PageIndex + 1;}
+@{int nRecords = grid.TotalRowCount;}
+@{
+    ViewBag.Title = "Ejercicios del día";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div id="row-header-index" class="row">
+            <div id="div-titulo" class="col-md-7">
+                <h4>@ViewBag.Title</h4>
+            </div>
+            <div class="col-md-4">
+                &nbsp;
+            </div>
+            <div id="div-search" class="col-md-1">
+                @Html.ActionLink(" ", "Days", "Plan", routeValues: new { id = Model.PlanID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-arrow-left fa-2x btn-accion-inv", @title = "Regresar" })
+            </div>
+        </div>
+    </div>
+</div>
+<hr id="header-divisor" />
+<div class="row">
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.Plan.DisciplinaID)
+    </div>
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.PlanID)
+    </div>
+    <div class="col-md-1 lbltitulo">
+        @Html.LabelFor(model => model.Dia)
+    </div>
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.RutinaID)
+    </div>
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.DietaID)
+    </div>
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.ProTipID)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.Plan.Disciplina.Nombre)
+    </div>
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.Plan.Nombre)
+    </div>
+    <div class="col-md-1 txt-area-display-with-border area-border-1">
+        @Html.DisplayFor(model => model.Dia)
+    </div>
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.Rutina.Nombre)
+    </div>
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.Dieta.Nombre)
+    </div>
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.ProTip.Nombre)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row row-detalle-add">
+    <div class="col-md-12">
+        <span>
+            @Html.ActionLink(" ", "Create", "PlanDiaEjercicios", routeValues: new { pagina = ViewBag.Pagina, page = ViewBag.Page, dia = Model.ID }, htmlAttributes: new { @class = "fa fa-plus-square fa-2x btn-accion", @title = "Agrega un Ejercicio al Día de Entrenamiento" })
+        </span>
+        @Html.LabelFor(model => model.EjerciciosDelDia, htmlAttributes: new { @class = "lbltitulo" })
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        @if (noPaginas > 0)
+        {
+            @grid.GetHtml(tableStyle: "table webGrid",
+                mode: WebGridPagerModes.NextPrevious,
+                headerStyle: "webGridHeader webGridHeaderBack",
+                fillEmptyRows: true,
+                alternatingRowStyle: "",
+                selectedRowStyle: "",
+                previousText: "Previo",
+                nextText: "Siguiente",
+                columns: grid.Columns(
+                grid.Column("Secuencia", header: "Secuencia", canSort: true),
+                grid.Column("Ejercicio.NombreCompleto", header: "Ejercicio", canSort: false),
+                grid.Column("Series", "Series", canSort: false),
+                grid.Column("", header: "", canSort: false,
+                    format:
+                    @<text>
+                        @item.Repeticiones @item.UnidadEjercicio.Abreviacion
+                    </text>),
+                grid.Column("", header: "Descanso", canSort: false,
+                    format:
+                    @<text>
+                        @item.Descanso MIN
+                    </text>),
+                grid.Column("Nivel", "Peso/Nivel", canSort: false),
+                grid.Column("", header: "", canSort: false, style: "columnActionwebGrid",
+                    format:
+                    @<text>
+                        @Html.ActionLink(" ", "Edit", "PlanDiaEjercicios", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-pencil-square fa-2x btn-accion", @title = "Editar el Ejercicio del Día" })
+                        @Html.ActionLink(" ", "Series", "PlanDiaEjercicios", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-refresh fa-2x btn-accion ", @title = "Series del Ejercicio" })
+                        @Html.ActionLink(" ", "Delete", "PlanDiaEjercicios", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-minus-square fa-2x btn-accion", @title = "Borrar el Ejercicio del Día" })
+                    </text>)
+                                                                                                                             )
+                                                                                                                         )
+        }
+    </div>
+</div>

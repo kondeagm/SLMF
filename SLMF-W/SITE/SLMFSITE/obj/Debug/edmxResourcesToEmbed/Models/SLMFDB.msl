@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SlmfDBModelStoreContainer" CdmEntityContainer="SlmfDBEntities">
+    <EntitySetMapping Name="Accesorio">
+      <EntityTypeMapping TypeName="SlmfDBModel.Accesorio">
+        <MappingFragment StoreEntitySet="Accesorio">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Abreviacion" ColumnName="Abreviacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Alimento">
+      <EntityTypeMapping TypeName="SlmfDBModel.Alimento">
+        <MappingFragment StoreEntitySet="Alimento">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="NutrienteID" ColumnName="NutrienteID" />
+          <ScalarProperty Name="Suplemento" ColumnName="Suplemento" />
+          <ScalarProperty Name="Preparado" ColumnName="Preparado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banner">
+      <EntityTypeMapping TypeName="SlmfDBModel.Banner">
+        <MappingFragment StoreEntitySet="Banner">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="FileImage" ColumnName="FileImage" />
+          <ScalarProperty Name="LinkBanner" ColumnName="LinkBanner" />
+          <ScalarProperty Name="Prioridad" ColumnName="Prioridad" />
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContenidoEstatico">
+      <EntityTypeMapping TypeName="SlmfDBModel.ContenidoEstatico">
+        <MappingFragment StoreEntitySet="ContenidoEstatico">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RedSocialID" ColumnName="RedSocialID" />
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cuestionario">
+      <EntityTypeMapping TypeName="SlmfDBModel.Cuestionario">
+        <MappingFragment StoreEntitySet="Cuestionario">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="DisciplinaID" ColumnName="DisciplinaID" />
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dieta">
+      <EntityTypeMapping TypeName="SlmfDBModel.Dieta">
+        <MappingFragment StoreEntitySet="Dieta">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="FileImage" ColumnName="FileImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DietaAlimentacion">
+      <EntityTypeMapping TypeName="SlmfDBModel.DietaAlimentacion">
+        <MappingFragment StoreEntitySet="DietaAlimentacion">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DietaTemposID" ColumnName="DietaTemposID" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="PorcionID" ColumnName="PorcionID" />
+          <ScalarProperty Name="AlimentoID" ColumnName="AlimentoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DietaTempos">
+      <EntityTypeMapping TypeName="SlmfDBModel.DietaTempos">
+        <MappingFragment StoreEntitySet="DietaTempos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DietaID" ColumnName="DietaID" />
+          <ScalarProperty Name="TempoID" ColumnName="TempoID" />
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Disciplina">
+      <EntityTypeMapping TypeName="SlmfDBModel.Disciplina">
+        <MappingFragment StoreEntitySet="Disciplina">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Siglas" ColumnName="Siglas" />
+          <ScalarProperty Name="Slogan" ColumnName="Slogan" />
+          <ScalarProperty Name="Proposito" ColumnName="Proposito" />
+          <ScalarProperty Name="FileImage" ColumnName="FileImage" />
+          <ScalarProperty Name="IconImage" ColumnName="IconImage" />
+          <ScalarProperty Name="LogoSVG" ColumnName="LogoSVG" />
+          <ScalarProperty Name="SiglasImage" ColumnName="SiglasImage" />
+          <ScalarProperty Name="ColorCode" ColumnName="ColorCode" />
+          <ScalarProperty Name="ImageEntrenar" ColumnName="ImageEntrenar" />
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ejercicio">
+      <EntityTypeMapping TypeName="SlmfDBModel.Ejercicio">
+        <MappingFragment StoreEntitySet="Ejercicio">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="AccesorioID" ColumnName="AccesorioID" />
+          <ScalarProperty Name="ElementoID" ColumnName="ElementoID" />
+          <ScalarProperty Name="PosicionID" ColumnName="PosicionID" />
+          <ScalarProperty Name="MusculoID" ColumnName="MusculoID" />
+          <ScalarProperty Name="VimeoID" ColumnName="VimeoID" />
+          <ScalarProperty Name="FileImage" ColumnName="FileImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Elemento">
+      <EntityTypeMapping TypeName="SlmfDBModel.Elemento">
+        <MappingFragment StoreEntitySet="Elemento">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Abreviacion" ColumnName="Abreviacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Evento">
+      <EntityTypeMapping TypeName="SlmfDBModel.Evento">
+        <MappingFragment StoreEntitySet="Evento">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Lugar" ColumnName="Lugar" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="DisciplinaID" ColumnName="DisciplinaID" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GrupoMusculos">
+      <EntityTypeMapping TypeName="SlmfDBModel.GrupoMusculos">
+        <MappingFragment StoreEntitySet="GrupoMusculos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="FileImage" ColumnName="FileImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Musculo">
+      <EntityTypeMapping TypeName="SlmfDBModel.Musculo">
+        <MappingFragment StoreEntitySet="Musculo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="NombreComun" ColumnName="NombreComun" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="GrupoMusculosID" ColumnName="GrupoMusculosID" />
+          <ScalarProperty Name="FileImage" ColumnName="FileImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nutriente">
+      <EntityTypeMapping TypeName="SlmfDBModel.Nutriente">
+        <MappingFragment StoreEntitySet="Nutriente">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ColorCode" ColumnName="ColorCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plan">
+      <EntityTypeMapping TypeName="SlmfDBModel.Plan">
+        <MappingFragment StoreEntitySet="Plan">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DisciplinaID" ColumnName="DisciplinaID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Leyenda" ColumnName="Leyenda" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="FileImage" ColumnName="FileImage" />
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlanDiaEjercicios">
+      <EntityTypeMapping TypeName="SlmfDBModel.PlanDiaEjercicios">
+        <MappingFragment StoreEntitySet="PlanDiaEjercicios">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PlanDiasID" ColumnName="PlanDiasID" />
+          <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+          <ScalarProperty Name="EjercicioID" ColumnName="EjercicioID" />
+          <ScalarProperty Name="Series" ColumnName="Series" />
+          <ScalarProperty Name="Repeticiones" ColumnName="Repeticiones" />
+          <ScalarProperty Name="UnidadEjercicioID" ColumnName="UnidadEjercicioID" />
+          <ScalarProperty Name="Descanso" ColumnName="Descanso" />
+          <ScalarProperty Name="Nivel" ColumnName="Nivel" />
+          <ScalarProperty Name="Nota" ColumnName="Nota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlanDiaEjercicioSeries">
+      <EntityTypeMapping TypeName="SlmfDBModel.PlanDiaEjercicioSeries">
+        <MappingFragment StoreEntitySet="PlanDiaEjercicioSeries">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PlanDiaEjerciciosID" ColumnName="PlanDiaEjerciciosID" />
+          <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+          <ScalarProperty Name="Repeticiones" ColumnName="Repeticiones" />
+          <ScalarProperty Name="Nivel" ColumnName="Nivel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlanDias">
+      <EntityTypeMapping TypeName="SlmfDBModel.PlanDias">
+        <MappingFragment StoreEntitySet="PlanDias">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+          <ScalarProperty Name="Dia" ColumnName="Dia" />
+          <ScalarProperty Name="RutinaID" ColumnName="RutinaID" />
+          <ScalarProperty Name="DietaID" ColumnName="DietaID" />
+          <ScalarProperty Name="ProTipID" ColumnName="ProTipID" />
+          <ScalarProperty Name="Descanso" ColumnName="Descanso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlanEtiquetas">
+      <EntityTypeMapping TypeName="SlmfDBModel.PlanEtiquetas">
+        <MappingFragment StoreEntitySet="PlanEtiquetas">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+          <ScalarProperty Name="RespuestaID" ColumnName="RespuestaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Porcion">
+      <EntityTypeMapping TypeName="SlmfDBModel.Porcion">
+        <MappingFragment StoreEntitySet="Porcion">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Abreviacion" ColumnName="Abreviacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posicion">
+      <EntityTypeMapping TypeName="SlmfDBModel.Posicion">
+        <MappingFragment StoreEntitySet="Posicion">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Abreviacion" ColumnName="Abreviacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pregunta">
+      <EntityTypeMapping TypeName="SlmfDBModel.Pregunta">
+        <MappingFragment StoreEntitySet="Pregunta">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CuestionarioID" ColumnName="CuestionarioID" />
+          <ScalarProperty Name="Texto" ColumnName="Texto" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Clase" ColumnName="Clase" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Producto">
+      <EntityTypeMapping TypeName="SlmfDBModel.Producto">
+        <MappingFragment StoreEntitySet="Producto">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="FileImage" ColumnName="FileImage" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="NutrienteID" ColumnName="NutrienteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProTip">
+      <EntityTypeMapping TypeName="SlmfDBModel.ProTip">
+        <MappingFragment StoreEntitySet="ProTip">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Autor" ColumnName="Autor" />
+          <ScalarProperty Name="VimeoID" ColumnName="VimeoID" />
+          <ScalarProperty Name="FileImage" ColumnName="FileImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RedSocial">
+      <EntityTypeMapping TypeName="SlmfDBModel.RedSocial">
+        <MappingFragment StoreEntitySet="RedSocial">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="APPId" ColumnName="APPId" />
+          <ScalarProperty Name="APIKey" ColumnName="APIKey" />
+          <ScalarProperty Name="NoPost" ColumnName="NoPost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Respuesta">
+      <EntityTypeMapping TypeName="SlmfDBModel.Respuesta">
+        <MappingFragment StoreEntitySet="Respuesta">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PreguntaID" ColumnName="PreguntaID" />
+          <ScalarProperty Name="Texto" ColumnName="Texto" />
+          <ScalarProperty Name="Clase" ColumnName="Clase" />
+          <ScalarProperty Name="Filtro" ColumnName="Filtro" />
+          <ScalarProperty Name="LogoSVG" ColumnName="LogoSVG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rutina">
+      <EntityTypeMapping TypeName="SlmfDBModel.Rutina">
+        <MappingFragment StoreEntitySet="Rutina">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="GrupoMusculosID" ColumnName="GrupoMusculosID" />
+          <ScalarProperty Name="Inactividad" ColumnName="Inactividad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tempo">
+      <EntityTypeMapping TypeName="SlmfDBModel.Tempo">
+        <MappingFragment StoreEntitySet="Tempo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+          <ScalarProperty Name="Prefijo" ColumnName="Prefijo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Complementario" ColumnName="Complementario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnidadEjercicio">
+      <EntityTypeMapping TypeName="SlmfDBModel.UnidadEjercicio">
+        <MappingFragment StoreEntitySet="UnidadEjercicio">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Abreviacion" ColumnName="Abreviacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="SlmfDBModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FacebookID" ColumnName="FacebookID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="FechaInicioPlan" ColumnName="FechaInicioPlan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

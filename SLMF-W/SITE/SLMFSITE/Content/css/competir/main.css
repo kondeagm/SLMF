@@ -1,0 +1,95 @@
+body.competir-home{overflow:hidden;}
+.competir{height:100%;width:100%;min-width:1024px;min-height:600px;display:block;position:absolute;top:0;left:47px;bottom:0;margin:auto 0;}
+.ribbon-transparent-background{position:absolute;background:black;height:95px;width:100%;bottom:-30px;}
+.Firefox .ribbon-transparent-background{bottom:-34px;}
+.background-wrapper{background:url("/Content/img/competir/background.jpg") no-repeat;height:100%;width:100%;background-size:cover;display:block;position:absolute;}
+.background-wrapper .content-wrapper{width:100%;height:80%;min-height:600px;}
+.background-wrapper .content-wrapper #timeline{display:block;position:absolute;width:100%;height:130px;bottom:0;}
+.background-wrapper .calendar{display:block;height:60px;width:100%;position:absolute;bottom:0;left:0;right:0;margin:auto 0;z-index:1;}
+.background-wrapper .calendar ul{padding-left:48px;width:100%;height:100%;}
+.background-wrapper .calendar ul li{display:block;position:absolute;height:100%;width:77px;text-align:center;background:url("/Content/img/competir/dash-tile.png") repeat-x transparent;background-size:152px 2px;background-position:-61px -1px;}
+.background-wrapper .calendar ul li div:first-child{color:#242424;font-family:"Tungsten A","Tungsten B";font-size:30px;font-weight:400;height:40px;margin-top:-3px;}
+.background-wrapper .calendar ul li div:nth-child(2){color:#333333;font-size:14px;height:20px;opacity:0;visibility:hidden;}
+.background-wrapper .calendar ul li.dayEnabled{background:url("/Content/img/competir/dash-tile.png") repeat-x transparent;background-position:3px -1px;cursor:pointer;}
+.background-wrapper .calendar ul li.dayEnabled div:first-child{color:#818182;}
+.background-wrapper .calendar ul li.dayEnabled:hover > div:first-child{color:white!important;}
+.background-wrapper .calendar ul li.daySelected{cursor:default;background-position:3px -1px;}
+.background-wrapper .calendar ul li.daySelected div:first-child{color:#f7d72b!important;}
+.background-wrapper .calendar ul li.daySelected div:nth-child(2){color:#b2b2b2;}
+.background-wrapper .calendar ul.over li div{color:#242424;}
+.background-wrapper .calendar ul.over li.daySelected div:nth-child(2){color:white;}
+.background-wrapper .calendar ul.over li.dayEnabled div:first-child{color:#b2b2b2;}
+.background-wrapper .calendar ul.over li.dayEnabled div:nth-child(2){color:#818182;}
+.background-wrapper .event-picker{width:245px;height:65px;top:auto;bottom:60px;}
+.background-wrapper .event-picker #current-month-name{position:absolute;font-size:45px;font-family:"Tungsten A","Tungsten B";text-align:center;font-weight:400;color:white;height:70px;width:100%;}
+.background-wrapper .event-picker .arrow-container{position:absolute;height:70px;width:40px;cursor:pointer;}
+.background-wrapper .event-picker .arrow-content{top:9px;bottom:0;margin:auto 0;left:0;right:0;position:absolute;}
+.background-wrapper .event-picker .left-arrow{left:0;z-index:1;}
+.background-wrapper .event-picker .left-arrow span{background-position:20px -14px;}
+.background-wrapper .event-picker .right-arrow{right:0;}
+.background-wrapper .event-picker .right-arrow span{background-position:-20px 0;}
+.background-wrapper .event-picker .left-arrow-disabled span{background-position:20px -53px!important;}
+.background-wrapper .event-picker .right-arrow-disabled span{background-position:-20px -46px!important;}
+.background-wrapper .record{width:78%;height:100%;max-width:950px;max-height:630px;position:absolute;z-index:0;}
+.background-wrapper .record .description{width:50%;height:100%;float:left;position:absolute;left:0;margin-top:0;}
+.background-wrapper .record .description .description-wrapper{height:94%;}
+.background-wrapper .record .description svg{top:0;left:0;right:0;bottom:0;margin:auto;position:absolute;}
+.background-wrapper .record .description .glyph-active{display:block!important;}
+.background-wrapper .record .description .glyph-discipline{display:block;width:45px;height:64px;position:absolute;top:0;left:-45px;}
+.background-wrapper .record .description .glyph-discipline svg{fill:#393939;}
+.background-wrapper .record .description #mma-glyph{display:none;}
+.background-wrapper .record .description #mma-glyph svg{width:24px;height:26px;}
+.background-wrapper .record .description #cft-glyph{display:none;}
+.background-wrapper .record .description #cft-glyph svg{width:19px;height:30px;}
+.background-wrapper .record .description #bbd-glyph{display:none;}
+.background-wrapper .record .description #bbd-glyph svg{width:33px;height:20px;}
+.background-wrapper .record .description #discipline{font-size:68px;font-family:"JLSOverKillHammerSCNormal";color:#f7d72b;height:65px;line-height:1em;}
+.background-wrapper .record .description #title{font-family:"Tungsten A","Tungsten B";color:white;font-size:100px;font-weight:500;line-height:0.85em;letter-spacing:0.05em;width:80%;text-transform:uppercase;}
+.background-wrapper .record .description #subtitle{font-family:"Tungsten A","Tungsten B";font-size:21px;letter-spacing:0.1em;color:#f7d72b;width:290px;line-height:1.1em;text-transform:uppercase;}
+.background-wrapper .record .description #location{color:#d4d4d4;font-size:14px;letter-spacing:0.02em;line-height:1.2em;width:290px;padding-left:25px;background:url("/Content/img/competir/pin.png") no-repeat;background-position:2px 3px;margin-top:18px;}
+.background-wrapper .record .description #invitation-button{font-family:"Tungsten A","Tungsten B";border:1px solid #af9f48;width:195px;height:30px;color:#f7d62a;margin-top:45px;text-align:center;padding-top:6px;font-size:15px;letter-spacing:0.3em;font-weight:600;display:block;}
+.background-wrapper .record .description #invitation-button:hover{color:#212224;background:#f7d62a;}
+.background-wrapper .record .description .separator{border-top:1px solid #989898;margin-top:7px;margin-bottom:14px;width:315px;}
+.background-wrapper .record .day{width:50%;height:100%;float:right;background-position:50%;position:absolute;right:0;}
+.background-wrapper .record .day img{position:absolute;height:85%;display:none;}
+.background-wrapper .record .day .active{display:block;}
+.background-wrapper .record .day .pic-back{z-index:0;}
+.background-wrapper .record .day .pic-front{z-index:2;}
+.background-wrapper .record .day .pic-left{margin-left:-26%;}
+.background-wrapper .record .day .pic-right{right:-1%;top:9%;}
+.background-wrapper .record .day #day-field{font-size:490px;font-family:"Tungsten A","Tungsten B";font-weight:600;color:#f7d72b;line-height:1em;z-index:1;position:absolute;letter-spacing:-0.03em;width:100%;height:570px;text-align:center;top:0;bottom:2%;margin:auto;left:-15%;}
+.background-wrapper .record .day img{width:auto;height:auto;}
+.background-wrapper .record .day .bbd.bbd-2.pic-right{left:36%;top:-4%;}
+.background-wrapper .record .day .bbd.bbd-1.pic-right{left:26%;top:0%;}
+.background-wrapper .record .day .bbd.bbd-0.pic-right{left:52%;top:6%;}
+.background-wrapper .record .day .cft.cft-2.pic-front{left:20%;}
+.background-wrapper .record .day .cft.cft-1.pic-right{top:5%;left:36%;}
+.background-wrapper .record .day .cft.cft-1.pic-left{top:53%;left:49%;}
+.background-wrapper .record .day .cft.cft-0.pic-right{left:51%;}
+.background-wrapper .record .day .mma.mma-0.pic-front{top:37%;left:-5%;}
+.background-wrapper .record .day .mma.mma-1.pic-left{left:-5%;top:20%;z-index:3;}
+.background-wrapper .record .day .mma.mma-1.pic-right{left:40%;z-index:2;top:21%;}
+.background-wrapper .record .day .mma.mma-2.pic-left{left:42%;top:17%;z-index:3;}
+.background-wrapper .record .day .mma.mma-2.pic-right{left:31%;z-index:2;top:16%;}
+.ie .background-wrapper .record .description #discipline,.Firefox .background-wrapper .record .description #discipline{line-height:0.65em;}
+@media screen and (max-height:700px) and (max-width:1300px){
+  #invitation-button{margin-top:25px!important;}
+}
+@media screen and (min-width:1300px) and (min-height: 800){
+  .background-wrapper .content-wrapper{height:74%;min-height:550px;}
+  .background-wrapper .record{width:65%;}
+  .background-wrapper .record .description .description-wrapper{height:85%;}
+}
+@media screen and (min-width:1800px){
+  .background-wrapper .content-wrapper{height:65%;min-height:550px;}
+  .background-wrapper .record{width:65%;max-height:750px;}
+  .background-wrapper .record .description .description-wrapper{height:85%;}
+}
+@media screen and (min-width:1920px){
+  .background-wrapper .content-wrapper{height:65%;min-height:550px;}
+  .background-wrapper .record{width:65%;max-height:800px;max-width:1000px;}
+  .background-wrapper .record .description .description-wrapper{height:85%;}
+}
+@media screen and (min-width: 2400px){
+  .background-wrapper .content-wrapper{height:80%;}
+}

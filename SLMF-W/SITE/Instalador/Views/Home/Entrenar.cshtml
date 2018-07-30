@@ -1,0 +1,123 @@
+﻿@model SLMFSITE.Models.Disciplina
+@using SLMFSITE
+@{
+    ViewBag.Title = "SLMF - " + @Model.Nombre + " - Entrenar";
+    ViewBag.BodyClass = "entrenar-home";
+    ViewBag.NavPilarsClass = "";
+}
+@{var vLink = "";}
+@{var vLinkLogo = Convert.ToString(Session["AppAssetsURL"]) + "slmf-logo.jpg";}
+@section MetaTags {
+    <meta name="description" content="">
+    <meta property="og:description" content="Nuestro sitio está en construcción, y no sólo por un cambio de imagen: te ofreceremos programas de entrenamiento, dietas y todo lo necesario para que también tú estés entre los más fuertes.">
+    <meta property="og:image" content="@vLinkLogo">
+    <meta property="og:url" content="http://sololosmasfuertes.com">
+    <meta property="og:title" content="SÓLO LOS MÁS FUERTES">
+}
+@{SLMFSITE.Models.SlmfDBEntities dbV = new SLMFSITE.Models.SlmfDBEntities();}
+@{ var bdVFiltros = dbV.Respuesta.Where(s => s.Filtro == true && s.Pregunta.Cuestionario.DisciplinaID == Model.ID);}
+@{ var bdVPreguntas = dbV.Pregunta.Where(s => s.Cuestionario.DisciplinaID == Model.ID);}
+@{int iCount = 0;}
+@{string sClaseInicial = "last";}
+@section LocalCss {
+    @Styles.Render("~/training-discipline/css")
+}
+<div id="slmf-community-tohidde" class="full-all">
+    <div id="entrenar">
+        <div class="allLoader">
+            <div class="hidden">
+                <div id="background-wrapper">
+                    <header id="main-page">
+
+                        <div class="content">
+                            <div class="content-right">
+                                <h1>ENTRENATE!</h1>
+                                <div class="left">
+                                    <h2>LISTA DE PLANES</h2>
+                                    <p>
+                                        Entrena y adquiere fuerza, definición y simetría.
+                                        <br>
+                                        Explora los planes de entrenamiento
+                                        <br>
+                                        que te ofrecemos para ser un campeón.
+                                    </p>
+                                </div>
+                                <div class="right">
+                                    <h2>TEST PERSONAL</h2>
+                                    <p>
+                                        Encuentra tu entrenamiento específico por
+                                        <br>
+                                        medio de nuestro test personal. Selecciona
+                                        <br>
+                                        tu nivel y define tu siguiente objetivo.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="content-wrapper">
+                        <div class="filters-wrapper">
+                            <nav id="plans-filters">
+                                <span class='plans-list-label'>PLANES:</span>
+                                <ul>
+                                    <li><a id="btn-filter-all" href="#todos">TODOS</a></li>
+                                    @foreach (var item in bdVFiltros)
+                                    {
+                                        <li>
+                                            <a id="btn-filter-@item.Clase.ToLower()" href="#@item.Texto.ToLower().QuitaAcentos().ToLower()">@item.Texto.ToUpper()</a>
+                                        </li>
+                                    }
+                                </ul>
+                                <div class="buttons-container">
+                                    <a id="btn-do-test" href="#">
+                                        <span class="icon">
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="26px" height="18.135px" viewBox="0 0 26 18.135" enable-background="new 0 0 26 18.135" xml:space="preserve">
+                                            <polygon points="2,7.001 0,7.001 0,11.001 2,11.001 2,14.001 5,14.001 5,4.001 2,4.001 	"></polygon>
+                                            <polygon points="17,8.001 9,8.001 9,2.001 6,2.001 6,16.001 9,16.001 9,11.001 17,11.001 17,16.001 20,16.001 20,2.001 17,2.001 	"></polygon>
+                                            <polygon points="26,7.001 24,7.001 24,4.001 21,4.001 21,14.001 24,14.001 24,11.001 26,11.001 	"></polygon>
+                                            </svg>
+                                        </span>
+                                        <span class="caption">HACER TEST</span>
+                                    </a>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="test-wrapper">
+                            <div id="plans-test" class="center-horizontal">
+                                <div class="menu center-vertical">
+                                    <span class="tooltip">Seleccióna tu respuesta para encontrar tu plan de entrenamiento:</span>
+                                    @foreach (var item in bdVPreguntas)
+                                    {
+                                        var bdVRespuestas = dbV.Respuesta.Where(s => s.PreguntaID == @item.ID);
+                                        iCount++;
+                                        <span class="label">@item.Descripcion</span>
+                                        <ul id="@item.Clase">
+                                            @foreach (var row in bdVRespuestas)
+                                            {
+                                                <li>
+                                                    <span data-tag="@row.Texto.QuitaAcentos().ToLower()">@row.Texto.ToUpper()</span>
+                                                </li>
+                                            }
+                                            <li class="none">
+                                                <div class="combo"></div>
+                                            </li>
+                                        </ul>
+                                    }
+                                    <a href="#view-results" class="button-view-plans"><span>VER PLANES</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="plans-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="loader2 center-all">
+            <span>0</span>
+        </div>
+    </div>
+</div>
+@section LocalScript {
+    @Scripts.Render("~/training-discipline/scripts")
+    @Html.Raw(System.Web.HttpUtility.HtmlDecode(@ViewBag.Loader))
+}

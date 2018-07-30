@@ -1,0 +1,94 @@
+﻿@model SLMFCMS.Models.Respuesta
+@using System.Web.Helpers
+@{
+    ViewBag.Title = "Detalle de la Respuesta a la Pregunta del Cuestionario";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="row-header-index" class="row">
+            <div id="div-titulo" class="col-md-7">
+                <h4>@ViewBag.Title</h4>
+            </div>
+            <div class="col-md-4">
+                &nbsp;
+            </div>
+            <div id="div-search" class="col-md-1">
+                @Html.ActionLink(" ", "Details", "Pregunta", routeValues: new { id = Model.PreguntaID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-arrow-left fa-2x btn-accion-inv", @title = "Regresar" })
+            </div>
+        </div>
+    </div>
+</div>
+<hr id="header-divisor" />
+<div class="row">
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.Pregunta.Cuestionario.DisciplinaID)
+    </div>
+    <div class="col-md-3 lbltitulo">
+        @Html.LabelFor(model => model.Pregunta.CuestionarioID)
+    </div>
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.Texto)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.Label(Model.Pregunta.Cuestionario.Disciplina.Nombre)
+    </div>
+    <div class="col-md-3 txt-area-display-with-border area-border-3">
+        @Html.Label(Model.Pregunta.Cuestionario.Nombre)
+    </div>
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.Label(Model.Pregunta.Texto)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.Texto)
+    </div>
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.Clase)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.Texto)
+    </div>
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.Clase)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table webGrid table-partial-logo center-table">
+            <tr class="webGridHeader">
+                <th class="txt-center">
+                    Icono
+                </th>
+            </tr>
+            <tr>
+                <td class="celda-logo-delete">
+                    <div>
+                        @if (!String.IsNullOrEmpty(Model.LogoSVG))
+                        {
+                            <div class="image-preview-filterlogo">
+                                @Html.Raw(System.Web.HttpUtility.HtmlDecode(Model.LogoSVG))
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="image-preview-logo-none">
+                                <p>Aun no captura el código SVG del Icono</p>
+                            </div>
+                        }
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

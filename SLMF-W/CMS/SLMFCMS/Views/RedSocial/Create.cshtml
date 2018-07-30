@@ -1,0 +1,108 @@
+﻿@model SLMFCMS.Models.RedSocial
+@{
+    ViewBag.Title = "Agregar una Red Social";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12">
+            <div id="row-header-index" class="row">
+                <div id="div-titulo" class="col-md-7">
+                    <h4>@ViewBag.Title</h4>
+                </div>
+                <div class="col-md-3">
+                    &nbsp;
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-save" type="submit" title="Guardar">Guardar</button>
+                </div>
+                <div id="div-search" class="col-md-1">
+                    @Html.ActionLink("Cancelar", "Index", "RedSocial", routeValues: new { pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "btn btn-cancel", @title = "Cancelar" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr id="header-divisor" />
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="row">
+            <div class="col-md-3 lbltitulo">
+                @Html.LabelFor(model => model.Nombre)
+            </div>
+            <div class="col-md-3 lbltitulo">
+                @Html.LabelFor(model => model.Identificador)
+            </div>
+            <div class="col-md-4 lbltitulo">
+                @Html.LabelFor(model => model.URL)
+            </div>
+            <div class="col-md-2 lbltitulo">
+                @Html.LabelFor(model => model.NoPost)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 margen-off">
+                @Html.TextBoxFor(model => model.Nombre, new { @class = "txt-box-input-20-1" })
+            </div>
+            <div class="col-md-3 margen-off">
+                @Html.TextBoxFor(model => model.Identificador, new { @class = "txt-box-input-20-1" })
+            </div>
+            <div class="col-md-4 margen-off">
+                @Html.TextBoxFor(model => model.URL, new { @class = "txt-box-input-35-1" })
+            </div>
+            <div class="col-md-2 margen-off">
+                @Html.TextBoxFor(model => model.NoPost, new { @class = "txt-box-input-5-1" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 lbltitulo">
+                @Html.LabelFor(model => model.APPId)
+            </div>
+            <div class="col-md-4 lbltitulo">
+                @Html.LabelFor(model => model.APIKey)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 margen-off">
+                @Html.TextBoxFor(model => model.APPId, new { @class = "txt-box-input-30-1" })
+            </div>
+            <div class="col-md-4 margen-off">
+                @Html.TextBoxFor(model => model.APIKey, new { @class = "txt-box-input-30-1" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Identificador, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.URL, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.NoPost, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.APPId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.APIKey, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

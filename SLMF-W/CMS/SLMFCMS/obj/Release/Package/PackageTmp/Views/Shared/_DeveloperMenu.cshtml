@@ -1,0 +1,11 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Context.User.IsInRole("PageAdmin") || Context.User.IsInRole("ContentAdmin"))
+{
+    <li>@Html.ActionLink("Dietas", "Index", "Dieta", routeValues: null, htmlAttributes: null)</li>
+    <li>@Html.ActionLink("Rutinas", "Index", "Rutina", routeValues: null, htmlAttributes: null)</li>
+    <li>@Html.ActionLink("Planes", "Index", "Plan", routeValues: null, htmlAttributes: null)</li>
+}
+@if (Context.User.IsInRole("PageAdmin") || Context.User.IsInRole("EventAdmin"))
+{
+    <li>@Html.ActionLink("Eventos", "Index", "Evento", routeValues: null, htmlAttributes: null)</li>
+}

@@ -1,0 +1,150 @@
+body {
+	overflow: hidden
+}
+
+/* SECTION GENERICS */
+#potenciar .transparent {
+	visibility: hidden;
+	opacity: 0;
+}
+#potenciar em, #potenciar strong { line-height: 1.6em; /* text-transform:uppercase; */ font-size: 14px; font-weight: 400; font-family: "PlexesLightPro"; /* letter-spacing:0.22em; */ color: #fff; }
+#potenciar .loader { left: 95px }
+#potenciar h1, #potenciar h2 { padding: 0; margin: 0; left: 0; width: 100%; float: none }
+#potenciar h2 { font-size: 14px; text-transform: none; font-family: "PlexesLightPro"; text-shadow: 1px 1px 0px #000; letter-spacing: 0.02em; color: #cccccc; }
+#potenciar .wrapper { width: calc(100% - 95px); height: 100%; right: 0; top: 0; bottom: 0; margin: auto; position: absolute }
+
+/*BACKGROUND*/
+#potenciar #background { background: url("/Content/img/competir/background.jpg") no-repeat center top fixed; width: 100%; height: 100%; position: absolute; width: calc(100% - 95px); top: 0; background-size: cover;}
+
+/* HOME */
+#potenciar .home { height: 100%; bottom: auto; z-index: 0; }
+#potenciar .home h1, h2 { margin-bottom: 16px; font-size: 165px; font-family: "Tungsten A", "Tungsten B"; font-weight: 800; letter-spacing: 0.1em; color: #f6d641; text-align: center; text-shadow: none;}
+#potenciar .home h2 { width: 420px; left: 0; right: 0; margin: auto; line-height: 1.7em; text-shadow: none; font-weight: 400;}
+#potenciar .home h3 { margin-top: 36px; color: white; text-align: center; margin-top: 36px; width: 100%; }
+#potenciar .home header { top: 0; left: 0; right: 0; bottom: 0; margin: auto; position: absolute; height: 235px; }
+
+/* MAIN NAVIGATION BAR */
+#potenciar .navigation-bar { position: absolute; bottom: 0; right: 0; height: 0px; width: calc(100% - 95px); z-index: 1;}
+#potenciar .navigation-bar .nav-wrapper { height: 100%; }
+#potenciar .navigation-bar .nav-wrapper li.energia-caption .icon-nav-menu { margin-left: 28px; }
+#potenciar .navigation-bar .nav-wrapper li.desarrollo-caption .icon-nav-menu { margin-left: 22px; }
+#potenciar .navigation-bar .nav-wrapper li.reguladores-caption .icon-nav-menu { margin-left: 36px; }
+#potenciar .navigation-bar li { width: 33%; display: table-cell; vertical-align: middle; }
+
+	/* Top Bar */
+#potenciar .navigation-bar .top-bar { height: 92px; background: #212224; }
+#potenciar .navigation-bar .top-bar ul.section-captions { height: 100%; max-width: 1024px; width: 80%; left: 0; right: 0; margin: auto; position: relative; display: table }
+#potenciar .navigation-bar .top-bar a.title { color: white; font-size: 16px; line-height: 36px; padding: 0; float: left; font-family: "Tungsten A", "Tungsten B"; font-weight: 400; letter-spacing: 0.35em; }
+#potenciar .navigation-bar .top-bar a:not(.active).title:hover { color: #f6db58; }
+#potenciar .navigation-bar .top-bar a.active {color: #666; cursor: default;}
+#potenciar .icon-nav-menu { margin-top: 0; margin-left: 0; width: 76px; height: 34px; float: left; }
+#potenciar .icon-nav-menu svg { fill: #646566; height: 34px; }
+
+	/* Bottom Bar */
+#potenciar .navigation-bar .bottom-bar { height: 215px; width: 100%; background: #f6d641; position: absolute; }
+#potenciar .navigation-bar .bottom-bar li { height: 215px; }
+#potenciar .navigation-bar ul.section-contents { height: 100%; max-width: 1024px; width: 80%; left: 0; right: 0; margin: auto; position: relative; display: table }
+#potenciar .navigation-bar .section-contents img { float: left; }
+#potenciar .navigation-bar .section-contents .energia-description img { margin-left: 28px; }
+#potenciar .navigation-bar .section-contents .desarrollo-description img { margin-left: 8px; }
+#potenciar .navigation-bar .section-contents .reguladores-description img { margin-left: 26px; }
+#potenciar .navigation-bar .section-contents p { color: black; width: 135px; font-size: 12px; letter-spacing: 0; line-height: 1.4em; float: left; padding-left: 17px; position: absolute; margin-left: 80px }
+#potenciar .navigation-bar .section-contents .energia-description p { margin-left: 80px; }
+#potenciar .navigation-bar .section-contents .desarrollo-description p { margin-left: 88px; }
+#potenciar .navigation-bar .section-contents .reguladores-description p { margin-left: 91px; }
+#potenciar .navigation-bar .section-contents .v-line { height: 86px; width: 1px; float: right; background: black; margin-top: -12px; }
+#potenciar .navigation-bar .section-contents .energia-description .v-line { margin-right: 3px; }
+#potenciar .navigation-bar .section-contents .desarrollo-description .v-line { margin-right: -5px }
+@media (min-width:1280px) {
+	#potenciar .navigation-bar .section-contents .energia-description .v-line { margin-right: 30px; }
+	#potenciar .navigation-bar .section-contents .desarrollo-description .v-line { margin-right: 25px }
+}
+
+/* S E C T I O N S */
+#potenciar .sections em, #potenciar strong {
+	color: white;
+}
+#potenciar .sections { height: calc(100% - 240px); width: calc(100% - 95px); position: absolute; overflow: hidden; right: 0; top: 0; }
+#potenciar .section-wrapper { width: 88.7%; height: 83%; max-width: 1300px;left: 0; right: 0; top: 0; bottom: 0; margin: auto; position: absolute; z-index: 1;}
+@media (min-width:1400px) {
+	#potenciar .section-wrapper { width: 85%  }
+}
+
+/* TITLES */
+#potenciar .sections .titles { height: 75px; }
+#potenciar .sections .titles h1 { font-size: 48px; color: #f6db58; text-shadow: 1px 1px 0px black; letter-spacing: 0.01em; position: absolute;}
+#potenciar .sections .btn-back { color: #cccccc; width: 135px; position: absolute; margin-top: 41px; }
+#potenciar .sections .btn-back:hover { cursor: pointer }
+#potenciar .sections .btn-back:hover:before { color: #f6db58; }
+#potenciar .sections .btn-back:before { content: "REGRESAR"; font-family: "Tungsten A", "Tungsten B"; font-size: 18px; letter-spacing: 0.1em; margin-top: 10px; padding-left: 10px; width: 90px; float: right }
+#potenciar .sections .btn-back .btn-arrow { width: 30px; height: 7px; content: ""; display: block; float: left; background: url("/Content/img/icon/arrows.png") no-repeat; margin-top: 18px; background-position: 7px -14px }
+
+/* SIDEBARS */
+#potenciar .sections .sidebars { z-index: 2; width: 300px; height: 100%; position: absolute; }
+#potenciar .sections .sidebars .sidebar-info { width: 350px; position: absolute; margin: auto; height: 358px; top: 33px; left: 10px; }
+#potenciar .sections .sidebars .sidebar-icon svg { fill: #929292; height: 58px; width: 50px; }
+#potenciar .sections .sidebars .keyword { font-size: 48px; font-family: "Tungsten A", "Tungsten B"; letter-spacing: 0.1em; text-shadow: 1px 1px 0px black; margin-top: 15px; font-weight: 400; color: white; left: 0; text-align: left; }
+#potenciar .sections .sidebars p { margin-top: 19px; line-height: 1.75em; text-shadow: 1px 1px 0px black; }
+#potenciar .sections .sidebars p strong { color: #f6db58; }
+@media (min-height:800px) {
+	#potenciar .sections .sidebars .sidebar-info { top: 33px; }
+}
+
+/* ITEMS */
+#potenciar .sections .items { position: absolute; top: 0; right: 0; left: 0; bottom: 0; margin: auto; width: 500px; height: 100%; z-index: 1; }
+#potenciar .sections .items .food { position: absolute; z-index: 1; top: 0; bottom: 0; width: 100%; margin: auto; height: 100%; }
+#potenciar .sections .items .food img { display: block; top: 0; bottom: 0; margin: auto; position: absolute; }
+#potenciar .sections .items .food img.spaguetti { left: 7px; top: 112px; height: 400px; }
+#potenciar .sections .items .food img.salmon { top: 176px; height: 276px; left: 7px; }
+#potenciar .sections .items .food img.broccoli { top: 160px; height: 318px; left: 40px; }
+#potenciar .sections .items .food img.meat { top: 214px; height: 327px; left: -42px; }
+#potenciar .sections .items .food img.apples {  top: 154px; height: 300px; left: 74px; }
+#potenciar .sections .items .food img.berries { top: 140px; height: 324px; left: 37px; }
+#potenciar .sections .items .products { position: absolute; width: 100%; height: 100%;}
+#potenciar .sections .items .products .supplement { position: absolute; width: 100%; height: 100%; top: 65px; left: 20px; }
+#potenciar .sections .items .products .supplement img { top: 0; bottom: 0; width: auto; right: 0; left: 0; margin: auto; position: absolute; }
+#potenciar .sections .items .products .supplement a {
+	background: url('/Content/img/potenciar/slmf-buy.svg') no-repeat;
+	position: absolute;
+	height: 93px;
+	width: 93px;
+	right: 0;
+	left: 120px;
+	margin: auto;
+	top: 302px;
+	bottom: 0;
+	-webkit-transition: background-color 0.3s;
+  	transition: background 0.3s;
+}
+#potenciar .sections .items .products .supplement a:hover{background:url('/Content/img/potenciar/slmf-buy-over.svg') no-repeat}
+
+@media (min-width:1280px) {
+	#potenciar .sections .items .food img.broccoli { top: 160px; height: 398px; left: 0px; }
+	#potenciar .sections .items .food img.salmon { top: 176px; height: 364px; left: -77px; }
+	#potenciar .sections .items .food img.spaguetti { left: -104px; top: 112px; height: 550px; }
+	#potenciar .sections .items .food img.meat { top: 184px; height: 427px; left: -130px; }
+	#potenciar .sections .items .food img.apples { top: 163px; height: 345px; left: 53px; }
+	#potenciar .sections .items .food img.berries { top: 140px; height: 405px; left: 0px; }
+}
+
+/* BACKGROUND */
+#potenciar .sections .wood-background { z-index: 0; background: url('/Content/img/potenciar/wood_background.png') no-repeat center center; bottom: 0; position: absolute; height: 348px; width: 100%; top: 410px; margin: auto; }
+
+/* ACCORDIONS */
+#potenciar .sections .accordions .accordion { top: 0; bottom: 0; margin: auto; position: absolute; }
+#potenciar .sections .accordions { position: absolute; width: 240px; height: 100%; margin: auto; right: 0; top: 0; z-index: 2; }
+#potenciar .sections .accordions li.tab { padding-top: 11px; padding-bottom: 7px; border-bottom: 1px solid #656565; }
+#potenciar .sections .accordions li.tab:last-child { border: none; }
+#potenciar .sections .accordions a.tab-link { color: white; font-size: 18px; letter-spacing: 0.25em; text-shadow: 1px 1px 0px black; font-family: "Tungsten A", "Tungsten B"; font-weight: 400; }
+#potenciar .sections .accordions a:hover { color: #f6db58; }
+#potenciar .sections .accordions li.tab ul.supplements a { font-family: "Tungsten A" "Tungsten B"; text-decoration: underline; color: #f6db58; font-weight: 400; font-size: 16px; letter-spacing: 0.16em; }
+#potenciar .sections .accordions li.tab ul.supplements a.active { color: white; }
+#potenciar .sections .accordions li.tab ul.supplements a:hover { color: white; }
+#potenciar .sections .accordions li.tab ul.supplements li { display: inline-block; margin-right: 20px; }
+#potenciar .sections .accordions li.tab-active a { color: #212224; text-shadow: none; font-size: 24px; }
+#potenciar .sections .accordions .tab-content { text-shadow: 1px 1px 0px black; margin-top: 4px; overflow: hidden; }
+#potenciar .sections .accordions .tab-content p { margin-top: 14px; line-height: 1.44em; }
+#potenciar .sections .accordions .tab-content table { width: 107%; }
+#potenciar .sections .accordions .tab-content td { width: 33.3%; }
+
+

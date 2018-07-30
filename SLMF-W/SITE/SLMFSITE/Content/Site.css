@@ -1,0 +1,11 @@
+﻿.message-error {
+    padding: 145px 200px;
+    float: unset;
+    text-align: center;
+}
+
+    .message-error > h1 {
+        font-size: 50px;
+        letter-spacing: 1px;
+        line-height: 44px;
+    }

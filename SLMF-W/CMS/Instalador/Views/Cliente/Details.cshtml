@@ -1,0 +1,85 @@
+﻿@model SLMFCMS.Models.Usuario
+@using System.Web.Helpers
+@{
+    ViewBag.Title = "Detalles del Cliente";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div id="row-header-index" class="row">
+            <div id="div-titulo" class="col-md-7">
+                <h4>@ViewBag.Title</h4>
+            </div>
+            <div class="col-md-4">
+                &nbsp;
+            </div>
+            <div id="div-search" class="col-md-1">
+                @Html.ActionLink(" ", "Index", "Cliente", routeValues: new { pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-arrow-left fa-2x btn-accion-inv", @title = "Regresar" })
+            </div>
+        </div>
+    </div>
+</div>
+<hr id="header-divisor" />
+<div class="row">
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.Nombre)
+    </div>
+    <div class="col-md-3 lbltitulo">
+        @Html.LabelFor(model => model.Apellidos)
+    </div>
+    <div class="col-md-4 lbltitulo">
+        @Html.LabelFor(model => model.Correo)
+    </div>
+    <div class="col-md-3 lbltitulo">
+        @Html.LabelFor(model => model.FacebookID)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+    <div class="col-md-3 txt-area-display-with-border area-border-3">
+        @Html.DisplayFor(model => model.Apellidos)
+    </div>
+    <div class="col-md-4 txt-area-display-with-border area-border-4">
+        @Html.DisplayFor(model => model.Correo)
+    </div>
+    <div class="col-md-3 txt-area-display-with-border area-border-3">
+        @Html.DisplayFor(model => model.FacebookID)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-1 lbltitulo">
+        @Html.LabelFor(model => model.FechaRegistro)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-1 txt-area-display-with-border area-border-1">
+        @Html.DisplayFor(model => model.FechaRegistro)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 lbltitulo">
+        @Html.LabelFor(model => model.PlanID)
+    </div>
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.FechaInicioPlan)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 txt-area-display-with-border area-border-3">
+        @Html.DisplayFor(model => model.PlanDelUsuario.Nombre)
+    </div>
+    <div class="col-md-1 txt-area-display-with-border area-border-1">
+        @Html.DisplayFor(model => model.FechaInicioPlan)
+    </div>
+</div>

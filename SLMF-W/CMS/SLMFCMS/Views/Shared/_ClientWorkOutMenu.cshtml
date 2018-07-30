@@ -1,0 +1,55 @@
+﻿@using System.Web.Helpers
+@using SLMFCMS.App_Code
+@if (Request.IsAuthenticated)
+{
+    if (Context.User.IsInRole("PageAdmin") || Context.User.IsInRole("ContentAdmin"))
+    {
+        <div id="menu-flotado-left" class="body-nav body-nav-vertical body-nav-fixed">
+            <div id="container-menu-left" class="container">
+                <ul>
+                    @if (Context.User.IsInRole("PageAdmin"))
+                    {
+                        <li>
+                            @Html.MenuActionLink("Grupo de Musculos", "GrupoMusculos", "Index", "fa fa-universal-access icon-large")
+                        </li>
+                        <li>
+                            @Html.MenuActionLink("Unidades de Medición", "UnidadEjercicio", "Index", "fa fa-tachometer icon-large")
+                        </li>
+                        <content>
+                            <div style="height: 15px;">
+                            </div>
+                        </content>
+                    }
+                    <li>
+                        @Html.MenuActionLink("Musculos", "Musculo", "Index", "fa fa-male icon-large")
+                    </li>
+                    <li>
+                        @Html.MenuActionLink("Pro-TIPS SLMF", "ProTip", "Index", "fa fa-file-video-o icon-large")
+                    </li>
+                </ul>
+            </div>
+        </div>
+    }
+
+    if (Context.User.IsInRole("PageAdmin") || Context.User.IsInRole("ContentAdmin"))
+    {
+        <div id="menu-flotado-right" class="body-nav body-nav-vertical body-nav-fixed body-nav-right">
+            <div id="container-menu-right" class="container">
+                <ul>
+                    <li>
+                        @Html.MenuActionLink("Accesorios para Ejercitarse", "Accesorio", "Index", "fa fa-wrench icon-large")
+                    </li>
+                    <li>
+                        @Html.MenuActionLink("Elementos para Ejercitarse", "Elemento", "Index", "fa fa-bicycle icon-large")
+                    </li>
+                    <li>
+                        @Html.MenuActionLink("Posiciones para Ejercitarse", "Posicion", "Index", "fa fa-bed icon-large")
+                    </li>
+                    <li>
+                        @Html.MenuActionLink("Ejercicios", "Ejercicio", "Index", "fa fa-cubes icon-large")
+                    </li>
+                </ul>
+            </div>
+        </div>
+    }
+}

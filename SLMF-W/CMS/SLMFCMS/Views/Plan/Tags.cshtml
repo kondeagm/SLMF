@@ -1,0 +1,163 @@
+﻿@model SLMFCMS.Models.Plan
+@using System.Web.Helpers
+@{SLMFCMS.Models.ApplicationDbContext dbV = new SLMFCMS.Models.ApplicationDbContext();}
+@{int iIdDisciplina = Model.DisciplinaID;
+int iIdCuetionario = dbV.Cuestionario.Where(s => s.DisciplinaID == iIdDisciplina && s.Visible == true).First().ID;}
+@{ var bdVEtiquetas =
+	   (from Res in dbV.Respuesta
+		join Pre in dbV.Pregunta on Res.PreguntaID equals Pre.ID into tResPre
+		from Pre in tResPre.DefaultIfEmpty()
+		where Res.Pregunta.Cuestionario.ID == iIdCuetionario
+		select new
+		{
+			RespuestaID = Res.ID,
+			PreguntaID = Pre.ID,
+			TextoCompleto = Pre.Texto + ": " + Res.Texto
+		}).ToList();
+}
+@{ var bdVSeleccionados =
+	   (from Val in dbV.PlanEtiquetas
+		join Res in dbV.Respuesta on Val.RespuestaID equals Res.ID into tValRes
+		from Res in tValRes.DefaultIfEmpty()
+		join Pre in dbV.Pregunta on Res.PreguntaID equals Pre.ID into tValPre
+		from Pre in tValPre.DefaultIfEmpty()
+		where Val.PlanID == Model.ID
+		select new
+		{
+			ValorID = Val.ID,
+			RespuestaID = Val.RespuestaID,
+			PreguntaID = Res.PreguntaID,
+			TextoCompleto = Pre.Texto + ": " + Res.Texto
+		}).ToList();
+}
+@{var bdDisponibles = bdVEtiquetas.Where(s => !bdVSeleccionados.Select(p => p.RespuestaID).Contains(s.RespuestaID));}
+@{
+	ViewBag.Title = "Etiquetas del Plan";
+}
+@using (Html.BeginForm(actionName: "SaveList", controllerName: "Plan", routeValues: new { id = Model.ID }, method: FormMethod.Post, htmlAttributes: new { id = "form" }))
+{
+	@Html.AntiForgeryToken()
+	<div class="row">
+		<div class="col-md-12">
+			<div id="row-header-index" class="row">
+				<div id="div-titulo" class="col-md-7">
+					<h4>@ViewBag.Title</h4>
+				</div>
+				<div class="col-md-3">
+					&nbsp;
+				</div>
+				<div class="col-md-1">
+					<button class="btn btn-save" type="submit" title="Guardar">Guardar</button>
+				</div>
+				<div id="div-search" class="col-md-1">
+					@Html.ActionLink("Cancelar", "Index", "Plan", routeValues: new { pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "btn btn-cancel", @title = "Cancelar" })
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr id="header-divisor" />
+	<div class="form-horizontal">
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+		<div class="row">
+			<div class="col-md-2 lbltitulo">
+				@Html.LabelFor(model => model.DisciplinaID)
+			</div>
+			<div class="col-md-2 lbltitulo">
+				@Html.LabelFor(model => model.Nombre)
+			</div>
+			<div class="col-md-3 lbltitulo">
+				@Html.LabelFor(model => model.Leyenda)
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2 txt-area-display-with-border area-border-2">
+				@Html.DisplayFor(model => model.Disciplina.Nombre)
+			</div>
+			<div class="col-md-2 txt-area-display-with-border area-border-2">
+				@Html.DisplayFor(model => model.Nombre)
+			</div>
+			<div class="col-md-3 txt-area-display-with-border area-border-3">
+				@Html.DisplayFor(model => model.Leyenda)
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				&nbsp;
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				@Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+			</div>
+		</div>
+		<div style="overflow: auto;">
+			<table class="table webGrid table-partial-tags">
+				<tr class="webGridHeader">
+					<th class=" text-bold">
+						@bdDisponibles.Count() Etiquetas posibles
+					</th>
+					<th class=" text-bold">
+						@bdVSeleccionados.Count Etiquetas seleccionadas
+					</th>
+				</tr>
+				<tr>
+					<td class="container-tags">
+						<div class="ui-widget-content ui-corner-all drag-and-drop-window zona-drag">
+							<ul id="left" class="drag-and-drop-connectedSortable ul-sinpunto area-drag">
+								@foreach (var item in bdDisponibles)
+								{
+									<li class="ui-state-default drag-and-drop-item">@item.TextoCompleto</li>
+								}
+							</ul>
+						</div>
+					</td>
+					<td class="container-tags">
+						<div class="ui-widget-content ui-corner-all drag-and-drop-window zona-drag">
+							<ul id="center" class="drag-and-drop-connectedSortable ul-sinpunto area-drag">
+								@foreach (var item in bdVSeleccionados)
+								{
+									<li class="ui-state-default drag-and-drop-item li-seleccionado">@item.TextoCompleto</li>
+								}
+							</ul>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+}
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+	@Scripts.Render("~/bundles/dragscript")
+	<script type="text/javascript">
+		$(document).ready(function () {
+			jQuery.ajaxSettings.traditional = true;
+			$("#form").submit(function () {
+				var centervalues = [];
+				$("#center li").each(function () { centervalues.push($(this).text()) });
+				var postData = { center: centervalues };
+				$.post('@Url.Action(actionName: "SaveList", controllerName: "Plan", routeValues: new { id = Model.ID })',
+						postData,
+						function (data) {
+							window.history.back(-1);
+						},
+						'json');
+				return false;
+			});
+			$("#left").sortable({
+				connectWith: '.drag-and-drop-connectedSortable',
+				update: function (event, ui) {
+					var countleft = $("#left").find("li").length;
+					$("#lefttitle").text(countleft + " Etiquetas posibles");
+				}
+			}).disableSelection();
+			$("#center").sortable({
+				connectWith: '.drag-and-drop-connectedSortable',
+				update: function (event, ui) {
+					var countright = $("#center").find("li").length;
+					$("#centertitle").text(countright + " Etiquetas seleccionadas");
+				}
+			}).disableSelection();
+		});
+	</script>
+}

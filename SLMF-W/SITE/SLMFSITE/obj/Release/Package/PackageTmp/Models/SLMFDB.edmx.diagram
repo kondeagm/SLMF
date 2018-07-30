@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7e963d42bce94f7180be9ec35e7d89b5" Name="Diagram1">
+        <EntityTypeShape EntityType="SlmfDBModel.Accesorio" Width="1.5" PointX="3" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.Alimento" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.Banner" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.ContenidoEstatico" Width="1.5" PointX="12" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.Cuestionario" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.Dieta" Width="1.5" PointX="3" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.DietaAlimentacion" Width="1.5" PointX="10.5" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.DietaTempos" Width="1.5" PointX="8.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.Disciplina" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.Ejercicio" Width="1.5" PointX="5.25" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.Elemento" Width="1.5" PointX="3" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.Evento" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.GrupoMusculos" Width="1.5" PointX="0.75" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.Musculo" Width="1.5" PointX="3" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.Nutriente" Width="1.5" PointX="6" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.Plan" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.PlanDiaEjercicios" Width="1.5" PointX="7.5" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.PlanDiaEjercicioSeries" Width="1.5" PointX="9.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.PlanDias" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.PlanEtiquetas" Width="1.5" PointX="9.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.Porcion" Width="1.5" PointX="8.25" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.Posicion" Width="1.5" PointX="3" PointY="34.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.Pregunta" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.Producto" Width="1.5" PointX="8.25" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.ProTip" Width="1.5" PointX="3" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.RedSocial" Width="1.5" PointX="9.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.Respuesta" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.Rutina" Width="1.5" PointX="3" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.Tempo" Width="1.5" PointX="6" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.UnidadEjercicio" Width="1.5" PointX="5.25" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SlmfDBModel.Usuario" Width="1.5" PointX="5.25" PointY="16" IsExpanded="true" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_Ejercicio_dbo_Accesorio_AccesorioID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_Alimento_dbo_Nutriente_NutrienteID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_DietaAlimentacion_dbo_Alimento_AlimentoID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_ContenidoEstatico_dbo_RedSocial_RedSocialID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_Cuestionario_dbo_Disciplina_DisciplinaID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_Pregunta_dbo_Cuestionario_CuestionarioID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_DietaTempos_dbo_Dieta_DietaID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_PlanDias_dbo_Dieta_DietaID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_DietaAlimentacion_dbo_DietaTempos_DietaTemposID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_DietaAlimentacion_dbo_Porcion_PorcionID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_DietaTempos_dbo_Tempo_TempoID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_Evento_dbo_Disciplina_DisciplinaID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_Plan_dbo_Disciplina_DisciplinaID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_Ejercicio_dbo_Elemento_ElementoID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_Ejercicio_dbo_Musculo_MusculoID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_Ejercicio_dbo_Posicion_PosicionID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_PlanDiaEjercicios_dbo_Ejercicio_EjercicioID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_Musculoes_dbo_GrupoMusculos_GrupoMusculosID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_Rutina_dbo_GrupoMusculos_GrupoMusculosID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_Producto_dbo_Nutriente_NutrienteID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_PlanDias_dbo_Plan_PlanID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_PlanEtiquetas_dbo_Plan_PlanID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_Usuario_dbo_Plan_PlanID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_PlanDiaEjercicios_dbo_PlanDias_PlanDiasID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_PlanDiaEjercicios_dbo_UnidadEjercicio_UnidadEjercicioID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_PlanDiaEjercicioSeries_dbo_PlanDiaEjercicios_PlanDiaEjerciciosID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_PlanDias_dbo_ProTip_ProTipID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_PlanDias_dbo_Rutina_RutinaID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_PlanEtiquetas_dbo_Respuesta_RespuestaID" ManuallyRouted="false" />
+        <AssociationConnector Association="SlmfDBModel.FK_dbo_Respuesta_dbo_Pregunta_PreguntaID" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

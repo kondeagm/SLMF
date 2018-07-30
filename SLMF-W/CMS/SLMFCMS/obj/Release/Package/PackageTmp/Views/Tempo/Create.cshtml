@@ -1,0 +1,80 @@
+﻿@model SLMFCMS.Models.Tempo
+@{
+    ViewBag.Title = "Agregar un Tiempo de Alimentación";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12">
+            <div id="row-header-index" class="row">
+                <div id="div-titulo" class="col-md-7">
+                    <h4>@ViewBag.Title</h4>
+                </div>
+                <div class="col-md-3">
+                    &nbsp;
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-save" type="submit" title="Guardar">Guardar</button>
+                </div>
+                <div id="div-search" class="col-md-1">
+                    @Html.ActionLink("Cancelar", "Index", "Tempo", routeValues: new { pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "btn btn-cancel", @title = "Cancelar" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr id="header-divisor" />
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="row">
+            <div class="col-md-1 lbltitulo">
+                @Html.LabelFor(model => model.Secuencia)
+            </div>
+            <div class="col-md-1 lbltitulo">
+                @Html.LabelFor(model => model.Prefijo)
+            </div>
+            <div class="col-md-4 lbltitulo">
+                @Html.LabelFor(model => model.Nombre)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 margen-off">
+                @Html.TextBoxFor(model => model.Secuencia, new { @class = "txt-box-input-5-1" })
+            </div>
+            <div class="col-md-1 margen-off">
+                @Html.TextBoxFor(model => model.Prefijo, new { @class = "txt-box-input-7-1" })
+            </div>
+            <div class="col-md-5 margen-off">
+                @Html.TextBoxFor(model => model.Nombre, new { @class = "txt-box-input-col4-row1" })
+            </div>
+            <div class="col-md-2 lbltitulo">
+                @Html.LabelFor(model => model.Complementario)
+                @Html.EditorFor(model => model.Complementario)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Secuencia, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Prefijo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ValidationMessageFor(model => model.Complementario, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

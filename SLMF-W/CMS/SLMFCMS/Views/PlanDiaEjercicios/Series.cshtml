@@ -1,0 +1,154 @@
+﻿@model SLMFCMS.Models.PlanDiaEjercicios
+@using System.Web.Helpers
+@{var grid = new WebGrid(Model.SeriesDelEjercicio, defaultSort: "ID", canPage: true, rowsPerPage: 5,
+    selectionFieldName: "ID", ajaxUpdateContainerId: "gridContent");}
+@{int noPaginas = grid.PageCount;}
+@{int nPagina = grid.PageIndex + 1;}
+@{int nRecords = grid.TotalRowCount;}
+@{
+    ViewBag.Title = "Ejercicios del día";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div id="row-header-index" class="row">
+            <div id="div-titulo" class="col-md-7">
+                <h4>@ViewBag.Title</h4>
+            </div>
+            <div class="col-md-4">
+                &nbsp;
+            </div>
+            <div id="div-search" class="col-md-1">
+                @Html.ActionLink(" ", "Exercices", "PlanDias", routeValues: new { id = Model.PlanDiasID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-arrow-left fa-2x btn-accion-inv", @title = "Regresar" })
+            </div>
+        </div>
+    </div>
+</div>
+<hr id="header-divisor" />
+<div class="row">
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.PlanDias.Plan.DisciplinaID)
+    </div>
+    <div class="col-md-2 lbltitulo">
+        @Html.LabelFor(model => model.PlanDias.PlanID)
+    </div>
+    <div class="col-md-1 lbltitulo">
+        @Html.LabelFor(model => model.PlanDias.Dia)
+    </div>
+    <div class="col-md-3 lbltitulo">
+        @Html.LabelFor(model => model.PlanDias.RutinaID)
+    </div>
+    <div class="col-md-3 lbltitulo">
+        @Html.LabelFor(model => model.PlanDias.DietaID)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.PlanDias.Plan.Disciplina.Nombre)
+    </div>
+    <div class="col-md-2 txt-area-display-with-border area-border-2">
+        @Html.DisplayFor(model => model.PlanDias.Plan.Nombre)
+    </div>
+    <div class="col-md-1 txt-area-display-with-border area-border-1 text-center">
+        @Html.DisplayFor(model => model.PlanDias.Dia)
+    </div>
+    <div class="col-md-3 txt-area-display-with-border area-border-3">
+        @Html.DisplayFor(model => model.PlanDias.Rutina.Nombre)
+    </div>
+    <div class="col-md-3 txt-area-display-with-border area-border-3">
+        @Html.DisplayFor(model => model.PlanDias.Dieta.Nombre)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-1 lbltitulo">
+        @Html.LabelFor(model => model.Secuencia)
+    </div>
+    <div class="col-md-5 lbltitulo">
+        @Html.LabelFor(model => model.EjercicioID)
+    </div>
+    <div class="col-md-1 lbltitulo">
+        @Html.LabelFor(model => model.Series)
+    </div>
+    <div class="col-md-3 lbltitulo">
+        @Html.LabelFor(model => model.Repeticiones)
+    </div>
+    <div class="col-md-1 lbltitulo">
+        @Html.LabelFor(model => model.Descanso)
+    </div>
+    <div class="col-md-1 lbltitulo">
+        @Html.LabelFor(model => model.Nivel)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-1 txt-area-display-with-border area-border-1 text-center">
+        @Html.DisplayFor(model => model.Secuencia)
+    </div>
+    <div class="col-md-5 txt-area-display-with-border area-border-5">
+        @Html.DisplayFor(model => model.Ejercicio.NombreCompleto)
+    </div>
+    <div class="col-md-1 txt-area-display-with-border area-border-1 text-center">
+        @Html.DisplayFor(model => model.Series)
+    </div>
+    <div class="col-md-3 txt-area-display-with-border area-border-3">
+        @Html.DisplayFor(model => model.Repeticiones) @Html.DisplayFor(model => model.UnidadEjercicio.Nombre)
+    </div>
+    <div class="col-md-1 txt-area-display-with-border area-border-1 text-center">
+        @Html.DisplayFor(model => model.Descanso) @Html.Label("Min", htmlAttributes: new { @class = "lbltitulo" })
+    </div>
+    <div class="col-md-1 txt-area-display-with-border area-border-1 text-center">
+        @Html.DisplayFor(model => model.Nivel)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-1 lbltitulo">
+        @Html.LabelFor(model => model.Nota)
+    </div>
+    <div class="col-md-3 txt-area-display-with-border area-border-3">
+        @Html.DisplayFor(model => model.Nota)
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row">
+        <div class="col-md-12">
+            @if (noPaginas > 0)
+            {
+                @grid.GetHtml(tableStyle: "table webGrid",
+                    mode: WebGridPagerModes.NextPrevious,
+                    headerStyle: "webGridHeader webGridHeaderBack",
+                    fillEmptyRows: true,
+                    alternatingRowStyle: "",
+                    selectedRowStyle: "",
+                    previousText: "Previo",
+                    nextText: "Siguiente",
+                    columns: grid.Columns(
+                    grid.Column("Secuencia", header: "Serie", canSort: true),
+                    grid.Column("PlanDiaEjercicios.Ejercicio.NombreCompleto", header: "Ejercicio", canSort: false),
+                    grid.Column("", header: "Realizar", canSort: false,
+                    format:
+                    @<text>
+                        @item.Repeticiones @item.PlanDiaEjercicios.UnidadEjercicio.Abreviacion
+                    </text>),
+                    grid.Column("Nivel", "Peso/Nivel", canSort: false),
+                    grid.Column("", header: "", canSort: false, style: "columnActionwebGrid",
+                        format:
+                        @<text>
+                            @Html.ActionLink(" ", "Edit", "PlanDiaEjercicioSeries", routeValues: new { id = item.ID, pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "fa fa-pencil-square fa-2x btn-accion", @title = "Editar el Ejercicio del Día" })
+                        </text>)
+                    )
+                )
+            }
+    </div>
+</div>

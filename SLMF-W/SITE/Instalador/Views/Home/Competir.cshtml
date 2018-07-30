@@ -1,0 +1,70 @@
+﻿@using SLMFSITE
+@{
+    ViewBag.Title = "SLMF - Competir";
+    ViewBag.BodyClass = "competir-home";
+    ViewBag.NavPilarsClass = "";
+}
+@{var vLink = "";}
+@{var vLinkLogo = Convert.ToString(Session["AppAssetsURL"]) + "slmf-logo.jpg";}
+@section MetaTags {
+    <meta name="description" content="">
+    <meta property="og:description" content="Nuestro sitio está en construcción, y no sólo por un cambio de imagen: te ofreceremos programas de entrenamiento, dietas y todo lo necesario para que también tú estés entre los más fuertes.">
+    <meta property="og:image" content="@vLinkLogo">
+    <meta property="og:url" content="http://sololosmasfuertes.com">
+    <meta property="og:title" content="SÓLO LOS MÁS FUERTES">
+}
+@{SLMFSITE.Models.SlmfDBEntities dbV = new SLMFSITE.Models.SlmfDBEntities();}
+@{var bdVDisciplinas = dbV.Disciplina.Where(s => s.ID > 0);}
+@section LocalCss {
+    @Styles.Render("~/competition-discipline/css")
+}
+<div id="slmf-community-tohidde" class="full-all">
+    <div id="competir" class="competir">
+        <div class="allLoader">
+            <div class="hidden">
+                <div class="background-wrapper">
+                    <div class="content-wrapper center-vertical">
+                        <div class="record center-horizontal">
+                            <div class="description">
+                                <div class="description-wrapper center-vertical">
+                                    <div id="discipline" class="simple-shadow">DISC</div>
+                                    @foreach (var item in bdVDisciplinas)
+                                    {
+                                        <div id="@item.Siglas.ToLower()-glyph" class="glyph-discipline">
+                                            @Html.Raw(System.Web.HttpUtility.HtmlDecode(item.LogoSVG))
+                                        </div>
+                                    }
+                                    <div id="title" class="simple-shadow">TITLE</div>
+                                    <div class="separator"></div>
+                                    <div id="subtitle" class="simple-shadow">SUBTITLE</div>
+                                    <div id="location" class="simple-shadow">LOCATION</div><a id="invitation-button" href="#" target="_blank">VER CONVOCATORIA</a>
+                                </div>
+                            </div>
+                            <div class="day">
+                                <img src="" data-distance='2.3' class="pic-back active">
+                                <img src="" data-distance='0.6' class="pic-front active">
+                                <div id="day-field" class="simple-shadow">0</div>
+                            </div>
+                        </div>
+                        <div id="timeline">
+                            <div class="ribbon-transparent-background"></div>
+                            <div class="event-picker center-all">
+                                <div id="arrow-left" class="arrow-container left-arrow"><span class="arrow-content arrow-prev-white"></span></div>
+                                <div id="current-month-name" class="simple-shadow"></div>
+                                <div id="arrow-right" class="arrow-container right-arrow"><span class="arrow-content arrow-next-white"></span></div>
+                            </div>
+                            <div id="timeline-ribbon" class="calendar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="loader2 center-all">
+            <span>0</span>
+        </div>
+    </div>
+</div>
+@section LocalScript {
+    @Scripts.Render("~/competition-discipline/scripts")
+    @Html.Raw(System.Web.HttpUtility.HtmlDecode(@ViewBag.Loader))
+}

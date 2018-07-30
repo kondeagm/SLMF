@@ -1,0 +1,55 @@
+﻿@using System.Web.Helpers
+@using SLMFCMS.App_Code
+@if (Request.IsAuthenticated)
+{
+    if (Context.User.IsInRole("PageAdmin") || Context.User.IsInRole("ContentAdmin"))
+    {
+        <div id="menu-flotado-left" class="body-nav body-nav-vertical body-nav-fixed">
+            <div id="container-menu-left" class="container">
+                <ul>
+                    @if (Context.User.IsInRole("PageAdmin"))
+                    {
+                        <li>
+                            @Html.MenuActionLink("Tiempos de Alimentación", "Tempo", "Index", "fa fa-clock-o icon-large")
+                        </li>
+                        <li>
+                            @Html.MenuActionLink("Porciones", "Porcion", "Index", "fa fa-cutlery icon-large")
+                        </li>
+                        <li>
+                            @Html.MenuActionLink("Nutrientes", "Nutriente", "Index", "fa fa-user-md icon-large")
+                        </li>
+                        <content>
+                            <div style="height: 15px;">
+                            </div>
+                        </content>
+                    }
+                    <li>
+                        @Html.MenuActionLink("Productos SLMF", "Producto", "Index", "fa fa-product-hunt icon-large")
+                    </li>
+                    <li>
+                        @Html.MenuActionLink("Banners", "Banner", "Index", "fa fa-ticket icon-large")
+                    </li>
+                </ul>
+            </div>
+        </div>
+    }
+
+    if (Context.User.IsInRole("PageAdmin") || Context.User.IsInRole("ContentAdmin"))
+    {
+        <div id="menu-flotado-right" class="body-nav body-nav-vertical body-nav-fixed body-nav-right">
+            <div id="container-menu-right" class="container">
+                <ul>
+                    <li>
+                        @Html.MenuActionLink("Alimentos", "Alimento", "Index", "fa fa-lemon-o icon-large")
+                    </li>
+                    <li>
+                        @Html.MenuActionLink("Alimentos Preparados", "Platillo", "Index", "fa fa-bitbucket icon-large")
+                    </li>
+                    <li>
+                        @Html.MenuActionLink("Suplementos", "Suplemento", "Index", "fa fa-battery-full icon-large")
+                    </li>
+                </ul>
+            </div>
+        </div>
+    }
+}

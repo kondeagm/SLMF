@@ -1,0 +1,113 @@
+﻿@model SLMFCMS.Models.Evento
+@{
+    ViewBag.Title = "Agregar un Evento";
+}
+@section LocalCss {
+    @Styles.Render("~/Content/picker")
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12">
+            <div id="row-header-index" class="row">
+                <div id="div-titulo" class="col-md-7">
+                    <h4>@ViewBag.Title</h4>
+                </div>
+                <div class="col-md-3">
+                    &nbsp;
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-save" type="submit" title="Guardar">Guardar</button>
+                </div>
+                <div id="div-search" class="col-md-1">
+                    @Html.ActionLink("Cancelar", "Index", "Evento", routeValues: new { pagina = ViewBag.Pagina }, htmlAttributes: new { @class = "btn btn-cancel", @title = "Cancelar" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr id="header-divisor" />
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Visible)
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12 lbltitulo">
+                        @Html.LabelFor(model => model.DisciplinaID)
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="selector-table-1" class="col-md-12 margen-off">
+                        @Html.DropDownList("DisciplinaID", String.Empty)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 lbltitulo">
+                        @Html.LabelFor(model => model.Fecha)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12  margen-off">
+                        <div class="day-picker-star"></div>
+                        <input type="hidden" id="Fecha" name="Fecha" value="@Model.Fecha.ToShortDateString()" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6 lbltitulo">
+                        @Html.LabelFor(model => model.Titulo)
+                    </div>
+                    <div class="col-md-6 lbltitulo">
+                        @Html.LabelFor(model => model.Nombre)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 margen-off">
+                        @Html.TextAreaFor(model => model.Titulo, new { @class = "txt-area-input-col3-row2" })
+                    </div>
+                    <div class="col-md-6 margen-off">
+                        @Html.TextBoxFor(model => model.Nombre, new { @class = "txt-box-input-col4-row1" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 lbltitulo">
+                        @Html.LabelFor(model => model.Lugar)
+                    </div>
+                    <div class="col-md-6 lbltitulo">
+                        @Html.LabelFor(model => model.Direccion)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 margen-off">
+                        @Html.TextBoxFor(model => model.Lugar, new { @class = "txt-box-input-col3-row1" })
+                    </div>
+                    <div class="col-md-6 margen-off">
+                        @Html.TextAreaFor(model => model.Direccion, new { @class = "txt-area-input-col4-row4" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 lbltitulo">
+                        @Html.LabelFor(model => model.URL)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 margen-off">
+                        @Html.TextBoxFor(model => model.URL, new { @class = "txt-box-input-col6-row1" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/schedulepickerday")
+}

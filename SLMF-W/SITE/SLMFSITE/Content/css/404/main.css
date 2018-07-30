@@ -1,0 +1,8 @@
+.body-404{background:url(../../img/404/bg.svg) no-repeat scroll center center #020202;}
+.section-404{width:755px;height:345px;}
+.section-404 h1{color:#f6d641;font-size:200px;margin:0;padding:0;line-height:1em;letter-spacing:-0.02em;padding-bottom:18px;margin-top:-19px;}
+.section-404 h1 img{float:left;margin-right:24px;top:67px;position:relative;}
+.section-404 h2{font-size:48px;padding-left:195px;letter-spacing:0.21em;padding-bottom:16px;}
+.section-404 p{font-size:15px;padding-left:193px;padding-bottom:35px;}
+.section-404 a{padding:5px 30px;border:1px solid #f6d641;color:#f6d641;font-size:16px;letter-spacing:0.212em;float:left;text-align:center;margin-left:194px;}
+.section-404 a:hover{background:#f6d641;color:#212224;}
